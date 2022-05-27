@@ -39,19 +39,19 @@ locals {
   prod_vnet_rg = "${local.project_prefix_short}-p-vnet-rg"
 
   # 📦 ACR DEV DOCKER
-  srv_endpoint_name_docker_registry_dev = "${local.project_prefix_short}-acr_docker_registry_dev"
-  docker_registry_rg_name_dev           = "${local.project_prefix_short}-d-docker-rg"
-  docker_registry_name_dev              = "${local.project_prefix_short}dacr"
+  srv_endpoint_name_docker_registry_dev = "cstar-azurecrcommon-dev"
+  docker_registry_rg_name_dev           = "cstar-d-container-registry-rg"
+  docker_registry_name_dev              = "cstardcommonacr"
 
   # 📦 ACR UAT DOCKER
-  srv_endpoint_name_docker_registry_uat = "${local.project_prefix_short}-acr_docker_registry_uat"
-  docker_registry_rg_name_uat           = "${local.project_prefix_short}-u-docker-rg"
-  docker_registry_name_uat              = "${local.project_prefix_short}uacr"
+  srv_endpoint_name_docker_registry_uat = "cstar-azurecrcommon-uat"
+  docker_registry_rg_name_uat           = "cstar-u-container-registry-rg"
+  docker_registry_name_uat              = "cstarucommonacr"
 
   # 📦 ACR PROD DOCKER
-  srv_endpoint_name_docker_registry_prod = "${local.project_prefix_short}-acr_docker_registry_prod"
-  docker_registry_rg_name_prod           = "${local.project_prefix_short}-p-docker-rg"
-  docker_registry_name_prod              = "${local.project_prefix_short}pacr"
+  srv_endpoint_name_docker_registry_prod = "cstar-azurecrcommon-prod"
+  docker_registry_rg_name_prod           = "cstar-p-container-registry-rg"
+  docker_registry_name_prod              = "cstarpcommonacr"
 
   #tfsec:ignore:general-secrets-no-plaintext-exposure
   #tfsec:ignore:GEN002
