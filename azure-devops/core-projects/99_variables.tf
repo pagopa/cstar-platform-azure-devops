@@ -13,18 +13,16 @@ variable "prod_subscription_name" {
   description = "PROD Subscription name"
 }
 
-variable "project_name_prefix" {
+variable "project_name" {
   type        = string
-  description = "Project name project_prefix (e.g. devopslab)"
+  description = "Project name project"
 }
 
 locals {
-  project_prefix_short = "short"
+  project_prefix_short = "cstar"
   azure_devops_org     = "pagopaspa"
 
   # 🔐 KV
-  dev_key_vault_azdo_name  = "${local.project_prefix_short}-d-azdo-weu-kv"
-  uat_key_vault_azdo_name  = "${local.project_prefix_short}-u-azdo-weu-kv"
   prod_key_vault_azdo_name = "${local.project_prefix_short}-p-azdo-weu-kv"
 
   dev_key_vault_name  = "${local.project_prefix_short}-d-kv"
@@ -58,4 +56,7 @@ locals {
   #tfsec:ignore:general-secrets-no-plaintext-exposure
   #tfsec:ignore:GEN002
   tlscert_renew_token = "v1"
+
+  ### SONAR
+  azuredevops_serviceendpoint_sonarcloud_id = "1a9c808a-84ca-4d0c-8d5a-1976a1ae685f"
 }
