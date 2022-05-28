@@ -4,8 +4,8 @@ resource "azuredevops_serviceendpoint_azurecr" "cstar-azurecrcommon-dev" {
 
   project_id                = data.azuredevops_project.project.id
   service_endpoint_name     = local.srv_endpoint_name_docker_registry_dev
-  resource_group            = "cstar-d-aks-rg"
-  azurecr_name              = "cstardacr"
+  resource_group            = local.docker_registry_rg_name_dev
+  azurecr_name              = local.docker_registry_name_dev
   azurecr_subscription_name = "DEV-CSTAR"
   azurecr_spn_tenantid      = module.secret_azdo.values["PAGOPAIT-TENANTID"].value
   azurecr_subscription_id   = module.secret_azdo.values["PAGOPAIT-DEV-CSTAR-SUBSCRIPTION-ID"].value
