@@ -59,6 +59,16 @@ locals {
   uat_vnet_rg  = "${local.prefix}-u-vnet-rg"
   prod_vnet_rg = "${local.prefix}-p-vnet-rg"
 
+  # DNS Zone
+
+  rg_dev_dns_zone_name  = "cstar-d-vnet-rg"
+  rg_uat_dns_zone_name  = "cstar-u-vnet-rg"
+  rg_prod_dns_zone_name = "cstar-p-vnet-rg"
+
+  dev_dns_zone_name  = "dev.cstar.pagopa.it"
+  uat_dns_zone_name  = "uat.cstar.pagopa.it"
+  prod_dns_zone_name = "cstar.pagopa.it"
+
   # 📦 ACR DEV FOR AKS
   srv_endpoint_name_aks_cr_dev = "${local.prefix}-aks-cr-dev"
   aks_cr_rg_name_dev           = "${local.prefix}-d-container-registry-rg"
@@ -80,13 +90,13 @@ locals {
   srv_endpoint_name_aks_prod = "${local.prefix}-${local.domain}-aks-prod"
 
   # Agent Pool
-  azdo_agent_pool_dev = "cstar-dev-linux"
-  azdo_agent_pool_uat = "cstar-uat-linux"
+  azdo_agent_pool_dev  = "cstar-dev-linux"
+  azdo_agent_pool_uat  = "cstar-uat-linux"
   azdo_agent_pool_prod = "cstar-prod-linux"
 
   # Subscription Name
-  dev_cstar_subscription_name = "dev-cstar"
-  uat_cstar_subscription_name = "uat-cstar"
+  dev_cstar_subscription_name  = "dev-cstar"
+  uat_cstar_subscription_name  = "uat-cstar"
   prod_cstar_subscription_name = "prod-cstar"
 
   #tfsec:ignore:general-secrets-no-plaintext-exposure
@@ -100,11 +110,11 @@ locals {
   # Outputs from CORE
   #
   service_endpoint_io_azure_devops_github_ro_name = data.terraform_remote_state.core.outputs.service_endpoint_io_azure_devops_github_ro_name
-  service_endpoint_io_azure_devops_github_pr_id = data.terraform_remote_state.core.outputs.service_endpoint_io_azure_devops_github_pr_id
-  service_endpoint_io_azure_devops_github_ro_id = data.terraform_remote_state.core.outputs.service_endpoint_io_azure_devops_github_ro_id
-  
+  service_endpoint_io_azure_devops_github_pr_id   = data.terraform_remote_state.core.outputs.service_endpoint_io_azure_devops_github_pr_id
+  service_endpoint_io_azure_devops_github_ro_id   = data.terraform_remote_state.core.outputs.service_endpoint_io_azure_devops_github_ro_id
+
   service_endpoint_azure_devops_acr_aks_dev_name = data.terraform_remote_state.core.outputs.service_endpoint_azure_devops_acr_aks_dev_name
-  service_endpoint_azure_devops_acr_aks_dev_id = data.terraform_remote_state.core.outputs.service_endpoint_azure_devops_acr_aks_dev_id
+  service_endpoint_azure_devops_acr_aks_dev_id   = data.terraform_remote_state.core.outputs.service_endpoint_azure_devops_acr_aks_dev_id
 
   service_endpoint_azure_dev_id = data.terraform_remote_state.core.outputs.service_endpoint_azure_dev_id
 }

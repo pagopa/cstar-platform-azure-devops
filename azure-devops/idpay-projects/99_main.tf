@@ -13,11 +13,15 @@ terraform {
 }
 
 provider "azurerm" {
-  features {}
+  features {
+    key_vault {
+      purge_soft_delete_on_destroy = false
+    }
+  }
 }
 
 provider "azurerm" {
-  alias           = "dev"
+  alias = "dev"
   features {
     key_vault {
       purge_soft_delete_on_destroy = false
@@ -27,7 +31,7 @@ provider "azurerm" {
 }
 
 provider "azurerm" {
-  alias           = "uat"
+  alias = "uat"
   features {
     key_vault {
       purge_soft_delete_on_destroy = false
@@ -37,7 +41,7 @@ provider "azurerm" {
 }
 
 provider "azurerm" {
-  alias           = "prod"
+  alias = "prod"
   features {
     key_vault {
       purge_soft_delete_on_destroy = false
