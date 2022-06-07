@@ -74,9 +74,15 @@ locals {
   aks_cr_rg_name_prod           = "${local.prefix}-p-container-registry-rg"
   aks_cr_name_prod              = "${local.prefix}pcommonacr"
 
+  # AKS
   srv_endpoint_name_aks_dev  = "${local.prefix}-${local.domain}-aks-dev"
   srv_endpoint_name_aks_uat  = "${local.prefix}-${local.domain}-aks-uat"
   srv_endpoint_name_aks_prod = "${local.prefix}-${local.domain}-aks-prod"
+
+  # Agent Pool
+  azdo_agent_pool_dev = "cstar-dev-linux"
+  azdo_agent_pool_uat = "cstar-uat-linux"
+  azdo_agent_pool_prod = "cstar-prod-linux"
 
   #tfsec:ignore:general-secrets-no-plaintext-exposure
   #tfsec:ignore:GEN002
@@ -84,4 +90,16 @@ locals {
 
   # TODO azure devops terraform provider does not support SonarCloud service endpoint
   azuredevops_serviceendpoint_sonarcloud_id = "9182be64-d387-465d-9acc-e79e802910c8"
+
+  #
+  # Outputs from CORE
+  #
+  service_endpoint_io_azure_devops_github_ro_name = data.terraform_remote_state.core.outputs.service_endpoint_io_azure_devops_github_ro_name
+  service_endpoint_io_azure_devops_github_pr_id = data.terraform_remote_state.core.outputs.service_endpoint_io_azure_devops_github_pr_id
+  service_endpoint_io_azure_devops_github_ro_id = data.terraform_remote_state.core.outputs.service_endpoint_io_azure_devops_github_ro_id
+  
+  service_endpoint_azure_devops_acr_aks_dev_name = data.terraform_remote_state.core.outputs.service_endpoint_azure_devops_acr_aks_dev_name
+  service_endpoint_azure_devops_acr_aks_dev_id = data.terraform_remote_state.core.outputs.service_endpoint_azure_devops_acr_aks_dev_id
+
+  service_endpoint_azure_dev_id = data.terraform_remote_state.core.outputs.service_endpoint_azure_dev_id
 }
