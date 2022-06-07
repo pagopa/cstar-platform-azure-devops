@@ -46,13 +46,13 @@ locals {
   prod_key_vault_azdo_name = "${local.prefix}-p-azdo-weu-kv"
 
   # 🔐 KV Domain
-  dev_idpay_key_vault_resource_group  = "${local.prefix}-d-${local.domain}-sec-rg"
-  uat_idpay_key_vault_resource_group  = "${local.prefix}-u-${local.domain}-sec-rg"
-  prod_idpay_key_vault_resource_group = "${local.prefix}-p-${local.domain}-sec-rg"
+  dev_domain_key_vault_resource_group  = "${local.prefix}-d-${local.domain}-sec-rg"
+  uat_domain_key_vault_resource_group  = "${local.prefix}-u-${local.domain}-sec-rg"
+  prod_domain_key_vault_resource_group = "${local.prefix}-p-${local.domain}-sec-rg"
 
-  dev_idpay_key_vault_name  = "${local.prefix}-d-${local.domain}-kv"
-  uat_idpay_key_vault_name  = "${local.prefix}-u-${local.domain}-kv"
-  prod_idpay_key_vault_name = "${local.prefix}-p-${local.domain}-kv"
+  dev_domain_key_vault_name  = "${local.prefix}-d-${local.domain}-kv"
+  uat_domain_key_vault_name  = "${local.prefix}-u-${local.domain}-kv"
+  prod_domain_key_vault_name = "${local.prefix}-p-${local.domain}-kv"
 
   # ☁️ VNET
   dev_vnet_rg  = "${local.prefix}-d-vnet-rg"

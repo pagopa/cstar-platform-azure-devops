@@ -19,8 +19,8 @@ module "DEV-CSTAR-IDPAY-TLS-CERT-SERVICE-CONN" {
   renew_token = local.tlscert_renew_token
 
   credential_subcription              = local.dev_cstar_subscription_name
-  credential_key_vault_name           = local.dev_idpay_key_vault_name
-  credential_key_vault_resource_group = local.dev_idpay_key_vault_resource_group
+  credential_key_vault_name           = local.dev_domain_key_vault_name
+  credential_key_vault_resource_group = local.dev_domain_key_vault_resource_group
 }
 
 resource "azurerm_key_vault_access_policy" "DEV-CSTAR-IDPAY-TLS-CERT-SERVICE-CONN_kv_access_policy" {
@@ -41,7 +41,7 @@ module "letsencrypt_dev" {
   }
   prefix            = local.prefix
   env               = "d"
-  key_vault_name    = local.dev_idpay_key_vault_name
+  key_vault_name    = local.dev_domain_key_vault_name
   subscription_name = local.dev_cstar_subscription_name
 }
 

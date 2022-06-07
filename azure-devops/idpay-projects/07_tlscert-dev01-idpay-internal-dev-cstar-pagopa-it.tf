@@ -29,15 +29,15 @@ locals {
     subscription_id                     = module.secret_azdo.values["PAGOPAIT-DEV-CSTAR-SUBSCRIPTION-ID"].value
     dns_zone_resource_group             = local.rg_dev_dns_zone_name
     credential_subcription              = local.dev_cstar_subscription_name
-    credential_key_vault_name           = local.dev_idpay_key_vault_name
-    credential_key_vault_resource_group = local.dev_idpay_key_vault_resource_group
+    credential_key_vault_name           = local.dev_domain_key_vault_name
+    credential_key_vault_resource_group = local.dev_domain_key_vault_resource_group
     service_connection_ids_authorization = [
       module.DEV-CSTAR-IDPAY-TLS-CERT-SERVICE-CONN.service_endpoint_id,
     ]
   }
   tlscert-dev01-idpay-internal-dev-cstar-pagopa-it-variables = {
     KEY_VAULT_SERVICE_CONNECTION = module.DEV-CSTAR-IDPAY-TLS-CERT-SERVICE-CONN.service_endpoint_name,
-    KEY_VAULT_NAME               = local.dev_idpay_key_vault_name
+    KEY_VAULT_NAME               = local.dev_domain_key_vault_name
   }
   tlscert-dev01-idpay-internal-dev-cstar-pagopa-it-variables_secret = {
   }

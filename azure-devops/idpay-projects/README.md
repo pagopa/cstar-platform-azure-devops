@@ -22,7 +22,7 @@
 |------|--------|---------|
 | <a name="module_DEV-CSTAR-IDPAY-TLS-CERT-SERVICE-CONN"></a> [DEV-CSTAR-IDPAY-TLS-CERT-SERVICE-CONN](#module\_DEV-CSTAR-IDPAY-TLS-CERT-SERVICE-CONN) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_limited | v2.1.0 |
 | <a name="module_devops-springboot-gitlab-workflow_deploy"></a> [devops-springboot-gitlab-workflow\_deploy](#module\_devops-springboot-gitlab-workflow\_deploy) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_deploy | v2.1.0 |
-| <a name="module_idpay_dev_secrets"></a> [idpay\_dev\_secrets](#module\_idpay\_dev\_secrets) | git::https://github.com/pagopa/azurerm.git//key_vault_secrets_query | v2.0.4 |
+| <a name="module_domain_dev_secrets"></a> [domain\_dev\_secrets](#module\_domain\_dev\_secrets) | git::https://github.com/pagopa/azurerm.git//key_vault_secrets_query | v2.0.4 |
 | <a name="module_letsencrypt_dev"></a> [letsencrypt\_dev](#module\_letsencrypt\_dev) | git::https://github.com/pagopa/azurerm.git//letsencrypt_credential | v2.18.0 |
 | <a name="module_secret_azdo"></a> [secret\_azdo](#module\_secret\_azdo) | git::https://github.com/pagopa/azurerm.git//key_vault_secrets_query | v2.0.5 |
 | <a name="module_tlscert-dev01-idpay-internal-dev-cstar-pagopa-it-cert_az"></a> [tlscert-dev01-idpay-internal-dev-cstar-pagopa-it-cert\_az](#module\_tlscert-dev01-idpay-internal-dev-cstar-pagopa-it-cert\_az) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_tls_cert | v2.1.0 |
