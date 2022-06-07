@@ -14,7 +14,7 @@ jobs:
 
       - name: init_terraform_folders
         env:
-          FOLDERS: src src/k8s src/aks-platform src/psql src/domains/idpay src/domains/idpay-common
+          FOLDERS: core iac idpay
         run: |
           pids=()
 
