@@ -10,7 +10,7 @@ variable "devops-java-springboot-color" {
     pipeline = {
       enable_code_review = true
       enable_deploy      = true
-      path            = "idpay\\devops-java-springboot-color"
+      path               = "idpay\\devops-java-springboot-color"
     }
   }
 }
@@ -69,7 +69,7 @@ module "devops-java-springboot-color_code_review" {
   project_id                   = data.azuredevops_project.project.id
   repository                   = var.devops-java-springboot-color.repository
   github_service_connection_id = local.service_endpoint_io_azure_devops_github_pr_id
-  path = var.devops-java-springboot-color.pipeline.path
+  path                         = var.devops-java-springboot-color.pipeline.path
 
   pull_request_trigger_use_yaml = true
 
@@ -96,7 +96,7 @@ module "devops-java-springboot-color_deploy" {
   project_id                   = data.azuredevops_project.project.id
   repository                   = var.devops-java-springboot-color.repository
   github_service_connection_id = local.service_endpoint_io_azure_devops_github_pr_id
-  path = var.devops-java-springboot-color.pipeline.path
+  path                         = var.devops-java-springboot-color.pipeline.path
 
   ci_trigger_use_yaml = true
 
