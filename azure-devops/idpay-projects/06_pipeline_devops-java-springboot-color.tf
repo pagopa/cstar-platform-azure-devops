@@ -3,13 +3,14 @@ variable "devops-java-springboot-color" {
     repository = {
       organization    = "pagopa"
       name            = "devops-java-springboot-color"
-      branch_name     = "release-dev"
+      branch_name     = "refs/heads/main"
       pipelines_path  = ".devops"
-      yml_prefix_name = null
+      yml_prefix_name = "cstar"
     }
     pipeline = {
-      enable_code_review = false
+      enable_code_review = true
       enable_deploy      = true
+      path            = "idpay\\devops-java-springboot-color"
     }
   }
 }
@@ -61,39 +62,41 @@ locals {
   }
 }
 
-# module "devops-java-springboot-color_code_review" {
-#   source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_code_review?ref=v2.1.0"
-#   count  = var.devops-java-springboot-color.pipeline.enable_code_review == true ? 1 : 0
+module "devops-java-springboot-color_code_review" {
+  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_code_review?ref=fix-folder-path-option"
+  count  = var.devops-java-springboot-color.pipeline.enable_code_review == true ? 1 : 0
 
-#   project_id                   = azuredevops_project.project.id
-#   repository                   = var.devops-java-springboot-color.repository
-#   github_service_connection_id = azuredevops_serviceendpoint_github.io-azure-devops-github-pr.id
+  project_id                   = data.azuredevops_project.project.id
+  repository                   = var.devops-java-springboot-color.repository
+  github_service_connection_id = local.service_endpoint_io_azure_devops_github_pr_id
+  path = var.devops-java-springboot-color.pipeline.path
 
-#   pull_request_trigger_use_yaml = true
+  pull_request_trigger_use_yaml = true
 
-#   variables = merge(
-#     local.devops-java-springboot-color-variables,
-#     local.devops-java-springboot-color-variables_code_review,
-#   )
+  variables = merge(
+    local.devops-java-springboot-color-variables,
+    local.devops-java-springboot-color-variables_code_review,
+  )
 
-#   variables_secret = merge(
-#     local.devops-java-springboot-color-variables_secret,
-#     local.devops-java-springboot-color-variables_secret_code_review,
-#   )
+  variables_secret = merge(
+    local.devops-java-springboot-color-variables_secret,
+    local.devops-java-springboot-color-variables_secret_code_review,
+  )
 
-#   service_connection_ids_authorization = [
-#     azuredevops_serviceendpoint_github.io-azure-devops-github-ro.id,
-#     local.azuredevops_serviceendpoint_sonarcloud_id,
-#   ]
-# }
+  service_connection_ids_authorization = [
+    local.service_endpoint_io_azure_devops_github_ro_id,
+    local.azuredevops_serviceendpoint_sonarcloud_id,
+  ]
+}
 
 module "devops-java-springboot-color_deploy" {
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_deploy?ref=fix-schedules-triggers"
+  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_deploy?ref=fix-folder-path-option"
   count  = var.devops-java-springboot-color.pipeline.enable_deploy == true ? 1 : 0
 
   project_id                   = data.azuredevops_project.project.id
   repository                   = var.devops-java-springboot-color.repository
   github_service_connection_id = local.service_endpoint_io_azure_devops_github_pr_id
+  path = var.devops-java-springboot-color.pipeline.path
 
   ci_trigger_use_yaml = true
 
