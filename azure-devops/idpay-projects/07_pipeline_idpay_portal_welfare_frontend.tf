@@ -11,6 +11,7 @@ variable "idpay-portal-welfare-frontend" {
     pipeline = {
       enable_code_review = true
       enable_deploy      = true
+      path               = "idpay\\idpay-portal-welfare-frontend"
     }
   }
 }
