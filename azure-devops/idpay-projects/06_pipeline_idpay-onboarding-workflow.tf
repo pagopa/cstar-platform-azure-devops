@@ -69,7 +69,7 @@ module "idpay-onboarding-workflow_code_review" {
   project_id                   = data.azuredevops_project.project.id
   repository                   = var.idpay-onboarding-workflow.repository
   github_service_connection_id = local.service_endpoint_io_azure_devops_github_pr_id
-  path                         = var.devops-java-springboot-color.pipeline.path
+  path                         = var.idpay-onboarding-workflow.pipeline.path
 
   pull_request_trigger_use_yaml = true
 
@@ -96,7 +96,7 @@ module "idpay-onboarding-workflow_deploy" {
   project_id                   = data.azuredevops_project.project.id
   repository                   = var.idpay-onboarding-workflow.repository
   github_service_connection_id = local.service_endpoint_io_azure_devops_github_pr_id
-  path                         = var.devops-java-springboot-color.pipeline.path
+  path                         = var.idpay-onboarding-workflow.pipeline.path
   ci_trigger_use_yaml          = true
 
   variables = merge(
