@@ -34,11 +34,11 @@ locals {
   }
   # deploy vars
   infra-sftp-test-dev-variables_deploy = {
-    environment                     = 'DEV'
-    dockerRegistryServiceConnection = local.service_endpoint_azure_devops_acr_aks_dev_name
-    kubernetesServiceConnection     = local.srv_endpoint_name_aks_dev
-    containerRegistry               = local.aks_cr_name_dev
-    selfHostedAgentPool             = local.azdo_agent_pool_dev
+    TF_ENVIRONMENT                     = "DEV"
+    TF_DOCKERREGISTRYSERVICECONNECTION = local.service_endpoint_azure_devops_acr_aks_dev_name
+    TF_KUBERNETESSERVICECONNECTION     = local.srv_endpoint_name_aks_dev
+    TF_CONTAINERREGISTRY               = local.aks_cr_name_dev
+    TF_SELFHOSTEDAGENTPOOL             = local.azdo_agent_pool_dev
 
     K8S_IMAGE_REPOSITORY_NAME        = replace(var.infra-sftp-test-dev.repository.name, "-", "")
     DEPLOY_NAMESPACE                 = local.domain
@@ -69,7 +69,7 @@ module "infra-sftp-test-dev_code_review" {
 
   project_id                   = data.azuredevops_project.project.id
   repository                   = var.infra-sftp-test-dev.repository
-  github_service_connection_id = local.service_endpoint_io_azure_devops_github_pr_id
+  github_service_connection_id = local.service_endpoint_io_azure_devops_github_ro_id
   path                         = var.infra-sftp-test-dev.pipeline.path
 
   pull_request_trigger_use_yaml = true
@@ -96,9 +96,8 @@ module "infra-sftp-test-dev_deploy" {
 
   project_id                   = data.azuredevops_project.project.id
   repository                   = var.infra-sftp-test-dev.repository
-  github_service_connection_id = local.service_endpoint_io_azure_devops_github_pr_id
+  github_service_connection_id = local.service_endpoint_io_azure_devops_github_ro_id
   path                         = var.infra-sftp-test-dev.pipeline.path
-  ci_trigger_use_yaml          = true
 
   variables = merge(
     local.infra-sftp-test-dev-variables,
@@ -111,11 +110,10 @@ module "infra-sftp-test-dev_deploy" {
   )
 
   service_connection_ids_authorization = [
-    local.service_endpoint_io_azure_devops_github_pr_id,
-
-    local.service_endpoint_azure_dev_id,
+    local.service_endpoint_io_azure_devops_github_ro_id,
+    # local.service_endpoint_azure_dev_id,
     local.service_endpoint_azure_devops_acr_aks_dev_id,
-    azuredevops_serviceendpoint_kubernetes.aks_dev.id
+    azuredevops_serviceendpoint_kubernetes.aks_dev.id,
   ]
 
 }
