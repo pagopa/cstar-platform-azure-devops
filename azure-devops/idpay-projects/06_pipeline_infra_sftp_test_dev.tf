@@ -40,9 +40,9 @@ locals {
     TF_CONTAINERREGISTRY               = local.aks_cr_name_dev
     TF_SELFHOSTEDAGENTPOOL             = local.azdo_agent_pool_dev
 
-    K8S_IMAGE_REPOSITORY_NAME        = replace(var.infra-sftp-test-dev.repository.name, "-", "")
-    DEPLOY_NAMESPACE                 = local.domain
-    HELM_RELEASE_NAME                = var.infra-sftp-test-dev.repository.name
+    K8S_IMAGE_REPOSITORY_NAME = replace(var.infra-sftp-test-dev.repository.name, "-", "")
+    DEPLOY_NAMESPACE          = local.domain
+    HELM_RELEASE_NAME         = var.infra-sftp-test-dev.repository.name
 
     DEV_CONTAINER_REGISTRY_SERVICE_CONN = local.service_endpoint_azure_devops_acr_aks_dev_name
     DEV_KUBERNETES_SERVICE_CONN         = local.srv_endpoint_name_aks_dev
