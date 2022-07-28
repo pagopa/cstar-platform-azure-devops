@@ -1,47 +1,47 @@
-variable "idpay-admissibility-assessor" {
+variable "idpay-notification-manager" {
   default = {
     repository = {
       organization    = "pagopa"
-      name            = "idpay-admissibility-assessor"
-      branch_name     = "refs/heads/release-dev"
+      name            = "idpay-notification-manager"
+      branch_name     = "release-dev"
       pipelines_path  = ".devops"
       yml_prefix_name = null
     }
     pipeline = {
       enable_code_review = true
       enable_deploy      = true
-      path               = "idpay\\idpay-admissibility-assessor"
+      path               = "idpay\\idpay-notification-manager"
     }
   }
 }
 
 locals {
   # global vars
-  idpay-admissibility-assessor-variables = {
+  idpay-notification-manager-variables = {
     dockerfile = "Dockerfile"
   }
   # global secrets
-  idpay-admissibility-assessor-variables_secret = {
+  idpay-notification-manager-variables_secret = {
 
   }
   # code_review vars
-  idpay-admissibility-assessor-variables_code_review = {
+  idpay-notification-manager-variables_code_review = {
     sonarcloud_service_conn = "SONARCLOUD-SERVICE-CONN"
-    sonarcloud_org          = var.idpay-admissibility-assessor.repository.organization
-    sonarcloud_project_key  = "${var.idpay-admissibility-assessor.repository.organization}_${var.idpay-admissibility-assessor.repository.name}"
-    sonarcloud_project_name = var.idpay-admissibility-assessor.repository.name
+    sonarcloud_org          = var.idpay-notification-manager.repository.organization
+    sonarcloud_project_key  = "${var.idpay-notification-manager.repository.organization}_${var.idpay-notification-manager.repository.name}"
+    sonarcloud_project_name = var.idpay-notification-manager.repository.name
   }
   # code_review secrets
-  idpay-admissibility-assessor-variables_secret_code_review = {
+  idpay-notification-manager-variables_secret_code_review = {
 
   }
   # deploy vars
-  idpay-admissibility-assessor-variables_deploy = {
-    K8S_IMAGE_REPOSITORY_NAME        = replace(var.idpay-admissibility-assessor.repository.name, "-", "")
+  idpay-notification-manager-variables_deploy = {
+    K8S_IMAGE_REPOSITORY_NAME        = replace(var.idpay-notification-manager.repository.name, "-", "")
     DEPLOY_NAMESPACE                 = local.domain
     SETTINGS_XML_RW_SECURE_FILE_NAME = "settings-rw.xml"
     SETTINGS_XML_RO_SECURE_FILE_NAME = "settings-ro.xml"
-    HELM_RELEASE_NAME                = var.idpay-admissibility-assessor.repository.name
+    HELM_RELEASE_NAME                = var.idpay-notification-manager.repository.name
 
     DEV_CONTAINER_REGISTRY_SERVICE_CONN = local.service_endpoint_azure_devops_acr_aks_dev_name
     DEV_KUBERNETES_SERVICE_CONN         = local.srv_endpoint_name_aks_dev
@@ -57,30 +57,30 @@ locals {
     # PROD_AGENT_POOL                      = "cstar-prod-linux"
   }
   # deploy secrets
-  idpay-admissibility-assessor-variables_secret_deploy = {
+  idpay-notification-manager-variables_secret_deploy = {
 
   }
 }
 
-module "idpay-admissibility-assessor_code_review" {
+module "idpay-notification-manager_code_review" {
   source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_code_review?ref=v2.2.0"
-  count  = var.idpay-admissibility-assessor.pipeline.enable_code_review == true ? 1 : 0
+  count  = var.idpay-notification-manager.pipeline.enable_code_review == true ? 1 : 0
 
   project_id                   = data.azuredevops_project.project.id
-  repository                   = var.idpay-admissibility-assessor.repository
+  repository                   = var.idpay-notification-manager.repository
   github_service_connection_id = local.service_endpoint_io_azure_devops_github_pr_id
-  path                         = var.idpay-admissibility-assessor.pipeline.path
+  path                         = var.idpay-notification-manager.pipeline.path
 
   pull_request_trigger_use_yaml = true
 
   variables = merge(
-    local.idpay-admissibility-assessor-variables,
-    local.idpay-admissibility-assessor-variables_code_review,
+    local.idpay-notification-manager-variables,
+    local.idpay-notification-manager-variables_code_review,
   )
 
   variables_secret = merge(
-    local.idpay-admissibility-assessor-variables_secret,
-    local.idpay-admissibility-assessor-variables_secret_code_review,
+    local.idpay-notification-manager-variables_secret,
+    local.idpay-notification-manager-variables_secret_code_review,
   )
 
   service_connection_ids_authorization = [
@@ -89,24 +89,24 @@ module "idpay-admissibility-assessor_code_review" {
   ]
 }
 
-module "idpay-admissibility-assessor_deploy" {
+module "idpay-notification-manager_deploy" {
   source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_deploy?ref=v2.2.0"
-  count  = var.idpay-admissibility-assessor.pipeline.enable_deploy == true ? 1 : 0
+  count  = var.idpay-notification-manager.pipeline.enable_deploy == true ? 1 : 0
 
   project_id                   = data.azuredevops_project.project.id
-  repository                   = var.idpay-admissibility-assessor.repository
+  repository                   = var.idpay-notification-manager.repository
   github_service_connection_id = local.service_endpoint_io_azure_devops_github_pr_id
-  path                         = var.idpay-admissibility-assessor.pipeline.path
+  path                         = var.idpay-notification-manager.pipeline.path
   ci_trigger_use_yaml          = true
 
   variables = merge(
-    local.idpay-admissibility-assessor-variables,
-    local.idpay-admissibility-assessor-variables_deploy,
+    local.idpay-notification-manager-variables,
+    local.idpay-notification-manager-variables_deploy,
   )
 
   variables_secret = merge(
-    local.idpay-admissibility-assessor-variables_secret,
-    local.idpay-admissibility-assessor-variables_secret_deploy,
+    local.idpay-notification-manager-variables_secret,
+    local.idpay-notification-manager-variables_secret_deploy,
   )
 
   service_connection_ids_authorization = [
