@@ -116,11 +116,11 @@ locals {
   # DEV
   service_endpoint_azure_devops_acr_aks_dev_name = data.terraform_remote_state.core.outputs.service_endpoint_azure_devops_acr_aks_dev_name
   service_endpoint_azure_devops_acr_aks_dev_id   = data.terraform_remote_state.core.outputs.service_endpoint_azure_devops_acr_aks_dev_id
-  service_endpoint_azure_dev_id = data.terraform_remote_state.core.outputs.service_endpoint_azure_dev_id
+  service_endpoint_azure_dev_id                  = data.terraform_remote_state.core.outputs.service_endpoint_azure_dev_id
 
   # UAT
   service_endpoint_azure_devops_acr_aks_uat_name = data.terraform_remote_state.core.outputs.service_endpoint_azure_devops_acr_aks_uat_name
   service_endpoint_azure_devops_acr_aks_uat_id   = data.terraform_remote_state.core.outputs.service_endpoint_azure_devops_acr_aks_uat_id
-  service_endpoint_azure_uat_id = data.terraform_remote_state.core.outputs.service_endpoint_azure_uat_id
+  service_endpoint_azure_uat_id                  = data.terraform_remote_state.core.outputs.service_endpoint_azure_uat_id
 
 }
