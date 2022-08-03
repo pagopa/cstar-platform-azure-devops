@@ -15,16 +15,13 @@ ACTION="$1"
 MODE="$2"
 
 array=(
-    'src::dev'
-    'src/k8s::dev-cstar'
-    'src/aks-platform::dev01'
-    'src/psql::dev-cstar'
-    'src/domains/idpay::dev'
-    'src/domains/idpay-common::dev'
+    'azure-devops::core'
+    'azure-devops::iac'
+    'azure-devops::idpay'
 )
 
 function rm_terraform {
-    find . \( -iname ".terraform*" ! -iname ".terraform-docs*" ! -iname ".terraform-version" \) -print0 | xargs -0 echo
+    find . \( -iname ".terraform*" ! -iname ".terraform-docs*" ! -iname ".terraform-version" \) -print0 | xargs -0 rm -rf 
 }
 
 echo "[INFO] 🪚 Delete all .terraform folders"
