@@ -54,7 +54,7 @@ if echo "init plan apply refresh import output state taint destroy" | grep -w "$
     terraform init -reconfigure -backend-config="${BACKEND_CONFIG_PATH}"
 
     echo "[INFO] 🧭 run terraform with: ${ACTION} and other: >${other}<"
-    terraform "${ACTION}" -var-file="${TF_VAR_FILE_PATH}" $other
+    terraform "${ACTION}" -var-file="${TF_VAR_FILE_PATH}" -compact-warnings $other
   fi
 else
     echo "[ERROR] ACTION not allowed."
