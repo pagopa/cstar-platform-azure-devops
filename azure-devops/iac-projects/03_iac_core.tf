@@ -3,7 +3,7 @@ variable "iac" {
     repository = {
       organization    = "pagopa"
       name            = "cstar-infrastructure"
-      branch_name     = "main"
+      branch_name     = "refs/heads/main"
       pipelines_path  = ".devops"
       yml_prefix_name = null
     }
@@ -45,7 +45,7 @@ locals {
 }
 
 module "iac_code_review" {
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_code_review?ref=v2.2.0"
+  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_code_review?ref=v2.6.1"
   count  = var.iac.pipeline.enable_code_review == true ? 1 : 0
   path   = var.iac.pipeline.path
 
@@ -74,7 +74,7 @@ module "iac_code_review" {
 }
 
 module "iac_deploy" {
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_deploy?ref=v2.4.0"
+  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_deploy?ref=v2.6.1"
   count  = var.iac.pipeline.enable_deploy == true ? 1 : 0
   path   = var.iac.pipeline.path
 
