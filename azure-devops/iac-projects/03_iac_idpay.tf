@@ -8,9 +8,9 @@ variable "idpay_iac" {
       yml_prefix_name = "idpay"
     }
     pipeline = {
-      enable_code_review = true
-      enable_deploy      = false
-      path               = "idpay-infrastructure"
+      enable_code_review   = true
+      enable_deploy        = false
+      path                 = "idpay-infrastructure"
       pipeline_name_prefix = "cstar-idpay-infra"
     }
   }
