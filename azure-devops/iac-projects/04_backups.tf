@@ -24,7 +24,8 @@ module "apim_backup" {
   path                         = "backups"
   pipeline_name                = "backup-apim"
 
-  ci_trigger_use_yaml = false
+  ci_trigger_use_yaml           = false
+  pull_request_trigger_use_yaml = false
 
   variables = {
     apim_name                 = "cstar-p-apim"
