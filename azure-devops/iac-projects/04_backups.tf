@@ -7,11 +7,6 @@ variable "apim_backup" {
       pipelines_path  = ".devops"
       yml_prefix_name = "backup-apim"
     }
-    pipeline = {
-      enable_code_review = true
-      enable_deploy      = true
-      path               = "cstar-infrastructure"
-    }
   }
 }
 
