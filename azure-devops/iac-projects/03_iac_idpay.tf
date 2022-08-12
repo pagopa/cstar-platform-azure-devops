@@ -22,6 +22,7 @@ locals {
     dev01-aks-apiserver-url = module.idpay_dev_secrets.values["cstar-d-weu-dev01-aks-apiserver-url"].value,
     dev01-aks-azure-devops-sa-cacrt = module.idpay_dev_secrets.values["cstar-d-weu-dev01-aks-azure-devops-sa-cacrt"].value,
     dev01-aks-azure-devops-sa-token = base64decode(module.idpay_dev_secrets.values["cstar-d-weu-dev01-aks-azure-devops-sa-token"].value),
+    aks_dev_name = var.aks_dev_platform_name
   }
   # global secrets
   idpay_iac_variables_secret = {

@@ -18,6 +18,21 @@ variable "project_iac_name" {
   description = "Project name for IaC projects"
 }
 
+variable "aks_dev_platform_name" {
+  type        = string
+  description = "AKS DEV platform name"
+}
+
+variable "aks_uat_platform_name" {
+  type        = string
+  description = "AKS UAT platform name"
+}
+
+variable "aks_prod_platform_name" {
+  type        = string
+  description = "AKS PROD platform name"
+}
+
 locals {
   project_prefix_short = "cstar"
   azure_devops_org     = "pagopaspa"
