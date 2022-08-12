@@ -37,7 +37,7 @@ locals {
   project_prefix_short = "cstar"
   azure_devops_org     = "pagopaspa"
   github_org           = "pagopa"
-  prefix           = "cstar"
+  prefix               = "cstar"
 
   # 🔐 KV AZDO
   prod_key_vault_resource_group = "${local.project_prefix_short}-p-sec-rg"
