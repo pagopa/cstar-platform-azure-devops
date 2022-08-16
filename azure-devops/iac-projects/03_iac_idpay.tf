@@ -39,7 +39,7 @@ locals {
 }
 
 module "idpay_iac_code_review" {
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_code_review?ref=v2.6.2"
+  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_code_review?ref=v2.18.9"
   count  = var.idpay_iac.pipeline.enable_code_review == true ? 1 : 0
   path   = var.idpay_iac.pipeline.path
 
@@ -70,7 +70,7 @@ module "idpay_iac_code_review" {
 }
 
 module "idpay_iac_deploy" {
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_deploy?ref=v2.6.2"
+  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_deploy?ref=v2.18.9"
   count  = var.idpay_iac.pipeline.enable_deploy == true ? 1 : 0
   path   = var.idpay_iac.pipeline.path
 
