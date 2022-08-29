@@ -13,39 +13,52 @@ variable "prod_subscription_name" {
   description = "PROD Subscription name"
 }
 
-variable "project_name" {
+variable "project_iac_name" {
   type        = string
-  description = "Project name project"
+  description = "Project name for IaC projects"
+}
+
+variable "aks_dev_platform_name" {
+  type        = string
+  description = "AKS DEV platform name"
+}
+
+variable "aks_uat_platform_name" {
+  type        = string
+  description = "AKS UAT platform name"
+}
+
+variable "aks_prod_platform_name" {
+  type        = string
+  description = "AKS PROD platform name"
 }
 
 locals {
-  project_prefix_short = "project_prefix_short_e_g_selc_cstar"
+  project_prefix_short = "cstar"
   azure_devops_org     = "pagopaspa"
   github_org           = "pagopa"
+  prefix               = "cstar"
 
-  # 🔐 KV
-  dev_key_vault_name  = "${local.project_prefix_short}-d-azdo-weu-kv"
-  uat_key_vault_name  = "${local.project_prefix_short}-u-azdo-weu-kv"
-  prod_key_vault_name = "${local.project_prefix_short}-p-azdo-weu-kv"
-
-  dev_key_vault_resource_group  = "${local.project_prefix_short}-d-sec-rg"
-  uat_key_vault_resource_group  = "${local.project_prefix_short}-u-sec-rg"
+  # 🔐 KV AZDO
   prod_key_vault_resource_group = "${local.project_prefix_short}-p-sec-rg"
 
-  #
-  # IaC
-  #
-  iac-variables = {}
-  # global secrets
-  iac-variables_secret = {}
+  prod_key_vault_azdo_name = "${local.project_prefix_short}-p-azdo-weu-kv"
 
-  # code_review vars
-  iac-variables_code_review = {}
-  # code_review secrets
-  iac-variables_secret_code_review = {}
+  # 🔐 KV Domain
+  dev_idpay_key_vault_resource_group  = "${local.prefix}-d-idpay-sec-rg"
+  uat_idpay_key_vault_resource_group  = "${local.prefix}-u-idpay-sec-rg"
+  prod_idpay_key_vault_resource_group = "${local.prefix}-p-idpay-sec-rg"
 
-  # deploy vars
-  iac-variables_deploy = {}
-  # deploy secrets
-  iac-variables_secret_deploy = {}
+  dev_idpay_key_vault_name  = "${local.prefix}-d-idpay-kv"
+  uat_idpay_key_vault_name  = "${local.prefix}-u-idpay-kv"
+  prod_idpay_key_vault_name = "${local.prefix}-p-idpay-kv"
+
+  # 🔐 KV Domain
+  dev_rtd_key_vault_resource_group  = "${local.prefix}-d-rtd-sec-rg"
+  uat_rtd_key_vault_resource_group  = "${local.prefix}-u-rtd-sec-rg"
+  prod_rtd_key_vault_resource_group = "${local.prefix}-p-rtd-sec-rg"
+
+  dev_rtd_key_vault_name  = "${local.prefix}-d-rtd-kv"
+  uat_rtd_key_vault_name  = "${local.prefix}-u-rtd-kv"
+  prod_rtd_key_vault_name = "${local.prefix}-p-rtd-kv"
 }
