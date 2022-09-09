@@ -18,7 +18,7 @@ locals {
     dev_mixpanel_token     = "TODO" //"6e1290bdda5885981a2f443f37444f0f"
     dev_onetrust_domain_id = "TODO" //"a8f58d7a-7f6a-4fe6-ac02-f95bac3876d4-test"
 
-    uat_azure_subscription = "TODO" #azuredevops_serviceendpoint_azurerm.UAT-SERVICE-CONN.service_endpoint_name
+    uat_azure_subscription = local.service_endpoint_azure_uat_id #azuredevops_serviceendpoint_azurerm.UAT-SERVICE-CONN.service_endpoint_name
     uat_cdn_endpoint       = "cstar-u-weu-idpay-idpaycdn-cdn-endpoint"
     uat_cdn_profile        = "cstar-u-weu-idpay-idpaycdn-cdn-profile"
     uat_resource_group     = "cstar-u-idpay-cdn-rg"
