@@ -3,7 +3,7 @@ variable "idpay-reward-user-id-splitter" {
     repository = {
       organization    = "pagopa"
       name            = "idpay-reward-user-id-splitter"
-      branch_name     = "release-dev"
+      branch_name     = "refs/heads/release-dev"
       pipelines_path  = ".devops"
       yml_prefix_name = null
     }

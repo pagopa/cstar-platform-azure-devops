@@ -3,7 +3,7 @@ variable "idpay-portal-welfare-backend-config" {
     repository = {
       organization    = "pagopa"
       name            = "idpay-portal-welfare-backend-config"
-      branch_name     = "release-dev"
+      branch_name     = "refs/heads/release-dev"
       pipelines_path  = ".devops"
       yml_prefix_name = null
     }

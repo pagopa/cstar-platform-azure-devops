@@ -3,7 +3,7 @@ variable "idpay-timeline" {
     repository = {
       organization    = "pagopa"
       name            = "idpay-timeline"
-      branch_name     = "release-dev"
+      branch_name     = "refs/heads/release-dev"
       pipelines_path  = ".devops"
       yml_prefix_name = null
     }

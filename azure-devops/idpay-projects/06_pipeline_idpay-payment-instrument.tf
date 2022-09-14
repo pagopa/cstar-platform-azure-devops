@@ -3,7 +3,7 @@ variable "idpay-payment-instrument" {
     repository = {
       organization    = "pagopa"
       name            = "idpay-payment-instrument"
-      branch_name     = "release-dev"
+      branch_name     = "refs/heads/release-dev"
       pipelines_path  = ".devops"
       yml_prefix_name = null
     }
