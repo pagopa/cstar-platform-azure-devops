@@ -37,7 +37,7 @@ locals {
     TF_ENVIRONMENT                     = "DEV"
     TF_DOCKERREGISTRYSERVICECONNECTION = local.service_endpoint_azure_devops_acr_aks_dev_name
     TF_KUBERNETESSERVICECONNECTION     = local.srv_endpoint_name_aks_dev
-    TF_CONTAINERREGISTRY               = local.aks_cr_name_dev
+    TF_CONTAINERREGISTRY               = local.aks_dev_docker_registry_name
     TF_SELFHOSTEDAGENTPOOL             = local.azdo_agent_pool_dev
 
     K8S_IMAGE_REPOSITORY_NAME = replace(var.infra-sftp-test-dev.repository.name, "-", "")
@@ -46,7 +46,7 @@ locals {
 
     DEV_CONTAINER_REGISTRY_SERVICE_CONN = local.service_endpoint_azure_devops_acr_aks_dev_name
     DEV_KUBERNETES_SERVICE_CONN         = local.srv_endpoint_name_aks_dev
-    DEV_CONTAINER_REGISTRY_NAME         = local.aks_cr_name_dev
+    DEV_CONTAINER_REGISTRY_NAME         = local.aks_dev_docker_registry_name
     DEV_AGENT_POOL                      = local.azdo_agent_pool_dev
     # UAT_CONTAINER_REGISTRY_SERVICE_CONN  = azuredevops_serviceendpoint_azurecr.cstar-azurecr-uat.service_endpoint_name
     # UAT_KUBERNETES_SERVICE_CONN          = azuredevops_serviceendpoint_kubernetes.cstar-aks-uat.service_endpoint_name

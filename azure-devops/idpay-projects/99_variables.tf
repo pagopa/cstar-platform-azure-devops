@@ -70,14 +70,14 @@ locals {
   prod_dns_zone_name = "cstar.pagopa.it"
 
   # 📦 ACR DEV FOR AKS
-  srv_endpoint_name_aks_cr_dev = "${local.prefix}-aks-cr-dev"
-  aks_cr_rg_name_dev           = "${local.prefix}-d-container-registry-rg"
-  aks_cr_name_dev              = "${local.prefix}dcommonacr"
+  srv_endpoint_name_aks_dev_docker_registry = "${local.prefix}-aks-cr-dev"
+  aks_dev_docker_registry_rg_name           = "${local.prefix}-d-container-registry-rg"
+  aks_dev_docker_registry_name              = "${local.prefix}dcommonacr"
 
   # 📦 ACR UAT FOR AKS
-  srv_endpoint_name_aks_cr_uat = "${local.prefix}-aks-cr-uat"
-  aks_cr_rg_name_uat           = "${local.prefix}-u-container-registry-rg"
-  aks_cr_name_uat              = "${local.prefix}ucommonacr"
+  srv_endpoint_name_aks_uat_docker_registry = "${local.prefix}-aks-cr-uat"
+  aks_uat_docker_registry_rg_name           = "${local.prefix}-u-container-registry-rg"
+  aks_uat_docker_registry_name              = "${local.prefix}ucommonacr"
 
   # 📦 ACR PROD FOR AKS
   srv_endpoint_name_aks_cr_prod = "${local.prefix}-aks-cr-prod"
