@@ -5,12 +5,12 @@ variable "devops-java-springboot-color" {
       name            = "devops-java-springboot-color"
       branch_name     = "refs/heads/main"
       pipelines_path  = ".devops"
-      yml_prefix_name = "cstar-idpay"
+      yml_prefix_name = "cstar-rtd"
     }
     pipeline = {
       enable_code_review = true
       enable_deploy      = true
-      path               = "idpay\\devops-java-springboot-color"
+      path               = "rtd\\devops-java-springboot-color"
     }
   }
 }
@@ -43,14 +43,14 @@ locals {
     SETTINGS_XML_RO_SECURE_FILE_NAME = "settings-ro.xml"
     HELM_RELEASE_NAME                = var.devops-java-springboot-color.repository.name
 
-    DEV_CONTAINER_REGISTRY_SERVICE_CONN = local.service_endpoint_azure_devops_acr_aks_dev_name
+    DEV_CONTAINER_REGISTRY_SERVICE_CONN = local.service_endpoint_azure_devops_acr_dev_name
     DEV_KUBERNETES_SERVICE_CONN         = local.srv_endpoint_name_aks_dev
-    DEV_CONTAINER_REGISTRY_NAME         = local.aks_cr_name_dev
+    DEV_CONTAINER_REGISTRY_NAME         = local.aks_dev_docker_registry_name
     DEV_AGENT_POOL                      = local.azdo_agent_pool_dev
 
-    UAT_CONTAINER_REGISTRY_SERVICE_CONN = local.service_endpoint_azure_devops_acr_aks_uat_name
+    UAT_CONTAINER_REGISTRY_SERVICE_CONN = local.service_endpoint_azure_devops_acr_uat_name
     UAT_KUBERNETES_SERVICE_CONN         = local.srv_endpoint_name_aks_uat
-    UAT_CONTAINER_REGISTRY_NAME         = local.aks_cr_name_uat
+    UAT_CONTAINER_REGISTRY_NAME         = local.aks_uat_docker_registry_name
     UAT_AGENT_POOL                      = local.azdo_agent_pool_uat
 
   }
@@ -112,7 +112,12 @@ module "devops-java-springboot-color_deploy" {
     local.service_endpoint_io_azure_devops_github_pr_id,
 
     local.service_endpoint_azure_dev_id,
-    local.service_endpoint_azure_devops_acr_aks_dev_id,
-    azuredevops_serviceendpoint_kubernetes.aks_dev.id
+    local.service_endpoint_azure_devops_acr_dev_id,
+    azuredevops_serviceendpoint_kubernetes.aks_dev.id,
+
+
+    local.service_endpoint_azure_uat_id,
+    local.service_endpoint_azure_devops_acr_uat_id,
+    azuredevops_serviceendpoint_kubernetes.aks_uat.id
   ]
 }
