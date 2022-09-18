@@ -58,9 +58,9 @@ module "iac_code_review" {
 
   service_connection_ids_authorization = [
     azuredevops_serviceendpoint_github.io-azure-devops-github-ro.id,
-    azuredevops_serviceendpoint_azurerm.DEV-CSTAR.id,
-    azuredevops_serviceendpoint_azurerm.UAT-CSTAR.id,
-    azuredevops_serviceendpoint_azurerm.PROD-CSTAR.id,
+    azuredevops_serviceendpoint_azurerm.DEV-CORE-AZURE.id,
+    azuredevops_serviceendpoint_azurerm.UAT-CORE-AZURE.id,
+    azuredevops_serviceendpoint_azurerm.PROD-CORE-AZURE.id,
   ]
 }
 
@@ -90,8 +90,8 @@ module "iac_deploy" {
 
   service_connection_ids_authorization = [
     azuredevops_serviceendpoint_github.io-azure-devops-github-ro.id,
-    azuredevops_serviceendpoint_azurerm.DEV-CSTAR.id,
-    azuredevops_serviceendpoint_azurerm.UAT-CSTAR.id,
-    azuredevops_serviceendpoint_azurerm.PROD-CSTAR.id,
+    azuredevops_serviceendpoint_azurerm.DEV-CORE-AZURE.id,
+    azuredevops_serviceendpoint_azurerm.UAT-CORE-AZURE.id,
+    azuredevops_serviceendpoint_azurerm.PROD-CORE-AZURE.id,
   ]
 }

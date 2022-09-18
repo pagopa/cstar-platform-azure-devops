@@ -34,7 +34,7 @@ module "apim_backup" {
   variables_secret = {}
 
   service_connection_ids_authorization = [
-    azuredevops_serviceendpoint_azurerm.PROD-CSTAR.id,
+    azuredevops_serviceendpoint_azurerm.PROD-CORE-AZURE.id,
   ]
 
   schedules = {

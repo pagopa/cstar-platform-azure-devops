@@ -63,9 +63,9 @@ module "idpay_iac_code_review" {
 
   service_connection_ids_authorization = [
     azuredevops_serviceendpoint_github.io-azure-devops-github-ro.id,
-    azuredevops_serviceendpoint_azurerm.DEV-CSTAR.id,
-    azuredevops_serviceendpoint_azurerm.UAT-CSTAR.id,
-    azuredevops_serviceendpoint_azurerm.PROD-CSTAR.id,
+    azuredevops_serviceendpoint_azurerm.DEV-IDPAY-AZURE.id,
+    azuredevops_serviceendpoint_azurerm.UAT-IDPAY-AZURE.id,
+    azuredevops_serviceendpoint_azurerm.PROD-IDPAY-AZURE.id,
   ]
 }
 
@@ -94,8 +94,8 @@ module "idpay_iac_deploy" {
 
   service_connection_ids_authorization = [
     azuredevops_serviceendpoint_github.io-azure-devops-github-ro.id,
-    azuredevops_serviceendpoint_azurerm.DEV-CSTAR.id,
-    azuredevops_serviceendpoint_azurerm.UAT-CSTAR.id,
-    azuredevops_serviceendpoint_azurerm.PROD-CSTAR.id,
+    azuredevops_serviceendpoint_azurerm.DEV-IDPAY-AZURE.id,
+    azuredevops_serviceendpoint_azurerm.UAT-IDPAY-AZURE.id,
+    azuredevops_serviceendpoint_azurerm.PROD-IDPAY-AZURE.id,
   ]
 }
