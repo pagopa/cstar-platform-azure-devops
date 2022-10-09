@@ -52,6 +52,7 @@ locals {
 
     uat_react_app_url_cdn                 = "https://welfare.uat.cstar.pagopa.it/"
     uat_react_app_url_storage             = "https://cstaruweuidpayidpaycdnsa.z6.web.core.windows.net/"
+    uat_react_app_url_fe_pre_login        = "https://api-io.uat.cstar.pagopa.it/idpay/welfare/token"
     uat_react_app_url_fe_login            = "https://uat.selfcare.pagopa.it/auth"
     uat_react_app_url_fe_assistance       = "https://uat.selfcare.pagopa.it/assistenza"
     uat_react_app_url_fe_landing          = "https://uat.selfcare.pagopa.it/auth/logout"
@@ -61,6 +62,7 @@ locals {
 
     prod_react_app_url_cdn                 = "https://welfare.cstar.pagopa.it/"
     prod_react_app_url_storage             = "https://cstarpweuidpayidpaycdnsa.z6.web.core.windows.net/"
+    prod_react_app_url_fe_pre_login        = "https://api-io.cstar.pagopa.it/idpay/welfare/token"
     prod_react_app_url_fe_login            = "https://selfcare.pagopa.it/auth"
     prod_react_app_url_fe_assistance       = "https://selfcare.pagopa.it/assistenza"
     prod_react_app_url_fe_landing          = "https://selfcare.pagopa.it/auth/logout"
