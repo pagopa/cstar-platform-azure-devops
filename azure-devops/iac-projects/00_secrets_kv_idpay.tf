@@ -48,8 +48,8 @@ module "idpay_prod_secrets" {
   key_vault_name = local.prod_idpay_key_vault_name
 
   secrets = [
-    "cstar-p-weu-prod-aks-azure-devops-sa-token",
-    "cstar-p-weu-prod-aks-azure-devops-sa-cacrt",
-    "cstar-p-weu-prod-aks-apiserver-url"
+    "cstar-p-weu-prod01-aks-azure-devops-sa-token",
+    "cstar-p-weu-prod01-aks-azure-devops-sa-cacrt",
+    "cstar-p-weu-prod01-aks-apiserver-url"
   ]
 }
