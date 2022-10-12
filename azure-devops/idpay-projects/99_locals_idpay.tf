@@ -56,7 +56,7 @@ locals {
     uat_react_app_url_fe_login            = "https://uat.selfcare.pagopa.it/auth"
     uat_react_app_url_fe_assistance       = "https://uat.selfcare.pagopa.it/assistenza"
     uat_react_app_url_fe_landing          = "https://uat.selfcare.pagopa.it/auth/logout"
-    uat_react_app_url_api_portal          = "https://api-io.uat.cstar.pagopa.it/idpay/initiative"
+    uat_react_app_url_api_initiative          = "https://api-io.uat.cstar.pagopa.it/idpay/initiative"
     uat_react_app_url_api_groups          = "https://api-io.uat.cstar.pagopa.it/idpay/group"
     uat_react_app_url_api_role_permission = "https://api-io.uat.cstar.pagopa.it/idpay/authorization"
 
@@ -66,7 +66,7 @@ locals {
     prod_react_app_url_fe_login            = "https://selfcare.pagopa.it/auth"
     prod_react_app_url_fe_assistance       = "https://selfcare.pagopa.it/assistenza"
     prod_react_app_url_fe_landing          = "https://selfcare.pagopa.it/auth/logout"
-    prod_react_app_url_api_portal          = "https://api-io.cstar.pagopa.it/idpay/initiative"
+    prod_react_app_url_api_initiative          = "https://api-io.cstar.pagopa.it/idpay/initiative"
     prod_react_app_url_api_groups          = "https://api-io.cstar.pagopa.it/idpay/group"
     prod_react_app_url_api_role_permission = "https://api-io.cstar.pagopa.it/idpay/authorization"
 
