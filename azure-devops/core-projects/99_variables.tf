@@ -20,12 +20,12 @@ variable "project_name" {
 
 locals {
   project_prefix_short = "cstar"
-  domain = "core"
+  domain               = "core"
   azure_devops_org     = "pagopaspa"
 
   # Subscription
-  dev_subscription_name = "dev-cstar"
-  uat_subscription_name = "uat-cstar"
+  dev_subscription_name  = "dev-cstar"
+  uat_subscription_name  = "uat-cstar"
   prod_subscription_name = "prod-cstar"
 
 
@@ -70,13 +70,13 @@ locals {
   #
   # APP insights
   #
-  appinsights_renew_token         = "v1"
+  appinsights_renew_token = "v1"
 
-  dev_appinsights_name            = "${local.project_prefix_short}-d-appinsights"
-  dev_appinsights_resource_group  = "${local.project_prefix_short}-d-monitor-rg"
+  dev_appinsights_name           = "${local.project_prefix_short}-d-appinsights"
+  dev_appinsights_resource_group = "${local.project_prefix_short}-d-monitor-rg"
 
-  uat_appinsights_name            = "${local.project_prefix_short}-u-appinsights"
-  uat_appinsights_resource_group  = "${local.project_prefix_short}-u-monitor-rg"
+  uat_appinsights_name           = "${local.project_prefix_short}-u-appinsights"
+  uat_appinsights_resource_group = "${local.project_prefix_short}-u-monitor-rg"
 
   prod_appinsights_name           = "${local.project_prefix_short}-p-appinsights"
   prod_appinsights_resource_group = "${local.project_prefix_short}-p-monitor-rg"

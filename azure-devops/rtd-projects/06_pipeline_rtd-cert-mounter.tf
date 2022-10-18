@@ -33,18 +33,18 @@ locals {
   }
   # deploy vars
   cstar-aks-cert-mounter-variables_deploy = {
-    TF_DEPLOY_NAMESPACE                 = local.domain
-    TF_DOMAIN                 = local.domain
-    TF_HELM_RELEASE_NAME                = var.cstar-aks-cert-mounter.repository.name
+    TF_DEPLOY_NAMESPACE  = local.domain
+    TF_DOMAIN            = local.domain
+    TF_HELM_RELEASE_NAME = var.cstar-aks-cert-mounter.repository.name
 
-    TF_DEV_KUBERNETES_SERVICE_CONN         = local.srv_endpoint_name_aks_dev
-    TF_DEV_AGENT_POOL                      = local.azdo_agent_pool_dev
+    TF_DEV_KUBERNETES_SERVICE_CONN = local.srv_endpoint_name_aks_dev
+    TF_DEV_AGENT_POOL              = local.azdo_agent_pool_dev
 
-    TF_UAT_KUBERNETES_SERVICE_CONN         = local.srv_endpoint_name_aks_uat
-    TF_UAT_AGENT_POOL                      = local.azdo_agent_pool_uat
+    TF_UAT_KUBERNETES_SERVICE_CONN = local.srv_endpoint_name_aks_uat
+    TF_UAT_AGENT_POOL              = local.azdo_agent_pool_uat
 
-    TF_PROD_KUBERNETES_SERVICE_CONN         = local.srv_endpoint_name_aks_prod
-    TF_PROD_AGENT_POOL                      = local.azdo_agent_pool_prod
+    TF_PROD_KUBERNETES_SERVICE_CONN = local.srv_endpoint_name_aks_prod
+    TF_PROD_AGENT_POOL              = local.azdo_agent_pool_prod
 
   }
   # deploy secrets
@@ -62,7 +62,7 @@ module "cstar-aks-cert-mounter_deploy" {
   github_service_connection_id = local.service_endpoint_io_azure_devops_github_pr_id
   path                         = var.cstar-aks-cert-mounter.pipeline.path
 
-  ci_trigger_use_yaml = true
+  ci_trigger_use_yaml           = true
   pull_request_trigger_use_yaml = true
 
   variables = merge(
