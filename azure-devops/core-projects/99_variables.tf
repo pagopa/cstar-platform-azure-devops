@@ -32,13 +32,13 @@ locals {
   # 🔐 KV
   prod_key_vault_azdo_name = "${local.project_prefix_short}-p-azdo-weu-kv"
 
-  dev_key_vault_name  = "${local.project_prefix_short}-d-kv"
-  uat_key_vault_name  = "${local.project_prefix_short}-u-kv"
-  prod_key_vault_name = "${local.project_prefix_short}-p-kv"
+  dev_domain_key_vault_name  = "${local.project_prefix_short}-d-kv"
+  uat_domain_key_vault_name  = "${local.project_prefix_short}-u-kv"
+  prod_domain_key_vault_name = "${local.project_prefix_short}-p-kv"
 
-  dev_key_vault_resource_group  = "${local.project_prefix_short}-d-sec-rg"
-  uat_key_vault_resource_group  = "${local.project_prefix_short}-u-sec-rg"
-  prod_key_vault_resource_group = "${local.project_prefix_short}-p-sec-rg"
+  dev_domain_key_vault_resource_group  = "${local.project_prefix_short}-d-sec-rg"
+  uat_domain_key_vault_resource_group  = "${local.project_prefix_short}-u-sec-rg"
+  prod_domain_key_vault_resource_group = "${local.project_prefix_short}-p-sec-rg"
 
   # ☁️ VNET
   dev_vnet_rg  = "${local.project_prefix_short}-d-vnet-rg"
