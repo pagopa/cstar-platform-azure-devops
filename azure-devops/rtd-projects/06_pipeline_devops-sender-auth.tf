@@ -3,7 +3,7 @@ variable "rtd-ms-sender-auth" {
     repository = {
       organization    = "pagopa"
       name            = "rtd-ms-sender-auth"
-      branch_name     = "refs/heads/main"
+      branch_name     = "refs/heads/develop"
       pipelines_path  = ".devops"
       yml_prefix_name = "cstar-rtd"
     }
