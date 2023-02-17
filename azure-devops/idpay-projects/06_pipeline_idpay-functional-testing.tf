@@ -10,7 +10,7 @@ variable "idpay-functional-testing" {
     pipeline = {
       enable_scheduled_test = true
       enable_deploy         = true
-      path                  = "idpay\\rtd-ms-sender-auth"
+      path                  = "idpay\\idpay-functional-testing"
     }
   }
 }
