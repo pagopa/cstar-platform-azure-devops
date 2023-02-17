@@ -18,7 +18,7 @@ variable "idpay-functional-testing" {
 locals {
   # global vars
   idpay-functional-testing-variables = {
-    dockerfile = "Dockerfile"
+
   }
   # global secrets
   idpay-functional-testing-variables_secret = {
