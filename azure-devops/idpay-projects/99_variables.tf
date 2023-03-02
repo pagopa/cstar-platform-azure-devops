@@ -96,9 +96,8 @@ locals {
   uat_cstar_subscription_name  = "uat-cstar"
   prod_cstar_subscription_name = "prod-cstar"
 
-  #tfsec:ignore:general-secrets-no-plaintext-exposure
   #tfsec:ignore:GEN002
-  tlscert_renew_token = "v1"
+  tlscert_renew_token = "v2"
 
   # TODO azure devops terraform provider does not support SonarCloud service endpoint
   azuredevops_serviceendpoint_sonarcloud_id = "9182be64-d387-465d-9acc-e79e802910c8"
