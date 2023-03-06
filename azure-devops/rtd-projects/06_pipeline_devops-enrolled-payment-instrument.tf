@@ -53,10 +53,10 @@ locals {
     UAT_CONTAINER_REGISTRY_NAME         = local.aks_uat_docker_registry_name
     UAT_AGENT_POOL                      = local.azdo_agent_pool_uat
 
-    #    PROD_CONTAINER_REGISTRY_SERVICE_CONN = local.service_endpoint_azure_devops_docker_prod_name
-    #    PROD_KUBERNETES_SERVICE_CONN         = local.srv_endpoint_name_aks_prod
-    #    PROD_CONTAINER_REGISTRY_NAME         = local.aks_prod_docker_registry_name
-    #    PROD_AGENT_POOL                      = local.azdo_agent_pool_prod
+    PROD_CONTAINER_REGISTRY_SERVICE_CONN = local.service_endpoint_azure_devops_docker_prod_name
+    PROD_KUBERNETES_SERVICE_CONN         = local.srv_endpoint_name_aks_prod
+    PROD_CONTAINER_REGISTRY_NAME         = local.aks_prod_docker_registry_name
+    PROD_AGENT_POOL                      = local.azdo_agent_pool_prod
 
   }
   # deploy secrets
@@ -125,8 +125,8 @@ module "rtd-ms-enrolled-payment-instrument_deploy" {
     local.service_endpoint_azure_devops_docker_uat_id,
     azuredevops_serviceendpoint_kubernetes.aks_uat.id,
 
-    #    local.service_endpoint_azure_prod_id,
-    #    local.service_endpoint_azure_devops_docker_prod_id,
-    #    azuredevops_serviceendpoint_kubernetes.aks_prod.id
+    local.service_endpoint_azure_prod_id,
+    local.service_endpoint_azure_devops_docker_prod_id,
+    azuredevops_serviceendpoint_kubernetes.aks_prod.id
   ]
 }
