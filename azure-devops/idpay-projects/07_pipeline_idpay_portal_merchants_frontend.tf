@@ -5,6 +5,7 @@ variable "idpay-portal-merchants-frontend" {
       name            = "idpay-portal-merchants-frontend"
       branch_name     = "refs/heads/main"
       yml_prefix_name = null
+      pipelines_path  = ".devops"
     }
     pipeline = {
       enable_code_review = true
