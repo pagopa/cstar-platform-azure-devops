@@ -12,6 +12,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: run_pre_commit_terraform
+        run: |
+          terraform version
+
       - name: init_terraform_folders
         env:
           FOLDERS: core iac idpay rtd
@@ -44,5 +48,5 @@ jobs:
 
       - name: run_pre_commit_terraform
         run: |
-          TAG=v1.75.0
+          TAG=v1.79.1
           docker run -v $(pwd):/lint -w /lint ghcr.io/antonbabenko/pre-commit-terraform:$TAG run -a
