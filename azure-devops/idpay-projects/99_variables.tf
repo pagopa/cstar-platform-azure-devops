@@ -127,18 +127,18 @@ variable "terraform_remote_state_core" {
 }
 
 variable "service_endpoint_azure_dev_name" {
-  type = string
+  type        = string
   description = "azure service endpoint name for dev"
 }
 
 variable "service_endpoint_azure_uat_name" {
-  type = string
+  type        = string
   description = "azure service endpoint name for uat"
 
 }
 
 variable "service_endpoint_azure_prod_name" {
-  type = string
-    description = "azure service endpoint name for prod"
+  type        = string
+  description = "azure service endpoint name for prod"
 
 }
