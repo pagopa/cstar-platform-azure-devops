@@ -5,14 +5,14 @@
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.1.5 |
-| <a name="requirement_azuredevops"></a> [azuredevops](#requirement\_azuredevops) | >= 0.2.1 |
+| <a name="requirement_azuredevops"></a> [azuredevops](#requirement\_azuredevops) | >= 0.3.0 |
 | <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >= 2.99.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_azuredevops"></a> [azuredevops](#provider\_azuredevops) | 0.2.2 |
+| <a name="provider_azuredevops"></a> [azuredevops](#provider\_azuredevops) | 0.5.0 |
 | <a name="provider_azurerm.dev"></a> [azurerm.dev](#provider\_azurerm.dev) | 2.99.0 |
 | <a name="provider_azurerm.prod"></a> [azurerm.prod](#provider\_azurerm.prod) | 2.99.0 |
 | <a name="provider_azurerm.uat"></a> [azurerm.uat](#provider\_azurerm.uat) | 2.99.0 |
@@ -31,6 +31,8 @@
 | <a name="module_domain_dev_secrets"></a> [domain\_dev\_secrets](#module\_domain\_dev\_secrets) | git::https://github.com/pagopa/azurerm.git//key_vault_secrets_query | v2.18.9 |
 | <a name="module_domain_prod_secrets"></a> [domain\_prod\_secrets](#module\_domain\_prod\_secrets) | git::https://github.com/pagopa/azurerm.git//key_vault_secrets_query | v2.18.9 |
 | <a name="module_domain_uat_secrets"></a> [domain\_uat\_secrets](#module\_domain\_uat\_secrets) | git::https://github.com/pagopa/azurerm.git//key_vault_secrets_query | v2.18.9 |
+| <a name="module_idpay-lolab-payment_code_review"></a> [idpay-lolab-payment\_code\_review](#module\_idpay-lolab-payment\_code\_review) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_code_review | v2.2.0 |
+| <a name="module_idpay-lolab-payment_deploy"></a> [idpay-lolab-payment\_deploy](#module\_idpay-lolab-payment\_deploy) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_deploy | v2.2.0 |
 | <a name="module_letsencrypt_dev"></a> [letsencrypt\_dev](#module\_letsencrypt\_dev) | git::https://github.com/pagopa/azurerm.git//letsencrypt_credential | v3.2.1 |
 | <a name="module_letsencrypt_prod"></a> [letsencrypt\_prod](#module\_letsencrypt\_prod) | git::https://github.com/pagopa/azurerm.git//letsencrypt_credential | v3.2.1 |
 | <a name="module_letsencrypt_uat"></a> [letsencrypt\_uat](#module\_letsencrypt\_uat) | git::https://github.com/pagopa/azurerm.git//letsencrypt_credential | v3.2.1 |
@@ -70,6 +72,9 @@
 | [azurerm_key_vault_access_policy.PROD-CSTAR-RTD-TLS-CERT-SERVICE-CONN_kv_access_policy](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_access_policy) | resource |
 | [azurerm_key_vault_access_policy.UAT-CSTAR-RTD-TLS-CERT-SERVICE-CONN_kv_access_policy](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_access_policy) | resource |
 | [azuredevops_project.project](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/data-sources/project) | data source |
+| [azuredevops_serviceendpoint_azurerm.azure_dev](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/data-sources/serviceendpoint_azurerm) | data source |
+| [azuredevops_serviceendpoint_azurerm.azure_prod](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/data-sources/serviceendpoint_azurerm) | data source |
+| [azuredevops_serviceendpoint_azurerm.azure_uat](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/data-sources/serviceendpoint_azurerm) | data source |
 | [azurerm_key_vault.domain_kv_dev](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/key_vault) | data source |
 | [azurerm_key_vault.domain_kv_prod](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/key_vault) | data source |
 | [azurerm_key_vault.domain_kv_uat](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/key_vault) | data source |
@@ -82,6 +87,7 @@
 | <a name="input_cstar-aks-cert-mounter"></a> [cstar-aks-cert-mounter](#input\_cstar-aks-cert-mounter) | n/a | `map` | <pre>{<br>  "pipeline": {<br>    "enable_code_review": true,<br>    "enable_deploy": true,<br>    "path": "rtd\\cstar-aks-cert-mounter"<br>  },<br>  "repository": {<br>    "branch_name": "refs/heads/main",<br>    "name": "cstar-aks-cert-mounter",<br>    "organization": "pagopa",<br>    "pipelines_path": ".devops",<br>    "yml_prefix_name": "rtd"<br>  }<br>}</pre> | no |
 | <a name="input_dev_subscription_name"></a> [dev\_subscription\_name](#input\_dev\_subscription\_name) | DEV Subscription name | `string` | n/a | yes |
 | <a name="input_devops-java-springboot-color"></a> [devops-java-springboot-color](#input\_devops-java-springboot-color) | n/a | `map` | <pre>{<br>  "pipeline": {<br>    "enable_code_review": true,<br>    "enable_deploy": true,<br>    "path": "rtd\\devops-java-springboot-color"<br>  },<br>  "repository": {<br>    "branch_name": "refs/heads/main",<br>    "name": "devops-java-springboot-color",<br>    "organization": "pagopa",<br>    "pipelines_path": ".devops",<br>    "yml_prefix_name": "cstar-rtd"<br>  }<br>}</pre> | no |
+| <a name="input_idpay-lolab-payment"></a> [idpay-lolab-payment](#input\_idpay-lolab-payment) | n/a | `map` | <pre>{<br>  "pipeline": {<br>    "enable_code_review": true,<br>    "enable_deploy": true,<br>    "path": "rtd\\idpay-lolab-payment"<br>  },<br>  "repository": {<br>    "branch_name": "refs/heads/main",<br>    "name": "idpay-lolab-payment",<br>    "organization": "pagopa",<br>    "pipelines_path": ".devops",<br>    "yml_prefix_name": "cstar-rtd"<br>  }<br>}</pre> | no |
 | <a name="input_prod_subscription_name"></a> [prod\_subscription\_name](#input\_prod\_subscription\_name) | PROD Subscription name | `string` | n/a | yes |
 | <a name="input_project_name"></a> [project\_name](#input\_project\_name) | Project name (e.g. pagoPA platform) | `string` | n/a | yes |
 | <a name="input_rtd-ms-alternative-gateway"></a> [rtd-ms-alternative-gateway](#input\_rtd-ms-alternative-gateway) | n/a | `map` | <pre>{<br>  "pipeline": {<br>    "enable_code_review": true,<br>    "enable_deploy": true,<br>    "path": "rtd\\rtd-ms-alternative-gateway"<br>  },<br>  "repository": {<br>    "branch_name": "refs/heads/develop",<br>    "name": "rtd-ms-alternative-gateway",<br>    "organization": "pagopa",<br>    "pipelines_path": ".devops",<br>    "yml_prefix_name": "cstar-rtd"<br>  }<br>}</pre> | no |
@@ -94,6 +100,9 @@
 | <a name="input_rtd-ms-payment-instrument"></a> [rtd-ms-payment-instrument](#input\_rtd-ms-payment-instrument) | n/a | `map` | <pre>{<br>  "pipeline": {<br>    "enable_code_review": true,<br>    "enable_deploy": true,<br>    "path": "rtd\\rtd-ms-payment-instrument"<br>  },<br>  "repository": {<br>    "branch_name": "refs/heads/develop",<br>    "name": "rtd-ms-payment-instrument",<br>    "organization": "pagopa",<br>    "pipelines_path": ".devops",<br>    "yml_prefix_name": "cstar-rtd"<br>  }<br>}</pre> | no |
 | <a name="input_rtd-ms-pi-event-processor"></a> [rtd-ms-pi-event-processor](#input\_rtd-ms-pi-event-processor) | n/a | `map` | <pre>{<br>  "pipeline": {<br>    "enable_code_review": true,<br>    "enable_deploy": true,<br>    "path": "rtd\\rtd-ms-pi-event-processor"<br>  },<br>  "repository": {<br>    "branch_name": "refs/heads/develop",<br>    "name": "rtd-ms-pi-event-processor",<br>    "organization": "pagopa",<br>    "pipelines_path": ".devops",<br>    "yml_prefix_name": "cstar-rtd"<br>  }<br>}</pre> | no |
 | <a name="input_rtd-ms-sender-auth"></a> [rtd-ms-sender-auth](#input\_rtd-ms-sender-auth) | n/a | `map` | <pre>{<br>  "pipeline": {<br>    "enable_code_review": true,<br>    "enable_deploy": true,<br>    "path": "rtd\\rtd-ms-sender-auth"<br>  },<br>  "repository": {<br>    "branch_name": "refs/heads/develop",<br>    "name": "rtd-ms-sender-auth",<br>    "organization": "pagopa",<br>    "pipelines_path": ".devops",<br>    "yml_prefix_name": "cstar-rtd"<br>  }<br>}</pre> | no |
+| <a name="input_service_endpoint_azure_dev_name"></a> [service\_endpoint\_azure\_dev\_name](#input\_service\_endpoint\_azure\_dev\_name) | azure service endpoint name for dev | `string` | n/a | yes |
+| <a name="input_service_endpoint_azure_prod_name"></a> [service\_endpoint\_azure\_prod\_name](#input\_service\_endpoint\_azure\_prod\_name) | azure service endpoint name for prod | `string` | n/a | yes |
+| <a name="input_service_endpoint_azure_uat_name"></a> [service\_endpoint\_azure\_uat\_name](#input\_service\_endpoint\_azure\_uat\_name) | azure service endpoint name for uat | `string` | n/a | yes |
 | <a name="input_terraform_remote_state_core"></a> [terraform\_remote\_state\_core](#input\_terraform\_remote\_state\_core) | n/a | <pre>object({<br>    resource_group_name  = string,<br>    storage_account_name = string,<br>    container_name       = string,<br>    key                  = string<br>  })</pre> | n/a | yes |
 | <a name="input_tlscert-dev01-rtd-internal-dev-cstar-pagopa-it"></a> [tlscert-dev01-rtd-internal-dev-cstar-pagopa-it](#input\_tlscert-dev01-rtd-internal-dev-cstar-pagopa-it) | n/a | `map` | <pre>{<br>  "pipeline": {<br>    "dns_record_name": "dev01.rtd.internal",<br>    "dns_zone_name": "dev.cstar.pagopa.it",<br>    "enable_tls_cert": true,<br>    "path": "TLS-Certificates\\DEV",<br>    "variables": {<br>      "CERT_NAME_EXPIRE_SECONDS": "2592000"<br>    },<br>    "variables_secret": {}<br>  },<br>  "repository": {<br>    "branch_name": "refs/heads/master",<br>    "name": "le-azure-acme-tiny",<br>    "organization": "pagopa",<br>    "pipelines_path": "."<br>  }<br>}</pre> | no |
 | <a name="input_tlscert-prod01-rtd-internal-cstar-pagopa-it"></a> [tlscert-prod01-rtd-internal-cstar-pagopa-it](#input\_tlscert-prod01-rtd-internal-cstar-pagopa-it) | n/a | `map` | <pre>{<br>  "pipeline": {<br>    "dns_record_name": "prod01.rtd.internal",<br>    "dns_zone_name": "cstar.pagopa.it",<br>    "enable_tls_cert": true,<br>    "path": "TLS-Certificates\\PROD",<br>    "variables": {<br>      "CERT_NAME_EXPIRE_SECONDS": "2592000"<br>    },<br>    "variables_secret": {}<br>  },<br>  "repository": {<br>    "branch_name": "refs/heads/master",<br>    "name": "le-azure-acme-tiny",<br>    "organization": "pagopa",<br>    "pipelines_path": "."<br>  }<br>}</pre> | no |
