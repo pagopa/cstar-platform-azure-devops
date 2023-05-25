@@ -12,6 +12,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: run_pre_commit_terraform
+        run: |
+          tfenv list
+
       - name: init_terraform_folders
         env:
           FOLDERS: core iac idpay rtd
