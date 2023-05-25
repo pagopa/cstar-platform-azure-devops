@@ -1,36 +1,3 @@
-#
-# Subscription
-#
-
-variable "dev_subscription_name" {
-  type        = string
-  description = "DEV Subscription name"
-}
-
-variable "uat_subscription_name" {
-  type        = string
-  description = "UAT Subscription name"
-}
-
-variable "prod_subscription_name" {
-  type        = string
-  description = "PROD Subscription name"
-}
-
-variable "project_name" {
-  type        = string
-  description = "Project name (e.g. pagoPA platform)"
-}
-
-variable "terraform_remote_state_core" {
-  type = object({
-    resource_group_name  = string,
-    storage_account_name = string,
-    container_name       = string,
-    key                  = string
-  })
-}
-
 locals {
   prefix           = "cstar"
   azure_devops_org = "pagopaspa"
@@ -116,15 +83,65 @@ locals {
   # DEV
   service_endpoint_azure_devops_docker_dev_name = data.terraform_remote_state.core.outputs.service_endpoint_azure_devops_docker_dev_name
   service_endpoint_azure_devops_docker_dev_id   = data.terraform_remote_state.core.outputs.service_endpoint_azure_devops_docker_dev_id
-  service_endpoint_azure_dev_id                 = data.terraform_remote_state.core.outputs.service_endpoint_azure_dev_id
+  service_endpoint_azure_dev_id                 = data.azuredevops_serviceendpoint_azurerm.azure_dev.id
 
   # UAT
   service_endpoint_azure_devops_docker_uat_name = data.terraform_remote_state.core.outputs.service_endpoint_azure_devops_docker_uat_name
   service_endpoint_azure_devops_docker_uat_id   = data.terraform_remote_state.core.outputs.service_endpoint_azure_devops_docker_uat_id
-  service_endpoint_azure_uat_id                 = data.terraform_remote_state.core.outputs.service_endpoint_azure_uat_id
+  service_endpoint_azure_uat_id                 = data.azuredevops_serviceendpoint_azurerm.azure_uat.id
 
   # PROD
   service_endpoint_azure_devops_docker_prod_name = data.terraform_remote_state.core.outputs.service_endpoint_azure_devops_docker_prod_name
   service_endpoint_azure_devops_docker_prod_id   = data.terraform_remote_state.core.outputs.service_endpoint_azure_devops_docker_prod_id
-  service_endpoint_azure_prod_id                 = data.terraform_remote_state.core.outputs.service_endpoint_azure_prod_id
+  service_endpoint_azure_prod_id                 = data.azuredevops_serviceendpoint_azurerm.azure_prod.id
+}
+
+#
+# Subscription
+#
+
+variable "dev_subscription_name" {
+  type        = string
+  description = "DEV Subscription name"
+}
+
+variable "uat_subscription_name" {
+  type        = string
+  description = "UAT Subscription name"
+}
+
+variable "prod_subscription_name" {
+  type        = string
+  description = "PROD Subscription name"
+}
+
+variable "project_name" {
+  type        = string
+  description = "Project name (e.g. pagoPA platform)"
+}
+
+variable "terraform_remote_state_core" {
+  type = object({
+    resource_group_name  = string,
+    storage_account_name = string,
+    container_name       = string,
+    key                  = string
+  })
+}
+
+variable "service_endpoint_azure_dev_name" {
+  type = string
+  description = "azure service endpoint name for dev"
+}
+
+variable "service_endpoint_azure_uat_name" {
+  type = string
+  description = "azure service endpoint name for uat"
+
+}
+
+variable "service_endpoint_azure_prod_name" {
+  type = string
+    description = "azure service endpoint name for prod"
+
 }
