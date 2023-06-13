@@ -37,29 +37,3 @@ resource "azuredevops_serviceendpoint_azurerm" "PROD-CSTAR" {
   azurerm_spn_tenantid      = module.secret_azdo.values["PAGOPAIT-TENANTID"].value
   azurerm_subscription_id   = module.secret_azdo.values["PAGOPAIT-PROD-CSTAR-SUBSCRIPTION-ID"].value
 }
-
-#
-# PLAN Azure service connections
-#
-module "DEV-CSTAR-CORE-PLAN-SERVICE-CONN" {
-
-  providers = {
-    azurerm = azurerm.dev
-  }
-
-  depends_on = [data.azuredevops_project.project]
-  source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_plan?ref=add-service-endpoint-sp-personal"
-
-  project_id        = data.azuredevops_project.project.id
-  name              = "${local.project_prefix_short}-d-${local.domain}-plan-app"
-  tenant_id         = module.secret_azdo.values["PAGOPAIT-TENANTID"].value
-  subscription_name = local.dev_subscription_name
-  subscription_id   = module.secret_azdo.values["PAGOPAIT-DEV-CSTAR-SUBSCRIPTION-ID"].value
-  #tfsec:ignore:GEN003
-  # renew_token = local.tlscert_renew_token
-
-  credential_subcription              = local.dev_subscription_name
-  credential_key_vault_name           = local.dev_domain_key_vault_name
-  credential_key_vault_resource_group = local.dev_domain_key_vault_resource_group
-}
-
