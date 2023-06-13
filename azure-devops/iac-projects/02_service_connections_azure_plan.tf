@@ -10,63 +10,66 @@ module "DEV-CSTAR-PLAN-SERVICE-CONN" {
   depends_on = [data.azuredevops_project.project]
   source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_plan?ref=add-service-endpoint-sp-personal"
 
-  project_id        = data.azuredevops_project.project.id
-  name              = "${local.project_prefix_short}-d-${local.domain}"
-  tenant_id         = module.secret_azdo.values["PAGOPAIT-TENANTID"].value
-  subscription_name = local.dev_subscription_name
-  subscription_id   = module.secret_azdo.values["PAGOPAIT-DEV-CSTAR-SUBSCRIPTION-ID"].value
+  name_suffix                 = "${local.project_prefix_short}-dev"
+  iac_aad_group_name          = "azure-devops-iac-service-connection"
+  password_time_rotation_days = 1
 
-  credential_subcription              = local.dev_subscription_name
-  credential_key_vault_name           = local.dev_domain_key_vault_name
-  credential_key_vault_resource_group = local.dev_domain_key_vault_resource_group
+
+  project_id      = data.azuredevops_project.project.id
+  tenant_id       = module.secret_azdo.values["PAGOPAIT-TENANTID"].value
+  subscription_id = module.secret_azdo.values["PAGOPAIT-DEV-CSTAR-SUBSCRIPTION-ID"].value
+
+  credential_key_vault_name           = local.dev_idpay_key_vault_name
+  credential_key_vault_resource_group = local.dev_idpay_key_vault_resource_group
 }
 
-#
-# UAT
-#
-module "UAT-CSTAR-PLAN-SERVICE-CONN" {
+# #
+# # UAT
+# #
+# module "UAT-CSTAR-PLAN-SERVICE-CONN" {
 
-  providers = {
-    azurerm = azurerm.uat
-  }
+#   providers = {
+#     azurerm = azurerm.uat
+#   }
 
-  depends_on = [data.azuredevops_project.project]
-  source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_plan?ref=add-service-endpoint-sp-personal"
+#   depends_on = [data.azuredevops_project.project]
+#   source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_plan?ref=add-service-endpoint-sp-personal"
 
-  project_id        = data.azuredevops_project.project.id
-  name              = "${local.project_prefix_short}-u-${local.domain}"
-  tenant_id         = module.secret_azdo.values["PAGOPAIT-TENANTID"].value
-  subscription_name = local.uat_subscription_name
-  subscription_id   = module.secret_azdo.values["PAGOPAIT-UAT-CSTAR-SUBSCRIPTION-ID"].value
-  #tfsec:ignore:GEN003
-  renew_token = local.tlscert_renew_token
+#   name_suffix              = "${local.project_prefix_short}-uat"
+#     iac_aad_group_name = "azure-devops-iac-service-connection"
+#       password_time_rotation_days = 1
 
-  credential_subcription              = local.uat_subscription_name
-  credential_key_vault_name           = local.uat_domain_key_vault_name
-  credential_key_vault_resource_group = local.uat_domain_key_vault_resource_group
-}
 
-#
-# PROD
-#
-module "PROD-CSTAR-PLAN-SERVICE-CONN" {
 
-  providers = {
-    azurerm = azurerm.prod
-  }
+#   project_id        = data.azuredevops_project.project.id
+#   tenant_id         = module.secret_azdo.values["PAGOPAIT-TENANTID"].value
+#   subscription_id   = module.secret_azdo.values["PAGOPAIT-UAT-CSTAR-SUBSCRIPTION-ID"].value
 
-  depends_on = [data.azuredevops_project.project]
-  source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_plan?ref=add-service-endpoint-sp-personal"
+#   credential_key_vault_name           = local.uat_idpay_key_vault_name
+#   credential_key_vault_resource_group = local.uat_idpay_key_vault_resource_group
+# }
 
-  project_id        = data.azuredevops_project.project.id
-  name              = "${local.project_prefix_short}-p-${local.domain}"
-  tenant_id         = module.secret_azdo.values["PAGOPAIT-TENANTID"].value
-  subscription_name = local.prod_subscription_name
-  subscription_id   = module.secret_azdo.values["PAGOPAIT-PROD-CSTAR-SUBSCRIPTION-ID"].value
-  #tfsec:ignore:GEN003
-  renew_token = local.tlscert_renew_token
+# #
+# # PROD
+# #
+# module "PROD-CSTAR-PLAN-SERVICE-CONN" {
 
-  credential_subcription              = local.prod_subscription_name
-  credential_key_vault_name           = local.prod_domain_key_vault_name
-  credential_key_vault_resource_group = local.prod_domain_key_vault_resource_group
-}
+#   providers = {
+#     azurerm = azurerm.prod
+#   }
+
+#   depends_on = [data.azuredevops_project.project]
+#   source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_plan?ref=add-service-endpoint-sp-personal"
+
+#   name_suffix              = "${local.project_prefix_short}-prod"
+#     iac_aad_group_name = "azure-devops-iac-service-connection"
+#       password_time_rotation_days = 1
+
+
+#   project_id        = data.azuredevops_project.project.id
+#   tenant_id         = module.secret_azdo.values["PAGOPAIT-TENANTID"].value
+#   subscription_id   = module.secret_azdo.values["PAGOPAIT-PROD-CSTAR-SUBSCRIPTION-ID"].value
+
+#   credential_key_vault_name           = local.prod_idpay_key_vault_name
+#   credential_key_vault_resource_group = local.prod_idpay_key_vault_resource_group
+# }
