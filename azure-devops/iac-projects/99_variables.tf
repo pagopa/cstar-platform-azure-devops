@@ -71,3 +71,4 @@ variable "aks_prod_platform_name" {
   type        = string
   description = "AKS PROD platform name"
 }
+
