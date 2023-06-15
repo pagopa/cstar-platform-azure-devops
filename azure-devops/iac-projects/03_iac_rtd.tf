@@ -66,6 +66,7 @@ module "rtd_iac_code_review" {
     azuredevops_serviceendpoint_azurerm.DEV-CSTAR.id,
     azuredevops_serviceendpoint_azurerm.UAT-CSTAR.id,
     azuredevops_serviceendpoint_azurerm.PROD-CSTAR.id,
+    module.DEV-CSTAR-PLAN-SERVICE-CONN.service_endpoint_id
   ]
 }
 
