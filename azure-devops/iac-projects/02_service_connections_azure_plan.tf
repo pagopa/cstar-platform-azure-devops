@@ -12,7 +12,8 @@ module "DEV-CSTAR-PLAN-SERVICE-CONN" {
 
   name_suffix                 = "${local.project_prefix_short}-dev"
   iac_aad_group_name          = "azure-devops-iac-service-connection"
-  password_time_rotation_days = 1
+  password_time_rotation_days = 365
+  renew_token                 = "v2"
 
 
   project_id      = data.azuredevops_project.project.id
