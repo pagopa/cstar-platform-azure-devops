@@ -22,6 +22,12 @@ locals {
     tf_dev01_aks_apiserver_url         = module.rtd_dev_secrets.values["cstar-d-weu-dev01-aks-apiserver-url"].value,
     tf_dev01_aks_azure_devops_sa_cacrt = module.rtd_dev_secrets.values["cstar-d-weu-dev01-aks-azure-devops-sa-cacrt"].value,
     tf_dev01_aks_azure_devops_sa_token = base64decode(module.rtd_dev_secrets.values["cstar-d-weu-dev01-aks-azure-devops-sa-token"].value),
+        tf_uat01_aks_apiserver_url         = module.rtd_uat_secrets.values["cstar-u-weu-uat01-aks-apiserver-url"].value,
+    tf_uat01_aks_azure_devops_sa_cacrt = module.rtd_uat_secrets.values["cstar-u-weu-uat01-aks-azure-devops-sa-cacrt"].value,
+    tf_uat01_aks_azure_devops_sa_token = base64decode(module.rtd_uat_secrets.values["cstar-u-weu-uat01-aks-azure-devops-sa-token"].value),
+        tf_prod01_aks_apiserver_url         = module.rtd_prod_secrets.values["cstar-p-weu-prod01-aks-apiserver-url"].value,
+    tf_prod01_aks_azure_devops_sa_cacrt = module.rtd_prod_secrets.values["cstar-p-weu-prod01-aks-azure-devops-sa-cacrt"].value,
+    tf_prod01_aks_azure_devops_sa_token = base64decode(module.rtd_prod_secrets.values["cstar-p-weu-prod01-aks-azure-devops-sa-token"].value),
     tf_aks_dev_name                    = var.aks_dev_platform_name
   }
   # global secrets
