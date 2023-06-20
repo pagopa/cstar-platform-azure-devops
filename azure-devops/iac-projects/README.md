@@ -18,7 +18,9 @@
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_DEV-CSTAR-PLAN-SERVICE-CONN"></a> [DEV-CSTAR-PLAN-SERVICE-CONN](#module\_DEV-CSTAR-PLAN-SERVICE-CONN) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_plan | add-service-endpoint-sp-personal |
+| <a name="module_DEV-CSTAR-PLAN-SERVICE-CONN"></a> [DEV-CSTAR-PLAN-SERVICE-CONN](#module\_DEV-CSTAR-PLAN-SERVICE-CONN) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_plan | fix-azure-plan |
+| <a name="module_PROD-CSTAR-PLAN-SERVICE-CONN"></a> [PROD-CSTAR-PLAN-SERVICE-CONN](#module\_PROD-CSTAR-PLAN-SERVICE-CONN) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_plan | fix-azure-plan |
+| <a name="module_UAT-CSTAR-PLAN-SERVICE-CONN"></a> [UAT-CSTAR-PLAN-SERVICE-CONN](#module\_UAT-CSTAR-PLAN-SERVICE-CONN) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_plan | fix-azure-plan |
 | <a name="module_apim_backup"></a> [apim\_backup](#module\_apim\_backup) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_deploy | v3.0.0 |
 | <a name="module_iac_code_review"></a> [iac\_code\_review](#module\_iac\_code\_review) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_code_review | v3.0.0 |
 | <a name="module_iac_deploy"></a> [iac\_deploy](#module\_iac\_deploy) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_deploy | v3.0.0 |
