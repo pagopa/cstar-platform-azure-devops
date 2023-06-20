@@ -32,6 +32,7 @@
 | <a name="module_rtd_dev_secrets"></a> [rtd\_dev\_secrets](#module\_rtd\_dev\_secrets) | git::https://github.com/pagopa/terraform-azurerm-v3.git//key_vault_secrets_query | v6.15.2 |
 | <a name="module_rtd_iac_code_review"></a> [rtd\_iac\_code\_review](#module\_rtd\_iac\_code\_review) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_code_review | v3.0.0 |
 | <a name="module_rtd_iac_deploy"></a> [rtd\_iac\_deploy](#module\_rtd\_iac\_deploy) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_deploy | v3.0.0 |
+| <a name="module_rtd_prod_secrets"></a> [rtd\_prod\_secrets](#module\_rtd\_prod\_secrets) | git::https://github.com/pagopa/terraform-azurerm-v3.git//key_vault_secrets_query | v6.15.2 |
 | <a name="module_rtd_uat_secrets"></a> [rtd\_uat\_secrets](#module\_rtd\_uat\_secrets) | git::https://github.com/pagopa/terraform-azurerm-v3.git//key_vault_secrets_query | v6.15.2 |
 | <a name="module_secret_azdo"></a> [secret\_azdo](#module\_secret\_azdo) | git::https://github.com/pagopa/terraform-azurerm-v3.git//key_vault_secrets_query | v6.15.2 |
 | <a name="module_tae_dev_secrets"></a> [tae\_dev\_secrets](#module\_tae\_dev\_secrets) | git::https://github.com/pagopa/terraform-azurerm-v3.git//key_vault_secrets_query | v6.15.2 |
