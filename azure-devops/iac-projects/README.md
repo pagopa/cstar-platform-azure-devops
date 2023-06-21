@@ -18,7 +18,9 @@
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_DEV-CSTAR-PLAN-SERVICE-CONN"></a> [DEV-CSTAR-PLAN-SERVICE-CONN](#module\_DEV-CSTAR-PLAN-SERVICE-CONN) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_plan | add-service-endpoint-sp-personal |
+| <a name="module_DEV-CSTAR-PLAN-SERVICE-CONN"></a> [DEV-CSTAR-PLAN-SERVICE-CONN](#module\_DEV-CSTAR-PLAN-SERVICE-CONN) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_plan | v3.1.1 |
+| <a name="module_PROD-CSTAR-PLAN-SERVICE-CONN"></a> [PROD-CSTAR-PLAN-SERVICE-CONN](#module\_PROD-CSTAR-PLAN-SERVICE-CONN) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_plan | v3.1.1 |
+| <a name="module_UAT-CSTAR-PLAN-SERVICE-CONN"></a> [UAT-CSTAR-PLAN-SERVICE-CONN](#module\_UAT-CSTAR-PLAN-SERVICE-CONN) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_plan | v3.1.1 |
 | <a name="module_apim_backup"></a> [apim\_backup](#module\_apim\_backup) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_deploy | v3.0.0 |
 | <a name="module_iac_code_review"></a> [iac\_code\_review](#module\_iac\_code\_review) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_code_review | v3.0.0 |
 | <a name="module_iac_deploy"></a> [iac\_deploy](#module\_iac\_deploy) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_deploy | v3.0.0 |
@@ -30,6 +32,7 @@
 | <a name="module_rtd_dev_secrets"></a> [rtd\_dev\_secrets](#module\_rtd\_dev\_secrets) | git::https://github.com/pagopa/terraform-azurerm-v3.git//key_vault_secrets_query | v6.15.2 |
 | <a name="module_rtd_iac_code_review"></a> [rtd\_iac\_code\_review](#module\_rtd\_iac\_code\_review) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_code_review | v3.0.0 |
 | <a name="module_rtd_iac_deploy"></a> [rtd\_iac\_deploy](#module\_rtd\_iac\_deploy) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_deploy | v3.0.0 |
+| <a name="module_rtd_prod_secrets"></a> [rtd\_prod\_secrets](#module\_rtd\_prod\_secrets) | git::https://github.com/pagopa/terraform-azurerm-v3.git//key_vault_secrets_query | v6.15.2 |
 | <a name="module_rtd_uat_secrets"></a> [rtd\_uat\_secrets](#module\_rtd\_uat\_secrets) | git::https://github.com/pagopa/terraform-azurerm-v3.git//key_vault_secrets_query | v6.15.2 |
 | <a name="module_secret_azdo"></a> [secret\_azdo](#module\_secret\_azdo) | git::https://github.com/pagopa/terraform-azurerm-v3.git//key_vault_secrets_query | v6.15.2 |
 | <a name="module_tae_dev_secrets"></a> [tae\_dev\_secrets](#module\_tae\_dev\_secrets) | git::https://github.com/pagopa/terraform-azurerm-v3.git//key_vault_secrets_query | v6.15.2 |
