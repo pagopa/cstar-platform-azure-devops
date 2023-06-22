@@ -71,6 +71,7 @@ module "idpay-ranking_code_review" {
   github_service_connection_id = local.service_endpoint_io_azure_devops_github_pr_id
   path                         = var.idpay-ranking.pipeline.path
 
+  ci_trigger_use_yaml           = true
   pull_request_trigger_use_yaml = true
 
   variables = merge(
