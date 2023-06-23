@@ -59,9 +59,9 @@ module "tae_iac_code_review" {
 
   service_connection_ids_authorization = [
     azuredevops_serviceendpoint_github.io-azure-devops-github-ro.id,
-    azuredevops_serviceendpoint_azurerm.DEV-CSTAR.id,
-    azuredevops_serviceendpoint_azurerm.UAT-CSTAR.id,
-    azuredevops_serviceendpoint_azurerm.PROD-CSTAR.id,
+    module.DEV-CSTAR-PLAN-SERVICE-CONN.service_endpoint_id,
+    module.UAT-CSTAR-PLAN-SERVICE-CONN.service_endpoint_id,
+    module.PROD-CSTAR-PLAN-SERVICE-CONN.service_endpoint_id,
   ]
 }
 
