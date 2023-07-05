@@ -47,7 +47,7 @@ locals {
 }
 
 module "idpay-fe-merchants_code_review" {
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_code_review?ref=v2.2.0"
+  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_code_review?ref=v2.7.0"
   count  = var.idpay-portal-merchants-frontend.pipeline.enable_code_review == true ? 1 : 0
 
   project_id                   = data.azuredevops_project.project.id
@@ -55,6 +55,7 @@ module "idpay-fe-merchants_code_review" {
   github_service_connection_id = local.service_endpoint_io_azure_devops_github_pr_id
   path                         = var.idpay-portal-merchants-frontend.pipeline.path
 
+  ci_trigger_use_yaml           = true
   pull_request_trigger_use_yaml = true
 
   variables = merge(
@@ -73,7 +74,7 @@ module "idpay-fe-merchants_code_review" {
 }
 
 module "idpay-fe-merchants_deploy" {
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_deploy?ref=v2.2.0"
+  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_deploy?ref=v2.7.0"
   count  = var.idpay-portal-merchants-frontend.pipeline.enable_deploy == true ? 1 : 0
 
   project_id                   = data.azuredevops_project.project.id
