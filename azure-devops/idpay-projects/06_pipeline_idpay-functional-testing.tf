@@ -18,11 +18,12 @@ variable "idpay-functional-testing" {
 variable "idpay-functional-testing-discount-flow" {
   default = {
     repository = {
-      organization    = "pagopa"
-      name            = "idpay-functional-testing"
-      branch_name     = "refs/heads/main"
-      pipelines_path  = ".devops"
-      yml_prefix_name = "idpay-functiona-testing-discount-flow"
+      organization          = "pagopa"
+      name                  = "idpay-functional-testing"
+      branch_name           = "refs/heads/main"
+      pipelines_path        = ".devops"
+      pipeline_name         = "idpay-functional-testing.discount-flow"
+      pipeline_yml_filename = "idpay-functional-testing-discount-flow.yml"
     }
     pipeline = {
       enable_scheduled_test = true
@@ -79,8 +80,11 @@ module "idpay-functional-testing_scheduled_test" {
 
 
 module "idpay-functional-testing_scheduled_test_discount" {
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_code_review?ref=v2.2.0"
+  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_generic?ref=v2.7.0"
   count  = var.idpay-functional-testing-discount-flow.pipeline.enable_scheduled_test == true ? 1 : 0
+
+  pipeline_name         = var.idpay-functional-testing-discount-flow.repository.pipeline_name
+  pipeline_yml_filename = var.idpay-functional-testing-discount-flow.repository.pipeline_yml_filename
 
   project_id                   = data.azuredevops_project.project.id
   repository                   = var.idpay-functional-testing-discount-flow.repository
