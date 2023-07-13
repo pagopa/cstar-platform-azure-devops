@@ -5,7 +5,8 @@ variable "idpay-functional-testing" {
       name            = "idpay-functional-testing"
       branch_name     = "refs/heads/main"
       pipelines_path  = ".devops"
-      yml_prefix_name = "idpay"
+      yml_prefix_name = "idpay-functional-testing"
+      yml_suffix_name = ".yml"
     }
     pipeline = {
       enable_scheduled_test = true
@@ -17,19 +18,13 @@ variable "idpay-functional-testing" {
 
 variable "idpay-functional-testing-discount-flow" {
   default = {
-    repository = {
-      organization          = "pagopa"
-      name                  = "idpay-functional-testing"
-      branch_name           = "refs/heads/main"
-      pipelines_path        = ".devops"
-      pipeline_name         = "idpay-functional-testing.discount-flow"
-      pipeline_yml_filename = "idpay-functional-testing-discount-flow.yml"
-    }
-    pipeline = {
-      enable_scheduled_test = true
-      enable_deploy         = true
-      path                  = "idpay\\idpay-functional-testing"
-    }
+    flow_name = "discount-flow"
+  }
+}
+
+variable "idpay-functional-testing-refund-flow" {
+  default = {
+    flow_name = "refund-flow"
   }
 }
 
@@ -81,15 +76,14 @@ module "idpay-functional-testing_scheduled_test" {
 
 module "idpay-functional-testing_scheduled_test_discount" {
   source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_generic?ref=v2.7.0"
-  count  = var.idpay-functional-testing-discount-flow.pipeline.enable_scheduled_test == true ? 1 : 0
+  count  = var.idpay-functional-testing.pipeline.enable_scheduled_test == true ? 1 : 0
 
-  pipeline_name         = var.idpay-functional-testing-discount-flow.repository.pipeline_name
-  pipeline_yml_filename = var.idpay-functional-testing-discount-flow.repository.pipeline_yml_filename
-
+  pipeline_name                = "${var.idpay-functional-testing.repository.yml_prefix_name}.${var.idpay-functional-testing-discount-flow.flow_name}"
+  pipeline_yml_filename        = "${var.idpay-functional-testing.repository.yml_prefix_name}-${var.idpay-functional-testing-discount-flow.flow_name}${var.idpay-functional-testing.repository.yml_suffix_name}"
   project_id                   = data.azuredevops_project.project.id
-  repository                   = var.idpay-functional-testing-discount-flow.repository
+  repository                   = var.idpay-functional-testing.repository
   github_service_connection_id = local.service_endpoint_io_azure_devops_github_pr_id
-  path                         = var.idpay-functional-testing-discount-flow.pipeline.path
+  path                         = var.idpay-functional-testing.pipeline.path
 
   pull_request_trigger_use_yaml = true
 
