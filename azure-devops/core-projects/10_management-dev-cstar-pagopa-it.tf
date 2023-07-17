@@ -2,25 +2,18 @@ variable "management-cstar-dev-pagopa-it" {
   default = {
     repository = {
       organization   = "pagopa"
-      name           = "cert-az-management"
-      branch_name    = "master"
+      name           = "le-azure-acme-tiny"
+      branch_name    = "refs/heads/master"
       pipelines_path = "."
     }
     pipeline = {
-      enable_cert_az = true
-      path           = "cstar"
-      name           = "management.dev.cstar.pagopa.it"
+      enable_tls_cert = true
+      path            = "TLS-Certificates\\DEV"
+      dns_record_name = "management"
+      dns_zone_name   = "dev.cstar.pagopa.it"
       # common variables to all pipelines
       variables = {
-        DO_RENEW_CERT               = "true"
-        PRODUCTION_AcmeDirectory    = "LE_PROD"
-        PRODUCTION_CertificateNames = "management.dev.cstar.pagopa.it"
-        PRODUCTION_ResourceGroup    = "cstar-d-sec-rg"
-        PRODUCTION_KeyVault         = "cstar-d-kv"
-        TEST_AcmeDirectory          = "LE_STAGE"
-        TEST_CertificateNames       = "NA"
-        TEST_ResourceGroup          = "NA"
-        TEST_KeyVault               = "NA"
+        CERT_NAME_EXPIRE_SECONDS = "2592000" #30 days
       }
       # common secret variables to all pipelines
       variables_secret = {
@@ -30,27 +23,56 @@ variable "management-cstar-dev-pagopa-it" {
 }
 
 locals {
+  management-cstar-dev-pagopa-it = {
+    tenant_id                           = module.secret_azdo.values["PAGOPAIT-TENANTID"].value
+    subscription_name                   = local.dev_subscription_name
+    subscription_id                     = module.secret_azdo.values["PAGOPAIT-DEV-CSTAR-SUBSCRIPTION-ID"].value
+    dns_zone_resource_group             = local.rg_dev_dns_zone_name
+    credential_subcription              = local.dev_subscription_name
+    credential_key_vault_name           = local.dev_domain_key_vault_name
+    credential_key_vault_resource_group = local.dev_domain_key_vault_resource_group
+    service_connection_ids_authorization = [
+      module.DEV-CSTAR-CORE-TLS-CERT-SERVICE-CONN.service_endpoint_id,
+    ]
+  }
   management-cstar-dev-pagopa-it-variables = {
-    PRODUCTION_AcmeContact        = module.secrets.values["CERT-AZ-MANAGEMENT-MAIL-CONTACT"].value
-    PRODUCTION_AZURE_SUBSCRIPTION = azuredevops_serviceendpoint_azurerm.DEV-CSTAR.service_endpoint_name
-    PRODUCTION_KeyVaultResourceId = "/subscriptions/${module.secrets.values["PAGOPAIT-DEV-CSTAR-SUBSCRIPTION-ID"].value}/resourceGroups/${var.management-cstar-dev-pagopa-it.pipeline.variables.PRODUCTION_ResourceGroup}/providers/Microsoft.KeyVault/vaults/${var.management-cstar-dev-pagopa-it.pipeline.variables.PRODUCTION_KeyVault}"
-    TEST_AcmeContact              = "NA"
-    TEST_AZURE_SUBSCRIPTION       = azuredevops_serviceendpoint_azurerm.DEV-CSTAR.service_endpoint_name
-    TEST_KeyVaultResourceId       = "/subscriptions/${module.secrets.values["PAGOPAIT-DEV-CSTAR-SUBSCRIPTION-ID"].value}/resourceGroups/${var.management-cstar-dev-pagopa-it.pipeline.variables.TEST_ResourceGroup}/providers/Microsoft.KeyVault/vaults/${var.management-cstar-dev-pagopa-it.pipeline.variables.TEST_KeyVault}"
+    KEY_VAULT_SERVICE_CONNECTION = module.DEV-CSTAR-CORE-TLS-CERT-SERVICE-CONN.service_endpoint_name,
+    KEY_VAULT_NAME               = local.dev_domain_key_vault_name
   }
   management-cstar-dev-pagopa-it-variables_secret = {
   }
 }
 
+# change only providers
+#tfsec:ignore:general-secrets-no-plaintext-exposure
 module "management-cstar-dev-pagopa-it-cert_az" {
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_certaz?ref=v0.0.2"
-  count  = var.management-cstar-dev-pagopa-it.pipeline.enable_cert_az == true ? 1 : 0
+  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_tls_cert?ref=v2.6.5"
+  count  = var.management-cstar-dev-pagopa-it.pipeline.enable_tls_cert == true ? 1 : 0
 
-  project_id                   = azuredevops_project.project.id
-  repository                   = var.management-cstar-dev-pagopa-it.repository
-  name                         = var.management-cstar-dev-pagopa-it.pipeline.name
-  path                         = var.management-cstar-dev-pagopa-it.pipeline.path
-  github_service_connection_id = azuredevops_serviceendpoint_github.io-azure-devops-github-pr.id
+  # change me
+  providers = {
+    azurerm = azurerm.dev
+  }
+
+  project_id = data.azuredevops_project.project.id
+  repository = var.management-cstar-dev-pagopa-it.repository
+  name       = "${var.management-cstar-dev-pagopa-it.pipeline.dns_record_name}.${var.management-cstar-dev-pagopa-it.pipeline.dns_zone_name}"
+  #tfsec:ignore:general-secrets-no-plaintext-exposure
+  #tfsec:ignore:GEN003
+  renew_token                  = local.tlscert_renew_token
+  path                         = "${local.domain}\\${var.management-cstar-dev-pagopa-it.pipeline.path}"
+  github_service_connection_id = azuredevops_serviceendpoint_github.io-azure-devops-github-rw.id
+
+  dns_record_name         = var.management-cstar-dev-pagopa-it.pipeline.dns_record_name
+  dns_zone_name           = var.management-cstar-dev-pagopa-it.pipeline.dns_zone_name
+  dns_zone_resource_group = local.management-cstar-dev-pagopa-it.dns_zone_resource_group
+  tenant_id               = local.management-cstar-dev-pagopa-it.tenant_id
+  subscription_name       = local.management-cstar-dev-pagopa-it.subscription_name
+  subscription_id         = local.management-cstar-dev-pagopa-it.subscription_id
+
+  credential_subcription              = local.management-cstar-dev-pagopa-it.credential_subcription
+  credential_key_vault_name           = local.management-cstar-dev-pagopa-it.credential_key_vault_name
+  credential_key_vault_resource_group = local.management-cstar-dev-pagopa-it.credential_key_vault_resource_group
 
   variables = merge(
     var.management-cstar-dev-pagopa-it.pipeline.variables,
@@ -62,8 +84,21 @@ module "management-cstar-dev-pagopa-it-cert_az" {
     local.management-cstar-dev-pagopa-it-variables_secret,
   )
 
-  service_connection_ids_authorization = [
-    azuredevops_serviceendpoint_github.io-azure-devops-github-ro.id,
-    azuredevops_serviceendpoint_azurerm.DEV-CSTAR.id,
+  service_connection_ids_authorization = local.management-cstar-dev-pagopa-it.service_connection_ids_authorization
+
+  schedules = {
+    days_to_build              = ["Thu"]
+    schedule_only_with_changes = false
+    start_hours                = 3
+    start_minutes              = 0
+    time_zone                  = "(UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna"
+    branch_filter = {
+      include = [var.management-cstar-dev-pagopa-it.repository.branch_name]
+      exclude = []
+    }
+  }
+
+  depends_on = [
+    module.letsencrypt_dev
   ]
 }
