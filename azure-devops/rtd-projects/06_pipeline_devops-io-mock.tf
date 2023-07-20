@@ -37,9 +37,9 @@ locals {
   }
   # deploy vars
   cstar-io-mock-variables_deploy = {
-    K8S_IMAGE_REPOSITORY_NAME        = replace(var.cstar-io-mock.repository.name, "-", "")
-    DEPLOY_NAMESPACE                 = local.domain
-    HELM_RELEASE_NAME                = var.cstar-io-mock.repository.name
+    K8S_IMAGE_REPOSITORY_NAME = replace(var.cstar-io-mock.repository.name, "-", "")
+    DEPLOY_NAMESPACE          = local.domain
+    HELM_RELEASE_NAME         = var.cstar-io-mock.repository.name
 
     DEV_CONTAINER_REGISTRY_SERVICE_CONN = local.service_endpoint_azure_devops_docker_dev_name
     DEV_KUBERNETES_SERVICE_CONN         = local.srv_endpoint_name_aks_dev
