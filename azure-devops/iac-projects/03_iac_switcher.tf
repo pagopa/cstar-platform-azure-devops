@@ -80,7 +80,7 @@ module "resource_switcher" {
     ]
     sa_sftp = [
       {
-        sa_name : "cstardsftp"
+        sa_name    = "cstardsftp"
         start_time = "08:00"
         stop_time  = "20:00"
       }
