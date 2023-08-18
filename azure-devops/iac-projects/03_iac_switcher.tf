@@ -8,8 +8,8 @@ variable "switcher_iac" {
       yml_prefix_name = null
     }
     pipeline = {
-      enable        = true
-      path          = "switcher"
+      enable = true
+      path   = "switcher"
     }
   }
 }
@@ -18,7 +18,7 @@ locals {
   # deploy vars
   iac-variables_switcher = {
     TF_AZURE_SERVICE_CONNECTION_NAME = azuredevops_serviceendpoint_azurerm.DEV-CSTAR.service_endpoint_name
-    TF_AZURE_DEVOPS_POOL_AGENT_NAME: "cstar-dev-linux"
+    TF_AZURE_DEVOPS_POOL_AGENT_NAME : "cstar-dev-linux"
   }
   # deploy secrets
   iac-variables_secret_switcher = {}
@@ -29,7 +29,7 @@ locals {
 module "resource_switcher" {
 
   providers = {
-   azurerm = azurerm.dev
+    azurerm = azurerm.dev
   }
 
   source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_resource_switcher?ref=v3.5.0"
@@ -57,7 +57,7 @@ module "resource_switcher" {
 
   schedule_configuration = {
     days_to_build = ["Mon", "Tue", "Wed", "Thu", "Fri"]
-    timezone = "(UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna"
+    timezone      = "(UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna"
     branch_filter = {
       include = ["main"]
       exclude = []
@@ -65,24 +65,24 @@ module "resource_switcher" {
     aks = [
       {
         cluster_name = "cstar-d-weu-dev01-aks"
-        start_time = "08:00"
-        stop_time = "20:00"
-        rg = "cstar-d-weu-dev01-aks-rg"
+        start_time   = "08:00"
+        stop_time    = "20:00"
+        rg           = "cstar-d-weu-dev01-aks-rg"
         user = {
           nodes_on_start = "1,3"
-          nodes_on_stop = "0,0"
+          nodes_on_stop  = "0,0"
         }
         system = {
           nodes_on_start = "1,3"
-          nodes_on_stop = "1,1"
+          nodes_on_stop  = "1,1"
         }
       }
     ]
     sa_sftp = [
       {
-        sa_name: "cstardsftp"
+        sa_name : "cstardsftp"
         start_time = "08:00"
-        stop_time = "20:00"
+        stop_time  = "20:00"
       }
     ]
   }
