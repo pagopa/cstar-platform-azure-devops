@@ -18,7 +18,7 @@ locals {
   # deploy vars
   iac-variables_switcher = {
     TF_AZURE_SERVICE_CONNECTION_NAME = azuredevops_serviceendpoint_azurerm.DEV-CSTAR.service_endpoint_name
-    TF_AZURE_DEVOPS_POOL_AGENT_NAME : "cstar-dev-linux"
+    TF_AZURE_DEVOPS_POOL_AGENT_NAME : "cstar-dev-linux-infra"
   }
   # deploy secrets
   iac-variables_secret_switcher = {}
