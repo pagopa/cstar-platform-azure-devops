@@ -32,7 +32,7 @@ module "resource_switcher" {
     azurerm = azurerm.dev
   }
 
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_resource_switcher?ref=v3.7.0"
+  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_resource_switcher?ref=v3.8.0"
   path   = var.switcher_iac.pipeline.path
 
   project_id                   = data.azuredevops_project.project.id
