@@ -49,7 +49,7 @@ module "resource_switcher" {
     local.iac-variables_secret_switcher,
   )
 
-  timeout = 30
+  timeout = 50
 
   service_connection_ids_authorization = [
     azuredevops_serviceendpoint_github.io-azure-devops-github-ro.id,
