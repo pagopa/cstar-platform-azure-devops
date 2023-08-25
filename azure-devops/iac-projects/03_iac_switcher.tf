@@ -32,7 +32,7 @@ module "resource_switcher" {
     azurerm = azurerm.dev
   }
 
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_resource_switcher?ref=v3.7.0"
+  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_resource_switcher?ref=v3.9.0"
   path   = var.switcher_iac.pipeline.path
 
   project_id                   = data.azuredevops_project.project.id
@@ -70,6 +70,7 @@ module "resource_switcher" {
         stop_time    = "20:00"
         rg           = "cstar-d-weu-dev01-aks-rg"
         node_pool_exclusions = ["cstdev01usr"]
+        force        = true
         user = {
           nodes_on_start = "1,3"
           nodes_on_stop  = "0,0"
