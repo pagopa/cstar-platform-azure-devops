@@ -89,7 +89,7 @@ locals {
     uat_react_app_one_trust_privacy_policy_json_url_merchants = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/draft/5079ee0c-cfa9-42ec-acda-66799bed5039.json"
     uat_react_app_one_trust_tos_id_merchants                  = "otnotice-d99f1397-31cc-4519-9629-785c0d4c9145"
     uat_react_app_one_trust_tos_json_url_merchants            = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/draft/d99f1397-31cc-4519-9629-785c0d4c9145.json"
-    
+
     prod_react_app_url_cdn                                     = "https://welfare.cstar.pagopa.it/"
     prod_react_app_url_storage                                 = "https://cstarpweuidpayidpaycdnsa.z6.web.core.windows.net/"
     prod_react_app_url_fe_pre_login                            = "https://api-io.cstar.pagopa.it/idpay/welfare/token"

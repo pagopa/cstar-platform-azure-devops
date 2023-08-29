@@ -29,7 +29,7 @@
 | <a name="module_idpay_iac_deploy"></a> [idpay\_iac\_deploy](#module\_idpay\_iac\_deploy) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_deploy | v3.0.0 |
 | <a name="module_idpay_prod_secrets"></a> [idpay\_prod\_secrets](#module\_idpay\_prod\_secrets) | git::https://github.com/pagopa/terraform-azurerm-v3.git//key_vault_secrets_query | v6.15.2 |
 | <a name="module_idpay_uat_secrets"></a> [idpay\_uat\_secrets](#module\_idpay\_uat\_secrets) | git::https://github.com/pagopa/terraform-azurerm-v3.git//key_vault_secrets_query | v6.15.2 |
-| <a name="module_resource_switcher"></a> [resource\_switcher](#module\_resource\_switcher) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_resource_switcher | v3.6.0 |
+| <a name="module_resource_switcher"></a> [resource\_switcher](#module\_resource\_switcher) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_resource_switcher | v3.9.0 |
 | <a name="module_rtd_dev_secrets"></a> [rtd\_dev\_secrets](#module\_rtd\_dev\_secrets) | git::https://github.com/pagopa/terraform-azurerm-v3.git//key_vault_secrets_query | v6.15.2 |
 | <a name="module_rtd_iac_code_review"></a> [rtd\_iac\_code\_review](#module\_rtd\_iac\_code\_review) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_code_review | v3.0.0 |
 | <a name="module_rtd_iac_deploy"></a> [rtd\_iac\_deploy](#module\_rtd\_iac\_deploy) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_deploy | v3.0.0 |
