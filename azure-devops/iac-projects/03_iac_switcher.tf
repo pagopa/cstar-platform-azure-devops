@@ -65,12 +65,12 @@ module "resource_switcher" {
     }
     aks = [
       {
-        cluster_name = "cstar-d-weu-dev01-aks"
-        start_time   = "08:00"
-        stop_time    = "20:00"
-        rg           = "cstar-d-weu-dev01-aks-rg"
+        cluster_name         = "cstar-d-weu-dev01-aks"
+        start_time           = "08:00"
+        stop_time            = "20:00"
+        rg                   = "cstar-d-weu-dev01-aks-rg"
         node_pool_exclusions = ["cstdev01usr"]
-        force        = true
+        force                = true
         user = {
           nodes_on_start = "1,3"
           nodes_on_stop  = "0,0"
