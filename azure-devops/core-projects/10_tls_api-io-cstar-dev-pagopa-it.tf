@@ -61,7 +61,7 @@ module "api-io-cstar-dev-pagopa-it-cert_az" {
   #tfsec:ignore:GEN003
   renew_token                  = local.tlscert_renew_token
   path                         = "${local.domain}\\${var.api-io-cstar-dev-pagopa-it.pipeline.path}"
-  github_service_connection_id = azuredevops_serviceendpoint_github.io-azure-devops-github-ro.id
+  github_service_connection_id = azuredevops_serviceendpoint_github.io-azure-devops-github-rw.id
 
   dns_record_name         = var.api-io-cstar-dev-pagopa-it.pipeline.dns_record_name
   dns_zone_name           = var.api-io-cstar-dev-pagopa-it.pipeline.dns_zone_name
