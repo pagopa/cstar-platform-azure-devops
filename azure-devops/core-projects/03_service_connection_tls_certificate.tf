@@ -8,7 +8,7 @@ module "DEV-CSTAR-CORE-TLS-CERT-SERVICE-CONN" {
   }
 
   depends_on = [data.azuredevops_project.project]
-  source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_limited?ref=v2.1.0"
+  source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_limited?ref=v2.6.5"
 
   project_id        = data.azuredevops_project.project.id
   name              = "${local.project_prefix_short}-d-${local.domain}-tls-cert"
@@ -55,7 +55,7 @@ module "UAT-CSTAR-CORE-TLS-CERT-SERVICE-CONN" {
   }
 
   depends_on = [data.azuredevops_project.project]
-  source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_limited?ref=v2.1.0"
+  source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_limited?ref=v2.6.5"
 
   project_id        = data.azuredevops_project.project.id
   name              = "${local.project_prefix_short}-u-${local.domain}-tls-cert"
@@ -102,7 +102,7 @@ module "PROD-CSTAR-CORE-TLS-CERT-SERVICE-CONN" {
   }
 
   depends_on = [data.azuredevops_project.project]
-  source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_limited?ref=v2.1.0"
+  source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_limited?ref=v2.6.5"
 
   project_id        = data.azuredevops_project.project.id
   name              = "${local.project_prefix_short}-p-${local.domain}-tls-cert"
