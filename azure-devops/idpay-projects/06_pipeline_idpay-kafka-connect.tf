@@ -24,17 +24,6 @@ locals {
   idpay-kafka-connect-variables_secret = {
 
   }
-  # code_review vars
-  idpay-kafka-connect-variables_code_review = {
-    sonarcloud_service_conn = "SONARCLOUD-SERVICE-CONN"
-    sonarcloud_org          = var.idpay-kafka-connect.repository.organization
-    sonarcloud_project_key  = "${var.idpay-kafka-connect.repository.organization}_${var.idpay-kafka-connect.repository.name}"
-    sonarcloud_project_name = var.idpay-kafka-connect.repository.name
-  }
-  # code_review secrets
-  idpay-kafka-connect-variables_secret_code_review = {
-
-  }
   # deploy vars
   idpay-kafka-connect-variables_deploy = {
     K8S_IMAGE_REPOSITORY_NAME        = replace(var.idpay-kafka-connect.repository.name, "-", "")
