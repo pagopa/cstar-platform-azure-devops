@@ -26,6 +26,12 @@ locals {
   uat_vnet_rg  = "${local.prefix}-u-vnet-rg"
   prod_vnet_rg = "${local.prefix}-p-vnet-rg"
 
+
+  location = "westeurope"
+  dev_identity_rg_name = "cstar-d-identity-rg"
+  uat_identity_rg_name = "cstar-u-identity-rg"
+  prod_identity_rg_name = "cstar-p-identity-rg"
+
   # DNS Zone
 
   rg_dev_dns_zone_name  = "cstar-d-vnet-rg"

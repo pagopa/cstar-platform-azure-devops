@@ -35,7 +35,7 @@ locals {
 }
 
 module "idpay-ux-testing_scheduled_test" {
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_code_review?ref=v5.0.0"
+  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_code_review?ref=v5.2.0"
   count  = var.idpay-ux-testing.pipeline.enable_scheduled_test == true ? 1 : 0
 
   project_id                   = data.azuredevops_project.project.id
