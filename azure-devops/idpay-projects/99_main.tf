@@ -3,10 +3,10 @@ terraform {
   required_providers {
     azuredevops = {
       source  = "microsoft/azuredevops"
-      version = ">= 0.3.0"
+      version = "<= 0.11.0"
     }
     azurerm = {
-      version = ">= 2.99.0"
+      version = "<= 3.85.0"
     }
     azuread = {
       source  = "hashicorp/azuread"
@@ -39,7 +39,7 @@ provider "azurerm" {
       purge_soft_delete_on_destroy = false
     }
   }
-  subscription_id = module.secret_azdo.values["PAGOPAIT-DEV-CSTAR-SUBSCRIPTION-ID"].value
+  subscription_id = data.azurerm_subscriptions.dev.subscriptions[0].subscription_id
 }
 
 provider "azurerm" {
@@ -49,7 +49,7 @@ provider "azurerm" {
       purge_soft_delete_on_destroy = false
     }
   }
-  subscription_id = module.secret_azdo.values["PAGOPAIT-UAT-CSTAR-SUBSCRIPTION-ID"].value
+  subscription_id = data.azurerm_subscriptions.uat.subscriptions[0].subscription_id
 }
 
 provider "azurerm" {
@@ -59,7 +59,7 @@ provider "azurerm" {
       purge_soft_delete_on_destroy = false
     }
   }
-  subscription_id = module.secret_azdo.values["PAGOPAIT-PROD-CSTAR-SUBSCRIPTION-ID"].value
+  subscription_id = data.azurerm_subscriptions.prod.subscriptions[0].subscription_id
 }
 
 data "terraform_remote_state" "core" {
@@ -71,4 +71,19 @@ data "terraform_remote_state" "core" {
     container_name       = var.terraform_remote_state_core.container_name
     key                  = var.terraform_remote_state_core.key
   }
+}
+
+
+data "azurerm_client_config" "current" {}
+
+data "azurerm_subscriptions" "prod" {
+  display_name_prefix = var.prod_subscription_name
+}
+
+data "azurerm_subscriptions" "uat" {
+  display_name_prefix = var.uat_subscription_name
+}
+
+data "azurerm_subscriptions" "dev" {
+  display_name_prefix = var.dev_subscription_name
 }
