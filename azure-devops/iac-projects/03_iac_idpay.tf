@@ -10,7 +10,7 @@ variable "idpay_iac" {
     pipeline = {
       enable_code_review   = true
       enable_deploy        = true
-      path                 = "idpay-infrastructure"
+        path                 = "idpay-infrastructure"
       pipeline_name_prefix = "idpay-infra"
     }
   }
@@ -49,7 +49,7 @@ locals {
 }
 
 module "idpay_iac_code_review" {
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_code_review?ref=v3.0.0"
+  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_code_review?ref=v5.2.0"
   count  = var.idpay_iac.pipeline.enable_code_review == true ? 1 : 0
   path   = var.idpay_iac.pipeline.path
 
@@ -80,7 +80,7 @@ module "idpay_iac_code_review" {
 }
 
 module "idpay_iac_deploy" {
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_deploy?ref=v3.0.0"
+  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_deploy?ref=v5.2.0"
   count  = var.idpay_iac.pipeline.enable_deploy == true ? 1 : 0
   path   = var.idpay_iac.pipeline.path
 
