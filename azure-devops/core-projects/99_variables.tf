@@ -23,6 +23,11 @@ locals {
   domain               = "core"
   azure_devops_org     = "pagopaspa"
 
+  location = "westeurope"
+  dev_identity_rg_name = "cstar-d-identity-rg"
+  uat_identity_rg_name = "cstar-u-identity-rg"
+  prod_identity_rg_name = "cstar-p-identity-rg"
+
   # Subscription
   dev_subscription_name  = "dev-cstar"
   uat_subscription_name  = "uat-cstar"
