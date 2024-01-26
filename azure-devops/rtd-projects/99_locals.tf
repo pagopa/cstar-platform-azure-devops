@@ -1,7 +1,7 @@
 locals {
   prefix           = "cstar"
   azure_devops_org = "pagopaspa"
-  domain           = "idpay"
+  domain           = "rtd"
 
   # 🔐 KV AZDO
   dev_key_vault_resource_group  = "${local.prefix}-d-sec-rg"
@@ -26,6 +26,12 @@ locals {
   uat_vnet_rg  = "${local.prefix}-u-vnet-rg"
   prod_vnet_rg = "${local.prefix}-p-vnet-rg"
 
+
+  location = "westeurope"
+  dev_identity_rg_name = "cstar-d-identity-rg"
+  uat_identity_rg_name = "cstar-u-identity-rg"
+  prod_identity_rg_name = "cstar-p-identity-rg"
+
   # DNS Zone
 
   rg_dev_dns_zone_name  = "cstar-d-vnet-rg"
@@ -36,17 +42,20 @@ locals {
   uat_dns_zone_name  = "uat.cstar.pagopa.it"
   prod_dns_zone_name = "cstar.pagopa.it"
 
-  # 📦 ACR DEV FOR AKS
-  aks_dev_docker_registry_rg_name = "${local.prefix}-d-container-registry-rg"
-  aks_dev_docker_registry_name    = "${local.prefix}dcommonacr"
+  # 📦 DOCKER DEV FOR AKS
+  srv_endpoint_name_aks_dev_docker_registry = "${local.prefix}-aks-cr-dev"
+  aks_dev_docker_registry_rg_name           = "${local.prefix}-d-container-registry-rg"
+  aks_dev_docker_registry_name              = "${local.prefix}dcommonacr"
 
-  # 📦 ACR UAT FOR AKS
-  aks_uat_docker_registry_rg_name = "${local.prefix}-u-container-registry-rg"
-  aks_uat_docker_registry_name    = "${local.prefix}ucommonacr"
+  # 📦 DOCKER UAT FOR AKS
+  srv_endpoint_name_aks_uat_docker_registry = "${local.prefix}-aks-cr-uat"
+  aks_uat_docker_registry_rg_name           = "${local.prefix}-u-container-registry-rg"
+  aks_uat_docker_registry_name              = "${local.prefix}ucommonacr"
 
-  # 📦 ACR PROD FOR AKS
-  aks_docker_rg_name_prod       = "${local.prefix}-p-container-registry-rg"
-  aks_prod_docker_registry_name = "${local.prefix}pcommonacr"
+  # 📦 DOCKER PROD FOR AKS
+  srv_endpoint_name_aks_docker_prod = "${local.prefix}-aks-cr-prod"
+  aks_docker_rg_name_prod           = "${local.prefix}-p-container-registry-rg"
+  aks_prod_docker_registry_name     = "${local.prefix}pcommonacr"
 
   # AKS
   srv_endpoint_name_aks_dev  = "${local.prefix}-${local.domain}-aks-dev"
@@ -63,8 +72,9 @@ locals {
   uat_cstar_subscription_name  = "uat-cstar"
   prod_cstar_subscription_name = "prod-cstar"
 
+  #tfsec:ignore:general-secrets-no-plaintext-exposure
   #tfsec:ignore:GEN002
-  tlscert_renew_token = "v2"
+  tlscert_renew_token = "v1"
 
   # TODO azure devops terraform provider does not support SonarCloud service endpoint
   azuredevops_serviceendpoint_sonarcloud_id = "9182be64-d387-465d-9acc-e79e802910c8"
@@ -91,55 +101,4 @@ locals {
   service_endpoint_azure_devops_docker_prod_name = "cstar-azurecrcommon-prod"
   service_endpoint_azure_devops_docker_prod_id   = data.azuredevops_serviceendpoint_azurecr.prod-azureacr-service-endpoint.id
   service_endpoint_azure_prod_id                 = data.azuredevops_serviceendpoint_azurerm.azure_prod.id
-
-}
-
-#
-# Subscription
-#
-
-variable "dev_subscription_name" {
-  type        = string
-  description = "DEV Subscription name"
-}
-
-variable "uat_subscription_name" {
-  type        = string
-  description = "UAT Subscription name"
-}
-
-variable "prod_subscription_name" {
-  type        = string
-  description = "PROD Subscription name"
-}
-
-variable "project_name" {
-  type        = string
-  description = "Project name (e.g. pagoPA platform)"
-}
-
-variable "terraform_remote_state_core" {
-  type = object({
-    resource_group_name  = string,
-    storage_account_name = string,
-    container_name       = string,
-    key                  = string
-  })
-}
-
-variable "service_endpoint_azure_dev_name" {
-  type        = string
-  description = "azure service endpoint name for dev"
-}
-
-variable "service_endpoint_azure_uat_name" {
-  type        = string
-  description = "azure service endpoint name for uat"
-
-}
-
-variable "service_endpoint_azure_prod_name" {
-  type        = string
-  description = "azure service endpoint name for prod"
-
 }
