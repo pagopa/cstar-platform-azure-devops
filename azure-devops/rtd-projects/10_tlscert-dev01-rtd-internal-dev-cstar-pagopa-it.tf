@@ -32,11 +32,11 @@ locals {
     credential_key_vault_name           = local.dev_domain_key_vault_name
     credential_key_vault_resource_group = local.dev_domain_key_vault_resource_group
     service_connection_ids_authorization = [
-      module.DEV-CSTAR-RTD-TLS-CERT-SERVICE-CONN.service_endpoint_id,
+      module.DEV-CSTAR-RTD-TLS-CERT-SERVICE-CONN-NEW.service_endpoint_id,
     ]
   }
   tlscert-dev01-rtd-internal-dev-cstar-pagopa-it-variables = {
-    KEY_VAULT_SERVICE_CONNECTION = module.DEV-CSTAR-RTD-TLS-CERT-SERVICE-CONN.service_endpoint_name,
+    KEY_VAULT_SERVICE_CONNECTION = module.DEV-CSTAR-RTD-TLS-CERT-SERVICE-CONN-NEW.service_endpoint_name,
     KEY_VAULT_NAME               = local.dev_domain_key_vault_name
   }
   tlscert-dev01-rtd-internal-dev-cstar-pagopa-it-variables_secret = {

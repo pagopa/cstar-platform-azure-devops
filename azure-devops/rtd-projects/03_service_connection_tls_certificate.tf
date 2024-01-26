@@ -47,7 +47,7 @@ resource "azurerm_key_vault_access_policy" "DEV-CSTAR-RTD-TLS-CERT-SERVICE-CONN_
   provider     = azurerm.dev
   key_vault_id = data.azurerm_key_vault.domain_kv_dev.id
   tenant_id    = data.azurerm_client_config.current.tenant_id
-  object_id    = module.DEV-CSTAR-RTD-TLS-CERT-SERVICE-CONN.service_principal_object_id
+  object_id    = module.DEV-CSTAR-RTD-TLS-CERT-SERVICE-CONN-NEW.service_principal_object_id
 
   certificate_permissions = ["Get", "Import"]
 }
@@ -113,7 +113,7 @@ resource "azurerm_key_vault_access_policy" "UAT-CSTAR-RTD-TLS-CERT-SERVICE-CONN_
   provider     = azurerm.uat
   key_vault_id = data.azurerm_key_vault.domain_kv_uat.id
   tenant_id    = data.azurerm_client_config.current.tenant_id
-  object_id    = module.UAT-CSTAR-RTD-TLS-CERT-SERVICE-CONN.service_principal_object_id
+  object_id    = module.UAT-CSTAR-RTD-TLS-CERT-SERVICE-CONN-NEW.service_principal_object_id
 
   certificate_permissions = ["Get", "Import"]
 }
@@ -180,7 +180,7 @@ resource "azurerm_key_vault_access_policy" "PROD-CSTAR-RTD-TLS-CERT-SERVICE-CONN
   provider     = azurerm.prod
   key_vault_id = data.azurerm_key_vault.domain_kv_prod.id
   tenant_id    = data.azurerm_client_config.current.tenant_id
-  object_id    = module.PROD-CSTAR-RTD-TLS-CERT-SERVICE-CONN.service_principal_object_id
+  object_id    = module.PROD-CSTAR-RTD-TLS-CERT-SERVICE-CONN-NEW.service_principal_object_id
 
   certificate_permissions = ["Get", "Import"]
 }

@@ -32,11 +32,11 @@ locals {
     credential_key_vault_name           = local.uat_domain_key_vault_name
     credential_key_vault_resource_group = local.uat_domain_key_vault_resource_group
     service_connection_ids_authorization = [
-      module.UAT-CSTAR-RTD-TLS-CERT-SERVICE-CONN.service_endpoint_id,
+      module.UAT-CSTAR-RTD-TLS-CERT-SERVICE-CONN-NEW.service_endpoint_id,
     ]
   }
   tlscert-uat01-rtd-internal-uat-cstar-pagopa-it-variables = {
-    KEY_VAULT_SERVICE_CONNECTION = module.UAT-CSTAR-RTD-TLS-CERT-SERVICE-CONN.service_endpoint_name,
+    KEY_VAULT_SERVICE_CONNECTION = module.UAT-CSTAR-RTD-TLS-CERT-SERVICE-CONN-NEW.service_endpoint_name,
     KEY_VAULT_NAME               = local.uat_domain_key_vault_name
   }
   tlscert-uat01-rtd-internal-uat-cstar-pagopa-it-variables_secret = {
