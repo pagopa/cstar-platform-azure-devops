@@ -55,7 +55,7 @@ module "management-cstar-pagopa-it-cert_az" {
   }
 
   location            = local.location
-  managed_identity_resource_group_name = local.dev_identity_rg_name
+  managed_identity_resource_group_name = local.prod_identity_rg_name
 
   project_id = data.azuredevops_project.project.id
   repository = var.management-cstar-pagopa-it.repository
