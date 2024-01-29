@@ -1,29 +1,8 @@
 #
 # DEV
 #
-module "DEV-CSTAR-CORE-TLS-CERT-SERVICE-CONN" {
 
-  providers = {
-    azurerm = azurerm.dev
-  }
-
-  depends_on = [data.azuredevops_project.project]
-  source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_limited?ref=v5.2.0"
-
-  project_id        = data.azuredevops_project.project.id
-  name              = "${local.project_prefix_short}-d-${local.domain}-tls-cert"
-  tenant_id         = data.azurerm_client_config.current.tenant_id
-  subscription_name = local.dev_subscription_name
-  subscription_id   = data.azurerm_subscriptions.dev.subscriptions[0].subscription_id
-  #tfsec:ignore:GEN003
-  renew_token = local.tlscert_renew_token
-
-  credential_subcription              = local.dev_subscription_name
-  credential_key_vault_name           = local.dev_domain_key_vault_name
-  credential_key_vault_resource_group = local.dev_domain_key_vault_resource_group
-}
-
-module "DEV-CSTAR-CORE-TLS-CERT-SERVICE-CONN-NEW" {
+module "DEV-CSTAR-CORE-TLS-CERT-SERVICE-CONN-FEDERATED" {
 
   providers = {
     azurerm = azurerm.dev
@@ -46,7 +25,7 @@ resource "azurerm_key_vault_access_policy" "DEV-CSTAR-CORE-TLS-CERT-SERVICE-CONN
   provider     = azurerm.dev
   key_vault_id = data.azurerm_key_vault.domain_kv_dev.id
   tenant_id    = data.azurerm_client_config.current.tenant_id
-  object_id    = module.DEV-CSTAR-CORE-TLS-CERT-SERVICE-CONN-NEW.service_principal_object_id
+  object_id    = module.DEV-CSTAR-CORE-TLS-CERT-SERVICE-CONN-FEDERATED.service_principal_object_id
 
   certificate_permissions = ["Get", "Import"]
 }
@@ -67,29 +46,8 @@ module "letsencrypt_dev" {
 #
 # UAT
 #
-module "UAT-CSTAR-CORE-TLS-CERT-SERVICE-CONN" {
 
-  providers = {
-    azurerm = azurerm.uat
-  }
-
-  depends_on = [data.azuredevops_project.project]
-  source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_limited?ref=v5.2.0"
-
-  project_id        = data.azuredevops_project.project.id
-  name              = "${local.project_prefix_short}-u-${local.domain}-tls-cert"
-  tenant_id         = data.azurerm_client_config.current.tenant_id
-  subscription_name = local.uat_subscription_name
-  subscription_id   = data.azurerm_subscriptions.uat.subscriptions[0].subscription_id
-  #tfsec:ignore:GEN003
-  renew_token = local.tlscert_renew_token
-
-  credential_subcription              = local.uat_subscription_name
-  credential_key_vault_name           = local.uat_domain_key_vault_name
-  credential_key_vault_resource_group = local.uat_domain_key_vault_resource_group
-}
-
-module "UAT-CSTAR-CORE-TLS-CERT-SERVICE-CONN-NEW" {
+module "UAT-CSTAR-CORE-TLS-CERT-SERVICE-CONN-FEDERATED" {
 
   providers = {
     azurerm = azurerm.uat
@@ -112,7 +70,7 @@ resource "azurerm_key_vault_access_policy" "UAT-CSTAR-CORE-TLS-CERT-SERVICE-CONN
   provider     = azurerm.uat
   key_vault_id = data.azurerm_key_vault.domain_kv_uat.id
   tenant_id    = data.azurerm_client_config.current.tenant_id
-  object_id    = module.UAT-CSTAR-CORE-TLS-CERT-SERVICE-CONN-NEW.service_principal_object_id
+  object_id    = module.UAT-CSTAR-CORE-TLS-CERT-SERVICE-CONN-FEDERATED.service_principal_object_id
 
   certificate_permissions = ["Get", "Import"]
 }
@@ -133,29 +91,7 @@ module "letsencrypt_uat" {
 #
 # PROD
 #
-module "PROD-CSTAR-CORE-TLS-CERT-SERVICE-CONN" {
-
-  providers = {
-    azurerm = azurerm.prod
-  }
-
-  depends_on = [data.azuredevops_project.project]
-  source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_limited?ref=v5.2.0"
-
-  project_id        = data.azuredevops_project.project.id
-  name              = "${local.project_prefix_short}-p-${local.domain}-tls-cert"
-  tenant_id         = data.azurerm_client_config.current.tenant_id
-  subscription_name = local.prod_subscription_name
-  subscription_id   = data.azurerm_subscriptions.prod.subscriptions[0].subscription_id
-  #tfsec:ignore:GEN003
-  renew_token = local.tlscert_renew_token
-
-  credential_subcription              = local.prod_subscription_name
-  credential_key_vault_name           = local.prod_domain_key_vault_name
-  credential_key_vault_resource_group = local.prod_domain_key_vault_resource_group
-}
-
-module "PROD-CSTAR-CORE-TLS-CERT-SERVICE-CONN-NEW" {
+module "PROD-CSTAR-CORE-TLS-CERT-SERVICE-CONN-FEDERATED" {
 
   providers = {
     azurerm = azurerm.prod
@@ -178,7 +114,7 @@ resource "azurerm_key_vault_access_policy" "PROD-CSTAR-CORE-TLS-CERT-SERVICE-CON
   provider     = azurerm.prod
   key_vault_id = data.azurerm_key_vault.domain_kv_prod.id
   tenant_id    = data.azurerm_client_config.current.tenant_id
-  object_id    = module.PROD-CSTAR-CORE-TLS-CERT-SERVICE-CONN-NEW.service_principal_object_id
+  object_id    = module.PROD-CSTAR-CORE-TLS-CERT-SERVICE-CONN-FEDERATED.service_principal_object_id
 
   certificate_permissions = ["Get", "Import"]
 }
