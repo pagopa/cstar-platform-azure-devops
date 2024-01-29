@@ -100,7 +100,7 @@ module "UAT-CSTAR-RTD-TLS-CERT-SERVICE-CONN-FEDERATED" {
   source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_federated?ref=v5.2.0"
 
   location            = local.location
-  resource_group_name = local.dev_identity_rg_name
+  resource_group_name = local.uat_identity_rg_name
 
   project_id        = data.azuredevops_project.project.id
   name              = "${local.prefix}-u-${local.domain}-tls-azdo-cert"
@@ -167,7 +167,7 @@ module "PROD-CSTAR-RTD-TLS-CERT-SERVICE-CONN-FEDERATED" {
   source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_federated?ref=v5.2.0"
 
   location            = local.location
-  resource_group_name = local.dev_identity_rg_name
+  resource_group_name = local.prod_identity_rg_name
 
   project_id        = data.azuredevops_project.project.id
   name              = "${local.prefix}-p-${local.domain}-tls-azdo-cert"
