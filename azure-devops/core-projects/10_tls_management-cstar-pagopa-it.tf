@@ -32,11 +32,11 @@ locals {
     credential_key_vault_name           = local.prod_domain_key_vault_name
     credential_key_vault_resource_group = local.prod_domain_key_vault_resource_group
     service_connection_ids_authorization = [
-      module.PROD-CSTAR-CORE-TLS-CERT-SERVICE-CONN-NEW.service_endpoint_id,
+      module.PROD-CSTAR-CORE-TLS-CERT-SERVICE-CONN-FEDERATED.service_endpoint_id,
     ]
   }
   management-cstar-pagopa-it-variables = {
-    KEY_VAULT_SERVICE_CONNECTION = module.PROD-CSTAR-CORE-TLS-CERT-SERVICE-CONN-NEW.service_endpoint_name,
+    KEY_VAULT_SERVICE_CONNECTION = module.PROD-CSTAR-CORE-TLS-CERT-SERVICE-CONN-FEDERATED.service_endpoint_name,
     KEY_VAULT_NAME               = local.prod_domain_key_vault_name
   }
   management-cstar-pagopa-it-variables_secret = {
