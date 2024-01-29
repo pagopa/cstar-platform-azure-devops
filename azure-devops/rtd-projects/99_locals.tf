@@ -94,4 +94,7 @@ locals {
   service_endpoint_azure_devops_docker_prod_name = "cstar-azurecrcommon-prod"
   service_endpoint_azure_devops_docker_prod_id   = data.azuredevops_serviceendpoint_azurecr.prod-azureacr-service-endpoint.id
   service_endpoint_azure_prod_id                 = data.azuredevops_serviceendpoint_azurerm.azure_prod.id
+
+
+  tlscert_renew_token = "v1"
 }
