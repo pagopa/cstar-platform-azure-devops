@@ -1,3 +1,5 @@
+location = "westeurope"
+
 dev_subscription_name  = "DEV-CSTAR"
 uat_subscription_name  = "UAT-CSTAR"
 prod_subscription_name = "PROD-CSTAR"
@@ -12,10 +14,3 @@ aks_prod_platform_name = "cstar-p-weu-prod01-aks"
 service_endpoint_azure_dev_name  = "DEV-CSTAR-SERVICE-CONN"
 service_endpoint_azure_uat_name  = "UAT-CSTAR-SERVICE-CONN"
 service_endpoint_azure_prod_name = "PROD-CSTAR-SERVICE-CONN"
-
-terraform_remote_state_core = {
-  resource_group_name  = "io-infra-rg"
-  storage_account_name = "cstarinfrastterraform"
-  container_name       = "azuredevopsstate"
-  key                  = "core-devops.terraform.tfstate"
-}

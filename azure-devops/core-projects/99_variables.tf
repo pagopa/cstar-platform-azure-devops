@@ -1,23 +1,3 @@
-variable "dev_subscription_name" {
-  type        = string
-  description = "DEV Subscription name"
-}
-
-variable "uat_subscription_name" {
-  type        = string
-  description = "UAT Subscription name"
-}
-
-variable "prod_subscription_name" {
-  type        = string
-  description = "PROD Subscription name"
-}
-
-variable "project_name" {
-  type        = string
-  description = "Project name project"
-}
-
 locals {
   project_prefix_short = "cstar"
   domain               = "core"
@@ -91,4 +71,28 @@ locals {
 
   prod_appinsights_name           = "${local.project_prefix_short}-p-appinsights"
   prod_appinsights_resource_group = "${local.project_prefix_short}-p-monitor-rg"
+}
+
+variable "dev_subscription_name" {
+  type        = string
+  description = "DEV Subscription name"
+}
+
+variable "uat_subscription_name" {
+  type        = string
+  description = "UAT Subscription name"
+}
+
+variable "prod_subscription_name" {
+  type        = string
+  description = "PROD Subscription name"
+}
+
+variable "project_name" {
+  type        = string
+  description = "Project name project"
+}
+
+variable "location" {
+  type = string
 }
