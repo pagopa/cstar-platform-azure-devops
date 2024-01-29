@@ -72,20 +72,13 @@ locals {
   uat_cstar_subscription_name  = "uat-cstar"
   prod_cstar_subscription_name = "prod-cstar"
 
-  #tfsec:ignore:general-secrets-no-plaintext-exposure
-  #tfsec:ignore:GEN002
-  tlscert_renew_token = "v1"
-
-  # TODO azure devops terraform provider does not support SonarCloud service endpoint
-  azuredevops_serviceendpoint_sonarcloud_id = "9182be64-d387-465d-9acc-e79e802910c8"
-
   #
   # Outputs from CORE
   #
   service_endpoint_io_azure_devops_github_ro_name = "io-azure-devops-github-ro"
   service_endpoint_io_azure_devops_github_pr_name = "io-azure-devops-github-pr"
-  service_endpoint_io_azure_devops_github_pr_id   = data.azuredevops_serviceendpoint_github.io-azure-devops-github-pr.service_endpoint_id
-  service_endpoint_io_azure_devops_github_ro_id   = data.azuredevops_serviceendpoint_github.io-azure-devops-github-ro.service_endpoint_id
+  service_endpoint_io_azure_devops_github_pr_id   = data.azuredevops_serviceendpoint_github.io-azure-devops-github-pr.id
+  service_endpoint_io_azure_devops_github_ro_id   = data.azuredevops_serviceendpoint_github.io-azure-devops-github-ro.id
 
   # DEV
   service_endpoint_azure_devops_docker_dev_name = "cstar-azurecrcommon-dev"
