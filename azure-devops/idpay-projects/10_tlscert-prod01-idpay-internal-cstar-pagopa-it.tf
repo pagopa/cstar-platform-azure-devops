@@ -46,7 +46,7 @@ locals {
 # change only providers
 #tfsec:ignore:general-secrets-no-plaintext-exposure
 module "tlscert-prod01-idpay-internal-cstar-pagopa-it-cert_az" {
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_tls_cert_federated?ref=v5.2.0"
+  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_tls_cert_federated?ref=v5.4.0"
   count  = var.tlscert-prod01-idpay-internal-cstar-pagopa-it.pipeline.enable_tls_cert == true ? 1 : 0
 
   location = local.location
