@@ -8,7 +8,7 @@ module "DEV-CSTAR-RTD-TLS-CERT-SERVICE-CONN" {
   }
 
   depends_on = [data.azuredevops_project.project]
-  source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_limited?ref=v5.4.0"
+  source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_limited?ref=v5.2.0"
 
   project_id        = data.azuredevops_project.project.id
   name              = "${local.prefix}-d-${local.domain}-tls-cert"
@@ -23,14 +23,14 @@ module "DEV-CSTAR-RTD-TLS-CERT-SERVICE-CONN" {
   credential_key_vault_resource_group = local.dev_domain_key_vault_resource_group
 }
 
-module "DEV-CSTAR-RTD-TLS-CERT-SERVICE-CONN-NEW" {
+module "DEV-CSTAR-RTD-TLS-CERT-SERVICE-CONN-FEDERATED" {
 
   providers = {
     azurerm = azurerm.dev
   }
 
   depends_on = [data.azuredevops_project.project]
-  source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_federated?ref=v5.4.0"
+  source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_federated?ref=v5.2.0"
 
   location            = local.location
   resource_group_name = local.dev_identity_rg_name
@@ -47,7 +47,7 @@ resource "azurerm_key_vault_access_policy" "DEV-CSTAR-RTD-TLS-CERT-SERVICE-CONN_
   provider     = azurerm.dev
   key_vault_id = data.azurerm_key_vault.domain_kv_dev.id
   tenant_id    = data.azurerm_client_config.current.tenant_id
-  object_id    = module.DEV-CSTAR-RTD-TLS-CERT-SERVICE-CONN-NEW.service_principal_object_id
+  object_id    = module.DEV-CSTAR-RTD-TLS-CERT-SERVICE-CONN-FEDERATED.service_principal_object_id
 
   certificate_permissions = ["Get", "Import"]
 }
@@ -75,7 +75,7 @@ module "UAT-CSTAR-RTD-TLS-CERT-SERVICE-CONN" {
   }
 
   depends_on = [data.azuredevops_project.project]
-  source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_limited?ref=v5.4.0"
+  source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_limited?ref=v5.2.0"
 
   project_id        = data.azuredevops_project.project.id
   name              = "${local.prefix}-u-${local.domain}-tls-cert"
@@ -90,14 +90,14 @@ module "UAT-CSTAR-RTD-TLS-CERT-SERVICE-CONN" {
   credential_key_vault_resource_group = local.uat_domain_key_vault_resource_group
 }
 
-module "UAT-CSTAR-RTD-TLS-CERT-SERVICE-CONN-NEW" {
+module "UAT-CSTAR-RTD-TLS-CERT-SERVICE-CONN-FEDERATED" {
 
   providers = {
     azurerm = azurerm.uat
   }
 
   depends_on = [data.azuredevops_project.project]
-  source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_federated?ref=v5.4.0"
+  source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_federated?ref=v5.2.0"
 
   location            = local.location
   resource_group_name = local.dev_identity_rg_name
@@ -113,7 +113,7 @@ resource "azurerm_key_vault_access_policy" "UAT-CSTAR-RTD-TLS-CERT-SERVICE-CONN_
   provider     = azurerm.uat
   key_vault_id = data.azurerm_key_vault.domain_kv_uat.id
   tenant_id    = data.azurerm_client_config.current.tenant_id
-  object_id    = module.UAT-CSTAR-RTD-TLS-CERT-SERVICE-CONN-NEW.service_principal_object_id
+  object_id    = module.UAT-CSTAR-RTD-TLS-CERT-SERVICE-CONN-FEDERATED.service_principal_object_id
 
   certificate_permissions = ["Get", "Import"]
 }
@@ -142,7 +142,7 @@ module "PROD-CSTAR-RTD-TLS-CERT-SERVICE-CONN" {
   }
 
   depends_on = [data.azuredevops_project.project]
-  source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_limited?ref=v5.4.0"
+  source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_limited?ref=v5.2.0"
 
   project_id        = data.azuredevops_project.project.id
   name              = "${local.prefix}-p-${local.domain}-tls-cert"
@@ -157,14 +157,14 @@ module "PROD-CSTAR-RTD-TLS-CERT-SERVICE-CONN" {
   credential_key_vault_resource_group = local.prod_domain_key_vault_resource_group
 }
 
-module "PROD-CSTAR-RTD-TLS-CERT-SERVICE-CONN-NEW" {
+module "PROD-CSTAR-RTD-TLS-CERT-SERVICE-CONN-FEDERATED" {
 
   providers = {
     azurerm = azurerm.prod
   }
 
   depends_on = [data.azuredevops_project.project]
-  source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_federated?ref=v5.4.0"
+  source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_federated?ref=v5.2.0"
 
   location            = local.location
   resource_group_name = local.dev_identity_rg_name
@@ -180,7 +180,7 @@ resource "azurerm_key_vault_access_policy" "PROD-CSTAR-RTD-TLS-CERT-SERVICE-CONN
   provider     = azurerm.prod
   key_vault_id = data.azurerm_key_vault.domain_kv_prod.id
   tenant_id    = data.azurerm_client_config.current.tenant_id
-  object_id    = module.PROD-CSTAR-RTD-TLS-CERT-SERVICE-CONN-NEW.service_principal_object_id
+  object_id    = module.PROD-CSTAR-RTD-TLS-CERT-SERVICE-CONN-FEDERATED.service_principal_object_id
 
   certificate_permissions = ["Get", "Import"]
 }
