@@ -32,11 +32,11 @@ locals {
     credential_key_vault_name           = local.dev_domain_key_vault_name
     credential_key_vault_resource_group = local.dev_domain_key_vault_resource_group
     service_connection_ids_authorization = [
-      module.DEV-CSTAR-RTD-TLS-CERT-SERVICE-CONN-NEW.service_endpoint_id,
+      module.DEV-CSTAR-RTD-TLS-CERT-SERVICE-CONN-FEDERATED.service_endpoint_id,
     ]
   }
   tlscert-dev01-rtd-internal-dev-cstar-pagopa-it-variables = {
-    KEY_VAULT_SERVICE_CONNECTION = module.DEV-CSTAR-RTD-TLS-CERT-SERVICE-CONN-NEW.service_endpoint_name,
+    KEY_VAULT_SERVICE_CONNECTION = module.DEV-CSTAR-RTD-TLS-CERT-SERVICE-CONN-FEDERATED.service_endpoint_name,
     KEY_VAULT_NAME               = local.dev_domain_key_vault_name
   }
   tlscert-dev01-rtd-internal-dev-cstar-pagopa-it-variables_secret = {
@@ -46,7 +46,7 @@ locals {
 # change only providers
 #tfsec:ignore:general-secrets-no-plaintext-exposure
 module "tlscert-dev01-rtd-internal-dev-cstar-pagopa-it-cert_az" {
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_tls_cert_federated?ref=v5.4.0"
+  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_tls_cert_federated?ref=v5.2.0"
   count  = var.tlscert-dev01-rtd-internal-dev-cstar-pagopa-it.pipeline.enable_tls_cert == true ? 1 : 0
 
   # change me
