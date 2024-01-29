@@ -74,8 +74,8 @@ locals {
   #
   service_endpoint_io_azure_devops_github_ro_name = "io-azure-devops-github-ro"
   service_endpoint_io_azure_devops_github_pr_name = "io-azure-devops-github-pr"
-  service_endpoint_io_azure_devops_github_pr_id   = data.azuredevops_serviceendpoint_github.io-azure-devops-github-pr.service_endpoint_id
-  service_endpoint_io_azure_devops_github_ro_id   = data.azuredevops_serviceendpoint_github.io-azure-devops-github-ro.service_endpoint_id
+  service_endpoint_io_azure_devops_github_pr_id   = data.azuredevops_serviceendpoint_github.io-azure-devops-github-pr.id
+  service_endpoint_io_azure_devops_github_ro_id   = data.azuredevops_serviceendpoint_github.io-azure-devops-github-ro.id
 
   # DEV
   service_endpoint_azure_devops_docker_dev_name = "cstar-azurecrcommon-dev"
