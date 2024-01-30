@@ -1,27 +1,12 @@
-variable "dev_subscription_name" {
-  type        = string
-  description = "DEV Subscription name"
-}
-
-variable "uat_subscription_name" {
-  type        = string
-  description = "UAT Subscription name"
-}
-
-variable "prod_subscription_name" {
-  type        = string
-  description = "PROD Subscription name"
-}
-
-variable "project_name" {
-  type        = string
-  description = "Project name project"
-}
-
 locals {
   project_prefix_short = "cstar"
   domain               = "core"
   azure_devops_org     = "pagopaspa"
+
+  location              = "westeurope"
+  dev_identity_rg_name  = "cstar-d-identity-rg"
+  uat_identity_rg_name  = "cstar-u-identity-rg"
+  prod_identity_rg_name = "cstar-p-identity-rg"
 
   # Subscription
   dev_subscription_name  = "dev-cstar"
@@ -70,10 +55,6 @@ locals {
   docker_registry_rg_name_prod           = "cstar-p-container-registry-rg"
   docker_registry_name_prod              = "cstarpcommonacr"
 
-  #tfsec:ignore:general-secrets-no-plaintext-exposure
-  #tfsec:ignore:GEN002
-  tlscert_renew_token = "v2" #03/12/2023
-
   ### SONAR
   azuredevops_serviceendpoint_sonarcloud_id = "1a9c808a-84ca-4d0c-8d5a-1976a1ae685f"
 
@@ -90,4 +71,28 @@ locals {
 
   prod_appinsights_name           = "${local.project_prefix_short}-p-appinsights"
   prod_appinsights_resource_group = "${local.project_prefix_short}-p-monitor-rg"
+}
+
+variable "dev_subscription_name" {
+  type        = string
+  description = "DEV Subscription name"
+}
+
+variable "uat_subscription_name" {
+  type        = string
+  description = "UAT Subscription name"
+}
+
+variable "prod_subscription_name" {
+  type        = string
+  description = "PROD Subscription name"
+}
+
+variable "project_name" {
+  type        = string
+  description = "Project name project"
+}
+
+variable "location" {
+  type = string
 }

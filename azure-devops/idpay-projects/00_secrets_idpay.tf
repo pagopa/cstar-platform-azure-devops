@@ -8,7 +8,7 @@ module "domain_dev_secrets" {
     azurerm = azurerm.dev
   }
 
-  source = "git::https://github.com/pagopa/azurerm.git//key_vault_secrets_query?ref=v2.18.9"
+  source = "git::https://github.com/pagopa/terraform-azurerm-v3.git//key_vault_secrets_query?ref=v7.47.2"
 
   resource_group = local.dev_domain_key_vault_resource_group
   key_vault_name = local.dev_domain_key_vault_name
@@ -21,7 +21,7 @@ module "domain_dev_secrets" {
 }
 
 module "domain_uat_secrets" {
-  source = "git::https://github.com/pagopa/azurerm.git//key_vault_secrets_query?ref=v2.18.9"
+  source = "git::https://github.com/pagopa/terraform-azurerm-v3.git//key_vault_secrets_query?ref=v7.47.2"
 
   providers = {
     azurerm = azurerm.uat
@@ -38,7 +38,7 @@ module "domain_uat_secrets" {
 }
 
 module "domain_prod_secrets" {
-  source = "git::https://github.com/pagopa/azurerm.git//key_vault_secrets_query?ref=v2.18.9"
+  source = "git::https://github.com/pagopa/terraform-azurerm-v3.git//key_vault_secrets_query?ref=v7.47.2"
 
   providers = {
     azurerm = azurerm.prod

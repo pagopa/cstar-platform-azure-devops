@@ -64,7 +64,7 @@ locals {
 }
 
 module "cstar-io-mock_code_review" {
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_code_review?ref=v3.1.1"
+  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_code_review?ref=v5.5.0"
   count  = var.cstar-io-mock.pipeline.enable_code_review == true ? 1 : 0
 
   project_id                   = data.azuredevops_project.project.id
@@ -86,12 +86,12 @@ module "cstar-io-mock_code_review" {
 
   service_connection_ids_authorization = [
     local.service_endpoint_io_azure_devops_github_ro_id,
-    local.azuredevops_serviceendpoint_sonarcloud_id,
+    data.azuredevops_serviceendpoint_sonarcloud.sonar_cloud.id,
   ]
 }
 
 module "cstar-io-mock_deploy" {
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_deploy?ref=v3.1.1"
+  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_deploy?ref=v5.4.0"
   count  = var.cstar-io-mock.pipeline.enable_deploy == true ? 1 : 0
 
   project_id                   = data.azuredevops_project.project.id

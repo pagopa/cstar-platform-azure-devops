@@ -8,7 +8,7 @@ module "rtd_dev_secrets" {
     azurerm = azurerm.dev
   }
 
-  source = "git::https://github.com/pagopa/terraform-azurerm-v3.git//key_vault_secrets_query?ref=v6.15.2"
+  source = "git::https://github.com/pagopa/terraform-azurerm-v3.git//key_vault_secrets_query?ref=v7.47.2"
 
   resource_group = local.dev_rtd_key_vault_resource_group
   key_vault_name = local.dev_rtd_key_vault_name
@@ -21,7 +21,7 @@ module "rtd_dev_secrets" {
 }
 
 module "rtd_uat_secrets" {
-  source = "git::https://github.com/pagopa/terraform-azurerm-v3.git//key_vault_secrets_query?ref=v6.15.2"
+  source = "git::https://github.com/pagopa/terraform-azurerm-v3.git//key_vault_secrets_query?ref=v7.47.2"
 
   providers = {
     azurerm = azurerm.uat
@@ -38,7 +38,7 @@ module "rtd_uat_secrets" {
 }
 
 module "rtd_prod_secrets" {
-  source = "git::https://github.com/pagopa/terraform-azurerm-v3.git//key_vault_secrets_query?ref=v6.15.2"
+  source = "git::https://github.com/pagopa/terraform-azurerm-v3.git//key_vault_secrets_query?ref=v7.47.2"
 
   providers = {
     azurerm = azurerm.prod

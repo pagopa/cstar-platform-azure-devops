@@ -7,8 +7,8 @@ resource "azuredevops_serviceendpoint_azurecr" "cstar-azurecrcommon-dev" {
   resource_group            = local.docker_registry_rg_name_dev
   azurecr_name              = local.docker_registry_name_dev
   azurecr_subscription_name = "DEV-CSTAR"
-  azurecr_spn_tenantid      = module.secret_azdo.values["PAGOPAIT-TENANTID"].value
-  azurecr_subscription_id   = module.secret_azdo.values["PAGOPAIT-DEV-CSTAR-SUBSCRIPTION-ID"].value
+  azurecr_spn_tenantid      = data.azurerm_client_config.current.tenant_id
+  azurecr_subscription_id   = data.azurerm_subscriptions.dev.subscriptions[0].subscription_id
 }
 
 # UAT service connection for azure container registry
@@ -20,8 +20,8 @@ resource "azuredevops_serviceendpoint_azurecr" "cstar-azurecrcommon-uat" {
   resource_group            = local.docker_registry_rg_name_uat
   azurecr_name              = local.docker_registry_name_uat
   azurecr_subscription_name = "UAT-CSTAR"
-  azurecr_spn_tenantid      = module.secret_azdo.values["PAGOPAIT-TENANTID"].value
-  azurecr_subscription_id   = module.secret_azdo.values["PAGOPAIT-UAT-CSTAR-SUBSCRIPTION-ID"].value
+  azurecr_spn_tenantid      = data.azurerm_client_config.current.tenant_id
+  azurecr_subscription_id   = data.azurerm_subscriptions.uat.subscriptions[0].subscription_id
 }
 
 # PROD service connection for azure container registry
@@ -33,6 +33,6 @@ resource "azuredevops_serviceendpoint_azurecr" "cstar-azurecrcommon-prod" {
   resource_group            = local.docker_registry_rg_name_prod
   azurecr_name              = local.docker_registry_name_prod
   azurecr_subscription_name = "PROD-CSTAR"
-  azurecr_spn_tenantid      = module.secret_azdo.values["PAGOPAIT-TENANTID"].value
-  azurecr_subscription_id   = module.secret_azdo.values["PAGOPAIT-PROD-CSTAR-SUBSCRIPTION-ID"].value
+  azurecr_spn_tenantid      = data.azurerm_client_config.current.tenant_id
+  azurecr_subscription_id   = data.azurerm_subscriptions.prod.subscriptions[0].subscription_id
 }

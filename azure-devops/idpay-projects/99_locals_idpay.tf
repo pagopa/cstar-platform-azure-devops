@@ -1,5 +1,10 @@
 locals {
 
+  location              = "westeurope"
+  dev_identity_rg_name  = "cstar-d-identity-rg"
+  uat_identity_rg_name  = "cstar-u-identity-rg"
+  prod_identity_rg_name = "cstar-p-identity-rg"
+
   idpay-fe-common-variables_deploy = {
 
     blob_container_name = "$web"

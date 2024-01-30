@@ -66,7 +66,7 @@ locals {
 }
 
 module "rtd-ms-payment-instrument_code_review" {
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_code_review?ref=v2.2.0"
+  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_code_review?ref=v5.4.0"
   count  = var.rtd-ms-payment-instrument.pipeline.enable_code_review == true ? 1 : 0
 
   project_id                   = data.azuredevops_project.project.id
@@ -88,12 +88,12 @@ module "rtd-ms-payment-instrument_code_review" {
 
   service_connection_ids_authorization = [
     local.service_endpoint_io_azure_devops_github_ro_id,
-    local.azuredevops_serviceendpoint_sonarcloud_id,
+    data.azuredevops_serviceendpoint_sonarcloud.sonar_cloud.id,
   ]
 }
 
 module "rtd-ms-payment-instrument_deploy" {
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_deploy?ref=v2.2.0"
+  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_deploy?ref=v5.4.0"
   count  = var.rtd-ms-payment-instrument.pipeline.enable_deploy == true ? 1 : 0
 
   project_id                   = data.azuredevops_project.project.id
@@ -119,7 +119,7 @@ module "rtd-ms-payment-instrument_deploy" {
     local.service_endpoint_azure_dev_id,
     local.service_endpoint_azure_devops_docker_dev_id,
     azuredevops_serviceendpoint_kubernetes.aks_dev.id,
-    /* 
+    /*
 
     local.service_endpoint_azure_uat_id,
     local.service_endpoint_azure_devops_docker_uat_id,

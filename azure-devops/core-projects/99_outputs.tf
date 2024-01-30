@@ -44,17 +44,3 @@ output "service_endpoint_azure_devops_docker_prod_id" {
   value = azuredevops_serviceendpoint_azurecr.cstar-azurecrcommon-prod.id
 }
 
-#
-# Azure
-#
-output "service_endpoint_azure_dev_id" {
-  value = azuredevops_serviceendpoint_azurerm.DEV-CSTAR.id
-}
-
-output "service_endpoint_azure_uat_id" {
-  value = azuredevops_serviceendpoint_azurerm.UAT-CSTAR.id
-}
-
-output "service_endpoint_azure_prod_id" {
-  value = azuredevops_serviceendpoint_azurerm.PROD-CSTAR.id
-}

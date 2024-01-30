@@ -63,34 +63,32 @@ locals {
   uat_cstar_subscription_name  = "uat-cstar"
   prod_cstar_subscription_name = "prod-cstar"
 
-  #tfsec:ignore:GEN002
-  tlscert_renew_token = "v2"
-
-  # TODO azure devops terraform provider does not support SonarCloud service endpoint
-  azuredevops_serviceendpoint_sonarcloud_id = "9182be64-d387-465d-9acc-e79e802910c8"
-
   #
   # Outputs from CORE
   #
-  service_endpoint_io_azure_devops_github_ro_name = data.terraform_remote_state.core.outputs.service_endpoint_io_azure_devops_github_ro_name
-  service_endpoint_io_azure_devops_github_pr_id   = data.terraform_remote_state.core.outputs.service_endpoint_io_azure_devops_github_pr_id
-  service_endpoint_io_azure_devops_github_ro_id   = data.terraform_remote_state.core.outputs.service_endpoint_io_azure_devops_github_ro_id
+  service_endpoint_io_azure_devops_github_ro_name = "io-azure-devops-github-ro"
+  service_endpoint_io_azure_devops_github_pr_name = "io-azure-devops-github-pr"
+  service_endpoint_io_azure_devops_github_pr_id   = data.azuredevops_serviceendpoint_github.io-azure-devops-github-pr.id
+  service_endpoint_io_azure_devops_github_ro_id   = data.azuredevops_serviceendpoint_github.io-azure-devops-github-ro.id
 
   # DEV
-  service_endpoint_azure_devops_docker_dev_name = data.terraform_remote_state.core.outputs.service_endpoint_azure_devops_docker_dev_name
-  service_endpoint_azure_devops_docker_dev_id   = data.terraform_remote_state.core.outputs.service_endpoint_azure_devops_docker_dev_id
+  service_endpoint_azure_devops_docker_dev_name = "cstar-azurecrcommon-dev"
+  service_endpoint_azure_devops_docker_dev_id   = data.azuredevops_serviceendpoint_azurecr.dev-azureacr-service-endpoint.id
   service_endpoint_azure_dev_id                 = data.azuredevops_serviceendpoint_azurerm.azure_dev.id
 
   # UAT
-  service_endpoint_azure_devops_docker_uat_name = data.terraform_remote_state.core.outputs.service_endpoint_azure_devops_docker_uat_name
-  service_endpoint_azure_devops_docker_uat_id   = data.terraform_remote_state.core.outputs.service_endpoint_azure_devops_docker_uat_id
+  service_endpoint_azure_devops_docker_uat_name = "cstar-azurecrcommon-uat"
+  service_endpoint_azure_devops_docker_uat_id   = data.azuredevops_serviceendpoint_azurecr.uat-azureacr-service-endpoint.id
   service_endpoint_azure_uat_id                 = data.azuredevops_serviceendpoint_azurerm.azure_uat.id
 
   # PROD
-  service_endpoint_azure_devops_docker_prod_name = data.terraform_remote_state.core.outputs.service_endpoint_azure_devops_docker_prod_name
-  service_endpoint_azure_devops_docker_prod_id   = data.terraform_remote_state.core.outputs.service_endpoint_azure_devops_docker_prod_id
+  service_endpoint_azure_devops_docker_prod_name = "cstar-azurecrcommon-prod"
+  service_endpoint_azure_devops_docker_prod_id   = data.azuredevops_serviceendpoint_azurecr.prod-azureacr-service-endpoint.id
   service_endpoint_azure_prod_id                 = data.azuredevops_serviceendpoint_azurerm.azure_prod.id
 
+
+  #tfsec:ignore:GEN002
+  tlscert_renew_token = "v2"
 }
 
 #
@@ -115,15 +113,6 @@ variable "prod_subscription_name" {
 variable "project_name" {
   type        = string
   description = "Project name (e.g. pagoPA platform)"
-}
-
-variable "terraform_remote_state_core" {
-  type = object({
-    resource_group_name  = string,
-    storage_account_name = string,
-    container_name       = string,
-    key                  = string
-  })
 }
 
 variable "service_endpoint_azure_dev_name" {

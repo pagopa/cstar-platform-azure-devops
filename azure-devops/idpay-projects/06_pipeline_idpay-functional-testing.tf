@@ -48,7 +48,7 @@ locals {
 }
 
 module "idpay-functional-testing_scheduled_test" {
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_code_review?ref=v2.2.0"
+  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_code_review?ref=v5.4.0"
   count  = var.idpay-functional-testing.pipeline.enable_scheduled_test == true ? 1 : 0
 
   project_id                   = data.azuredevops_project.project.id
@@ -75,7 +75,7 @@ module "idpay-functional-testing_scheduled_test" {
 
 
 module "idpay-functional-testing_scheduled_test_discount" {
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_generic?ref=v2.7.0"
+  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_generic?ref=v5.4.0"
   count  = var.idpay-functional-testing.pipeline.enable_scheduled_test == true ? 1 : 0
 
   pipeline_name                = "${var.idpay-functional-testing.repository.yml_prefix_name}.${var.idpay-functional-testing-discount-flow.flow_name}"
@@ -103,7 +103,7 @@ module "idpay-functional-testing_scheduled_test_discount" {
 }
 
 module "idpay-functional-testing_scheduled_test_refund" {
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_generic?ref=v2.7.0"
+  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_generic?ref=v5.4.0"
   count  = var.idpay-functional-testing.pipeline.enable_scheduled_test == true ? 1 : 0
 
   pipeline_name                = "${var.idpay-functional-testing.repository.yml_prefix_name}.${var.idpay-functional-testing-refund-flow.flow_name}"
