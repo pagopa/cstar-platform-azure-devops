@@ -87,7 +87,7 @@ locals {
   service_endpoint_azure_prod_id                 = data.azuredevops_serviceendpoint_azurerm.azure_prod.id
 
 
-#tfsec:ignore:GEN002
+  #tfsec:ignore:GEN002
   tlscert_renew_token = "v2"
 }
 

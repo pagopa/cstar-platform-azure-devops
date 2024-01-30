@@ -11,7 +11,7 @@ module "DEV-APPINSIGHTS-SERVICE-CONN-FEDERATED" {
   location            = local.location
   resource_group_name = local.dev_identity_rg_name
 
-  project_id = data.azuredevops_project.project.id
+  project_id        = data.azuredevops_project.project.id
   name              = "${local.project_prefix_short}-d-${local.domain}-azdo-appinsights"
   tenant_id         = data.azurerm_client_config.current.tenant_id
   subscription_id   = data.azurerm_subscriptions.dev.subscriptions[0].subscription_id

@@ -49,7 +49,7 @@ module "tlscert-dev01-idpay-internal-dev-cstar-pagopa-it-cert_az" {
   source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_tls_cert_federated?ref=v5.4.0"
   count  = var.tlscert-dev01-idpay-internal-dev-cstar-pagopa-it.pipeline.enable_tls_cert == true ? 1 : 0
 
-  location = local.location
+  location                             = local.location
   managed_identity_resource_group_name = local.dev_identity_rg_name
 
   # change me
@@ -57,8 +57,8 @@ module "tlscert-dev01-idpay-internal-dev-cstar-pagopa-it-cert_az" {
     azurerm = azurerm.dev
   }
 
-  project_id = data.azuredevops_project.project.id
-  repository = var.tlscert-dev01-idpay-internal-dev-cstar-pagopa-it.repository
+  project_id                   = data.azuredevops_project.project.id
+  repository                   = var.tlscert-dev01-idpay-internal-dev-cstar-pagopa-it.repository
   path                         = "${local.domain}\\${var.tlscert-dev01-idpay-internal-dev-cstar-pagopa-it.pipeline.path}"
   github_service_connection_id = data.azuredevops_serviceendpoint_github.io-azure-devops-github-rw.id
 

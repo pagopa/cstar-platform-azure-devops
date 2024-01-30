@@ -10,7 +10,7 @@ variable "idpay_iac" {
     pipeline = {
       enable_code_review   = true
       enable_deploy        = true
-        path                 = "idpay-infrastructure"
+      path                 = "idpay-infrastructure"
       pipeline_name_prefix = "idpay-infra"
     }
   }

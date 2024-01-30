@@ -54,11 +54,11 @@ module "tlscert-prod01-rtd-internal-cstar-pagopa-it-cert_az" {
     azurerm = azurerm.prod
   }
 
-  location = local.location
+  location                             = local.location
   managed_identity_resource_group_name = local.prod_identity_rg_name
 
-  project_id = data.azuredevops_project.project.id
-  repository = var.tlscert-prod01-rtd-internal-cstar-pagopa-it.repository
+  project_id                   = data.azuredevops_project.project.id
+  repository                   = var.tlscert-prod01-rtd-internal-cstar-pagopa-it.repository
   path                         = "${local.domain}\\${var.tlscert-prod01-rtd-internal-cstar-pagopa-it.pipeline.path}"
   github_service_connection_id = local.service_endpoint_io_azure_devops_github_ro_id
 

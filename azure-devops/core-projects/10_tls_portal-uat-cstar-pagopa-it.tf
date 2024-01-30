@@ -54,11 +54,11 @@ module "portal-cstar-uat-pagopa-it-cert_az" {
     azurerm = azurerm.uat
   }
 
-  location            = local.location
+  location                             = local.location
   managed_identity_resource_group_name = local.uat_identity_rg_name
 
-  project_id = data.azuredevops_project.project.id
-  repository = var.portal-cstar-uat-pagopa-it.repository
+  project_id                   = data.azuredevops_project.project.id
+  repository                   = var.portal-cstar-uat-pagopa-it.repository
   path                         = "${local.domain}\\${var.portal-cstar-uat-pagopa-it.pipeline.path}"
   github_service_connection_id = azuredevops_serviceendpoint_github.io-azure-devops-github-rw.id
 

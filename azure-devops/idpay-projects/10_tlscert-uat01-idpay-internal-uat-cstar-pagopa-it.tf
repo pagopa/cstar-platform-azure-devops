@@ -24,7 +24,7 @@ variable "tlscert-uat01-idpay-internal-uat-cstar-pagopa-it" {
 
 locals {
   tlscert-uat01-idpay-internal-uat-cstar-pagopa-it = {
-    tenant_id                           = data.azurerm_client_config.current.tenant_id
+    tenant_id = data.azurerm_client_config.current.tenant_id
 
     subscription_name                   = local.uat_cstar_subscription_name
     subscription_id                     = data.azurerm_subscriptions.uat.subscriptions[0].subscription_id
@@ -50,15 +50,15 @@ module "tlscert-uat01-idpay-internal-uat-cstar-pagopa-it-cert_az" {
   source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_tls_cert_federated?ref=v5.4.0"
   count  = var.tlscert-uat01-idpay-internal-uat-cstar-pagopa-it.pipeline.enable_tls_cert == true ? 1 : 0
 
-  location = local.location
+  location                             = local.location
   managed_identity_resource_group_name = local.uat_identity_rg_name
   # change me
   providers = {
     azurerm = azurerm.uat
   }
 
-  project_id = data.azuredevops_project.project.id
-  repository = var.tlscert-uat01-idpay-internal-uat-cstar-pagopa-it.repository
+  project_id                   = data.azuredevops_project.project.id
+  repository                   = var.tlscert-uat01-idpay-internal-uat-cstar-pagopa-it.repository
   path                         = "${local.domain}\\${var.tlscert-uat01-idpay-internal-uat-cstar-pagopa-it.pipeline.path}"
   github_service_connection_id = data.azuredevops_serviceendpoint_github.io-azure-devops-github-rw.id
 
