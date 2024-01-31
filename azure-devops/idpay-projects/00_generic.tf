@@ -16,18 +16,18 @@ data "azurerm_subscriptions" "dev" {
 # ENV
 #
 data "azuredevops_environment" "dev_env" {
-  project_id= data.azuredevops_project.project.id
-  name = "DEV"
+  project_id = data.azuredevops_project.project.id
+  name       = "DEV"
 }
 
 data "azuredevops_environment" "uat_env" {
-  project_id= data.azuredevops_project.project.id
-  name = "UAT"
+  project_id = data.azuredevops_project.project.id
+  name       = "UAT"
 }
 
 data "azuredevops_environment" "prod_env" {
-  project_id= data.azuredevops_project.project.id
-  name = "PROD"
+  project_id = data.azuredevops_project.project.id
+  name       = "PROD"
 }
 
 #
