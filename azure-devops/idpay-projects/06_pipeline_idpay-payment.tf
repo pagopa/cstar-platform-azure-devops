@@ -113,9 +113,18 @@ module "idpay-payment_deploy" {
   service_connection_ids_authorization = [
     local.service_endpoint_io_azure_devops_github_pr_id,
 
+    #dev
     local.service_endpoint_azure_dev_id,
     local.service_endpoint_azure_devops_docker_dev_id,
-    azuredevops_serviceendpoint_kubernetes.aks_dev.id
+    azuredevops_serviceendpoint_kubernetes.aks_dev.id,
+    #uat
+    local.service_endpoint_azure_uat_id,
+    local.service_endpoint_azure_devops_docker_uat_id,
+    azuredevops_serviceendpoint_kubernetes.aks_uat.id,
+    #prod
+    local.service_endpoint_azure_prod_id,
+    local.service_endpoint_azure_devops_docker_prod_id,
+    azuredevops_serviceendpoint_kubernetes.aks_prod.id,
   ]
 
 }

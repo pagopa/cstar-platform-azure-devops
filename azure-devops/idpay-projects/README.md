@@ -111,6 +111,12 @@
 | [azurerm_key_vault_access_policy.DEV-CSTAR-IDPAY-TLS-CERT-SERVICE-CONN_kv_access_policy](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_access_policy) | resource |
 | [azurerm_key_vault_access_policy.PROD-CSTAR-IDPAY-TLS-CERT-SERVICE-CONN_kv_access_policy](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_access_policy) | resource |
 | [azurerm_key_vault_access_policy.UAT-CSTAR-IDPAY-TLS-CERT-SERVICE-CONN_kv_access_policy](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_access_policy) | resource |
+| [azuredevops_agent_pool.cstar_dev_linux](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/data-sources/agent_pool) | data source |
+| [azuredevops_agent_pool.cstar_prod_linux](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/data-sources/agent_pool) | data source |
+| [azuredevops_agent_pool.cstar_uat_linux](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/data-sources/agent_pool) | data source |
+| [azuredevops_environment.dev_env](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/data-sources/environment) | data source |
+| [azuredevops_environment.prod_env](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/data-sources/environment) | data source |
+| [azuredevops_environment.uat_env](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/data-sources/environment) | data source |
 | [azuredevops_project.project](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/data-sources/project) | data source |
 | [azuredevops_serviceendpoint_azurecr.dev-azureacr-service-endpoint](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/data-sources/serviceendpoint_azurecr) | data source |
 | [azuredevops_serviceendpoint_azurecr.prod-azureacr-service-endpoint](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/data-sources/serviceendpoint_azurecr) | data source |
