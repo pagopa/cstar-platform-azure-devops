@@ -87,6 +87,8 @@ module "idpay-wallet_code_review" {
   service_connection_ids_authorization = [
     local.service_endpoint_io_azure_devops_github_ro_id,
     data.azuredevops_serviceendpoint_sonarcloud.sonar_cloud.id,
+    data.azuredevops_environment.dev_env.id
+
   ]
 }
 
