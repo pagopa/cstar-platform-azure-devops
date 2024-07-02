@@ -59,7 +59,7 @@ module "tlscert-dev01-idpay-internal-dev-cstar-pagopa-it-cert_az" {
 
   project_id                   = data.azuredevops_project.project.id
   repository                   = var.tlscert-dev01-idpay-internal-dev-cstar-pagopa-it.repository
-  path                         = "${local.domain}\\${var.tlscert-dev01-idpay-internal-dev-cstar-pagopa-it.pipeline.path}"
+  path                         = var.tlscert-dev01-idpay-internal-dev-cstar-pagopa-it.pipeline.path
   github_service_connection_id = data.azuredevops_serviceendpoint_github.io-azure-devops-github-rw.id
 
   dns_record_name         = var.tlscert-dev01-idpay-internal-dev-cstar-pagopa-it.pipeline.dns_record_name
