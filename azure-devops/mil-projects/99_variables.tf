@@ -1,3 +1,7 @@
+variable "location_short" {
+  type = string
+}
+
 #
 # Subscription
 #

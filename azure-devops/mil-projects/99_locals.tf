@@ -1,7 +1,7 @@
 locals {
   prefix           = "cstar"
   azure_devops_org = "pagopaspa"
-  domain           = "rtd"
+  domain           = "mil"
 
   # 🔐 KV AZDO
   dev_key_vault_resource_group  = "${local.prefix}-d-sec-rg"
@@ -13,19 +13,18 @@ locals {
   prod_key_vault_azdo_name = "${local.prefix}-p-azdo-weu-kv"
 
   # 🔐 KV Domain
-  dev_domain_key_vault_resource_group  = "${local.prefix}-d-${local.domain}-sec-rg"
-  uat_domain_key_vault_resource_group  = "${local.prefix}-u-${local.domain}-sec-rg"
-  prod_domain_key_vault_resource_group = "${local.prefix}-p-${local.domain}-sec-rg"
+  dev_domain_key_vault_resource_group  = "${local.prefix}-d-${var.location_short}-${local.domain}-sec-rg"
+  uat_domain_key_vault_resource_group  = "${local.prefix}-u-${var.location_short}-${local.domain}-sec-rg"
+  prod_domain_key_vault_resource_group = "${local.prefix}-p-${var.location_short}-${local.domain}-sec-rg"
 
-  dev_domain_key_vault_name  = "${local.prefix}-d-${local.domain}-kv"
-  uat_domain_key_vault_name  = "${local.prefix}-u-${local.domain}-kv"
-  prod_domain_key_vault_name = "${local.prefix}-p-${local.domain}-kv"
+  dev_domain_key_vault_name  = "${local.prefix}-d-${var.location_short}-${local.domain}-kv"
+  uat_domain_key_vault_name  = "${local.prefix}-u-${var.location_short}-${local.domain}-kv"
+  prod_domain_key_vault_name = "${local.prefix}-p-${var.location_short}-${local.domain}-kv"
 
   # ☁️ VNET
   dev_vnet_rg  = "${local.prefix}-d-vnet-rg"
   uat_vnet_rg  = "${local.prefix}-u-vnet-rg"
   prod_vnet_rg = "${local.prefix}-p-vnet-rg"
-
 
   location              = "westeurope"
   dev_identity_rg_name  = "cstar-d-identity-rg"
@@ -85,16 +84,14 @@ locals {
   service_endpoint_azure_devops_docker_dev_id   = data.azuredevops_serviceendpoint_azurecr.dev-azureacr-service-endpoint.id
   service_endpoint_azure_dev_id                 = data.azuredevops_serviceendpoint_azurerm.azure_dev.id
 
-  # UAT
-  service_endpoint_azure_devops_docker_uat_name = "cstar-azurecrcommon-uat"
-  service_endpoint_azure_devops_docker_uat_id   = data.azuredevops_serviceendpoint_azurecr.uat-azureacr-service-endpoint.id
-  service_endpoint_azure_uat_id                 = data.azuredevops_serviceendpoint_azurerm.azure_uat.id
+#   # UAT
+#   service_endpoint_azure_devops_docker_uat_name = "cstar-azurecrcommon-uat"
+#   service_endpoint_azure_devops_docker_uat_id   = data.azuredevops_serviceendpoint_azurecr.uat-azureacr-service-endpoint.id
+#   service_endpoint_azure_uat_id                 = data.azuredevops_serviceendpoint_azurerm.azure_uat.id
+#
+#   # PROD
+#   service_endpoint_azure_devops_docker_prod_name = "cstar-azurecrcommon-prod"
+#   service_endpoint_azure_devops_docker_prod_id   = data.azuredevops_serviceendpoint_azurecr.prod-azureacr-service-endpoint.id
+#   service_endpoint_azure_prod_id                 = data.azuredevops_serviceendpoint_azurerm.azure_prod.id
 
-  # PROD
-  service_endpoint_azure_devops_docker_prod_name = "cstar-azurecrcommon-prod"
-  service_endpoint_azure_devops_docker_prod_id   = data.azuredevops_serviceendpoint_azurecr.prod-azureacr-service-endpoint.id
-  service_endpoint_azure_prod_id                 = data.azuredevops_serviceendpoint_azurerm.azure_prod.id
-
-
-  tlscert_renew_token = "v1"
 }
