@@ -1,4 +1,4 @@
-location = "westeurope"
+location       = "westeurope"
 location_short = "weu"
 
 dev_subscription_name  = "DEV-CSTAR"

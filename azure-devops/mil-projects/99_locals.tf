@@ -84,14 +84,14 @@ locals {
   service_endpoint_azure_devops_docker_dev_id   = data.azuredevops_serviceendpoint_azurecr.dev-azureacr-service-endpoint.id
   service_endpoint_azure_dev_id                 = data.azuredevops_serviceendpoint_azurerm.azure_dev.id
 
-#   # UAT
-#   service_endpoint_azure_devops_docker_uat_name = "cstar-azurecrcommon-uat"
-#   service_endpoint_azure_devops_docker_uat_id   = data.azuredevops_serviceendpoint_azurecr.uat-azureacr-service-endpoint.id
-#   service_endpoint_azure_uat_id                 = data.azuredevops_serviceendpoint_azurerm.azure_uat.id
-#
-#   # PROD
-#   service_endpoint_azure_devops_docker_prod_name = "cstar-azurecrcommon-prod"
-#   service_endpoint_azure_devops_docker_prod_id   = data.azuredevops_serviceendpoint_azurecr.prod-azureacr-service-endpoint.id
-#   service_endpoint_azure_prod_id                 = data.azuredevops_serviceendpoint_azurerm.azure_prod.id
+  #   # UAT
+  #   service_endpoint_azure_devops_docker_uat_name = "cstar-azurecrcommon-uat"
+  #   service_endpoint_azure_devops_docker_uat_id   = data.azuredevops_serviceendpoint_azurecr.uat-azureacr-service-endpoint.id
+  #   service_endpoint_azure_uat_id                 = data.azuredevops_serviceendpoint_azurerm.azure_uat.id
+  #
+  #   # PROD
+  #   service_endpoint_azure_devops_docker_prod_name = "cstar-azurecrcommon-prod"
+  #   service_endpoint_azure_devops_docker_prod_id   = data.azuredevops_serviceendpoint_azurecr.prod-azureacr-service-endpoint.id
+  #   service_endpoint_azure_prod_id                 = data.azuredevops_serviceendpoint_azurerm.azure_prod.id
 
 }
