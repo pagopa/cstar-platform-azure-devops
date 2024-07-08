@@ -9,7 +9,7 @@ variable "tlscert-mil-internal-dev-cstar-pagopa-it" {
     pipeline = {
       enable_tls_cert = true
       path            = "TLS-Certificates\\DEV"
-      dns_record_name = "mil.internal"
+      dns_record_name = "mil.weu.internal"
       dns_zone_name   = "dev.cstar.pagopa.it"
       # common variables to all pipelines
       variables = {
