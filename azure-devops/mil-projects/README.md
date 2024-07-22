@@ -24,12 +24,12 @@
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_DEV-CSTAR-MIL-TLS-CERT-SERVICE-CONN-FEDERATED"></a> [DEV-CSTAR-MIL-TLS-CERT-SERVICE-CONN-FEDERATED](#module\_DEV-CSTAR-MIL-TLS-CERT-SERVICE-CONN-FEDERATED) | ./.terraform/modules/__devops_v0__/azuredevops_serviceendpoint_federated | n/a |
-| <a name="module_UAT_CSTAR_MIL_TLS_CERT_SERVICE_CONN_FEDERATED"></a> [UAT\_CSTAR\_MIL\_TLS\_CERT\_SERVICE\_CONN\_FEDERATED](#module\_UAT\_CSTAR\_MIL\_TLS\_CERT\_SERVICE\_CONN\_FEDERATED) | ./.terraform/modules/__devops_v0__/azuredevops_serviceendpoint_federated | n/a |
+| <a name="module_DEV-CSTAR-MIL-TLS-CERT-SERVICE-CONN-FEDERATED"></a> [DEV-CSTAR-MIL-TLS-CERT-SERVICE-CONN-FEDERATED](#module\_DEV-CSTAR-MIL-TLS-CERT-SERVICE-CONN-FEDERATED) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_federated | v9.0.0 |
+| <a name="module_UAT_CSTAR_MIL_TLS_CERT_SERVICE_CONN_FEDERATED"></a> [UAT\_CSTAR\_MIL\_TLS\_CERT\_SERVICE\_CONN\_FEDERATED](#module\_UAT\_CSTAR\_MIL\_TLS\_CERT\_SERVICE\_CONN\_FEDERATED) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_federated | v9.0.0 |
 | <a name="module___devops_v0__"></a> [\_\_devops\_v0\_\_](#module\_\_\_devops\_v0\_\_) | git::https://github.com/pagopa/azuredevops-tf-modules.git | 7a19400902abf7f58d1af6cb7e34ef83dba5cf68 |
 | <a name="module___v3__"></a> [\_\_v3\_\_](#module\_\_\_v3\_\_) | git::https://github.com/pagopa/terraform-azurerm-v3.git | 1259cead9eb972e0d290f09fbeb34c6e40f604c7 |
-| <a name="module_domain_dev_secrets"></a> [domain\_dev\_secrets](#module\_domain\_dev\_secrets) | git::https://github.com/pagopa/terraform-azurerm-v3.git//key_vault_secrets_query | v8.22.0 |
-| <a name="module_letsencrypt_dev"></a> [letsencrypt\_dev](#module\_letsencrypt\_dev) | git::https://github.com/pagopa/terraform-azurerm-v3.git//letsencrypt_credential | v8.22.0 |
+| <a name="module_domain_dev_secrets"></a> [domain\_dev\_secrets](#module\_domain\_dev\_secrets) | ./.terraform/modules/__v3__/key_vault_secrets_query | n/a |
+| <a name="module_letsencrypt_dev"></a> [letsencrypt\_dev](#module\_letsencrypt\_dev) | ./.terraform/modules/__v3__/letsencrypt_credential | n/a |
 | <a name="module_letsencrypt_uat"></a> [letsencrypt\_uat](#module\_letsencrypt\_uat) | ./.terraform/modules/__v3__/letsencrypt_credential | n/a |
 | <a name="module_secret_azdo"></a> [secret\_azdo](#module\_secret\_azdo) | ./.terraform/modules/__v3__/key_vault_secrets_query | n/a |
 | <a name="module_tlscert-mil-internal-dev-cstar-pagopa-it-cert_az"></a> [tlscert-mil-internal-dev-cstar-pagopa-it-cert\_az](#module\_tlscert-mil-internal-dev-cstar-pagopa-it-cert\_az) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated | n/a |
