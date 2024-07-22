@@ -69,3 +69,13 @@ data "azurerm_subscriptions" "uat" {
 data "azurerm_subscriptions" "dev" {
   display_name_prefix = var.dev_subscription_name
 }
+
+module "__v3__" {
+  # https://github.com/pagopa/terraform-azurerm-v3/releases/tag/v8.29.0
+  source = "git::https://github.com/pagopa/terraform-azurerm-v3.git?ref=1259cead9eb972e0d290f09fbeb34c6e40f604c7"
+}
+
+module "__devops_v0__" {
+  # https://github.com/pagopa/azuredevops-tf-modules/releases/tag/v9.0.0
+  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git?ref=7a19400902abf7f58d1af6cb7e34ef83dba5cf68"
+}
