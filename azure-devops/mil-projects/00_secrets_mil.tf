@@ -19,26 +19,26 @@ module "domain_dev_secrets" {
   ]
 }
 
-# #
-# # UAT
-# #
-# module "domain_uat_secrets" {
-#   source = "git::https://github.com/pagopa/terraform-azurerm-v3.git//key_vault_secrets_query?ref=v8.22.0"
-#
-#   providers = {
-#     azurerm = azurerm.uat
-#   }
-#
-#   resource_group = local.uat_domain_key_vault_resource_group
-#   key_vault_name = local.uat_domain_key_vault_name
-#
-#   secrets = [
-#     "cstar-u-weu-uat01-aks-azure-devops-sa-token",
-#     "cstar-u-weu-uat01-aks-azure-devops-sa-cacrt",
-#     "cstar-u-weu-uat01-aks-apiserver-url"
-#   ]
-# }
-#
+ #
+ # UAT
+ #
+ module "domain_uat_secrets" {
+   source = "git::https://github.com/pagopa/terraform-azurerm-v3.git//key_vault_secrets_query?ref=v8.22.0"
+
+   providers = {
+     azurerm = azurerm.uat
+   }
+
+   resource_group = local.uat_domain_key_vault_resource_group
+   key_vault_name = local.uat_domain_key_vault_name
+
+   secrets = [
+     "cstar-u-weu-uat01-aks-azure-devops-sa-token",
+     "cstar-u-weu-uat01-aks-azure-devops-sa-cacrt",
+     "cstar-u-weu-uat01-aks-apiserver-url"
+   ]
+ }
+
 # #
 # # PROD
 # #
