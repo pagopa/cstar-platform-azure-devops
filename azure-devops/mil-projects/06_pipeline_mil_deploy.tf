@@ -3,7 +3,7 @@ variable "mil-deploy" {
     repository = {
       organization    = "pagopa"
       name            = "mil-aks-deploy"
-      branch_name     = "refs/heads/deploy-pipeline"
+      branch_name     = "refs/heads/main"
       pipelines_path  = ".devops"
       yml_prefix_name = null
     }
