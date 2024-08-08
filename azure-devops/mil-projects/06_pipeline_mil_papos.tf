@@ -54,9 +54,9 @@ locals {
     UAT_AGENT_POOL                      = local.azdo_agent_pool_uat
 
     //PROD_CONTAINER_REGISTRY_SERVICE_CONN = local.service_endpoint_azure_devops_docker_prod_name
-    PROD_KUBERNETES_SERVICE_CONN         = local.srv_endpoint_name_aks_prod
-    PROD_CONTAINER_REGISTRY_NAME         = local.aks_prod_docker_registry_name
-    PROD_AGENT_POOL                      = local.azdo_agent_pool_prod
+    PROD_KUBERNETES_SERVICE_CONN = local.srv_endpoint_name_aks_prod
+    PROD_CONTAINER_REGISTRY_NAME = local.aks_prod_docker_registry_name
+    PROD_AGENT_POOL              = local.azdo_agent_pool_prod
 
   }
   # deploy secrets
