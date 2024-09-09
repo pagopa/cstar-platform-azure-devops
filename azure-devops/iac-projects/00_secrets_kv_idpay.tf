@@ -8,7 +8,7 @@ module "idpay_dev_secrets" {
     azurerm = azurerm.dev
   }
 
-    source = "./.terraform/modules/__v3__/key_vault_secrets_query"
+  source = "./.terraform/modules/__v3__/key_vault_secrets_query"
 
 
   resource_group = local.dev_idpay_key_vault_resource_group
@@ -22,7 +22,7 @@ module "idpay_dev_secrets" {
 }
 
 module "idpay_uat_secrets" {
-    source = "./.terraform/modules/__v3__/key_vault_secrets_query"
+  source = "./.terraform/modules/__v3__/key_vault_secrets_query"
 
 
   providers = {
@@ -40,7 +40,7 @@ module "idpay_uat_secrets" {
 }
 
 module "idpay_prod_secrets" {
-    source = "./.terraform/modules/__v3__/key_vault_secrets_query"
+  source = "./.terraform/modules/__v3__/key_vault_secrets_query"
 
 
   providers = {

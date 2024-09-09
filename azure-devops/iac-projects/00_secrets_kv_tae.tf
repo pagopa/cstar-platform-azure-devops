@@ -8,7 +8,7 @@ module "tae_dev_secrets" {
     azurerm = azurerm.dev
   }
 
-    source = "./.terraform/modules/__v3__/key_vault_secrets_query"
+  source = "./.terraform/modules/__v3__/key_vault_secrets_query"
 
 
   resource_group = local.dev_tae_key_vault_resource_group
@@ -19,7 +19,7 @@ module "tae_dev_secrets" {
 }
 
 module "tae_uat_secrets" {
-    source = "./.terraform/modules/__v3__/key_vault_secrets_query"
+  source = "./.terraform/modules/__v3__/key_vault_secrets_query"
 
 
   providers = {

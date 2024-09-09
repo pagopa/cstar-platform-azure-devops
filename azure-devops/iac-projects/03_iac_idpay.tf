@@ -49,11 +49,11 @@ locals {
 }
 
 module "idpay_iac_code_review" {
-#   source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_code_review?ref=v5.2.0"
-      source = "./.terraform/modules/__azdo__/azuredevops_build_definition_code_review"
+  #   source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_code_review?ref=v5.2.0"
+  source = "./.terraform/modules/__azdo__/azuredevops_build_definition_code_review"
 
-  count  = var.idpay_iac.pipeline.enable_code_review == true ? 1 : 0
-  path   = var.idpay_iac.pipeline.path
+  count = var.idpay_iac.pipeline.enable_code_review == true ? 1 : 0
+  path  = var.idpay_iac.pipeline.path
 
   project_id                   = data.azuredevops_project.project.id
   repository                   = var.idpay_iac.repository
@@ -82,11 +82,11 @@ module "idpay_iac_code_review" {
 }
 
 module "idpay_iac_deploy" {
-#   source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_deploy?ref=v5.2.0"
-        source = "./.terraform/modules/__azdo__/azuredevops_build_definition_deploy"
+  #   source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_deploy?ref=v5.2.0"
+  source = "./.terraform/modules/__azdo__/azuredevops_build_definition_deploy"
 
-  count  = var.idpay_iac.pipeline.enable_deploy == true ? 1 : 0
-  path   = var.idpay_iac.pipeline.path
+  count = var.idpay_iac.pipeline.enable_deploy == true ? 1 : 0
+  path  = var.idpay_iac.pipeline.path
 
   project_id                   = data.azuredevops_project.project.id
   repository                   = var.idpay_iac.repository
