@@ -32,7 +32,9 @@ module "resource_switcher" {
     azurerm = azurerm.dev
   }
 
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_resource_switcher?ref=v5.2.0"
+#   source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_resource_switcher?ref=v5.2.0"
+        source = "./.terraform/modules/__azdo__/azuredevops_build_definition_resource_switcher"
+
   path   = var.switcher_iac.pipeline.path
 
   project_id                   = data.azuredevops_project.project.id
