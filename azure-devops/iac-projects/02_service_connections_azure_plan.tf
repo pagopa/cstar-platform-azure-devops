@@ -8,7 +8,7 @@ module "DEV-CSTAR-PLAN-SERVICE-CONN" {
   }
 
   depends_on = [data.azuredevops_project.project]
-  source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_plan?ref=v9.2.0"
+  source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_plan?ref=v9.2.1"
 
   name_suffix                 = "${local.project_prefix_short}-dev"
   password_time_rotation_days = 365
@@ -33,7 +33,7 @@ module "UAT-CSTAR-PLAN-SERVICE-CONN" {
   }
 
   depends_on = [data.azuredevops_project.project]
-  source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_plan?ref=v9.2.0"
+  source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_plan?ref=v9.2.1"
 
   name_suffix                 = "${local.project_prefix_short}-uat"
   password_time_rotation_days = 365
@@ -58,7 +58,7 @@ module "PROD-CSTAR-PLAN-SERVICE-CONN" {
   }
 
   depends_on = [data.azuredevops_project.project]
-  source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_plan?ref=v9.2.0"
+  source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_plan?ref=v9.2.1"
 
   name_suffix                 = "${local.project_prefix_short}-prod"
   password_time_rotation_days = 365

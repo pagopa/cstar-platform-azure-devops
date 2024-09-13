@@ -19,9 +19,9 @@
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_DEV-CSTAR-PLAN-SERVICE-CONN"></a> [DEV-CSTAR-PLAN-SERVICE-CONN](#module\_DEV-CSTAR-PLAN-SERVICE-CONN) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_plan | v9.2.0 |
-| <a name="module_PROD-CSTAR-PLAN-SERVICE-CONN"></a> [PROD-CSTAR-PLAN-SERVICE-CONN](#module\_PROD-CSTAR-PLAN-SERVICE-CONN) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_plan | v9.2.0 |
-| <a name="module_UAT-CSTAR-PLAN-SERVICE-CONN"></a> [UAT-CSTAR-PLAN-SERVICE-CONN](#module\_UAT-CSTAR-PLAN-SERVICE-CONN) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_plan | v9.2.0 |
+| <a name="module_DEV-CSTAR-PLAN-SERVICE-CONN"></a> [DEV-CSTAR-PLAN-SERVICE-CONN](#module\_DEV-CSTAR-PLAN-SERVICE-CONN) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_plan | v9.2.1 |
+| <a name="module_PROD-CSTAR-PLAN-SERVICE-CONN"></a> [PROD-CSTAR-PLAN-SERVICE-CONN](#module\_PROD-CSTAR-PLAN-SERVICE-CONN) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_plan | v9.2.1 |
+| <a name="module_UAT-CSTAR-PLAN-SERVICE-CONN"></a> [UAT-CSTAR-PLAN-SERVICE-CONN](#module\_UAT-CSTAR-PLAN-SERVICE-CONN) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_plan | v9.2.1 |
 | <a name="module___azdo__"></a> [\_\_azdo\_\_](#module\_\_\_azdo\_\_) | git::https://github.com/pagopa/azuredevops-tf-modules.git | 60093f5ef1b148b1656c9aac4d0214a2b800893f |
 | <a name="module___v3__"></a> [\_\_v3\_\_](#module\_\_\_v3\_\_) | git::https://github.com/pagopa/terraform-azurerm-v3.git | 7dbbc06d591d3ce66536a7bdb2208b1370de04dd |
 | <a name="module_apim_backup"></a> [apim\_backup](#module\_apim\_backup) | ./.terraform/modules/__azdo__/azuredevops_build_definition_deploy | n/a |
