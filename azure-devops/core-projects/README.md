@@ -6,7 +6,7 @@
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.1.5 |
 | <a name="requirement_azuredevops"></a> [azuredevops](#requirement\_azuredevops) | <= 1.1.1 |
-| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | <= 3.85.0 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | <= 3.116.0 |
 
 ## Providers
 
@@ -50,9 +50,6 @@
 
 | Name | Type |
 |------|------|
-| [azuredevops_serviceendpoint_azurecr.cstar-azurecrcommon-dev](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/resources/serviceendpoint_azurecr) | resource |
-| [azuredevops_serviceendpoint_azurecr.cstar-azurecrcommon-prod](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/resources/serviceendpoint_azurecr) | resource |
-| [azuredevops_serviceendpoint_azurecr.cstar-azurecrcommon-uat](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/resources/serviceendpoint_azurecr) | resource |
 | [azuredevops_serviceendpoint_github.io-azure-devops-github-pr](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/resources/serviceendpoint_github) | resource |
 | [azuredevops_serviceendpoint_github.io-azure-devops-github-ro](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/resources/serviceendpoint_github) | resource |
 | [azuredevops_serviceendpoint_github.io-azure-devops-github-rw](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/resources/serviceendpoint_github) | resource |
@@ -106,12 +103,6 @@
 
 | Name | Description |
 |------|-------------|
-| <a name="output_service_endpoint_azure_devops_docker_dev_id"></a> [service\_endpoint\_azure\_devops\_docker\_dev\_id](#output\_service\_endpoint\_azure\_devops\_docker\_dev\_id) | n/a |
-| <a name="output_service_endpoint_azure_devops_docker_dev_name"></a> [service\_endpoint\_azure\_devops\_docker\_dev\_name](#output\_service\_endpoint\_azure\_devops\_docker\_dev\_name) | Docker registry |
-| <a name="output_service_endpoint_azure_devops_docker_prod_id"></a> [service\_endpoint\_azure\_devops\_docker\_prod\_id](#output\_service\_endpoint\_azure\_devops\_docker\_prod\_id) | n/a |
-| <a name="output_service_endpoint_azure_devops_docker_prod_name"></a> [service\_endpoint\_azure\_devops\_docker\_prod\_name](#output\_service\_endpoint\_azure\_devops\_docker\_prod\_name) | n/a |
-| <a name="output_service_endpoint_azure_devops_docker_uat_id"></a> [service\_endpoint\_azure\_devops\_docker\_uat\_id](#output\_service\_endpoint\_azure\_devops\_docker\_uat\_id) | n/a |
-| <a name="output_service_endpoint_azure_devops_docker_uat_name"></a> [service\_endpoint\_azure\_devops\_docker\_uat\_name](#output\_service\_endpoint\_azure\_devops\_docker\_uat\_name) | n/a |
 | <a name="output_service_endpoint_azure_devops_github_pr_name"></a> [service\_endpoint\_azure\_devops\_github\_pr\_name](#output\_service\_endpoint\_azure\_devops\_github\_pr\_name) | n/a |
 | <a name="output_service_endpoint_io_azure_devops_github_pr_id"></a> [service\_endpoint\_io\_azure\_devops\_github\_pr\_id](#output\_service\_endpoint\_io\_azure\_devops\_github\_pr\_id) | Github |
 | <a name="output_service_endpoint_io_azure_devops_github_ro_id"></a> [service\_endpoint\_io\_azure\_devops\_github\_ro\_id](#output\_service\_endpoint\_io\_azure\_devops\_github\_ro\_id) | n/a |
