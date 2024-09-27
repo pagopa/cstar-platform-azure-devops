@@ -59,4 +59,3 @@ variable "acr_weu_service_connection_workload_identity_prod" {
   description = "The service connection ID for the ITA PROD workload identity in Azure Container Registry"
   default     = ""
 }
-
