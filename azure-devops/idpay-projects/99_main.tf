@@ -34,7 +34,7 @@ provider "azurerm" {
 }
 
 provider "azurerm" {
-  alias = "dev"
+  alias                      = "dev"
   skip_provider_registration = true
   features {
     key_vault {
@@ -45,7 +45,7 @@ provider "azurerm" {
 }
 
 provider "azurerm" {
-  alias = "uat"
+  alias                      = "uat"
   skip_provider_registration = true
   features {
     key_vault {
@@ -56,7 +56,7 @@ provider "azurerm" {
 }
 
 provider "azurerm" {
-  alias = "prod"
+  alias                      = "prod"
   skip_provider_registration = true
   features {
     key_vault {
