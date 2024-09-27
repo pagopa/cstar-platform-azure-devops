@@ -3,16 +3,17 @@ terraform {
   required_providers {
     azuredevops = {
       source  = "microsoft/azuredevops"
-      version = "<= 0.11.0"
+      version = "<= 1.3.0"
     }
     azurerm = {
-      version = "<= 3.85.0"
+      version = "<= 3.116.0"
     }
   }
   backend "azurerm" {}
 }
 
 provider "azurerm" {
+  skip_provider_registration = true
   features {
     key_vault {
       purge_soft_delete_on_destroy = false
@@ -22,6 +23,7 @@ provider "azurerm" {
 
 provider "azurerm" {
   alias = "dev"
+  skip_provider_registration = true
   features {
     key_vault {
       purge_soft_delete_on_destroy = false
@@ -32,6 +34,7 @@ provider "azurerm" {
 
 provider "azurerm" {
   alias = "uat"
+  skip_provider_registration = true
   features {
     key_vault {
       purge_soft_delete_on_destroy = false
@@ -42,6 +45,7 @@ provider "azurerm" {
 
 provider "azurerm" {
   alias = "prod"
+  skip_provider_registration = true
   features {
     key_vault {
       purge_soft_delete_on_destroy = false
