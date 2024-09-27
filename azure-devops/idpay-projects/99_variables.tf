@@ -72,18 +72,18 @@ locals {
   service_endpoint_io_azure_devops_github_ro_id   = data.azuredevops_serviceendpoint_github.io-azure-devops-github-ro.id
 
   # DEV
-  service_endpoint_azure_devops_docker_dev_name = "cstar-azurecrcommon-dev"
-  service_endpoint_azure_devops_docker_dev_id   = data.azuredevops_serviceendpoint_azurecr.dev-azureacr-service-endpoint.id
+  service_endpoint_azure_devops_docker_dev_name = data.azuredevops_serviceendpoint_azurecr.dev_weu_workload_identity.service_endpoint_name
+  service_endpoint_azure_devops_docker_dev_id   = data.azuredevops_serviceendpoint_azurecr.dev_weu_workload_identity.id
   service_endpoint_azure_dev_id                 = data.azuredevops_serviceendpoint_azurerm.azure_dev.id
 
   # UAT
-  service_endpoint_azure_devops_docker_uat_name = "cstar-azurecrcommon-uat"
-  service_endpoint_azure_devops_docker_uat_id   = data.azuredevops_serviceendpoint_azurecr.uat-azureacr-service-endpoint.id
+  service_endpoint_azure_devops_docker_uat_name = data.azuredevops_serviceendpoint_azurecr.uat_weu_workload_identity.service_endpoint_name
+  service_endpoint_azure_devops_docker_uat_id   = data.azuredevops_serviceendpoint_azurecr.uat_weu_workload_identity.id
   service_endpoint_azure_uat_id                 = data.azuredevops_serviceendpoint_azurerm.azure_uat.id
 
   # PROD
-  service_endpoint_azure_devops_docker_prod_name = "cstar-azurecrcommon-prod"
-  service_endpoint_azure_devops_docker_prod_id   = data.azuredevops_serviceendpoint_azurecr.prod-azureacr-service-endpoint.id
+  service_endpoint_azure_devops_docker_prod_name = data.azuredevops_serviceendpoint_azurecr.prod_weu_workload_identity.service_endpoint_name
+  service_endpoint_azure_devops_docker_prod_id   = data.azuredevops_serviceendpoint_azurecr.prod_weu_workload_identity.id
   service_endpoint_azure_prod_id                 = data.azuredevops_serviceendpoint_azurerm.azure_prod.id
 
 
@@ -130,4 +130,25 @@ variable "service_endpoint_azure_prod_name" {
   type        = string
   description = "azure service endpoint name for prod"
 
+}
+
+#
+# ACR Workload
+#
+variable "acr_weu_service_connection_workload_identity_dev" {
+  type        = string
+  description = "The service connection ID for the ITA DEV workload identity in Azure Container Registry"
+  default     = ""
+}
+
+variable "acr_weu_service_connection_workload_identity_uat" {
+  type        = string
+  description = "The service connection ID for the ITA UAT workload identity in Azure Container Registry"
+  default     = ""
+}
+
+variable "acr_weu_service_connection_workload_identity_prod" {
+  type        = string
+  description = "The service connection ID for the ITA PROD workload identity in Azure Container Registry"
+  default     = ""
 }
