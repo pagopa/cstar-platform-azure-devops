@@ -82,7 +82,7 @@ module "tlscert-rtp-internal-dev-cstar-pagopa-it-cert_az" {
     local.tlscert-rtp-internal-dev-cstar-pagopa-it-variables_secret,
   )
 
-  service_connection_ids_authorization = local.tlscert-mil-internal-dev-cstar-pagopa-it.service_connection_ids_authorization
+  service_connection_ids_authorization = local.tlscert-rtp-internal-dev-cstar-pagopa-it.service_connection_ids_authorization
 
   schedules = {
     days_to_build              = ["Fri"]

@@ -1,4 +1,4 @@
-resource_group_name  = "terraform-state-rg"
-storage_account_name = "tfinfprodcstar"
-container_name       = "terraform-state"
-key                  = "rtp-azure-devops.terraform.tfstate"
+resource_group_name  = "io-infra-rg"
+storage_account_name = "cstarinfrastterraform"
+container_name       = "azuredevopsstate"
+key                  = "rtp-domain-devops.terraform.tfstate"
