@@ -12,7 +12,7 @@ terraform {
       version = "<= 3.2.1"
     }
     time = {
-      version = "<= 0.11.0"
+      version = "<= 1.3.0"
     }
   }
   backend "azurerm" {}
