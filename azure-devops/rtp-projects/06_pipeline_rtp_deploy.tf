@@ -39,9 +39,9 @@ locals {
     UAT_KUBERNETES_SERVICE_CONN         = local.srv_endpoint_name_aks_uat
     UAT_CONTAINER_REGISTRY_NAME         = local.aks_uat_docker_registry_name
     UAT_AGENT_POOL                      = local.azdo_agent_pool_uat
-    # PROD_KUBERNETES_SERVICE_CONN        = local.srv_endpoint_name_aks_prod
-    # PROD_CONTAINER_REGISTRY_NAME        = local.aks_prod_docker_registry_name
-    # PROD_AGENT_POOL                     = local.azdo_agent_pool_prod
+    PROD_KUBERNETES_SERVICE_CONN        = local.srv_endpoint_name_aks_prod
+    PROD_CONTAINER_REGISTRY_NAME        = local.aks_prod_docker_registry_name
+    PROD_AGENT_POOL                     = local.azdo_agent_pool_prod
   }
   # deploy secrets
   rtp-deploy-variables_secret_deploy = {
@@ -83,9 +83,9 @@ module "rtp-deploy_deploy" {
     local.service_endpoint_azure_devops_docker_uat_id,
     azuredevops_serviceendpoint_kubernetes.aks_uat.id,
     # #prod
-    # local.service_endpoint_azure_prod_id,
-    # local.service_endpoint_azure_devops_docker_prod_id,
-    # azuredevops_serviceendpoint_kubernetes.aks_prod.id,
+    local.service_endpoint_azure_prod_id,
+    local.service_endpoint_azure_devops_docker_prod_id,
+    azuredevops_serviceendpoint_kubernetes.aks_prod.id,
   ]
 
 }
