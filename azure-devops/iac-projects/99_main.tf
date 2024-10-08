@@ -69,8 +69,8 @@ data "azurerm_subscriptions" "dev" {
 # Modules
 #
 module "__azdo__" {
-  # https://github.com/pagopa/terraform-azurerm-v3/releases/tag/v9.2.0
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git?ref=60093f5ef1b148b1656c9aac4d0214a2b800893f"
+  # https://github.com/pagopa/azuredevops-tf-modules/releases/tag/v9.2.1
+  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git?ref=7e23d73d22e7b37352c25a32cc40f6f42b6569ea"
 }
 
 module "__v3__" {
