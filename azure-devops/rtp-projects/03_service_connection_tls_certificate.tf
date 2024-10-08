@@ -7,7 +7,7 @@ module "DEV-CSTAR-RTP-TLS-CERT-SERVICE-CONN-FEDERATED" {
     azurerm = azurerm.dev
   }
 
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_federated?ref=v9.0.0"
+  source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_federated?ref=v9.2.1"
 
   location            = local.location
   resource_group_name = local.dev_identity_rg_name
@@ -46,7 +46,7 @@ module "letsencrypt_dev" {
 # UAT
 #
 module "UAT_CSTAR_RTP_TLS_CERT_SERVICE_CONN_FEDERATED" {
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_federated?ref=v9.0.0"
+  source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_federated?ref=v9.2.1"
 
   providers = {
     azurerm = azurerm.uat
@@ -97,7 +97,7 @@ module "PROD-CSTAR-RTP-TLS-CERT-SERVICE-CONN-FEDERATED" {
  }
 
  depends_on = [data.azuredevops_project.project]
- source     = "./.terraform/modules/__devops_v0__/azuredevops_serviceendpoint_federated"
+source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_federated?ref=v9.2.1"
 
  location            = local.location
  resource_group_name = local.prod_identity_rg_name

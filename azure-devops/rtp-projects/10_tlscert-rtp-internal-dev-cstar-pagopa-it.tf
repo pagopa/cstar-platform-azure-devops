@@ -46,7 +46,7 @@ locals {
 # change only providers
 #tfsec:ignore:general-secrets-no-plaintext-exposure
 module "tlscert-rtp-internal-dev-cstar-pagopa-it-cert_az" {
-  source = "./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated"
+  source = "./.terraform/modules/__azdo__/azuredevops_build_definition_tls_cert_federated"
   count  = var.tlscert-rtp-internal-dev-cstar-pagopa-it.pipeline.enable_tls_cert == true ? 1 : 0
 
   # change me
@@ -85,9 +85,9 @@ module "tlscert-rtp-internal-dev-cstar-pagopa-it-cert_az" {
   service_connection_ids_authorization = local.tlscert-rtp-internal-dev-cstar-pagopa-it.service_connection_ids_authorization
 
   schedules = {
-    days_to_build              = ["Fri"]
+    days_to_build              = ["Wed","Fri"]
     schedule_only_with_changes = false
-    start_hours                = 3
+    start_hours                = 13
     start_minutes              = 0
     time_zone                  = "(UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna"
     branch_filter = {

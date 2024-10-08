@@ -48,7 +48,8 @@ locals {
 }
 
 module "rtp-front-end-deploy_deploy" {
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_deploy?ref=v9.0.0"
+    source = "./.terraform/modules/__azdo__/azuredevops_build_definition_deploy"
+
 
   project_id                   = data.azuredevops_project.project.id
   repository                   = var.rtp_front_end_deploy.repository

@@ -52,7 +52,8 @@ locals {
 
 
 module "rtp-deploy_deploy" {
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_deploy?ref=v9.0.0"
+  source = "./.terraform/modules/__azdo__/azuredevops_build_definition_deploy"
+
   count  = var.rtp-deploy.pipeline.enable_deploy == true ? 1 : 0
 
   project_id                   = data.azuredevops_project.project.id

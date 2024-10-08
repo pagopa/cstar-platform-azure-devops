@@ -23,7 +23,9 @@ module "domain_dev_secrets" {
 # UAT
 #
 module "domain_uat_secrets" {
-  source = "git::https://github.com/pagopa/terraform-azurerm-v3.git//key_vault_secrets_query?ref=v8.22.0"
+
+    source = "./.terraform/modules/__v3__/key_vault_secrets_query"
+
 
   providers = {
     azurerm = azurerm.uat
@@ -43,7 +45,8 @@ module "domain_uat_secrets" {
 # PROD
 #
 module "domain_prod_secrets" {
- source = "git::https://github.com/pagopa/terraform-azurerm-v3.git//key_vault_secrets_query?ref=v8.22.0"
+      source = "./.terraform/modules/__v3__/key_vault_secrets_query"
+
  providers = {
    azurerm = azurerm.prod
  }
