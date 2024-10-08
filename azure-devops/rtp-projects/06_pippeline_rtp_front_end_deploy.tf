@@ -37,12 +37,12 @@ locals {
     UAT_APIM_PREFIX_DOMAIN     = local.uat_apim_prefix_domain
 
 
-#    PROD_AZURE_SUBSCRIPTION     = data.azuredevops_serviceendpoint_azurerm.azure_prod.id
-#    PROD_STORAGE_ACCOUNT_RG     = local.prod_storage_account_rg
-#    PROD_STORAGE_ACCOUNT_NAME   = local.prod_storage_account_name
-#    PROD_CDN_ENDPOINT           = local.prod_cdn_endpoint
-#    PROD_CDN_PROFILE            = local.prod_cdn_profile
-#    PROD_APIM_PREFIX_DOMAIN     = local.prod_apim_prefix_domain
+   PROD_AZURE_SUBSCRIPTION     = data.azuredevops_serviceendpoint_azurerm.azure_prod.id
+   PROD_STORAGE_ACCOUNT_RG     = local.prod_storage_account_rg
+   PROD_STORAGE_ACCOUNT_NAME   = local.prod_storage_account_name
+   PROD_CDN_ENDPOINT           = local.prod_cdn_endpoint
+   PROD_CDN_PROFILE            = local.prod_cdn_profile
+   PROD_APIM_PREFIX_DOMAIN     = local.prod_apim_prefix_domain
 
   }
 }
@@ -72,6 +72,6 @@ module "rtp-front-end-deploy_deploy" {
     #uat
     local.service_endpoint_azure_uat_id,
     # #prod
-#    local.service_endpoint_azure_prod_id,
+   local.service_endpoint_azure_prod_id,
   ]
 }

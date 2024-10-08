@@ -84,11 +84,11 @@ locals {
   uat_cdn_profile             = "${local.prefix}-u-${var.location_short}-${local.domain}-fe-cdn-profile"
   uat_apim_prefix_domain      = ""
 
-#  prod_storage_account_rg      = "${local.prefix}-p-${var.location_short}-${local.domain}-fe-rg"
-#  prod_storage_account_name    = "${local.prefix}p${var.location_short}${local.domain}fesa"
-#  prod_cdn_endpoint            = "${local.prefix}-p-${var.location_short}-${local.domain}-fe-cdn-endpoint"
-#  prod_cdn_profile             = "${local.prefix}-p-${var.location_short}-${local.domain}-fe-cdn-profile"
-#  prod_apim_prefix_domain      = ""
+ prod_storage_account_rg      = "${local.prefix}-p-${var.location_short}-${local.domain}-fe-rg"
+ prod_storage_account_name    = "${local.prefix}p${var.location_short}${local.domain}fesa"
+ prod_cdn_endpoint            = "${local.prefix}-p-${var.location_short}-${local.domain}-fe-cdn-endpoint"
+ prod_cdn_profile             = "${local.prefix}-p-${var.location_short}-${local.domain}-fe-cdn-profile"
+ prod_apim_prefix_domain      = ""
 
   #
   # Outputs from CORE
@@ -109,8 +109,8 @@ locals {
   service_endpoint_azure_uat_id                 = data.azuredevops_serviceendpoint_azurerm.azure_uat.id
 
   # PROD
-#  service_endpoint_azure_devops_docker_prod_name = data.azuredevops_serviceendpoint_azurecr.prod_weu_workload_identity.service_endpoint_name
-#  service_endpoint_azure_devops_docker_prod_id   = data.azuredevops_serviceendpoint_azurecr.prod_weu_workload_identity.id
-#  service_endpoint_azure_prod_id                 = data.azuredevops_serviceendpoint_azurerm.azure_prod.id
+ service_endpoint_azure_devops_docker_prod_name = data.azuredevops_serviceendpoint_azurecr.prod_weu_workload_identity.service_endpoint_name
+ service_endpoint_azure_devops_docker_prod_id   = data.azuredevops_serviceendpoint_azurecr.prod_weu_workload_identity.id
+ service_endpoint_azure_prod_id                 = data.azuredevops_serviceendpoint_azurerm.azure_prod.id
 
 }
