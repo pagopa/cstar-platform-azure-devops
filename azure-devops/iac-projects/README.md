@@ -22,7 +22,7 @@
 | <a name="module_DEV-CSTAR-PLAN-SERVICE-CONN"></a> [DEV-CSTAR-PLAN-SERVICE-CONN](#module\_DEV-CSTAR-PLAN-SERVICE-CONN) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_plan | v9.2.1 |
 | <a name="module_PROD-CSTAR-PLAN-SERVICE-CONN"></a> [PROD-CSTAR-PLAN-SERVICE-CONN](#module\_PROD-CSTAR-PLAN-SERVICE-CONN) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_plan | v9.2.1 |
 | <a name="module_UAT-CSTAR-PLAN-SERVICE-CONN"></a> [UAT-CSTAR-PLAN-SERVICE-CONN](#module\_UAT-CSTAR-PLAN-SERVICE-CONN) | git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_azurerm_plan | v9.2.1 |
-| <a name="module___azdo__"></a> [\_\_azdo\_\_](#module\_\_\_azdo\_\_) | git::https://github.com/pagopa/azuredevops-tf-modules.git | 60093f5ef1b148b1656c9aac4d0214a2b800893f |
+| <a name="module___azdo__"></a> [\_\_azdo\_\_](#module\_\_\_azdo\_\_) | git::https://github.com/pagopa/azuredevops-tf-modules.git | 7e23d73d22e7b37352c25a32cc40f6f42b6569ea |
 | <a name="module___v3__"></a> [\_\_v3\_\_](#module\_\_\_v3\_\_) | git::https://github.com/pagopa/terraform-azurerm-v3.git | 7dbbc06d591d3ce66536a7bdb2208b1370de04dd |
 | <a name="module_apim_backup"></a> [apim\_backup](#module\_apim\_backup) | ./.terraform/modules/__azdo__/azuredevops_build_definition_deploy | n/a |
 | <a name="module_iac_code_review"></a> [iac\_code\_review](#module\_iac\_code\_review) | ./.terraform/modules/__azdo__/azuredevops_build_definition_code_review | n/a |
@@ -38,6 +38,11 @@
 | <a name="module_rtd_iac_deploy"></a> [rtd\_iac\_deploy](#module\_rtd\_iac\_deploy) | ./.terraform/modules/__azdo__/azuredevops_build_definition_deploy | n/a |
 | <a name="module_rtd_prod_secrets"></a> [rtd\_prod\_secrets](#module\_rtd\_prod\_secrets) | ./.terraform/modules/__v3__/key_vault_secrets_query | n/a |
 | <a name="module_rtd_uat_secrets"></a> [rtd\_uat\_secrets](#module\_rtd\_uat\_secrets) | ./.terraform/modules/__v3__/key_vault_secrets_query | n/a |
+| <a name="module_rtp_dev_secrets"></a> [rtp\_dev\_secrets](#module\_rtp\_dev\_secrets) | ./.terraform/modules/__v3__/key_vault_secrets_query | n/a |
+| <a name="module_rtp_iac_code_review"></a> [rtp\_iac\_code\_review](#module\_rtp\_iac\_code\_review) | ./.terraform/modules/__azdo__/azuredevops_build_definition_code_review | n/a |
+| <a name="module_rtp_iac_deploy"></a> [rtp\_iac\_deploy](#module\_rtp\_iac\_deploy) | ./.terraform/modules/__azdo__/azuredevops_build_definition_deploy | n/a |
+| <a name="module_rtp_prod_secrets"></a> [rtp\_prod\_secrets](#module\_rtp\_prod\_secrets) | ./.terraform/modules/__v3__/key_vault_secrets_query | n/a |
+| <a name="module_rtp_uat_secrets"></a> [rtp\_uat\_secrets](#module\_rtp\_uat\_secrets) | ./.terraform/modules/__v3__/key_vault_secrets_query | n/a |
 | <a name="module_secret_azdo"></a> [secret\_azdo](#module\_secret\_azdo) | ./.terraform/modules/__v3__/key_vault_secrets_query | n/a |
 | <a name="module_tae_dev_secrets"></a> [tae\_dev\_secrets](#module\_tae\_dev\_secrets) | ./.terraform/modules/__v3__/key_vault_secrets_query | n/a |
 | <a name="module_tae_iac_code_review"></a> [tae\_iac\_code\_review](#module\_tae\_iac\_code\_review) | ./.terraform/modules/__azdo__/azuredevops_build_definition_code_review | n/a |
@@ -75,6 +80,7 @@
 | <a name="input_prod_subscription_name"></a> [prod\_subscription\_name](#input\_prod\_subscription\_name) | PROD Subscription name | `string` | n/a | yes |
 | <a name="input_project_iac_name"></a> [project\_iac\_name](#input\_project\_iac\_name) | Project name for IaC projects | `string` | n/a | yes |
 | <a name="input_rtd_iac"></a> [rtd\_iac](#input\_rtd\_iac) | n/a | `map` | <pre>{<br>  "pipeline": {<br>    "enable_code_review": true,<br>    "enable_deploy": true,<br>    "path": "rtd-infrastructure",<br>    "pipeline_name_prefix": "rtd-infra"<br>  },<br>  "repository": {<br>    "branch_name": "refs/heads/main",<br>    "name": "cstar-infrastructure",<br>    "organization": "pagopa",<br>    "pipelines_path": ".devops",<br>    "yml_prefix_name": "rtd"<br>  }<br>}</pre> | no |
+| <a name="input_rtp_iac"></a> [rtp\_iac](#input\_rtp\_iac) | n/a | `map` | <pre>{<br>  "pipeline": {<br>    "enable_code_review": true,<br>    "enable_deploy": true,<br>    "path": "rtp-infrastructure",<br>    "pipeline_name_prefix": "rtp-infra"<br>  },<br>  "repository": {<br>    "branch_name": "refs/heads/main",<br>    "name": "cstar-infrastructure",<br>    "organization": "pagopa",<br>    "pipelines_path": ".devops",<br>    "yml_prefix_name": "rtp"<br>  }<br>}</pre> | no |
 | <a name="input_switcher_iac"></a> [switcher\_iac](#input\_switcher\_iac) | n/a | `map` | <pre>{<br>  "pipeline": {<br>    "enable": true,<br>    "path": "switcher"<br>  },<br>  "repository": {<br>    "branch_name": "refs/heads/main",<br>    "name": "eng-common-scripts",<br>    "organization": "pagopa",<br>    "pipelines_path": "devops",<br>    "yml_prefix_name": null<br>  }<br>}</pre> | no |
 | <a name="input_tae_iac"></a> [tae\_iac](#input\_tae\_iac) | n/a | `map` | <pre>{<br>  "pipeline": {<br>    "enable_code_review": true,<br>    "enable_deploy": true,<br>    "path": "tae-infrastructure",<br>    "pipeline_name_prefix": "tae-infra"<br>  },<br>  "repository": {<br>    "branch_name": "refs/heads/main",<br>    "name": "cstar-infrastructure",<br>    "organization": "pagopa",<br>    "pipelines_path": ".devops",<br>    "yml_prefix_name": "tae"<br>  }<br>}</pre> | no |
 | <a name="input_uat_subscription_name"></a> [uat\_subscription\_name](#input\_uat\_subscription\_name) | UAT Subscription name | `string` | n/a | yes |

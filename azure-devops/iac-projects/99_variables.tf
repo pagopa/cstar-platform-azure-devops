@@ -35,6 +35,16 @@ locals {
   dev_tae_key_vault_name  = "${local.prefix}-d-tae-kv"
   uat_tae_key_vault_name  = "${local.prefix}-u-tae-kv"
   prod_tae_key_vault_name = "${local.prefix}-p-tae-kv"
+
+  # 🔐 RTP KV Domain
+  dev_rtp_key_vault_resource_group  = "${local.prefix}-d-weu-rtp-sec-rg"
+  uat_rtp_key_vault_resource_group  = "${local.prefix}-u-weu-rtp-sec-rg"
+  prod_rtp_key_vault_resource_group = "${local.prefix}-p-weu-rtp-sec-rg"
+
+  dev_rtp_key_vault_name  = "${local.prefix}-d-weu-rtp-kv"
+  uat_rtp_key_vault_name  = "${local.prefix}-u-weu-rtp-kv"
+  prod_rtp_key_vault_name = "${local.prefix}-p-weu-rtp-kv"
+
 }
 
 variable "dev_subscription_name" {
