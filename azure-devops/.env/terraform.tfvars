@@ -1,4 +1,5 @@
-location = "westeurope"
+location       = "westeurope"
+location_short = "weu"
 
 dev_subscription_name  = "DEV-CSTAR"
 uat_subscription_name  = "UAT-CSTAR"
@@ -14,3 +15,8 @@ aks_prod_platform_name = "cstar-p-weu-prod01-aks"
 service_endpoint_azure_dev_name  = "DEV-CSTAR-SERVICE-CONN"
 service_endpoint_azure_uat_name  = "UAT-CSTAR-SERVICE-CONN"
 service_endpoint_azure_prod_name = "PROD-CSTAR-SERVICE-CONN"
+
+### Azure Container registry docker
+acr_weu_service_connection_workload_identity_dev  = "docker-registry-weu-dev-workload-identity"
+acr_weu_service_connection_workload_identity_uat  = "docker-registry-weu-uat-workload-identity"
+acr_weu_service_connection_workload_identity_prod = "docker-registry-weu-prod-workload-identity"

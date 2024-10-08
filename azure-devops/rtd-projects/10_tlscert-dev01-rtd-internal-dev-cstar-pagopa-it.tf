@@ -59,7 +59,7 @@ module "tlscert-dev01-rtd-internal-dev-cstar-pagopa-it-cert_az" {
 
   project_id                   = data.azuredevops_project.project.id
   repository                   = var.tlscert-dev01-rtd-internal-dev-cstar-pagopa-it.repository
-  path                         = "${local.domain}\\${var.tlscert-dev01-rtd-internal-dev-cstar-pagopa-it.pipeline.path}"
+  path                         = var.tlscert-dev01-rtd-internal-dev-cstar-pagopa-it.pipeline.path
   github_service_connection_id = local.service_endpoint_io_azure_devops_github_ro_id
 
   dns_record_name         = var.tlscert-dev01-rtd-internal-dev-cstar-pagopa-it.pipeline.dns_record_name

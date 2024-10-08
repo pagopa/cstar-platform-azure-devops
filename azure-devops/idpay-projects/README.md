@@ -5,11 +5,11 @@
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.5 |
-| <a name="requirement_azuread"></a> [azuread](#requirement\_azuread) | >= 2.30.0 |
-| <a name="requirement_azuredevops"></a> [azuredevops](#requirement\_azuredevops) | <= 0.11.0 |
-| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | <= 3.85.0 |
-| <a name="requirement_null"></a> [null](#requirement\_null) | >= 3.2.1 |
-| <a name="requirement_time"></a> [time](#requirement\_time) | >= 0.7.0 |
+| <a name="requirement_azuread"></a> [azuread](#requirement\_azuread) | <= 2.30.0 |
+| <a name="requirement_azuredevops"></a> [azuredevops](#requirement\_azuredevops) | <= 1.3.0 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | <= 3.116.0 |
+| <a name="requirement_null"></a> [null](#requirement\_null) | <= 3.2.1 |
+| <a name="requirement_time"></a> [time](#requirement\_time) | <= 0.11.0 |
 
 ## Providers
 
@@ -118,9 +118,9 @@
 | [azuredevops_environment.prod_env](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/data-sources/environment) | data source |
 | [azuredevops_environment.uat_env](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/data-sources/environment) | data source |
 | [azuredevops_project.project](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/data-sources/project) | data source |
-| [azuredevops_serviceendpoint_azurecr.dev-azureacr-service-endpoint](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/data-sources/serviceendpoint_azurecr) | data source |
-| [azuredevops_serviceendpoint_azurecr.prod-azureacr-service-endpoint](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/data-sources/serviceendpoint_azurecr) | data source |
-| [azuredevops_serviceendpoint_azurecr.uat-azureacr-service-endpoint](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/data-sources/serviceendpoint_azurecr) | data source |
+| [azuredevops_serviceendpoint_azurecr.dev_weu_workload_identity](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/data-sources/serviceendpoint_azurecr) | data source |
+| [azuredevops_serviceendpoint_azurecr.prod_weu_workload_identity](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/data-sources/serviceendpoint_azurecr) | data source |
+| [azuredevops_serviceendpoint_azurecr.uat_weu_workload_identity](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/data-sources/serviceendpoint_azurecr) | data source |
 | [azuredevops_serviceendpoint_azurerm.azure_dev](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/data-sources/serviceendpoint_azurerm) | data source |
 | [azuredevops_serviceendpoint_azurerm.azure_prod](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/data-sources/serviceendpoint_azurerm) | data source |
 | [azuredevops_serviceendpoint_azurerm.azure_uat](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/data-sources/serviceendpoint_azurerm) | data source |
@@ -140,6 +140,9 @@
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_acr_weu_service_connection_workload_identity_dev"></a> [acr\_weu\_service\_connection\_workload\_identity\_dev](#input\_acr\_weu\_service\_connection\_workload\_identity\_dev) | The service connection ID for the ITA DEV workload identity in Azure Container Registry | `string` | `""` | no |
+| <a name="input_acr_weu_service_connection_workload_identity_prod"></a> [acr\_weu\_service\_connection\_workload\_identity\_prod](#input\_acr\_weu\_service\_connection\_workload\_identity\_prod) | The service connection ID for the ITA PROD workload identity in Azure Container Registry | `string` | `""` | no |
+| <a name="input_acr_weu_service_connection_workload_identity_uat"></a> [acr\_weu\_service\_connection\_workload\_identity\_uat](#input\_acr\_weu\_service\_connection\_workload\_identity\_uat) | The service connection ID for the ITA UAT workload identity in Azure Container Registry | `string` | `""` | no |
 | <a name="input_dev_subscription_name"></a> [dev\_subscription\_name](#input\_dev\_subscription\_name) | DEV Subscription name | `string` | n/a | yes |
 | <a name="input_idpay-admissibility-assessor"></a> [idpay-admissibility-assessor](#input\_idpay-admissibility-assessor) | n/a | `map` | <pre>{<br>  "pipeline": {<br>    "enable_code_review": true,<br>    "enable_deploy": true,<br>    "path": "idpay\\idpay-admissibility-assessor"<br>  },<br>  "repository": {<br>    "branch_name": "refs/heads/release-dev",<br>    "name": "idpay-admissibility-assessor",<br>    "organization": "pagopa",<br>    "pipelines_path": ".devops",<br>    "yml_prefix_name": null<br>  }<br>}</pre> | no |
 | <a name="input_idpay-functional-testing"></a> [idpay-functional-testing](#input\_idpay-functional-testing) | n/a | `map` | <pre>{<br>  "pipeline": {<br>    "enable_deploy": true,<br>    "enable_scheduled_test": true,<br>    "path": "idpay\\idpay-functional-testing"<br>  },<br>  "repository": {<br>    "branch_name": "refs/heads/main",<br>    "name": "idpay-functional-testing",<br>    "organization": "pagopa",<br>    "pipelines_path": ".devops",<br>    "yml_prefix_name": "idpay-functional-testing",<br>    "yml_suffix_name": ".yml"<br>  }<br>}</pre> | no |
