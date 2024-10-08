@@ -48,21 +48,14 @@ locals {
 }
 
 module "rtp-front-end-deploy_deploy" {
-  source = "./.terraform/modules/__devops_v0__/azuredevops_build_definition_generic"
-
-  providers = {
-    azurerm = azurerm.prod
-  }
+  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_deploy?ref=v9.0.0"
 
   project_id                   = data.azuredevops_project.project.id
   repository                   = var.rtp_front_end_deploy.repository
   github_service_connection_id = local.service_endpoint_io_azure_devops_github_pr_id
 
-  pipeline_name         = "${local.prefix}-${local.domain}-fe.deploy"
-  pipeline_yml_filename = "deploy-pipelines.yml"
   path                  = var.rtp_front_end_deploy.pipeline.path
 
-  ci_trigger_enabled  = true
   ci_trigger_use_yaml = true
 
   variables = merge(
