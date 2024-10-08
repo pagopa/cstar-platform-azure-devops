@@ -47,7 +47,7 @@ locals {
 module "tlscert-rtp-internal-cstar-pagopa-it-cert_az" {
   source = "./.terraform/modules/__azdo__/azuredevops_build_definition_tls_cert_federated"
 
-  count  = var.tlscert-rtp-internal-cstar-pagopa-it.pipeline.enable_tls_cert == true ? 1 : 0
+  count = var.tlscert-rtp-internal-cstar-pagopa-it.pipeline.enable_tls_cert == true ? 1 : 0
 
   # change me
   providers = {
@@ -85,7 +85,7 @@ module "tlscert-rtp-internal-cstar-pagopa-it-cert_az" {
   service_connection_ids_authorization = local.tlscert-rtp-internal-cstar-pagopa-it.service_connection_ids_authorization
 
   schedules = {
-    days_to_build              = ["Wed","Fri"]
+    days_to_build              = ["Wed", "Fri"]
     schedule_only_with_changes = false
     start_hours                = 13
     start_minutes              = 0

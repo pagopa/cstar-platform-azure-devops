@@ -24,7 +24,7 @@ module "domain_dev_secrets" {
 #
 module "domain_uat_secrets" {
 
-    source = "./.terraform/modules/__v3__/key_vault_secrets_query"
+  source = "./.terraform/modules/__v3__/key_vault_secrets_query"
 
 
   providers = {
@@ -45,19 +45,19 @@ module "domain_uat_secrets" {
 # PROD
 #
 module "domain_prod_secrets" {
-      source = "./.terraform/modules/__v3__/key_vault_secrets_query"
+  source = "./.terraform/modules/__v3__/key_vault_secrets_query"
 
- providers = {
-   azurerm = azurerm.prod
- }
+  providers = {
+    azurerm = azurerm.prod
+  }
 
- resource_group = local.prod_domain_key_vault_resource_group
- key_vault_name = local.prod_domain_key_vault_name
+  resource_group = local.prod_domain_key_vault_resource_group
+  key_vault_name = local.prod_domain_key_vault_name
 
- secrets = [
-   "cstar-p-weu-prod01-aks-azure-devops-sa-token",
-   "cstar-p-weu-prod01-aks-azure-devops-sa-cacrt",
-   "cstar-p-weu-prod01-aks-apiserver-url"
- ]
+  secrets = [
+    "cstar-p-weu-prod01-aks-azure-devops-sa-token",
+    "cstar-p-weu-prod01-aks-azure-devops-sa-cacrt",
+    "cstar-p-weu-prod01-aks-apiserver-url"
+  ]
 }
 

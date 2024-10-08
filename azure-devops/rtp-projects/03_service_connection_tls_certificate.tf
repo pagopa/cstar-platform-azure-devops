@@ -7,7 +7,7 @@ module "DEV-CSTAR-RTP-TLS-CERT-SERVICE-CONN-FEDERATED" {
     azurerm = azurerm.dev
   }
 
-  source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_federated?ref=v9.2.1"
+  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_federated?ref=v9.2.1"
 
   location            = local.location
   resource_group_name = local.dev_identity_rg_name
@@ -46,7 +46,7 @@ module "letsencrypt_dev" {
 # UAT
 #
 module "UAT_CSTAR_RTP_TLS_CERT_SERVICE_CONN_FEDERATED" {
-  source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_federated?ref=v9.2.1"
+  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_federated?ref=v9.2.1"
 
   providers = {
     azurerm = azurerm.uat
@@ -92,41 +92,41 @@ module "letsencrypt_uat" {
 #
 module "PROD-CSTAR-RTP-TLS-CERT-SERVICE-CONN-FEDERATED" {
 
- providers = {
-   azurerm = azurerm.prod
- }
+  providers = {
+    azurerm = azurerm.prod
+  }
 
- depends_on = [data.azuredevops_project.project]
-source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_federated?ref=v9.2.1"
+  depends_on = [data.azuredevops_project.project]
+  source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_federated?ref=v9.2.1"
 
- location            = local.location
- resource_group_name = local.prod_identity_rg_name
+  location            = local.location
+  resource_group_name = local.prod_identity_rg_name
 
- project_id        = data.azuredevops_project.project.id
- name              = "${local.prefix}-p-${local.domain}-tls-azdo-cert"
- tenant_id         = data.azurerm_client_config.current.tenant_id
- subscription_name = local.prod_cstar_subscription_name
- subscription_id   = data.azurerm_subscriptions.prod.subscriptions[0].subscription_id
+  project_id        = data.azuredevops_project.project.id
+  name              = "${local.prefix}-p-${local.domain}-tls-azdo-cert"
+  tenant_id         = data.azurerm_client_config.current.tenant_id
+  subscription_name = local.prod_cstar_subscription_name
+  subscription_id   = data.azurerm_subscriptions.prod.subscriptions[0].subscription_id
 }
 
 resource "azurerm_key_vault_access_policy" "PROD-CSTAR-RTP-TLS-CERT-SERVICE-CONN_kv_access_policy" {
- provider     = azurerm.prod
- key_vault_id = data.azurerm_key_vault.domain_kv_prod.id
- tenant_id    = data.azurerm_client_config.current.tenant_id
- object_id    = module.PROD-CSTAR-RTP-TLS-CERT-SERVICE-CONN-FEDERATED.service_principal_object_id
+  provider     = azurerm.prod
+  key_vault_id = data.azurerm_key_vault.domain_kv_prod.id
+  tenant_id    = data.azurerm_client_config.current.tenant_id
+  object_id    = module.PROD-CSTAR-RTP-TLS-CERT-SERVICE-CONN-FEDERATED.service_principal_object_id
 
- certificate_permissions = ["Get", "Import"]
+  certificate_permissions = ["Get", "Import"]
 }
 
 # create let's encrypt credential used to create SSL certificates
 module "letsencrypt_prod" {
- source = "git::https://github.com/pagopa/terraform-azurerm-v3.git//letsencrypt_credential?ref=v8.22.0"
+  source = "git::https://github.com/pagopa/terraform-azurerm-v3.git//letsencrypt_credential?ref=v8.22.0"
 
- providers = {
-   azurerm = azurerm.prod
- }
- prefix            = local.prefix
- env               = "p"
- key_vault_name    = local.prod_domain_key_vault_name
- subscription_name = local.prod_cstar_subscription_name
+  providers = {
+    azurerm = azurerm.prod
+  }
+  prefix            = local.prefix
+  env               = "p"
+  key_vault_name    = local.prod_domain_key_vault_name
+  subscription_name = local.prod_cstar_subscription_name
 }

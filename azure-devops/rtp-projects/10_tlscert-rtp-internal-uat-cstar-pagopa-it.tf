@@ -85,7 +85,7 @@ module "tlscert_rtp_internal_uat_cstar_pagopa_it_cert_az" {
   service_connection_ids_authorization = local.tlscert-rtp-internal-uat-cstar-pagopa-it.service_connection_ids_authorization
 
   schedules = {
-    days_to_build              = ["Wed","Fri"]
+    days_to_build              = ["Wed", "Fri"]
     schedule_only_with_changes = false
     start_hours                = 13
     start_minutes              = 0

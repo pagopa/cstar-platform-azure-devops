@@ -2,7 +2,7 @@ locals {
   prefix           = "cstar"
   azure_devops_org = "pagopaspa"
   domain           = "rtp"
-   
+
   # 🔐 KV AZDO
   dev_key_vault_resource_group  = "${local.prefix}-d-sec-rg"
   uat_key_vault_resource_group  = "${local.prefix}-u-sec-rg"
@@ -72,23 +72,23 @@ locals {
   prod_cstar_subscription_name = "prod-${local.prefix}"
 
   # Front end
-  dev_storage_account_rg      = "${local.prefix}-d-${var.location_short}-${local.domain}-fe-rg"
-  dev_storage_account_name    = "${local.prefix}d${var.location_short}${local.domain}fesa"
-  dev_cdn_endpoint            = "${local.prefix}-d-${var.location_short}-${local.domain}-fe-cdn-endpoint"
-  dev_cdn_profile             = "${local.prefix}-d-${var.location_short}-${local.domain}-fe-cdn-profile"
-  dev_apim_prefix_domain      = ""
+  dev_storage_account_rg   = "${local.prefix}-d-${var.location_short}-${local.domain}-fe-rg"
+  dev_storage_account_name = "${local.prefix}d${var.location_short}${local.domain}fesa"
+  dev_cdn_endpoint         = "${local.prefix}-d-${var.location_short}-${local.domain}-fe-cdn-endpoint"
+  dev_cdn_profile          = "${local.prefix}-d-${var.location_short}-${local.domain}-fe-cdn-profile"
+  dev_apim_prefix_domain   = ""
 
-  uat_storage_account_rg      = "${local.prefix}-u-${var.location_short}-${local.domain}-fe-rg"
-  uat_storage_account_name    = "${local.prefix}u${var.location_short}${local.domain}fesa"
-  uat_cdn_endpoint            = "${local.prefix}-u-${var.location_short}-${local.domain}-fe-cdn-endpoint"
-  uat_cdn_profile             = "${local.prefix}-u-${var.location_short}-${local.domain}-fe-cdn-profile"
-  uat_apim_prefix_domain      = ""
+  uat_storage_account_rg   = "${local.prefix}-u-${var.location_short}-${local.domain}-fe-rg"
+  uat_storage_account_name = "${local.prefix}u${var.location_short}${local.domain}fesa"
+  uat_cdn_endpoint         = "${local.prefix}-u-${var.location_short}-${local.domain}-fe-cdn-endpoint"
+  uat_cdn_profile          = "${local.prefix}-u-${var.location_short}-${local.domain}-fe-cdn-profile"
+  uat_apim_prefix_domain   = ""
 
- prod_storage_account_rg      = "${local.prefix}-p-${var.location_short}-${local.domain}-fe-rg"
- prod_storage_account_name    = "${local.prefix}p${var.location_short}${local.domain}fesa"
- prod_cdn_endpoint            = "${local.prefix}-p-${var.location_short}-${local.domain}-fe-cdn-endpoint"
- prod_cdn_profile             = "${local.prefix}-p-${var.location_short}-${local.domain}-fe-cdn-profile"
- prod_apim_prefix_domain      = ""
+  prod_storage_account_rg   = "${local.prefix}-p-${var.location_short}-${local.domain}-fe-rg"
+  prod_storage_account_name = "${local.prefix}p${var.location_short}${local.domain}fesa"
+  prod_cdn_endpoint         = "${local.prefix}-p-${var.location_short}-${local.domain}-fe-cdn-endpoint"
+  prod_cdn_profile          = "${local.prefix}-p-${var.location_short}-${local.domain}-fe-cdn-profile"
+  prod_apim_prefix_domain   = ""
 
   #
   # Outputs from CORE
@@ -109,8 +109,8 @@ locals {
   service_endpoint_azure_uat_id                 = data.azuredevops_serviceendpoint_azurerm.azure_uat.id
 
   # PROD
- service_endpoint_azure_devops_docker_prod_name = data.azuredevops_serviceendpoint_azurecr.prod_weu_workload_identity.service_endpoint_name
- service_endpoint_azure_devops_docker_prod_id   = data.azuredevops_serviceendpoint_azurecr.prod_weu_workload_identity.id
- service_endpoint_azure_prod_id                 = data.azuredevops_serviceendpoint_azurerm.azure_prod.id
+  service_endpoint_azure_devops_docker_prod_name = data.azuredevops_serviceendpoint_azurecr.prod_weu_workload_identity.service_endpoint_name
+  service_endpoint_azure_devops_docker_prod_id   = data.azuredevops_serviceendpoint_azurecr.prod_weu_workload_identity.id
+  service_endpoint_azure_prod_id                 = data.azuredevops_serviceendpoint_azurerm.azure_prod.id
 
 }
