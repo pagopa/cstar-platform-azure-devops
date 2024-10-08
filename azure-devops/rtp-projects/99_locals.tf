@@ -2,15 +2,15 @@ locals {
   prefix           = "cstar"
   azure_devops_org = "pagopaspa"
   domain           = "rtp"
-
+   
   # 🔐 KV AZDO
   dev_key_vault_resource_group  = "${local.prefix}-d-sec-rg"
   uat_key_vault_resource_group  = "${local.prefix}-u-sec-rg"
   prod_key_vault_resource_group = "${local.prefix}-p-sec-rg"
 
-  dev_key_vault_azdo_name  = "${local.prefix}-d-azdo-weu-kv"
-  uat_key_vault_azdo_name  = "${local.prefix}-u-azdo-weu-kv"
-  prod_key_vault_azdo_name = "${local.prefix}-p-azdo-weu-kv"
+  dev_key_vault_azdo_name  = "${local.prefix}-d-azdo-${var.location_short}-kv"
+  uat_key_vault_azdo_name  = "${local.prefix}-u-azdo-${var.location_short}-kv"
+  prod_key_vault_azdo_name = "${local.prefix}-p-azdo-${var.location_short}-kv"
 
   # 🔐 KV Domain
   dev_domain_key_vault_resource_group  = "${local.prefix}-d-${var.location_short}-${local.domain}-sec-rg"
@@ -27,19 +27,19 @@ locals {
   prod_vnet_rg = "${local.prefix}-p-vnet-rg"
 
   location              = "westeurope"
-  dev_identity_rg_name  = "cstar-d-identity-rg"
-  uat_identity_rg_name  = "cstar-u-identity-rg"
-  prod_identity_rg_name = "cstar-p-identity-rg"
+  dev_identity_rg_name  = "${local.prefix}-d-identity-rg"
+  uat_identity_rg_name  = "${local.prefix}-u-identity-rg"
+  prod_identity_rg_name = "${local.prefix}-p-identity-rg"
 
   # DNS Zone
 
-  rg_dev_dns_zone_name  = "cstar-d-vnet-rg"
-  rg_uat_dns_zone_name  = "cstar-u-vnet-rg"
-  rg_prod_dns_zone_name = "cstar-p-vnet-rg"
+  rg_dev_dns_zone_name  = "${local.prefix}-d-vnet-rg"
+  rg_uat_dns_zone_name  = "${local.prefix}-u-vnet-rg"
+  rg_prod_dns_zone_name = "${local.prefix}-p-vnet-rg"
 
-  dev_dns_zone_name  = "dev.cstar.pagopa.it"
-  uat_dns_zone_name  = "uat.cstar.pagopa.it"
-  prod_dns_zone_name = "cstar.pagopa.it"
+  dev_dns_zone_name  = "dev.${local.prefix}.pagopa.it"
+  uat_dns_zone_name  = "uat.${local.prefix}.pagopa.it"
+  prod_dns_zone_name = "${local.prefix}.pagopa.it"
 
   # 📦 DOCKER DEV FOR AKS
   srv_endpoint_name_aks_dev_docker_registry = "${local.prefix}-aks-cr-dev"
@@ -62,14 +62,33 @@ locals {
   srv_endpoint_name_aks_prod = "${local.prefix}-${local.domain}-aks-prod"
 
   # Agent Pool
-  azdo_agent_pool_dev  = "cstar-dev-linux"
-  azdo_agent_pool_uat  = "cstar-uat-linux"
-  azdo_agent_pool_prod = "cstar-prod-linux"
+  azdo_agent_pool_dev  = "${local.prefix}-dev-linux"
+  azdo_agent_pool_uat  = "${local.prefix}-uat-linux"
+  azdo_agent_pool_prod = "${local.prefix}-prod-linux"
 
   # Subscription Name
-  dev_cstar_subscription_name  = "dev-cstar"
-  uat_cstar_subscription_name  = "uat-cstar"
-  prod_cstar_subscription_name = "prod-cstar"
+  dev_cstar_subscription_name  = "dev-${local.prefix}"
+  uat_cstar_subscription_name  = "uat-${local.prefix}"
+  prod_cstar_subscription_name = "prod-${local.prefix}"
+
+  # Front end
+  dev_storage_account_rg      = "${local.prefix}-d-${var.location_short}-${local.domain}-fe-rg"
+  dev_storage_account_name    = "${local.prefix}d${var.location_short}${local.domain}fesa"
+  dev_cdn_endpoint            = "${local.prefix}-d-${var.location_short}-${local.domain}-fe-cdn-endpoint"
+  dev_cdn_profile             = "${local.prefix}-d-${var.location_short}-${local.domain}-fe-cdn-profile"
+  dev_apim_prefix_domain      = ""
+
+  uat_storage_account_rg      = "${local.prefix}-u-${var.location_short}-${local.domain}-fe-rg"
+  uat_storage_account_name    = "${local.prefix}u${var.location_short}${local.domain}fesa"
+  uat_cdn_endpoint            = "${local.prefix}-u-${var.location_short}-${local.domain}-fe-cdn-endpoint"
+  uat_cdn_profile             = "${local.prefix}-u-${var.location_short}-${local.domain}-fe-cdn-profile"
+  uat_apim_prefix_domain      = ""
+
+  prod_storage_account_rg      = "${local.prefix}-p-${var.location_short}-${local.domain}-fe-rg"
+  prod_storage_account_name    = "${local.prefix}p${var.location_short}${local.domain}fesa"
+  prod_cdn_endpoint            = "${local.prefix}-p-${var.location_short}-${local.domain}-fe-cdn-endpoint"
+  prod_cdn_profile             = "${local.prefix}-p-${var.location_short}-${local.domain}-fe-cdn-profile"
+  prod_apim_prefix_domain      = ""
 
   #
   # Outputs from CORE
@@ -89,9 +108,9 @@ locals {
   service_endpoint_azure_devops_docker_uat_id   = data.azuredevops_serviceendpoint_azurecr.uat_weu_workload_identity.id
   service_endpoint_azure_uat_id                 = data.azuredevops_serviceendpoint_azurerm.azure_uat.id
 
-  # # PROD
-  # service_endpoint_azure_devops_docker_prod_name = data.azuredevops_serviceendpoint_azurecr.prod_weu_workload_identity.service_endpoint_name
-  # service_endpoint_azure_devops_docker_prod_id   = data.azuredevops_serviceendpoint_azurecr.prod_weu_workload_identity.id
-  # service_endpoint_azure_prod_id                 = data.azuredevops_serviceendpoint_azurerm.azure_prod.id
+  # PROD
+  service_endpoint_azure_devops_docker_prod_name = data.azuredevops_serviceendpoint_azurecr.prod_weu_workload_identity.service_endpoint_name
+  service_endpoint_azure_devops_docker_prod_id   = data.azuredevops_serviceendpoint_azurecr.prod_weu_workload_identity.id
+  service_endpoint_azure_prod_id                 = data.azuredevops_serviceendpoint_azurerm.azure_prod.id
 
 }
