@@ -9,7 +9,7 @@ variable "rtp-cstar-pagopa-it" {
     pipeline = {
       enable_tls_cert = true
       path            = "TLS-Certificates\\PROD"
-      dns_record_name = "rtp"
+      dns_record_name = "rtp-api"
       dns_zone_name   = "cstar.pagopa.it"
       # common variables to all pipelines
       variables = {
