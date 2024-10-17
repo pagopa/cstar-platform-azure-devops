@@ -3,13 +3,13 @@ variable "rtp-cstar-pagopa-it" {
     repository = {
       organization   = "pagopa"
       name           = "le-azure-acme-tiny"
-      branch_name    = "refs/heads/master"
+      branch_name    = "refs/heads/master"  
       pipelines_path = "."
     }
     pipeline = {
       enable_tls_cert = true
       path            = "TLS-Certificates\\PROD"
-      dns_record_name = "rtp-api"
+      dns_record_name = "api-rtp"
       dns_zone_name   = "cstar.pagopa.it"
       # common variables to all pipelines
       variables = {
