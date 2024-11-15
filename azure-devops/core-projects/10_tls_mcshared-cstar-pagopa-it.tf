@@ -3,8 +3,7 @@ variable "mcshared-cstar-pagopa-it" {
     repository = {
       organization   = "pagopa"
       name           = "le-azure-acme-tiny"
-      branch_name    = "refs/heads/master"
-      tag            = "refs/tags/v2.0.0"
+      branch_name    = "refs/tags/v2.0.0"
       pipelines_path = "."
     }
     pipeline = {
