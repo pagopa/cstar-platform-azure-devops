@@ -4,7 +4,6 @@
 
 module "DEV-AZURERM-SERVICE-CONN" {
     source     = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_federated?ref=v9.2.1"
-
   providers = {
     azurerm = azurerm.dev
   }
@@ -38,7 +37,7 @@ module "UAT-AZURERM-SERVICE-CONN" {
 
   project_id = data.azuredevops_project.project.id
   #tfsec:ignore:general-secrets-no-plaintext-exposure
-  name = "UAT-CSTAR"
+  name = "azdo-uat-cstar-iac-apply"
 
   tenant_id         = data.azurerm_client_config.current.tenant_id
   subscription_id   = data.azurerm_subscriptions.uat.subscriptions[0].subscription_id
@@ -65,7 +64,7 @@ module "PROD-AZURERM-SERVICE-CONN" {
 
   project_id = data.azuredevops_project.project.id
   #tfsec:ignore:general-secrets-no-plaintext-exposure
-  name = "PROD-CSTAR"
+  name = "azdo-prod-cstar-iac-apply"
 
   tenant_id         = data.azurerm_client_config.current.tenant_id
   subscription_id   = data.azurerm_subscriptions.prod.subscriptions[0].subscription_id
