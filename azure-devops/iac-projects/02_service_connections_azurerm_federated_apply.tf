@@ -11,7 +11,7 @@ module "DEV-AZURERM-SERVICE-CONN" {
 
   project_id = data.azuredevops_project.project.id
   #tfsec:ignore:general-secrets-no-plaintext-exposure
-  name = "DEV-CSTAR"
+  name = "azdo-dev-cstar-iac-apply"
 
   tenant_id         = data.azurerm_client_config.current.tenant_id
   subscription_id   = data.azurerm_subscriptions.dev.subscriptions[0].subscription_id
