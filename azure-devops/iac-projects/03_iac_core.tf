@@ -23,12 +23,23 @@ locals {
   iac-variables_secret = {}
 
   # code_review vars
-  iac-variables_code_review = {}
+  iac-variables_code_review = {
+    dev_plan_service_connection_name : module.DEV-AZURERM-IAC-PLAN-SERVICE-CONN.service_endpoint_name
+    uat_plan_service_connection_name : module.UAT-AZURERM-IAC-PLAN-SERVICE-CONN.service_endpoint_name
+    prod_plan_service_connection_name : module.PROD-AZURERM-IAC-PLAN-SERVICE-CONN.service_endpoint_name
+  }
   # code_review secrets
   iac-variables_secret_code_review = {}
 
   # deploy vars
-  iac-variables_deploy = {}
+  iac-variables_deploy = {
+    dev_apply_service_connection_name : module.DEV-AZURERM-SERVICE-CONN.service_endpoint_name
+    uat_apply_service_connection_name : module.UAT-AZURERM-SERVICE-CONN.service_endpoint_name
+    prod_apply_service_connection_name : module.PROD-AZURERM-SERVICE-CONN.service_endpoint_name
+    dev_plan_service_connection_name : module.DEV-AZURERM-IAC-PLAN-SERVICE-CONN.service_endpoint_name
+    uat_plan_service_connection_name : module.UAT-AZURERM-IAC-PLAN-SERVICE-CONN.service_endpoint_name
+    prod_plan_service_connection_name : module.PROD-AZURERM-IAC-PLAN-SERVICE-CONN.service_endpoint_name
+  }
   # deploy secrets
   iac-variables_secret_deploy = {}
 }
