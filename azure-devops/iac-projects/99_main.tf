@@ -1,12 +1,25 @@
 terraform {
-  required_version = ">= 1.1.5"
+  required_version = ">= 1.8.5"
   required_providers {
     azuredevops = {
       source  = "microsoft/azuredevops"
-      version = " ~> 1.1.0"
+      version = " ~> 1.4.0"
+    }
+    azuread = {
+      source  = "hashicorp/azuread"
+      version = "~> 2.51"
+    }
+    null = {
+      source  = "hashicorp/null"
+      version = "~> 3.2"
+    }
+    time = {
+      source  = "hashicorp/time"
+      version = "~> 0.12"
     }
     azurerm = {
-      version = "~> 3.107.0"
+      source  = "hashicorp/azurerm"
+      version = "~> 3.117.0"
     }
   }
   backend "azurerm" {}
@@ -53,17 +66,18 @@ provider "azurerm" {
 
 data "azurerm_client_config" "current" {}
 
-data "azurerm_subscriptions" "prod" {
-  display_name_prefix = var.prod_subscription_name
+data "azurerm_subscriptions" "dev" {
+  display_name_prefix = var.dev_subscription_name
 }
 
 data "azurerm_subscriptions" "uat" {
   display_name_prefix = var.uat_subscription_name
 }
 
-data "azurerm_subscriptions" "dev" {
-  display_name_prefix = var.dev_subscription_name
+data "azurerm_subscriptions" "prod" {
+  display_name_prefix = var.prod_subscription_name
 }
+
 
 #
 # Modules

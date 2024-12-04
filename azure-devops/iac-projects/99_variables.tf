@@ -45,6 +45,16 @@ locals {
   uat_rtp_key_vault_name  = "${local.prefix}-u-weu-rtp-kv"
   prod_rtp_key_vault_name = "${local.prefix}-p-weu-rtp-kv"
 
+  #
+  # Identity RG
+  #
+  dev_identity_rg_name  = "cstar-d-identity-rg"
+  uat_identity_rg_name  = "cstar-u-identity-rg"
+  prod_identity_rg_name = "cstar-p-identity-rg"
+}
+
+variable "location" {
+  type = string
 }
 
 variable "dev_subscription_name" {
