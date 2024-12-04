@@ -42,12 +42,10 @@ module "resource_switcher" {
   github_service_connection_id = azuredevops_serviceendpoint_github.io-azure-devops-github-rw.id
 
   variables = merge(
-    local.iac-variables,
     local.iac-variables_switcher,
   )
 
   variables_secret = merge(
-    local.iac-variables_secret,
     local.iac-variables_secret_switcher,
   )
 
