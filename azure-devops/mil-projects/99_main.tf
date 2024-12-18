@@ -3,10 +3,11 @@ terraform {
   required_providers {
     azuredevops = {
       source  = "microsoft/azuredevops"
-      version = "<= 1.1.1"
+      version = "~> 1.2"
     }
     azurerm = {
-      version = "<= 3.107.0"
+      source  = "hashicorp/azurerm"
+      version = "~> 3.116"
     }
     null = {
       version = "<= 3.2.1"
@@ -71,11 +72,11 @@ data "azurerm_subscriptions" "dev" {
 }
 
 module "__v3__" {
-  # https://github.com/pagopa/terraform-azurerm-v3/releases/tag/v8.29.0
-  source = "git::https://github.com/pagopa/terraform-azurerm-v3.git?ref=1259cead9eb972e0d290f09fbeb34c6e40f604c7"
+  # https://github.com/pagopa/terraform-azurerm-v3/releases/tag/v8.63.0
+  source = "git::https://github.com/pagopa/terraform-azurerm-v3.git?ref=50f4db15d35bebedc8251139346fd0fac9ac6ca2"
 }
 
 module "__devops_v0__" {
-  # https://github.com/pagopa/azuredevops-tf-modules/releases/tag/v9.0.0
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git?ref=7a19400902abf7f58d1af6cb7e34ef83dba5cf68"
+  # https://github.com/pagopa/azuredevops-tf-modules/releases/tag/v9.2.1
+  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git?ref=7e23d73d22e7b37352c25a32cc40f6f42b6569ea"
 }

@@ -2,6 +2,10 @@ locals {
   prefix           = "cstar"
   azure_devops_org = "pagopaspa"
   domain           = "mil"
+  product          = "${local.prefix}-${local.domain}"
+
+  # ⚙️ DevOps
+  devops_project_id = data.azuredevops_project.project.project_id
 
   # 🔐 KV AZDO
   dev_key_vault_resource_group  = "${local.prefix}-d-sec-rg"
