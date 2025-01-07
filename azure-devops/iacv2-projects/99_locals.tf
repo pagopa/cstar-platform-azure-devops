@@ -25,113 +25,96 @@ locals {
   domains = [
     {
       name : "mil",
-      envs : ["d"],
+      envs : ["d", "u"],
       kv_name : "cstar-%s-weu-mil-kv",
       rg_name : "cstar-%s-weu-mil-sec-rg",
       code_review : true,
-      deploy : false,
+      deploy : true,
       pipeline_prefix : "mil-infra",
       pipeline_path : "mil-infrastructure",
       repository : {
         yml_prefix_name : "mil"
-        branch_name : "iac-devops"
+        branch_name : "refs/heads/iac-devops"
       }
-    }
-    #    {
-    #      name : "networking",
-    #      envs : ["d", "u", "p"],
-    #      kv_name : "",
-    #      rg_name : "",
-    #      code_review : true,
-    #      deploy : true,
-    #      pipeline_prefix : "networking-infra",
-    #      pipeline_path : "networking-infrastructure",
-    #      repository : {
-    #        yml_prefix_name : "networking"
-    #      }
-    #    },
-    #    {
-    #      name : "security",
-    #      envs : ["d", "u", "p"],
-    #      kv_name : "",
-    #      rg_name : "",
-    #      code_review : true,
-    #      deploy : true,
-    #      pipeline_prefix : "security-infra",
-    #      pipeline_path : "security-infrastructure",
-    #      repository : {
-    #        yml_prefix_name : "security"
-    #      }
-    #    },
-    #    {
-    #      name : "packer",
-    #      envs : ["d", "u", "p"],
-    #      kv_name : "",
-    #      rg_name : "",
-    #      code_review : true,
-    #      deploy : true,
-    #      pipeline_prefix : "packer-infra",
-    #      pipeline_path : "packer-infrastructure",
-    #      repository : {
-    #        yml_prefix_name : "packer"
-    #      }
-    #    },
-    #    {
-    #      name : "core",
-    #      envs : ["d", "u", "p"],
-    #      kv_name : "",
-    #      rg_name : "",
-    #      code_review : true,
-    #      deploy : true,
-    #      pipeline_prefix : "core-infra",
-    #      pipeline_path : "core-infrastructure",
-    #      repository : {
-    #        yml_prefix_name : "core"
-    #      }
-    #    },
-    #    {
-    #      name : "monitoring",
-    #      envs : ["d", "u", "p"],
-    #      kv_name : "",
-    #      rg_name : "",
-    #      code_review : true,
-    #      deploy : true,
-    #      pipeline_prefix : "monitoring-infra",
-    #      pipeline_path : "monitoring-infrastructure",
-    #      repository : {
-    #        yml_prefix_name : "monitoring"
-    #      }
-    #    },
-    #    {
-    #      name : "platform",
-    #      envs : ["d", "u", "p"],
-    #      kv_name : "",
-    #      rg_name : "",
-    #      code_review : true,
-    #      deploy : true,
-    #      pipeline_prefix : "platform-infra",
-    #      pipeline_path : "platform-infrastructure",
-    #      repository : {
-    #        yml_prefix_name : "platform"
-    #      }
-    #    },
-    #    {
-    #      name : "payhub-api-spec",
-    #      envs : ["d", "u", "p"],
-    #      kv_name : "",
-    #      rg_name : "",
-    #      code_review : true,
-    #      deploy : true,
-    #      pipeline_prefix : "payhub-api-spec",
-    #      pipeline_path : "payhub-api-spec",
-    #      repository : {
-    #        name = "p4pa-infra-api-spec"
-    #        yml_prefix_name : "payhub"
-    #        branch_name = "refs/heads/main"
-    #      }
-    #    }
+    },
+    {
+      name : "rtp",
+      envs : ["d", "u", "p"],
+      code_review : true,
+      deploy : true,
+      pipeline_prefix : "rtp-infra",
+      pipeline_path : "rtp-infrastructure",
+      repository : {
+        yml_prefix_name : "rtp"
+        branch_name : "refs/heads/iac-devops"
+      }
+    },
+    {
+      name : "rtd",
+      envs : ["d", "u", "p"],
+      kv_name : "${local.prefix}-%s-rtd-kv",
+      rg_name : "${local.prefix}-%s-rtd-sec-rg",
+      code_review : true,
+      deploy : true,
+      pipeline_prefix : "rtd-infra",
+      pipeline_path : "rtd-infrastructure",
+      repository : {
+        yml_prefix_name : "rtd"
+        branch_name : "refs/heads/iac-devops"
+      }
+    },
+    {
+      name : "tae",
+      envs : ["d", "u", "p"],
+      code_review : true,
+      deploy : true,
+      pipeline_prefix : "tae-infra",
+      pipeline_path : "tae-infrastructure",
+      repository : {
+        yml_prefix_name : "tae"
+        branch_name : "refs/heads/iac-devops"
+      }
+    },
+    {
+      name : "idpay",
+      envs : ["d", "u", "p"],
+      kv_name : "${local.prefix}-%s-idpay-kv",
+      rg_name : "${local.prefix}-%s-idpay-sec-rg",
+      code_review : true,
+      deploy : true,
+      pipeline_prefix : "idpay-infra",
+      pipeline_path : "idpay-infrastructure",
+      repository : {
+        yml_prefix_name : "idpay"
+        branch_name : "refs/heads/iac-devops"
+      }
+    },
+    {
+      name : "core",
+      envs : ["d", "u", "p"],
+      code_review : true,
+      deploy : true,
+      pipeline_prefix : "core-infra",
+      pipeline_path : "core-infrastructure",
+      repository : {
+        yml_prefix_name : "core"
+        branch_name : "refs/heads/iac-devops"
+      }
+    },
+    {
+      name : "packer",
+      envs : ["d", "u", "p"],
+      code_review : true,
+      deploy : true,
+      pipeline_prefix : "packer-infra",
+      pipeline_path : "packer-infrastructure",
+      repository : {
+        yml_prefix_name : "packer"
+        branch_name : "refs/heads/iac-devops"
+      }
+    },
   ]
-  #
+
   domain_variables = {
     #    mil = {
     #      iac_variables_cr : {},

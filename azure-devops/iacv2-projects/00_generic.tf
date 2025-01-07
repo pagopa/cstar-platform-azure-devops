@@ -15,3 +15,13 @@ data "azurerm_subscriptions" "prod" {
 data "azuredevops_project" "project" {
   name = "${local.prefix}-platform-iac-projects"
 }
+
+data "azuredevops_group" "admin" {
+  project_id = data.azuredevops_project.project.id
+  name       = "Project Administrators"
+}
+
+data "azuredevops_group" "iac_team" {
+  project_id = data.azuredevops_project.project.id
+  name       = "cstar-platform-iac-projects Team"
+}

@@ -56,7 +56,7 @@ module "prod_secrets" {
 
   secrets = [
     "${var.aks_prod_platform_name}-azure-devops-sa-token",
-    "${var.aks_prod_platform_name}-aks-azure-devops-sa-cacrt",
-    "${var.aks_prod_platform_name}-aks-apiserver-url"
+    "${var.aks_prod_platform_name}-azure-devops-sa-cacrt",
+    "${var.aks_prod_platform_name}-apiserver-url"
   ]
 }
