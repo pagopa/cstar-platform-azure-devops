@@ -34,7 +34,6 @@ locals {
       pipeline_path : "mil-infrastructure",
       repository : {
         yml_prefix_name : "mil"
-        branch_name : "refs/heads/iac-devops"
       }
     },
     {
@@ -46,7 +45,6 @@ locals {
       pipeline_path : "rtp-infrastructure",
       repository : {
         yml_prefix_name : "rtp"
-        branch_name : "refs/heads/iac-devops"
       }
     },
     {
@@ -60,7 +58,6 @@ locals {
       pipeline_path : "rtd-infrastructure",
       repository : {
         yml_prefix_name : "rtd"
-        branch_name : "refs/heads/iac-devops"
       }
     },
     {
@@ -72,7 +69,6 @@ locals {
       pipeline_path : "tae-infrastructure",
       repository : {
         yml_prefix_name : "tae"
-        branch_name : "refs/heads/iac-devops"
       }
     },
     {
@@ -86,7 +82,6 @@ locals {
       pipeline_path : "idpay-infrastructure",
       repository : {
         yml_prefix_name : "idpay"
-        branch_name : "refs/heads/iac-devops"
       }
     },
     {
@@ -98,7 +93,6 @@ locals {
       pipeline_path : "core-infrastructure",
       repository : {
         yml_prefix_name : "core"
-        branch_name : "refs/heads/iac-devops"
       }
     },
     {
@@ -110,7 +104,6 @@ locals {
       pipeline_path : "packer-infrastructure",
       repository : {
         yml_prefix_name : "packer"
-        branch_name : "refs/heads/iac-devops"
       }
     },
   ]
