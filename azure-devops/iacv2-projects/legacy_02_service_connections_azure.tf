@@ -3,7 +3,7 @@
 #
 
 # DEV service connection
-resource "azuredevops_serviceendpoint_azurerm" "DEV-CSTAR" {
+resource "azuredevops_serviceendpoint_azurerm" "DEV_CSTAR" {
   depends_on = [data.azuredevops_project.project]
 
   project_id                = data.azuredevops_project.project.id
@@ -15,7 +15,7 @@ resource "azuredevops_serviceendpoint_azurerm" "DEV-CSTAR" {
 }
 
 # UAT service connection
-resource "azuredevops_serviceendpoint_azurerm" "UAT-CSTAR" {
+resource "azuredevops_serviceendpoint_azurerm" "UAT_CSTAR" {
   depends_on = [data.azuredevops_project.project]
 
   project_id                = data.azuredevops_project.project.id
@@ -27,7 +27,7 @@ resource "azuredevops_serviceendpoint_azurerm" "UAT-CSTAR" {
 }
 
 # PROD service connection
-resource "azuredevops_serviceendpoint_azurerm" "PROD-CSTAR" {
+resource "azuredevops_serviceendpoint_azurerm" "PROD_CSTAR" {
   depends_on = [data.azuredevops_project.project]
 
   project_id                = data.azuredevops_project.project.id
