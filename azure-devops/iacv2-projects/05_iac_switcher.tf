@@ -17,7 +17,7 @@ variable "switcher_iac" {
 locals {
   # deploy vars
   iac-variables_switcher = {
-    TF_AZURE_SERVICE_CONNECTION_NAME = azuredevops_serviceendpoint_azurerm.DEV-CSTAR.service_endpoint_name
+    TF_AZURE_SERVICE_CONNECTION_NAME = azuredevops_serviceendpoint_azurerm.DEV_CSTAR.service_endpoint_name
     TF_AZURE_DEVOPS_POOL_AGENT_NAME : "cstar-dev-linux-infra"
   }
   # deploy secrets
@@ -27,35 +27,31 @@ locals {
 
 
 module "resource_switcher" {
-
   providers = {
     azurerm = azurerm.dev
   }
 
-  #   source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_resource_switcher?ref=v5.2.0"
-  source = "./.terraform/modules/__azdo__/azuredevops_build_definition_resource_switcher"
+  source = "./.terraform/modules/__devops_v0__/azuredevops_build_definition_resource_switcher"
 
   path = var.switcher_iac.pipeline.path
 
   project_id                   = data.azuredevops_project.project.id
   repository                   = var.switcher_iac.repository
-  github_service_connection_id = azuredevops_serviceendpoint_github.io-azure-devops-github-rw.id
+  github_service_connection_id = azuredevops_serviceendpoint_github.azure_devops_github_rw.id
 
   variables = merge(
-    local.iac-variables,
     local.iac-variables_switcher,
   )
 
   variables_secret = merge(
-    local.iac-variables_secret,
     local.iac-variables_secret_switcher,
   )
 
   timeout = 50
 
   service_connection_ids_authorization = [
-    azuredevops_serviceendpoint_github.io-azure-devops-github-ro.id,
-    azuredevops_serviceendpoint_azurerm.DEV-CSTAR.id
+    azuredevops_serviceendpoint_github.azure_devops_github_ro.id,
+    azuredevops_serviceendpoint_azurerm.DEV_CSTAR.id
   ]
 
   schedule_configuration = {
