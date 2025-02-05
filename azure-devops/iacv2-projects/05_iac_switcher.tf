@@ -17,7 +17,7 @@ variable "switcher_iac" {
 locals {
   # deploy vars
   iac-variables_switcher = {
-    TF_AZURE_SERVICE_CONNECTION_NAME = azuredevops_serviceendpoint_azurerm.DEV_CSTAR.service_endpoint_name
+    TF_AZURE_SERVICE_CONNECTION_NAME = module.dev_azurerm_iac_deploy_service_conn.service_endpoint_name
     TF_AZURE_DEVOPS_POOL_AGENT_NAME : "cstar-dev-linux-infra"
   }
   # deploy secrets
@@ -51,7 +51,7 @@ module "resource_switcher" {
 
   service_connection_ids_authorization = [
     azuredevops_serviceendpoint_github.azure_devops_github_ro.id,
-    azuredevops_serviceendpoint_azurerm.DEV_CSTAR.id
+    module.dev_azurerm_iac_deploy_service_conn.service_endpoint_id,
   ]
 
   schedule_configuration = {

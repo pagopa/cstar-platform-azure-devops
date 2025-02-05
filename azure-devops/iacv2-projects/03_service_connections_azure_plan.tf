@@ -2,7 +2,7 @@
 # ⛩ Service connections
 #
 
-module "DEV_AZURERM_IAC_PLAN_SERVICE_CONN" {
+module "dev_azurerm_iac_plan_service_conn" {
   source = "./.terraform/modules/__devops_v0__/azuredevops_serviceendpoint_federated"
 
   providers = {
@@ -25,13 +25,13 @@ resource "azurerm_role_assignment" "dev_plan_permissions" {
 
   scope                = data.azurerm_subscriptions.dev.subscriptions[0].id
   role_definition_name = "dev-${local.prefix}-platform-iac-reader"
-  principal_id         = module.DEV_AZURERM_IAC_PLAN_SERVICE_CONN.identity_principal_id
+  principal_id         = module.dev_azurerm_iac_plan_service_conn.identity_principal_id
 }
 #
 # UAT
 #
 
-module "UAT_AZURERM_IAC_PLAN_SERVICE_CONN" {
+module "uat_azurerm_iac_plan_service_conn" {
   source = "./.terraform/modules/__devops_v0__/azuredevops_serviceendpoint_federated"
   providers = {
     azurerm = azurerm.uat
@@ -53,14 +53,14 @@ resource "azurerm_role_assignment" "uat_plan_permissions" {
 
   scope                = data.azurerm_subscriptions.uat.subscriptions[0].id
   role_definition_name = "uat-${local.prefix}-platform-iac-reader"
-  principal_id         = module.UAT_AZURERM_IAC_PLAN_SERVICE_CONN.identity_principal_id
+  principal_id         = module.uat_azurerm_iac_plan_service_conn.identity_principal_id
 }
 
 #
 # PROD
 #
 
-module "PROD_AZURERM_IAC_PLAN_SERVICE_CONN" {
+module "prod_azurerm_iac_plan_service_conn" {
   source = "./.terraform/modules/__devops_v0__/azuredevops_serviceendpoint_federated"
   providers = {
     azurerm = azurerm.prod
@@ -82,5 +82,5 @@ resource "azurerm_role_assignment" "prod_plan_permissions" {
 
   scope                = data.azurerm_subscriptions.prod.subscriptions[0].id
   role_definition_name = "prod-${local.prefix}-platform-iac-reader"
-  principal_id         = module.PROD_AZURERM_IAC_PLAN_SERVICE_CONN.identity_principal_id
+  principal_id         = module.prod_azurerm_iac_plan_service_conn.identity_principal_id
 }
