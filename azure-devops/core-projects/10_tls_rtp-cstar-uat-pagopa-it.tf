@@ -26,11 +26,11 @@ locals {
     credential_key_vault_name           = local.uat_domain_key_vault_name
     credential_key_vault_resource_group = local.uat_domain_key_vault_resource_group
     service_connection_ids_authorization = [
-      module.UAT-CSTAR-CORE-TLS-CERT-SERVICE-CONN-FEDERATED.service_endpoint_id,
+      module.uat_cstar_core_tls_cert_service_conn_federated.service_endpoint_id,
     ]
   }
   rtp-cstar-uat-pagopa-it-variables = {
-    KEY_VAULT_SERVICE_CONNECTION = module.UAT-CSTAR-CORE-TLS-CERT-SERVICE-CONN-FEDERATED.service_endpoint_name,
+    KEY_VAULT_SERVICE_CONNECTION = module.uat_cstar_core_tls_cert_service_conn_federated.service_endpoint_name,
     KEY_VAULT_NAME               = local.uat_domain_key_vault_name
   }
   rtp-cstar-uat-pagopa-it-variables_secret = {

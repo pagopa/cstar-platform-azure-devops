@@ -23,11 +23,11 @@ locals {
     credential_key_vault_name           = local.uat_domain_key_vault_name
     credential_key_vault_resource_group = local.uat_domain_key_vault_resource_group
     service_connection_ids_authorization = [
-      module.UAT-CSTAR-CORE-TLS-CERT-SERVICE-CONN-FEDERATED.service_endpoint_id,
+      module.uat_cstar_core_tls_cert_service_conn_federated.service_endpoint_id,
     ]
   }
   api_emd_uat_cstar_pagopa_it_variables = {
-    KEY_VAULT_SERVICE_CONNECTION = module.UAT-CSTAR-CORE-TLS-CERT-SERVICE-CONN-FEDERATED.service_endpoint_name
+    KEY_VAULT_SERVICE_CONNECTION = module.uat_cstar_core_tls_cert_service_conn_federated.service_endpoint_name
   }
   api_emd_uat_cstar_pagopa_it_variables_secret = {
   }

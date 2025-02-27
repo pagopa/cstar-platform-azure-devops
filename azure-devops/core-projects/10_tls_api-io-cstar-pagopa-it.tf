@@ -26,11 +26,11 @@ locals {
     credential_key_vault_name           = local.prod_domain_key_vault_name
     credential_key_vault_resource_group = local.prod_domain_key_vault_resource_group
     service_connection_ids_authorization = [
-      module.PROD-CSTAR-CORE-TLS-CERT-SERVICE-CONN-FEDERATED.service_endpoint_id,
+      module.prod_cstar_core_tls_cert_service_conn_federated.service_endpoint_id,
     ]
   }
   api-io-cstar-pagopa-it-variables = {
-    KEY_VAULT_SERVICE_CONNECTION = module.PROD-CSTAR-CORE-TLS-CERT-SERVICE-CONN-FEDERATED.service_endpoint_name,
+    KEY_VAULT_SERVICE_CONNECTION = module.prod_cstar_core_tls_cert_service_conn_federated.service_endpoint_name,
     KEY_VAULT_NAME               = local.prod_domain_key_vault_name
   }
   api-io-cstar-pagopa-it-variables_secret = {

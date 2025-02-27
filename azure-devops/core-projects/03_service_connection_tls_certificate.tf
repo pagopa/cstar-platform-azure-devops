@@ -2,7 +2,7 @@
 # DEV
 #
 
-module "DEV-CSTAR-CORE-TLS-CERT-SERVICE-CONN-FEDERATED" {
+module "dev_cstar_core_tls_cert_service_conn_federated" {
   source = "./.terraform/modules/__devops_v0__/azuredevops_serviceendpoint_federated"
 
   providers = {
@@ -23,7 +23,7 @@ resource "azurerm_key_vault_access_policy" "DEV-CSTAR-CORE-TLS-CERT-SERVICE-CONN
   provider     = azurerm.dev
   key_vault_id = data.azurerm_key_vault.domain_kv_dev.id
   tenant_id    = data.azurerm_client_config.current.tenant_id
-  object_id    = module.DEV-CSTAR-CORE-TLS-CERT-SERVICE-CONN-FEDERATED.service_principal_object_id
+  object_id    = module.dev_cstar_core_tls_cert_service_conn_federated.service_principal_object_id
 
   certificate_permissions = ["Get", "Import"]
 }
@@ -45,7 +45,7 @@ module "letsencrypt_dev" {
 # UAT
 #
 
-module "UAT-CSTAR-CORE-TLS-CERT-SERVICE-CONN-FEDERATED" {
+module "uat_cstar_core_tls_cert_service_conn_federated" {
   source = "./.terraform/modules/__devops_v0__/azuredevops_serviceendpoint_federated"
 
   providers = {
@@ -66,7 +66,7 @@ resource "azurerm_key_vault_access_policy" "UAT-CSTAR-CORE-TLS-CERT-SERVICE-CONN
   provider     = azurerm.uat
   key_vault_id = data.azurerm_key_vault.domain_kv_uat.id
   tenant_id    = data.azurerm_client_config.current.tenant_id
-  object_id    = module.UAT-CSTAR-CORE-TLS-CERT-SERVICE-CONN-FEDERATED.service_principal_object_id
+  object_id    = module.uat_cstar_core_tls_cert_service_conn_federated.service_principal_object_id
 
   certificate_permissions = ["Get", "Import"]
 }
@@ -87,7 +87,7 @@ module "letsencrypt_uat" {
 #
 # PROD
 #
-module "PROD-CSTAR-CORE-TLS-CERT-SERVICE-CONN-FEDERATED" {
+module "prod_cstar_core_tls_cert_service_conn_federated" {
   source = "./.terraform/modules/__devops_v0__/azuredevops_serviceendpoint_federated"
 
   providers = {
@@ -108,7 +108,7 @@ resource "azurerm_key_vault_access_policy" "PROD-CSTAR-CORE-TLS-CERT-SERVICE-CON
   provider     = azurerm.prod
   key_vault_id = data.azurerm_key_vault.domain_kv_prod.id
   tenant_id    = data.azurerm_client_config.current.tenant_id
-  object_id    = module.PROD-CSTAR-CORE-TLS-CERT-SERVICE-CONN-FEDERATED.service_principal_object_id
+  object_id    = module.prod_cstar_core_tls_cert_service_conn_federated.service_principal_object_id
 
   certificate_permissions = ["Get", "Import"]
 }
