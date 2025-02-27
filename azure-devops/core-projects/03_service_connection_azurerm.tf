@@ -3,7 +3,7 @@
 #
 
 module "DEV-AZURERM-SERVICE-CONN" {
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_federated?ref=v5.4.0"
+  source = "./.terraform/modules/__devops_v0__/azuredevops_serviceendpoint_federated"
   providers = {
     azurerm = azurerm.dev
   }
@@ -30,7 +30,7 @@ resource "azurerm_role_assignment" "dev_azurerm" {
 # UAT
 #
 module "UAT-AZURERM-SERVICE-CONN" {
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_federated?ref=v5.4.0"
+  source = "./.terraform/modules/__devops_v0__/azuredevops_serviceendpoint_federated"
   providers = {
     azurerm = azurerm.uat
   }
@@ -57,7 +57,7 @@ resource "azurerm_role_assignment" "uat_azurerm" {
 # PROD
 #
 module "PROD-AZURERM-SERVICE-CONN" {
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_federated?ref=v5.4.0"
+  source = "./.terraform/modules/__devops_v0__/azuredevops_serviceendpoint_federated"
   providers = {
     azurerm = azurerm.prod
   }

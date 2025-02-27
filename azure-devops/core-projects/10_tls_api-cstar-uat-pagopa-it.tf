@@ -1,11 +1,5 @@
 variable "api-cstar-uat-pagopa-it" {
   default = {
-    repository = {
-      organization   = "pagopa"
-      name           = "le-azure-acme-tiny"
-      branch_name    = "refs/heads/master"
-      pipelines_path = "."
-    }
     pipeline = {
       enable_tls_cert = true
       path            = "TLS-Certificates\\UAT"
@@ -26,7 +20,7 @@ locals {
   api-cstar-uat-pagopa-it = {
     tenant_id                           = data.azurerm_client_config.current.tenant_id
     subscription_name                   = local.uat_subscription_name
-    subscription_id                     = data.azurerm_subscriptions.uat.subscriptions[0].subscription_id
+    subscription_id                     = local.uat_subscription_id
     dns_zone_resource_group             = local.rg_uat_dns_zone_name
     credential_subcription              = local.uat_subscription_name
     credential_key_vault_name           = local.uat_domain_key_vault_name
@@ -46,7 +40,7 @@ locals {
 # change only providers
 #tfsec:ignore:general-secrets-no-plaintext-exposure
 module "api-cstar-uat-pagopa-it-cert_az" {
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_tls_cert_federated?ref=v5.2.0"
+  source = "./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated"
   count  = var.api-cstar-uat-pagopa-it.pipeline.enable_tls_cert == true ? 1 : 0
 
   # change me
@@ -58,7 +52,7 @@ module "api-cstar-uat-pagopa-it-cert_az" {
   managed_identity_resource_group_name = local.uat_identity_rg_name
 
   project_id                   = data.azuredevops_project.project.id
-  repository                   = var.api-cstar-uat-pagopa-it.repository
+  repository                   = local.tlscert_repository
   path                         = "${local.domain}\\${var.api-cstar-uat-pagopa-it.pipeline.path}"
   github_service_connection_id = azuredevops_serviceendpoint_github.io-azure-devops-github-rw.id
 
@@ -91,12 +85,8 @@ module "api-cstar-uat-pagopa-it-cert_az" {
     start_minutes              = 0
     time_zone                  = "(UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna"
     branch_filter = {
-      include = [var.api-cstar-uat-pagopa-it.repository.branch_name]
+      include = ["refs/heads/master"]
       exclude = []
     }
   }
-
-  depends_on = [
-    module.letsencrypt_uat
-  ]
 }

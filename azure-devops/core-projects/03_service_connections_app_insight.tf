@@ -3,7 +3,7 @@
 #
 
 module "DEV-APPINSIGHTS-SERVICE-CONN-FEDERATED" {
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_federated?ref=v5.2.0"
+  source = "./.terraform/modules/__devops_v0__/azuredevops_serviceendpoint_federated"
   providers = {
     azurerm = azurerm.dev
   }

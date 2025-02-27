@@ -1,23 +1,20 @@
-variable "api-cstar-pagopa-it" {
+variable "api_emd_cstar_pagopa_it" {
   default = {
     pipeline = {
       enable_tls_cert = true
       path            = "TLS-Certificates\\PROD"
-      dns_record_name = "api"
+      dns_record_name = "api-emd"
       dns_zone_name   = "cstar.pagopa.it"
       # common variables to all pipelines
-      variables = {
-        CERT_NAME_EXPIRE_SECONDS = "2592000" #30 days
-      }
+      variables = {}
       # common secret variables to all pipelines
-      variables_secret = {
-      }
+      variables_secret = {}
     }
   }
 }
 
 locals {
-  api-cstar-pagopa-it = {
+  api_emd_cstar_pagopa_it = {
     tenant_id                           = data.azurerm_client_config.current.tenant_id
     subscription_name                   = local.prod_subscription_name
     subscription_id                     = local.prod_subscription_id
@@ -29,19 +26,17 @@ locals {
       module.PROD-CSTAR-CORE-TLS-CERT-SERVICE-CONN-FEDERATED.service_endpoint_id,
     ]
   }
-  api-cstar-pagopa-it-variables = {
-    KEY_VAULT_SERVICE_CONNECTION = module.PROD-CSTAR-CORE-TLS-CERT-SERVICE-CONN-FEDERATED.service_endpoint_name,
-    KEY_VAULT_NAME               = local.prod_domain_key_vault_name
+  api_emd_cstar_pagopa_it_variables = {
+    KEY_VAULT_SERVICE_CONNECTION = module.PROD-CSTAR-CORE-TLS-CERT-SERVICE-CONN-FEDERATED.service_endpoint_name
   }
-  api-cstar-pagopa-it-variables_secret = {
+  api_emd_cstar_pagopa_it_variables_secret = {
   }
 }
 
-# change only providers
 #tfsec:ignore:general-secrets-no-plaintext-exposure
-module "api-cstar-pagopa-it-cert_az" {
+module "api_emd_cstar_pagopa_it_cert_az" {
   source = "./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated"
-  count  = var.api-cstar-pagopa-it.pipeline.enable_tls_cert == true ? 1 : 0
+  count  = var.api_emd_cstar_pagopa_it.pipeline.enable_tls_cert == true ? 1 : 0
 
   # change me
   providers = {
@@ -51,32 +46,32 @@ module "api-cstar-pagopa-it-cert_az" {
   location                             = local.location
   managed_identity_resource_group_name = local.prod_identity_rg_name
 
-  project_id                   = data.azuredevops_project.project.id
+  project_id                   = local.devops_project_id
   repository                   = local.tlscert_repository
-  path                         = "${local.domain}\\${var.api-cstar-pagopa-it.pipeline.path}"
+  path                         = var.api_emd_cstar_pagopa_it.pipeline.path
   github_service_connection_id = azuredevops_serviceendpoint_github.io-azure-devops-github-rw.id
 
-  dns_record_name         = var.api-cstar-pagopa-it.pipeline.dns_record_name
-  dns_zone_name           = var.api-cstar-pagopa-it.pipeline.dns_zone_name
-  dns_zone_resource_group = local.api-cstar-pagopa-it.dns_zone_resource_group
-  tenant_id               = local.api-cstar-pagopa-it.tenant_id
-  subscription_name       = local.api-cstar-pagopa-it.subscription_name
-  subscription_id         = local.api-cstar-pagopa-it.subscription_id
+  dns_record_name         = var.api_emd_cstar_pagopa_it.pipeline.dns_record_name
+  dns_zone_name           = local.prod_dns_zone_name
+  dns_zone_resource_group = local.api_emd_cstar_pagopa_it.dns_zone_resource_group
+  tenant_id               = local.api_emd_cstar_pagopa_it.tenant_id
+  subscription_name       = local.api_emd_cstar_pagopa_it.subscription_name
+  subscription_id         = local.api_emd_cstar_pagopa_it.subscription_id
 
-  credential_key_vault_name           = local.api-cstar-pagopa-it.credential_key_vault_name
-  credential_key_vault_resource_group = local.api-cstar-pagopa-it.credential_key_vault_resource_group
+  credential_key_vault_name           = local.api_emd_cstar_pagopa_it.credential_key_vault_name
+  credential_key_vault_resource_group = local.api_emd_cstar_pagopa_it.credential_key_vault_resource_group
 
   variables = merge(
-    var.api-cstar-pagopa-it.pipeline.variables,
-    local.api-cstar-pagopa-it-variables,
+    var.api_emd_cstar_pagopa_it.pipeline.variables,
+    local.api_emd_cstar_pagopa_it_variables,
   )
 
   variables_secret = merge(
-    var.api-cstar-pagopa-it.pipeline.variables_secret,
-    local.api-cstar-pagopa-it-variables_secret,
+    var.api_emd_cstar_pagopa_it.pipeline.variables_secret,
+    local.api_emd_cstar_pagopa_it_variables_secret,
   )
 
-  service_connection_ids_authorization = local.api-cstar-pagopa-it.service_connection_ids_authorization
+  service_connection_ids_authorization = local.api_emd_cstar_pagopa_it.service_connection_ids_authorization
 
   schedules = {
     days_to_build              = ["Fri"]
@@ -85,12 +80,8 @@ module "api-cstar-pagopa-it-cert_az" {
     start_minutes              = 0
     time_zone                  = "(UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna"
     branch_filter = {
-      include = ["refs/heads/master"]
+      include = ["master"]
       exclude = []
     }
   }
-
-  depends_on = [
-    module.letsencrypt_prod
-  ]
 }
