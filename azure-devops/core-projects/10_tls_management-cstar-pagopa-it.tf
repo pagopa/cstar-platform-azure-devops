@@ -32,11 +32,11 @@ locals {
     credential_key_vault_name           = local.prod_domain_key_vault_name
     credential_key_vault_resource_group = local.prod_domain_key_vault_resource_group
     service_connection_ids_authorization = [
-      module.PROD-CSTAR-CORE-TLS-CERT-SERVICE-CONN-FEDERATED.service_endpoint_id,
+      module.prod_cstar_core_tls_cert_service_conn_federated.service_endpoint_id,
     ]
   }
   management-cstar-pagopa-it-variables = {
-    KEY_VAULT_SERVICE_CONNECTION = module.PROD-CSTAR-CORE-TLS-CERT-SERVICE-CONN-FEDERATED.service_endpoint_name,
+    KEY_VAULT_SERVICE_CONNECTION = module.prod_cstar_core_tls_cert_service_conn_federated.service_endpoint_name,
     KEY_VAULT_NAME               = local.prod_domain_key_vault_name
   }
   management-cstar-pagopa-it-variables_secret = {
@@ -46,7 +46,7 @@ locals {
 # change only providers
 #tfsec:ignore:general-secrets-no-plaintext-exposure
 module "management-cstar-pagopa-it-cert_az" {
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_tls_cert_federated?ref=v5.2.0"
+  source = "./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated"
   count  = var.management-cstar-pagopa-it.pipeline.enable_tls_cert == true ? 1 : 0
 
   # change me
@@ -91,12 +91,8 @@ module "management-cstar-pagopa-it-cert_az" {
     start_minutes              = 0
     time_zone                  = "(UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna"
     branch_filter = {
-      include = [var.management-cstar-pagopa-it.repository.branch_name]
+      include = ["refs/heads/master"]
       exclude = []
     }
   }
-
-  depends_on = [
-    module.letsencrypt_prod
-  ]
 }

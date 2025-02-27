@@ -2,8 +2,8 @@
 # ⛩ Service connection 2 🔐 KV@DEV 🛑
 #
 
-module "DEV-APPINSIGHTS-SERVICE-CONN-FEDERATED" {
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_federated?ref=v5.2.0"
+module "dev_appinsights_service_conn_federated" {
+  source = "./.terraform/modules/__devops_v0__/azuredevops_serviceendpoint_federated"
   providers = {
     azurerm = azurerm.dev
   }
@@ -30,5 +30,5 @@ resource "azurerm_role_assignment" "appinsights_component_contributor_dev" {
   provider             = azurerm.dev
   scope                = data.azurerm_application_insights.application_insights_dev.id
   role_definition_name = "Application Insights Component Contributor"
-  principal_id         = module.DEV-APPINSIGHTS-SERVICE-CONN-FEDERATED.service_principal_object_id
+  principal_id         = module.dev_appinsights_service_conn_federated.service_principal_object_id
 }

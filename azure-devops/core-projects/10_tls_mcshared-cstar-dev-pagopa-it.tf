@@ -1,11 +1,5 @@
 variable "mcshared-cstar-dev-pagopa-it" {
   default = {
-    repository = {
-      organization   = "pagopa"
-      name           = "le-azure-acme-tiny"
-      branch_name    = "refs/tags/v2.0.0"
-      pipelines_path = "."
-    }
     pipeline = {
       enable_tls_cert = true
       path            = "TLS-Certificates\\DEV"
@@ -32,11 +26,11 @@ locals {
     credential_key_vault_name           = local.dev_domain_key_vault_name
     credential_key_vault_resource_group = local.dev_domain_key_vault_resource_group
     service_connection_ids_authorization = [
-      module.DEV-CSTAR-CORE-TLS-CERT-SERVICE-CONN-FEDERATED.service_endpoint_id,
+      module.dev_cstar_core_tls_cert_service_conn_federated.service_endpoint_id,
     ]
   }
   mcshared-cstar-dev-pagopa-it-variables = {
-    KEY_VAULT_SERVICE_CONNECTION = module.DEV-CSTAR-CORE-TLS-CERT-SERVICE-CONN-FEDERATED.service_endpoint_name,
+    KEY_VAULT_SERVICE_CONNECTION = module.dev_cstar_core_tls_cert_service_conn_federated.service_endpoint_name,
     KEY_VAULT_NAME               = local.dev_domain_key_vault_name
   }
   mcshared-cstar-dev-pagopa-it-variables_secret = {
@@ -46,7 +40,7 @@ locals {
 # change only providers
 #tfsec:ignore:general-secrets-no-plaintext-exposure
 module "mcshared-cstar-dev-pagopa-it-cert_az" {
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_tls_cert_federated?ref=v5.2.0"
+  source = "./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated"
   count  = var.mcshared-cstar-dev-pagopa-it.pipeline.enable_tls_cert == true ? 1 : 0
 
   # change me
@@ -58,7 +52,7 @@ module "mcshared-cstar-dev-pagopa-it-cert_az" {
   managed_identity_resource_group_name = local.dev_identity_rg_name
 
   project_id                   = data.azuredevops_project.project.id
-  repository                   = var.mcshared-cstar-dev-pagopa-it.repository
+  repository                   = local.tlscert_repository
   path                         = "${local.domain}\\${var.mcshared-cstar-dev-pagopa-it.pipeline.path}"
   github_service_connection_id = azuredevops_serviceendpoint_github.io-azure-devops-github-rw.id
 
@@ -91,12 +85,8 @@ module "mcshared-cstar-dev-pagopa-it-cert_az" {
     start_minutes              = 0
     time_zone                  = "(UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna"
     branch_filter = {
-      include = [var.mcshared-cstar-dev-pagopa-it.repository.branch_name]
+      include = ["refs/heads/master"]
       exclude = []
     }
   }
-
-  depends_on = [
-    module.letsencrypt_dev
-  ]
 }
