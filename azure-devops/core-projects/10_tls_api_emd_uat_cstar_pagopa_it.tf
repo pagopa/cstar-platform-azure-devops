@@ -1,3 +1,10 @@
+# 🚨 WARNING: migrate to 10_tls_certs.tf
+#
+# This usage is deprecated, please use the 10_tls_certs.tf file, configuring the required certs in the local variable "certificates"
+#
+# It will create the cert pipeline in the TLS-Certificates/<env> folder.
+# Remember to manually edit the scheduling from portal to avoid a scheduling bug on terraform provider.
+# Destroy the old pipeline before creating the new one
 variable "api_emd_uat_cstar_pagopa_it" {
   default = {
     pipeline = {
