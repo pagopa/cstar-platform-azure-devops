@@ -29,19 +29,19 @@ provider "azurerm" {
 provider "azurerm" {
   features {}
   alias           = "dev"
-  subscription_id = module.secrets.values["DEV-SUBSCRIPTION-ID"].value
+  subscription_id = data.azurerm_subscriptions.dev.subscriptions[0].subscription_id
 }
 
 provider "azurerm" {
   features {}
   alias           = "uat"
-  subscription_id = module.secrets.values["UAT-SUBSCRIPTION-ID"].value
+  subscription_id = data.azurerm_subscriptions.uat.subscriptions[0].subscription_id
 }
 
 provider "azurerm" {
   features {}
   alias           = "prod"
-  subscription_id = module.secrets.values["PROD-SUBSCRIPTION-ID"].value
+  subscription_id = data.azurerm_subscriptions.prod.subscriptions[0].subscription_id
 }
 
 module "__v3__" {

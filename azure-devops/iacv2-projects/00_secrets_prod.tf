@@ -12,9 +12,5 @@ module "secrets" {
     "cstar-azure-devops-github-ro-TOKEN",
     "cstar-azure-devops-github-rw-TOKEN",
     "cstar-azure-devops-github-pr-TOKEN",
-    "TENANT-ID",
-    "DEV-SUBSCRIPTION-ID",
-    "UAT-SUBSCRIPTION-ID",
-    "PROD-SUBSCRIPTION-ID",
   ]
 }
