@@ -96,6 +96,17 @@ locals {
       }
     },
     {
+      name : "core-secrets",
+      envs : ["d", "u", "p"],
+      code_review : true,
+      deploy : true,
+      pipeline_prefix : "core-infra-secrets",
+      pipeline_path : "core-infrastructure",
+      repository : {
+        yml_prefix_name : "core-secrets"
+      }
+    },
+    {
       name : "packer",
       envs : ["d", "u", "p"],
       code_review : true,
