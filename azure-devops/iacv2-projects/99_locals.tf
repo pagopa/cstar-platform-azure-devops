@@ -25,7 +25,7 @@ locals {
   domains = [
     {
       name : "mil",
-      envs : ["d", "u"],
+      envs : ["d", "u", "p"],
       kv_name : "cstar-%s-weu-mil-kv",
       rg_name : "cstar-%s-weu-mil-sec-rg",
       code_review : true,
