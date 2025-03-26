@@ -1,7 +1,7 @@
 #
 # DEV
 #
-module "DEV-CSTAR-MIL-TLS-CERT-SERVICE-CONN-FEDERATED" {
+module "dev_cstar_mil_tls_cert_service_conn_federated" {
 
   providers = {
     azurerm = azurerm.dev
@@ -24,7 +24,7 @@ resource "azurerm_key_vault_access_policy" "DEV-CSTAR-MIL-TLS-CERT-SERVICE-CONN_
   provider     = azurerm.dev
   key_vault_id = data.azurerm_key_vault.domain_kv_dev.id
   tenant_id    = data.azurerm_client_config.current.tenant_id
-  object_id    = module.DEV-CSTAR-MIL-TLS-CERT-SERVICE-CONN-FEDERATED.service_principal_object_id
+  object_id    = module.dev_cstar_mil_tls_cert_service_conn_federated.service_principal_object_id
 
   certificate_permissions = ["Get", "Import"]
 }
@@ -45,7 +45,7 @@ module "letsencrypt_dev" {
 #
 # UAT
 #
-module "UAT_CSTAR_MIL_TLS_CERT_SERVICE_CONN_FEDERATED" {
+module "uat_cstar_mil_tls_cert_service_conn_federated" {
   source = "./.terraform/modules/__devops_v0__/azuredevops_serviceendpoint_federated"
 
   providers = {
@@ -68,7 +68,7 @@ resource "azurerm_key_vault_access_policy" "UAT_CSTAR_MIL_TLS_CERT_SERVICE_CONN_
 
   key_vault_id = data.azurerm_key_vault.domain_kv_uat.id
   tenant_id    = data.azurerm_client_config.current.tenant_id
-  object_id    = module.UAT_CSTAR_MIL_TLS_CERT_SERVICE_CONN_FEDERATED.service_principal_object_id
+  object_id    = module.uat_cstar_mil_tls_cert_service_conn_federated.service_principal_object_id
 
   certificate_permissions = ["Get", "Import"]
 }
@@ -90,7 +90,7 @@ module "letsencrypt_uat" {
 #
 # PROD
 #
-module "PROD-CSTAR-MIL-TLS-CERT-SERVICE-CONN-FEDERATED" {
+module "prod_cstar_mil_tls_cert_service_conn_federated" {
   source = "./.terraform/modules/__devops_v0__/azuredevops_serviceendpoint_federated"
   providers = {
     azurerm = azurerm.prod
@@ -111,7 +111,7 @@ resource "azurerm_key_vault_access_policy" "PROD-CSTAR-MIL-TLS-CERT-SERVICE-CONN
 
   key_vault_id = data.azurerm_key_vault.domain_kv_prod.id
   tenant_id    = data.azurerm_client_config.current.tenant_id
-  object_id    = module.PROD-CSTAR-MIL-TLS-CERT-SERVICE-CONN-FEDERATED.service_principal_object_id
+  object_id    = module.prod_cstar_mil_tls_cert_service_conn_federated.service_principal_object_id
 
   certificate_permissions = ["Get", "Import"]
 }
@@ -128,3 +128,19 @@ module "letsencrypt_prod" {
   key_vault_name    = local.prod_domain_key_vault_name
   subscription_name = local.prod_cstar_subscription_name
 }
+
+moved {
+  from = module.PROD-CSTAR-MIL-TLS-CERT-SERVICE-CONN-FEDERATED
+  to   = module.prod_cstar_mil_tls_cert_service_conn_federated
+}
+
+moved {
+  from = module.UAT_CSTAR_MIL_TLS_CERT_SERVICE_CONN_FEDERATED
+  to   = module.uat_cstar_mil_tls_cert_service_conn_federated
+}
+
+moved {
+  from = module.DEV-CSTAR-MIL-TLS-CERT-SERVICE-CONN-FEDERATED
+  to   = module.dev_cstar_mil_tls_cert_service_conn_federated
+}
+

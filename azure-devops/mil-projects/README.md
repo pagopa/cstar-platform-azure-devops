@@ -24,11 +24,9 @@
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_DEV-CSTAR-MIL-TLS-CERT-SERVICE-CONN-FEDERATED"></a> [DEV-CSTAR-MIL-TLS-CERT-SERVICE-CONN-FEDERATED](#module\_DEV-CSTAR-MIL-TLS-CERT-SERVICE-CONN-FEDERATED) | ./.terraform/modules/__devops_v0__/azuredevops_serviceendpoint_federated | n/a |
-| <a name="module_PROD-CSTAR-MIL-TLS-CERT-SERVICE-CONN-FEDERATED"></a> [PROD-CSTAR-MIL-TLS-CERT-SERVICE-CONN-FEDERATED](#module\_PROD-CSTAR-MIL-TLS-CERT-SERVICE-CONN-FEDERATED) | ./.terraform/modules/__devops_v0__/azuredevops_serviceendpoint_federated | n/a |
-| <a name="module_UAT_CSTAR_MIL_TLS_CERT_SERVICE_CONN_FEDERATED"></a> [UAT\_CSTAR\_MIL\_TLS\_CERT\_SERVICE\_CONN\_FEDERATED](#module\_UAT\_CSTAR\_MIL\_TLS\_CERT\_SERVICE\_CONN\_FEDERATED) | ./.terraform/modules/__devops_v0__/azuredevops_serviceendpoint_federated | n/a |
 | <a name="module___devops_v0__"></a> [\_\_devops\_v0\_\_](#module\_\_\_devops\_v0\_\_) | git::https://github.com/pagopa/azuredevops-tf-modules.git | 7e23d73d22e7b37352c25a32cc40f6f42b6569ea |
 | <a name="module___v3__"></a> [\_\_v3\_\_](#module\_\_\_v3\_\_) | git::https://github.com/pagopa/terraform-azurerm-v3.git | 50f4db15d35bebedc8251139346fd0fac9ac6ca2 |
+| <a name="module_dev_cstar_mil_tls_cert_service_conn_federated"></a> [dev\_cstar\_mil\_tls\_cert\_service\_conn\_federated](#module\_dev\_cstar\_mil\_tls\_cert\_service\_conn\_federated) | ./.terraform/modules/__devops_v0__/azuredevops_serviceendpoint_federated | n/a |
 | <a name="module_domain_dev_secrets"></a> [domain\_dev\_secrets](#module\_domain\_dev\_secrets) | ./.terraform/modules/__v3__/key_vault_secrets_query | n/a |
 | <a name="module_domain_prod_secrets"></a> [domain\_prod\_secrets](#module\_domain\_prod\_secrets) | ./.terraform/modules/__v3__/key_vault_secrets_query | n/a |
 | <a name="module_domain_uat_secrets"></a> [domain\_uat\_secrets](#module\_domain\_uat\_secrets) | ./.terraform/modules/__v3__/key_vault_secrets_query | n/a |
@@ -37,10 +35,12 @@
 | <a name="module_letsencrypt_prod"></a> [letsencrypt\_prod](#module\_letsencrypt\_prod) | ./.terraform/modules/__v3__/letsencrypt_credential | n/a |
 | <a name="module_letsencrypt_uat"></a> [letsencrypt\_uat](#module\_letsencrypt\_uat) | ./.terraform/modules/__v3__/letsencrypt_credential | n/a |
 | <a name="module_mil-deploy_deploy"></a> [mil-deploy\_deploy](#module\_mil-deploy\_deploy) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_deploy | n/a |
+| <a name="module_prod_cstar_mil_tls_cert_service_conn_federated"></a> [prod\_cstar\_mil\_tls\_cert\_service\_conn\_federated](#module\_prod\_cstar\_mil\_tls\_cert\_service\_conn\_federated) | ./.terraform/modules/__devops_v0__/azuredevops_serviceendpoint_federated | n/a |
 | <a name="module_secret_azdo"></a> [secret\_azdo](#module\_secret\_azdo) | ./.terraform/modules/__v3__/key_vault_secrets_query | n/a |
 | <a name="module_tlscert-mil-internal-cstar-pagopa-it-cert_az"></a> [tlscert-mil-internal-cstar-pagopa-it-cert\_az](#module\_tlscert-mil-internal-cstar-pagopa-it-cert\_az) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated | n/a |
 | <a name="module_tlscert-mil-internal-dev-cstar-pagopa-it-cert_az"></a> [tlscert-mil-internal-dev-cstar-pagopa-it-cert\_az](#module\_tlscert-mil-internal-dev-cstar-pagopa-it-cert\_az) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated | n/a |
 | <a name="module_tlscert_mil_internal_uat_cstar_pagopa_it_cert_az"></a> [tlscert\_mil\_internal\_uat\_cstar\_pagopa\_it\_cert\_az](#module\_tlscert\_mil\_internal\_uat\_cstar\_pagopa\_it\_cert\_az) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated | n/a |
+| <a name="module_uat_cstar_mil_tls_cert_service_conn_federated"></a> [uat\_cstar\_mil\_tls\_cert\_service\_conn\_federated](#module\_uat\_cstar\_mil\_tls\_cert\_service\_conn\_federated) | ./.terraform/modules/__devops_v0__/azuredevops_serviceendpoint_federated | n/a |
 
 ## Resources
 
