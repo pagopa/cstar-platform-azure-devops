@@ -129,18 +129,3 @@ module "letsencrypt_prod" {
   subscription_name = local.prod_cstar_subscription_name
 }
 
-moved {
-  from = module.PROD-CSTAR-MIL-TLS-CERT-SERVICE-CONN-FEDERATED
-  to   = module.prod_cstar_mil_tls_cert_service_conn_federated
-}
-
-moved {
-  from = module.UAT_CSTAR_MIL_TLS_CERT_SERVICE_CONN_FEDERATED
-  to   = module.uat_cstar_mil_tls_cert_service_conn_federated
-}
-
-moved {
-  from = module.DEV-CSTAR-MIL-TLS-CERT-SERVICE-CONN-FEDERATED
-  to   = module.dev_cstar_mil_tls_cert_service_conn_federated
-}
-
