@@ -7,7 +7,7 @@ module "DEV-CSTAR-MIL-TLS-CERT-SERVICE-CONN-FEDERATED" {
     azurerm = azurerm.dev
   }
 
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_federated?ref=v9.0.0"
+  source = "./.terraform/modules/__devops_v0__/azuredevops_serviceendpoint_federated"
 
   location            = local.location
   resource_group_name = local.dev_identity_rg_name
@@ -46,7 +46,7 @@ module "letsencrypt_dev" {
 # UAT
 #
 module "UAT_CSTAR_MIL_TLS_CERT_SERVICE_CONN_FEDERATED" {
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_serviceendpoint_federated?ref=v9.0.0"
+  source = "./.terraform/modules/__devops_v0__/azuredevops_serviceendpoint_federated"
 
   providers = {
     azurerm = azurerm.uat

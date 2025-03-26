@@ -23,7 +23,7 @@ module "domain_dev_secrets" {
 # UAT
 #
 module "domain_uat_secrets" {
-  source = "git::https://github.com/pagopa/terraform-azurerm-v3.git//key_vault_secrets_query?ref=v8.22.0"
+  source = "./.terraform/modules/__v3__/key_vault_secrets_query"
 
   providers = {
     azurerm = azurerm.uat
@@ -39,23 +39,23 @@ module "domain_uat_secrets" {
   ]
 }
 
-# #
-# # PROD
-# #
-# module "domain_prod_secrets" {
-#   source = "git::https://github.com/pagopa/terraform-azurerm-v3.git//key_vault_secrets_query?ref=v8.22.0"
 #
-#   providers = {
-#     azurerm = azurerm.prod
-#   }
+# PROD
 #
-#   resource_group = local.prod_domain_key_vault_resource_group
-#   key_vault_name = local.prod_domain_key_vault_name
-#
-#   secrets = [
-#     "cstar-p-weu-prod01-aks-azure-devops-sa-token",
-#     "cstar-p-weu-prod01-aks-azure-devops-sa-cacrt",
-#     "cstar-p-weu-prod01-aks-apiserver-url"
-#   ]
-# }
+module "domain_prod_secrets" {
+  source = "./.terraform/modules/__v3__/key_vault_secrets_query"
+
+  providers = {
+    azurerm = azurerm.prod
+  }
+
+  resource_group = local.prod_domain_key_vault_resource_group
+  key_vault_name = local.prod_domain_key_vault_name
+
+  secrets = [
+    "cstar-p-weu-prod01-aks-azure-devops-sa-token",
+    "cstar-p-weu-prod01-aks-azure-devops-sa-cacrt",
+    "cstar-p-weu-prod01-aks-apiserver-url"
+  ]
+}
 

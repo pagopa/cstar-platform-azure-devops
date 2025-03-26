@@ -52,7 +52,7 @@ locals {
 
 
 module "mil-deploy_deploy" {
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git//azuredevops_build_definition_deploy?ref=v9.0.0"
+  source = "./.terraform/modules/__devops_v0__/azuredevops_build_definition_deploy"
   count  = var.mil-deploy.pipeline.enable_deploy == true ? 1 : 0
 
   project_id                   = data.azuredevops_project.project.id
@@ -83,9 +83,9 @@ module "mil-deploy_deploy" {
     local.service_endpoint_azure_devops_docker_uat_id,
     azuredevops_serviceendpoint_kubernetes.aks_uat.id,
     #prod
-    #    local.service_endpoint_azure_prod_id,
-    #    local.service_endpoint_azure_devops_docker_prod_id,
-    #    azuredevops_serviceendpoint_kubernetes.aks_prod.id,
+    local.service_endpoint_azure_prod_id,
+    local.service_endpoint_azure_devops_docker_prod_id,
+    azuredevops_serviceendpoint_kubernetes.aks_prod.id,
   ]
 
 }
