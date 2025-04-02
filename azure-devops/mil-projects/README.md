@@ -31,6 +31,7 @@
 | <a name="module_domain_prod_secrets"></a> [domain\_prod\_secrets](#module\_domain\_prod\_secrets) | ./.terraform/modules/__v3__/key_vault_secrets_query | n/a |
 | <a name="module_domain_uat_secrets"></a> [domain\_uat\_secrets](#module\_domain\_uat\_secrets) | ./.terraform/modules/__v3__/key_vault_secrets_query | n/a |
 | <a name="module_emd_functional_test"></a> [emd\_functional\_test](#module\_emd\_functional\_test) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_generic | n/a |
+| <a name="module_emd_test_platform"></a> [emd\_test\_platform](#module\_emd\_test\_platform) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_generic | n/a |
 | <a name="module_letsencrypt_dev"></a> [letsencrypt\_dev](#module\_letsencrypt\_dev) | ./.terraform/modules/__v3__/letsencrypt_credential | n/a |
 | <a name="module_letsencrypt_prod"></a> [letsencrypt\_prod](#module\_letsencrypt\_prod) | ./.terraform/modules/__v3__/letsencrypt_credential | n/a |
 | <a name="module_letsencrypt_uat"></a> [letsencrypt\_uat](#module\_letsencrypt\_uat) | ./.terraform/modules/__v3__/letsencrypt_credential | n/a |
@@ -79,6 +80,7 @@
 | <a name="input_acr_weu_service_connection_workload_identity_uat"></a> [acr\_weu\_service\_connection\_workload\_identity\_uat](#input\_acr\_weu\_service\_connection\_workload\_identity\_uat) | The service connection ID for the ITA UAT workload identity in Azure Container Registry | `string` | `""` | no |
 | <a name="input_dev_subscription_name"></a> [dev\_subscription\_name](#input\_dev\_subscription\_name) | DEV Subscription name | `string` | n/a | yes |
 | <a name="input_emd_functional_test"></a> [emd\_functional\_test](#input\_emd\_functional\_test) | n/a | `map` | <pre>{<br/>  "pipeline": {<br/>    "path": "mil"<br/>  },<br/>  "repository": {<br/>    "branch_name": "refs/heads/main",<br/>    "name": "emd-functional-testing",<br/>    "organization": "pagopa",<br/>    "pipelines_path": ".devops",<br/>    "yml_prefix_name": null<br/>  }<br/>}</pre> | no |
+| <a name="input_emd_test_platform"></a> [emd\_test\_platform](#input\_emd\_test\_platform) | n/a | `map` | <pre>{<br/>  "pipeline": {<br/>    "path": "mil"<br/>  },<br/>  "repository": {<br/>    "branch_name": "refs/heads/main",<br/>    "name": "emd-test-platform",<br/>    "organization": "pagopa",<br/>    "pipelines_path": ".devops",<br/>    "yml_prefix_name": null<br/>  }<br/>}</pre> | no |
 | <a name="input_location_short"></a> [location\_short](#input\_location\_short) | n/a | `string` | n/a | yes |
 | <a name="input_mil-deploy"></a> [mil-deploy](#input\_mil-deploy) | n/a | `map` | <pre>{<br/>  "pipeline": {<br/>    "enable_code_review": true,<br/>    "enable_deploy": true,<br/>    "path": "mil"<br/>  },<br/>  "repository": {<br/>    "branch_name": "refs/heads/main",<br/>    "name": "mil-aks-deploy",<br/>    "organization": "pagopa",<br/>    "pipelines_path": ".devops",<br/>    "yml_prefix_name": null<br/>  }<br/>}</pre> | no |
 | <a name="input_prod_subscription_name"></a> [prod\_subscription\_name](#input\_prod\_subscription\_name) | PROD Subscription name | `string` | n/a | yes |
