@@ -1,5 +1,5 @@
 #
-# PROD ECOMMERCE KEYVAULT
+# PROD KEYVAULT
 #
 
 module "domain_dev_secrets" {
