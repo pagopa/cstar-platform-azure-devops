@@ -65,8 +65,3 @@ provider "azurerm" {
   }
   subscription_id = data.azurerm_subscriptions.prod.subscriptions[0].subscription_id
 }
-
-module "__devops_v0__" {
-  # https://github.com/pagopa/azuredevops-tf-modules/releases/tag/v9.2.1
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git?ref=7e23d73d22e7b37352c25a32cc40f6f42b6569ea"
-}
