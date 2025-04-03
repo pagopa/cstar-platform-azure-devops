@@ -61,9 +61,9 @@ locals {
 module "idpay_aks_deploy" {
   source = "./.terraform/modules/__devops_v0__/azuredevops_build_definition_generic"
 
-  project_id                   = data.azuredevops_project.project.project_id
+  project_id                   = local.devops_project_id
   repository                   = var.idpay_aks_deploy.repository
-  github_service_connection_id = data.azuredevops_serviceendpoint_github.io-azure-devops-github-rw.id
+  github_service_connection_id = data.azuredevops_serviceendpoint_github.azure_devops_github_rw.id
 
   pipeline_name         = "${var.idpay_aks_deploy.pipeline.name}.deploy"
   pipeline_yml_filename = "deploy-argocd-apps.yml"
