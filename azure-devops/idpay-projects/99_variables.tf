@@ -75,19 +75,16 @@ locals {
   service_endpoint_azure_devops_docker_dev_name = data.azuredevops_serviceendpoint_azurecr.dev_weu_workload_identity.service_endpoint_name
   service_endpoint_azure_devops_docker_dev_id   = data.azuredevops_serviceendpoint_azurecr.dev_weu_workload_identity.id
   service_endpoint_azure_dev_id                 = data.azuredevops_serviceendpoint_azurerm.azure_dev.id
-  service_endpoint_azure_dev_name               = data.azuredevops_serviceendpoint_azurerm.azure_dev.service_endpoint_name
 
   # UAT
   service_endpoint_azure_devops_docker_uat_name = data.azuredevops_serviceendpoint_azurecr.uat_weu_workload_identity.service_endpoint_name
   service_endpoint_azure_devops_docker_uat_id   = data.azuredevops_serviceendpoint_azurecr.uat_weu_workload_identity.id
   service_endpoint_azure_uat_id                 = data.azuredevops_serviceendpoint_azurerm.azure_uat.id
-  service_endpoint_azure_uat_name               = data.azuredevops_serviceendpoint_azurerm.azure_uat.service_endpoint_name
 
   # PROD
   service_endpoint_azure_devops_docker_prod_name = data.azuredevops_serviceendpoint_azurecr.prod_weu_workload_identity.service_endpoint_name
   service_endpoint_azure_devops_docker_prod_id   = data.azuredevops_serviceendpoint_azurecr.prod_weu_workload_identity.id
   service_endpoint_azure_prod_id                 = data.azuredevops_serviceendpoint_azurerm.azure_prod.id
-  service_endpoint_azure_prod_name               = data.azuredevops_serviceendpoint_azurerm.azure_prod.service_endpoint_name
 
 
   #tfsec:ignore:GEN002
