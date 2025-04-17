@@ -4,7 +4,13 @@ locals {
   location_short = "itn"
   location       = "italynorth"
 
-
+  # 🔑 Key Vault
+  dev_kv_domain_name           = "${local.prefix}-d-${local.location_short}-${local.domain}-kv"
+  dev_kv_domain_resource_group = "${local.prefix}-d-${local.location_short}-${local.domain}-security-rg"
+  uat_kv_domain_name           = "${local.prefix}-u-${local.location_short}-${local.domain}-kv"
+  uat_kv_domain_resource_group = "${local.prefix}-u-${local.location_short}-${local.domain}-security-rg"
+  prod_kv_domain_name           = "${local.prefix}-p-${local.location_short}-${local.domain}-kv"
+  prod_kv_domain_resource_group = "${local.prefix}-p-${local.location_short}-${local.domain}-security-rg"
 
   # product         = "${local.prefix}-${local.domain}"
   # external_domain = "pagopa.it"
@@ -18,8 +24,8 @@ locals {
 
   # # 🟢 DEV
   # dev_subscription_name        = "dev-${local.prefix}"
-  # dev_domain_kv_name           = "${local.prefix}-d-${local.location_short}-${local.domain}-kv"
-  # dev_domain_kv_resource_group = "${local.prefix}-d-${local.location_short}-idpay-sec-rg"
+  # dev_kv_domain_name           = "${local.prefix}-d-${local.location_short}-${local.domain}-kv"
+  # dev_kv_domain_resource_group = "${local.prefix}-d-${local.location_short}-idpay-sec-rg"
   # # dev_aks_name                 = "${local.prefix}-d-${local.location_short}-dev-aks"
   # # dev_azurecr_name             = "${local.prefix}d${local.location_short}corecommonacr"
   # dev_azdo_agent_pool = "${local.prefix}-dev-linux-app"
@@ -45,8 +51,8 @@ locals {
 
   # # 🟨 UAT
   # uat_subscription_name        = "uat-${local.prefix}"
-  # uat_domain_kv_name           = "${local.prefix}-u-${local.location_short}-${local.domain}-kv"
-  # uat_domain_kv_resource_group = "${local.prefix}-u-${local.location_short}-idpay-sec-rg"
+  # uat_kv_domain_name           = "${local.prefix}-u-${local.location_short}-${local.domain}-kv"
+  # uat_kv_domain_resource_group = "${local.prefix}-u-${local.location_short}-idpay-sec-rg"
   # # uat_aks_name                 = "${local.prefix}-u-${local.location_short}-uat-aks"
   # # uat_azurecr_name             = "${local.prefix}u${local.location_short}corecommonacr"
   # uat_azdo_agent_pool = "${local.prefix}-uat-linux-app"
@@ -72,8 +78,8 @@ locals {
 
   # # 🛑 PROD
   # prod_subscription_name        = "prod-${local.prefix}"
-  # prod_domain_kv_name           = "${local.prefix}-p-${local.location_short}-${local.domain}-kv"
-  # prod_domain_kv_resource_group = "${local.prefix}-p-${local.location_short}-idpay-sec-rg"
+  # prod_kv_domain_name           = "${local.prefix}-p-${local.location_short}-${local.domain}-kv"
+  # prod_kv_domain_resource_group = "${local.prefix}-p-${local.location_short}-idpay-sec-rg"
   # # prod_aks_name                 = "${local.prefix}-p-${local.location_short}-prod-aks"
   # # prod_azurecr_name             = "${local.prefix}p${local.location_short}corecommonacr"
   # prod_azdo_agent_pool = "${local.prefix}-prod-linux-app"
