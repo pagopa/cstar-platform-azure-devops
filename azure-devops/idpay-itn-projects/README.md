@@ -13,21 +13,21 @@
 |------|--------|---------|
 | <a name="module___devops_v0__"></a> [\_\_devops\_v0\_\_](#module\_\_\_devops\_v0\_\_) | git::https://github.com/pagopa/azuredevops-tf-modules.git | 7e23d73d22e7b37352c25a32cc40f6f42b6569ea |
 | <a name="module___v3__"></a> [\_\_v3\_\_](#module\_\_\_v3\_\_) | git::https://github.com/pagopa/terraform-azurerm-v3.git | a88c6d99ec3871db7de57db4280422b02db3e4f0 |
-| <a name="module_cittadini_dev_secrets"></a> [cittadini\_dev\_secrets](#module\_cittadini\_dev\_secrets) | ./.terraform/modules/__v3__/key_vault_secrets_query | n/a |
-| <a name="module_cittadini_fe_deploy"></a> [cittadini\_fe\_deploy](#module\_cittadini\_fe\_deploy) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_generic | n/a |
-| <a name="module_cittadini_prod_secrets"></a> [cittadini\_prod\_secrets](#module\_cittadini\_prod\_secrets) | ./.terraform/modules/__v3__/key_vault_secrets_query | n/a |
-| <a name="module_cittadini_uat_secrets"></a> [cittadini\_uat\_secrets](#module\_cittadini\_uat\_secrets) | ./.terraform/modules/__v3__/key_vault_secrets_query | n/a |
+| <a name="module_idpay_dev_secrets"></a> [idpay\_dev\_secrets](#module\_idpay\_dev\_secrets) | ./.terraform/modules/__v3__/key_vault_secrets_query | n/a |
+| <a name="module_idpay_fe_deploy"></a> [idpay\_fe\_deploy](#module\_idpay\_fe\_deploy) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_generic | n/a |
+| <a name="module_idpay_prod_secrets"></a> [idpay\_prod\_secrets](#module\_idpay\_prod\_secrets) | ./.terraform/modules/__v3__/key_vault_secrets_query | n/a |
+| <a name="module_idpay_uat_secrets"></a> [idpay\_uat\_secrets](#module\_idpay\_uat\_secrets) | ./.terraform/modules/__v3__/key_vault_secrets_query | n/a |
 | <a name="module_dev_tls_cert_service_conn"></a> [dev\_tls\_cert\_service\_conn](#module\_dev\_tls\_cert\_service\_conn) | ./.terraform/modules/__devops_v0__/azuredevops_serviceendpoint_federated | n/a |
-| <a name="module_federated_cert_pipeline_cittadini_dev"></a> [federated\_cert\_pipeline\_cittadini\_dev](#module\_federated\_cert\_pipeline\_cittadini\_dev) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated | n/a |
-| <a name="module_federated_cert_pipeline_cittadini_prod"></a> [federated\_cert\_pipeline\_cittadini\_prod](#module\_federated\_cert\_pipeline\_cittadini\_prod) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated | n/a |
-| <a name="module_federated_cert_pipeline_cittadini_uat"></a> [federated\_cert\_pipeline\_cittadini\_uat](#module\_federated\_cert\_pipeline\_cittadini\_uat) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated | n/a |
+| <a name="module_federated_cert_pipeline_idpay_dev"></a> [federated\_cert\_pipeline\_idpay\_dev](#module\_federated\_cert\_pipeline\_idpay\_dev) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated | n/a |
+| <a name="module_federated_cert_pipeline_idpay_prod"></a> [federated\_cert\_pipeline\_idpay\_prod](#module\_federated\_cert\_pipeline\_idpay\_prod) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated | n/a |
+| <a name="module_federated_cert_pipeline_idpay_uat"></a> [federated\_cert\_pipeline\_idpay\_uat](#module\_federated\_cert\_pipeline\_idpay\_uat) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated | n/a |
 | <a name="module_federated_cert_pipeline_p4pa_dev"></a> [federated\_cert\_pipeline\_p4pa\_dev](#module\_federated\_cert\_pipeline\_p4pa\_dev) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated | n/a |
 | <a name="module_federated_cert_pipeline_p4pa_prod"></a> [federated\_cert\_pipeline\_p4pa\_prod](#module\_federated\_cert\_pipeline\_p4pa\_prod) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated | n/a |
 | <a name="module_federated_cert_pipeline_p4pa_uat"></a> [federated\_cert\_pipeline\_p4pa\_uat](#module\_federated\_cert\_pipeline\_p4pa\_uat) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated | n/a |
 | <a name="module_letsencrypt_dev"></a> [letsencrypt\_dev](#module\_letsencrypt\_dev) | ./.terraform/modules/__v3__/letsencrypt_credential | n/a |
 | <a name="module_letsencrypt_prod"></a> [letsencrypt\_prod](#module\_letsencrypt\_prod) | ./.terraform/modules/__v3__/letsencrypt_credential | n/a |
 | <a name="module_letsencrypt_uat"></a> [letsencrypt\_uat](#module\_letsencrypt\_uat) | ./.terraform/modules/__v3__/letsencrypt_credential | n/a |
-| <a name="module_p4pa_arc_cittadini_aks_deploy"></a> [p4pa\_arc\_cittadini\_aks\_deploy](#module\_p4pa\_arc\_cittadini\_aks\_deploy) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_generic | n/a |
+| <a name="module_p4pa_arc_idpay_aks_deploy"></a> [p4pa\_arc\_idpay\_aks\_deploy](#module\_p4pa\_arc\_idpay\_aks\_deploy) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_generic | n/a |
 | <a name="module_prod_tls_cert_service_conn"></a> [prod\_tls\_cert\_service\_conn](#module\_prod\_tls\_cert\_service\_conn) | ./.terraform/modules/__devops_v0__/azuredevops_serviceendpoint_federated | n/a |
 | <a name="module_uat_tls_cert_service_conn"></a> [uat\_tls\_cert\_service\_conn](#module\_uat\_tls\_cert\_service\_conn) | ./.terraform/modules/__devops_v0__/azuredevops_serviceendpoint_federated | n/a |
 
@@ -65,8 +65,8 @@
 | <a name="input_acr_ita_service_connection_workload_identity_dev"></a> [acr\_ita\_service\_connection\_workload\_identity\_dev](#input\_acr\_ita\_service\_connection\_workload\_identity\_dev) | The service connection ID for the ITA DEV workload identity in Azure Container Registry | `string` | `""` | no |
 | <a name="input_acr_ita_service_connection_workload_identity_prod"></a> [acr\_ita\_service\_connection\_workload\_identity\_prod](#input\_acr\_ita\_service\_connection\_workload\_identity\_prod) | The service connection ID for the ITA PROD workload identity in Azure Container Registry | `string` | `""` | no |
 | <a name="input_acr_ita_service_connection_workload_identity_uat"></a> [acr\_ita\_service\_connection\_workload\_identity\_uat](#input\_acr\_ita\_service\_connection\_workload\_identity\_uat) | The service connection ID for the ITA UAT workload identity in Azure Container Registry | `string` | `""` | no |
-| <a name="input_cittadini_fe"></a> [cittadini\_fe](#input\_cittadini\_fe) | n/a | `map` | <pre>{<br/>  "pipeline": {<br/>    "path": "cittadini\\fe"<br/>  },<br/>  "repository": {<br/>    "branch_name": "refs/heads/main",<br/>    "name": "arc-fe",<br/>    "organization": "pagopa",<br/>    "pipelines_path": ".devops",<br/>    "yml_prefix_name": null<br/>  }<br/>}</pre> | no |
-| <a name="input_p4pa_arc_cittadini_aks_deploy"></a> [p4pa\_arc\_cittadini\_aks\_deploy](#input\_p4pa\_arc\_cittadini\_aks\_deploy) | n/a | `map` | <pre>{<br/>  "pipeline": {<br/>    "name": "arc-cittadini-deploy-aks",<br/>    "path": "argocd\\arc-cittadini-deploy-aks"<br/>  },<br/>  "repository": {<br/>    "branch_name": "refs/heads/main",<br/>    "name": "arc-cittadini-deploy-aks",<br/>    "organization": "pagopa",<br/>    "pipelines_path": ".devops"<br/>  }<br/>}</pre> | no |
+| <a name="input_idpay_fe"></a> [idpay\_fe](#input\_idpay\_fe) | n/a | `map` | <pre>{<br/>  "pipeline": {<br/>    "path": "idpay\\fe"<br/>  },<br/>  "repository": {<br/>    "branch_name": "refs/heads/main",<br/>    "name": "arc-fe",<br/>    "organization": "pagopa",<br/>    "pipelines_path": ".devops",<br/>    "yml_prefix_name": null<br/>  }<br/>}</pre> | no |
+| <a name="input_p4pa_arc_idpay_aks_deploy"></a> [p4pa\_arc\_idpay\_aks\_deploy](#input\_p4pa\_arc\_idpay\_aks\_deploy) | n/a | `map` | <pre>{<br/>  "pipeline": {<br/>    "name": "arc-idpay-deploy-aks",<br/>    "path": "argocd\\arc-idpay-deploy-aks"<br/>  },<br/>  "repository": {<br/>    "branch_name": "refs/heads/main",<br/>    "name": "arc-idpay-deploy-aks",<br/>    "organization": "pagopa",<br/>    "pipelines_path": ".devops"<br/>  }<br/>}</pre> | no |
 
 ## Outputs
 
