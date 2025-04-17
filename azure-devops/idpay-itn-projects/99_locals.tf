@@ -1,5 +1,5 @@
 locals {
-  prefix         = "p4pa"
+  prefix         = "cstar"
   domain         = "idpay"
   location_short = "itn"
   location       = "italynorth"

@@ -2,7 +2,7 @@
 #   env_mappings_idpay = {
 #     dev = {
 #       dns_zone_name                       = "dev.idpay.pagopa.it"
-#       dns_zone_rg                         = "p4pa-d-itn-core-vnet-rg"
+#       dns_zone_rg                         = "cstar-d-itn-core-vnet-rg"
 #       subscription_name                   = data.azurerm_subscriptions.dev.subscriptions[0].display_name
 #       subscription_id                     = data.azurerm_subscriptions.dev.subscriptions[0].subscription_id
 #       credential_key_vault_name           = local.dev_domain_kv_name
@@ -15,7 +15,7 @@
 #     }
 #     uat = {
 #       dns_zone_name                       = "uat.idpay.pagopa.it"
-#       dns_zone_rg                         = "p4pa-u-itn-core-vnet-rg"
+#       dns_zone_rg                         = "cstar-u-itn-core-vnet-rg"
 #       subscription_name                   = data.azurerm_subscriptions.uat.subscriptions[0].display_name
 #       subscription_id                     = data.azurerm_subscriptions.uat.subscriptions[0].subscription_id
 #       credential_key_vault_name           = local.uat_domain_kv_name
@@ -28,7 +28,7 @@
 #     }
 #     prod = {
 #       dns_zone_name                       = "idpay.pagopa.it"
-#       dns_zone_rg                         = "p4pa-p-itn-core-vnet-rg"
+#       dns_zone_rg                         = "cstar-p-itn-core-vnet-rg"
 #       subscription_name                   = data.azurerm_subscriptions.prod.subscriptions[0].display_name
 #       subscription_id                     = data.azurerm_subscriptions.prod.subscriptions[0].subscription_id
 #       credential_key_vault_name           = local.prod_domain_kv_name

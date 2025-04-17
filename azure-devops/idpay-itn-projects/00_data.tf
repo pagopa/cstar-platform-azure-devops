@@ -1,7 +1,7 @@
 data "azurerm_client_config" "current" {}
 
 data "azuredevops_project" "this" {
-  name = "p4pa-projects"
+  name = "cstar-projects"
 }
 
 #

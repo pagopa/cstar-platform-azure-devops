@@ -1,8 +1,8 @@
 # locals {
-#   env_mappings_p4pa = {
+#   env_mappings_cstar = {
 #     dev = {
-#       dns_zone_name                       = "dev.p4pa.pagopa.it"
-#       dns_zone_rg                         = "p4pa-d-itn-core-vnet-rg"
+#       dns_zone_name                       = "dev.cstar.pagopa.it"
+#       dns_zone_rg                         = "cstar-d-itn-core-vnet-rg"
 #       subscription_name                   = data.azurerm_subscriptions.dev.subscriptions[0].display_name
 #       subscription_id                     = data.azurerm_subscriptions.dev.subscriptions[0].subscription_id
 #       credential_key_vault_name           = local.dev_domain_kv_name
@@ -14,8 +14,8 @@
 #       variables_secret = {}
 #     }
 #     uat = {
-#       dns_zone_name                       = "uat.p4pa.pagopa.it"
-#       dns_zone_rg                         = "p4pa-u-itn-core-vnet-rg"
+#       dns_zone_name                       = "uat.cstar.pagopa.it"
+#       dns_zone_rg                         = "cstar-u-itn-core-vnet-rg"
 #       subscription_name                   = data.azurerm_subscriptions.uat.subscriptions[0].display_name
 #       subscription_id                     = data.azurerm_subscriptions.uat.subscriptions[0].subscription_id
 #       credential_key_vault_name           = local.uat_domain_kv_name
@@ -27,8 +27,8 @@
 #       variables_secret = {}
 #     }
 #     prod = {
-#       dns_zone_name                       = "p4pa.pagopa.it"
-#       dns_zone_rg                         = "p4pa-p-itn-core-vnet-rg"
+#       dns_zone_name                       = "cstar.pagopa.it"
+#       dns_zone_rg                         = "cstar-p-itn-core-vnet-rg"
 #       subscription_name                   = data.azurerm_subscriptions.prod.subscriptions[0].display_name
 #       subscription_id                     = data.azurerm_subscriptions.prod.subscriptions[0].subscription_id
 #       credential_key_vault_name           = local.prod_domain_kv_name
@@ -41,20 +41,20 @@
 #     }
 #   }
 
-#   certificates_p4pa = {
-#     "idpay-internal-dev-p4pa-pagopa-it" : {
+#   certificates_cstar = {
+#     "idpay-internal-dev-cstar-pagopa-it" : {
 #       env              = "dev"
 #       dns_record_name  = "idpay.internal"
 #       variables        = {}
 #       variables_secret = {}
 #     }
-#     "idpay-internal-uat-p4pa-pagopa-it" : {
+#     "idpay-internal-uat-cstar-pagopa-it" : {
 #       env              = "uat"
 #       dns_record_name  = "idpay.internal"
 #       variables        = {}
 #       variables_secret = {}
 #     }
-#     "idpay-internal-p4pa-pagopa-it" : {
+#     "idpay-internal-cstar-pagopa-it" : {
 #       env              = "prod"
 #       dns_record_name  = "idpay.internal"
 #       variables        = {}
@@ -63,10 +63,10 @@
 #   }
 # }
 
-# module "federated_cert_pipeline_p4pa_dev" {
+# module "federated_cert_pipeline_cstar_dev" {
 #   source = "./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated"
 
-#   for_each = { for k, v in local.certificates_p4pa : k => v if v.env == "dev" }
+#   for_each = { for k, v in local.certificates_cstar : k => v if v.env == "dev" }
 
 #   providers = {
 #     azurerm = azurerm.dev
@@ -81,26 +81,26 @@
 #   github_service_connection_id = local.srv_endpoint_github_id
 
 #   dns_record_name         = each.value.dns_record_name
-#   dns_zone_name           = local.env_mappings_p4pa[each.value.env].dns_zone_name
-#   dns_zone_resource_group = local.env_mappings_p4pa[each.value.env].dns_zone_rg
+#   dns_zone_name           = local.env_mappings_cstar[each.value.env].dns_zone_name
+#   dns_zone_resource_group = local.env_mappings_cstar[each.value.env].dns_zone_rg
 #   tenant_id               = data.azurerm_client_config.current.tenant_id
-#   subscription_name       = local.env_mappings_p4pa[each.value.env].subscription_name
-#   subscription_id         = local.env_mappings_p4pa[each.value.env].subscription_id
+#   subscription_name       = local.env_mappings_cstar[each.value.env].subscription_name
+#   subscription_id         = local.env_mappings_cstar[each.value.env].subscription_id
 
-#   credential_key_vault_name           = local.env_mappings_p4pa[each.value.env].credential_key_vault_name
-#   credential_key_vault_resource_group = local.env_mappings_p4pa[each.value.env].credential_key_vault_resource_group
+#   credential_key_vault_name           = local.env_mappings_cstar[each.value.env].credential_key_vault_name
+#   credential_key_vault_resource_group = local.env_mappings_cstar[each.value.env].credential_key_vault_resource_group
 
 #   variables = merge(
-#     local.env_mappings_p4pa[each.value.env].variables,
+#     local.env_mappings_cstar[each.value.env].variables,
 #     each.value.variables
 #   )
 
 #   variables_secret = merge(
-#     local.env_mappings_p4pa[each.value.env].variables_secret,
+#     local.env_mappings_cstar[each.value.env].variables_secret,
 #     each.value.variables_secret
 #   )
 
-#   service_connection_ids_authorization = [local.env_mappings_p4pa[each.value.env].service_endpoint]
+#   service_connection_ids_authorization = [local.env_mappings_cstar[each.value.env].service_endpoint]
 
 #   schedules = {
 #     days_to_build              = ["Wed", "Fri"]
@@ -119,10 +119,10 @@
 #   ]
 # }
 
-# module "federated_cert_pipeline_p4pa_uat" {
+# module "federated_cert_pipeline_cstar_uat" {
 #   source = "./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated"
 
-#   for_each = { for k, v in local.certificates_p4pa : k => v if v.env == "uat" }
+#   for_each = { for k, v in local.certificates_cstar : k => v if v.env == "uat" }
 
 #   providers = {
 #     azurerm = azurerm.uat
@@ -137,26 +137,26 @@
 #   github_service_connection_id = local.srv_endpoint_github_id
 
 #   dns_record_name         = each.value.dns_record_name
-#   dns_zone_name           = local.env_mappings_p4pa[each.value.env].dns_zone_name
-#   dns_zone_resource_group = local.env_mappings_p4pa[each.value.env].dns_zone_rg
+#   dns_zone_name           = local.env_mappings_cstar[each.value.env].dns_zone_name
+#   dns_zone_resource_group = local.env_mappings_cstar[each.value.env].dns_zone_rg
 #   tenant_id               = data.azurerm_client_config.current.tenant_id
-#   subscription_name       = local.env_mappings_p4pa[each.value.env].subscription_name
-#   subscription_id         = local.env_mappings_p4pa[each.value.env].subscription_id
+#   subscription_name       = local.env_mappings_cstar[each.value.env].subscription_name
+#   subscription_id         = local.env_mappings_cstar[each.value.env].subscription_id
 
-#   credential_key_vault_name           = local.env_mappings_p4pa[each.value.env].credential_key_vault_name
-#   credential_key_vault_resource_group = local.env_mappings_p4pa[each.value.env].credential_key_vault_resource_group
+#   credential_key_vault_name           = local.env_mappings_cstar[each.value.env].credential_key_vault_name
+#   credential_key_vault_resource_group = local.env_mappings_cstar[each.value.env].credential_key_vault_resource_group
 
 #   variables = merge(
-#     local.env_mappings_p4pa[each.value.env].variables,
+#     local.env_mappings_cstar[each.value.env].variables,
 #     each.value.variables
 #   )
 
 #   variables_secret = merge(
-#     local.env_mappings_p4pa[each.value.env].variables_secret,
+#     local.env_mappings_cstar[each.value.env].variables_secret,
 #     each.value.variables_secret
 #   )
 
-#   service_connection_ids_authorization = [local.env_mappings_p4pa[each.value.env].service_endpoint]
+#   service_connection_ids_authorization = [local.env_mappings_cstar[each.value.env].service_endpoint]
 
 #   schedules = {
 #     days_to_build              = ["Wed", "Fri"]
@@ -175,10 +175,10 @@
 #   ]
 # }
 
-# module "federated_cert_pipeline_p4pa_prod" {
+# module "federated_cert_pipeline_cstar_prod" {
 #   source = "./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated"
 
-#   for_each = { for k, v in local.certificates_p4pa : k => v if v.env == "prod" }
+#   for_each = { for k, v in local.certificates_cstar : k => v if v.env == "prod" }
 
 #   providers = {
 #     azurerm = azurerm.prod
@@ -193,26 +193,26 @@
 #   github_service_connection_id = local.srv_endpoint_github_id
 
 #   dns_record_name         = each.value.dns_record_name
-#   dns_zone_name           = local.env_mappings_p4pa[each.value.env].dns_zone_name
-#   dns_zone_resource_group = local.env_mappings_p4pa[each.value.env].dns_zone_rg
+#   dns_zone_name           = local.env_mappings_cstar[each.value.env].dns_zone_name
+#   dns_zone_resource_group = local.env_mappings_cstar[each.value.env].dns_zone_rg
 #   tenant_id               = data.azurerm_client_config.current.tenant_id
-#   subscription_name       = local.env_mappings_p4pa[each.value.env].subscription_name
-#   subscription_id         = local.env_mappings_p4pa[each.value.env].subscription_id
+#   subscription_name       = local.env_mappings_cstar[each.value.env].subscription_name
+#   subscription_id         = local.env_mappings_cstar[each.value.env].subscription_id
 
-#   credential_key_vault_name           = local.env_mappings_p4pa[each.value.env].credential_key_vault_name
-#   credential_key_vault_resource_group = local.env_mappings_p4pa[each.value.env].credential_key_vault_resource_group
+#   credential_key_vault_name           = local.env_mappings_cstar[each.value.env].credential_key_vault_name
+#   credential_key_vault_resource_group = local.env_mappings_cstar[each.value.env].credential_key_vault_resource_group
 
 #   variables = merge(
-#     local.env_mappings_p4pa[each.value.env].variables,
+#     local.env_mappings_cstar[each.value.env].variables,
 #     each.value.variables
 #   )
 
 #   variables_secret = merge(
-#     local.env_mappings_p4pa[each.value.env].variables_secret,
+#     local.env_mappings_cstar[each.value.env].variables_secret,
 #     each.value.variables_secret
 #   )
 
-#   service_connection_ids_authorization = [local.env_mappings_p4pa[each.value.env].service_endpoint]
+#   service_connection_ids_authorization = [local.env_mappings_cstar[each.value.env].service_endpoint]
 
 #   schedules = {
 #     days_to_build              = ["Wed", "Fri"]

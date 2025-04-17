@@ -1,4 +1,4 @@
-# variable "p4pa_arc_idpay_aks_deploy" {
+# variable "cstar_arc_idpay_aks_deploy" {
 #   default = {
 #     repository = {
 #       organization   = "pagopa"
@@ -15,19 +15,19 @@
 
 # locals {
 #   # global vars
-#   p4pa_arc_idpay_aks_deploy_variables = {}
+#   cstar_arc_idpay_aks_deploy_variables = {}
 
 #   # global secrets
-#   p4pa_arc_idpay_aks_deploy_variables_secret = {}
+#   cstar_arc_idpay_aks_deploy_variables_secret = {}
 
 #   # code_review vars
-#   p4pa_arc_idpay_aks_deploy_variables_code_review = {
+#   cstar_arc_idpay_aks_deploy_variables_code_review = {
 #   }
 #   # code_review secrets
-#   p4pa_arc_idpay_aks_deploy_variables_secret_code_review = {}
+#   cstar_arc_idpay_aks_deploy_variables_secret_code_review = {}
 
 #   # deploy vars
-#   p4pa_arc_idpay_aks_deploy_variables_deploy = {
+#   cstar_arc_idpay_aks_deploy_variables_deploy = {
 #     DEV_AGENT_POOL                    = local.dev_azdo_agent_pool
 #     DEV_ARGOCD_SERVER                 = module.idpay_dev_secrets.values["argocd-server-url"].value
 #     DEV_ARGOCD_USERNAME               = module.idpay_dev_secrets.values["argocd-admin-username"].value
@@ -55,32 +55,32 @@
 #   }
 
 #   # deploy secrets vars
-#   p4pa_arc_idpay_aks_deploy_variables_secret_deploy = {}
+#   cstar_arc_idpay_aks_deploy_variables_secret_deploy = {}
 # }
 
-# module "p4pa_arc_idpay_aks_deploy" {
+# module "cstar_arc_idpay_aks_deploy" {
 #   source = "./.terraform/modules/__devops_v0__/azuredevops_build_definition_generic"
 
 #   project_id                   = data.azuredevops_project.this.project_id
-#   repository                   = var.p4pa_arc_idpay_aks_deploy.repository
+#   repository                   = var.cstar_arc_idpay_aks_deploy.repository
 #   github_service_connection_id = data.azuredevops_serviceendpoint_github.arc_azure_devops_github_rw.id
 
-#   pipeline_name         = "${var.p4pa_arc_idpay_aks_deploy.pipeline.name}.deploy"
-#   pipeline_yml_filename = "p4pa-deploy-argocd-apps.yml"
-#   path                  = var.p4pa_arc_idpay_aks_deploy.pipeline.path
+#   pipeline_name         = "${var.cstar_arc_idpay_aks_deploy.pipeline.name}.deploy"
+#   pipeline_yml_filename = "cstar-deploy-argocd-apps.yml"
+#   path                  = var.cstar_arc_idpay_aks_deploy.pipeline.path
 
 #   pull_request_trigger_enabled     = true
 #   pull_request_trigger_auto_cancel = true
 #   pull_request_trigger_use_yaml    = true
 
 #   variables = merge(
-#     local.p4pa_arc_idpay_aks_deploy_variables,
-#     local.p4pa_arc_idpay_aks_deploy_variables_deploy
+#     local.cstar_arc_idpay_aks_deploy_variables,
+#     local.cstar_arc_idpay_aks_deploy_variables_deploy
 #   )
 
 #   variables_secret = merge(
-#     local.p4pa_arc_idpay_aks_deploy_variables_secret,
-#     local.p4pa_arc_idpay_aks_deploy_variables_secret_deploy
+#     local.cstar_arc_idpay_aks_deploy_variables_secret,
+#     local.cstar_arc_idpay_aks_deploy_variables_secret_deploy
 #   )
 
 #   service_connection_ids_authorization = [
