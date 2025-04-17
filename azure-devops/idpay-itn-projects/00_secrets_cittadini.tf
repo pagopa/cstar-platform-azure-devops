@@ -16,9 +16,9 @@ module "cittadini_dev_secrets" {
     # "${local.dev_aks_name}-azure-devops-sa-token",
     # "${local.dev_aks_name}-azure-devops-sa-cacrt",
     # "${local.dev_aks_name}-apiserver-url",
-    "argocd-admin-password",
-    "argocd-admin-username",
-    "argocd-server-url",
+    # "argocd-admin-password",
+    # "argocd-admin-username",
+    # "argocd-server-url",
     # "cittadini-workload-identity-client-id",
   ]
 }
