@@ -4,9 +4,11 @@ locals {
   location_short = "itn"
   location       = "italynorth"
 
-  product         = "${local.prefix}-${local.domain}"
-  external_domain = "pagopa.it"
-  dns_zone_third  = "idpay.pagopa.it"
+
+
+  # product         = "${local.prefix}-${local.domain}"
+  # external_domain = "pagopa.it"
+  # dns_zone_third  = "idpay.pagopa.it"
 
   # # ⚙️ DevOps
   # devops_project_id      = data.azuredevops_project.this.project_id
