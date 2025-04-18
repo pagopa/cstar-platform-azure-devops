@@ -16,17 +16,17 @@ data "azuredevops_serviceendpoint_github" "arc_azure_devops_github_ro" {
 #
 data "azuredevops_serviceendpoint_azurerm" "dev_azurerm_service_conn" {
   project_id            = data.azuredevops_project.this.id
-  service_endpoint_name = "${data.azurerm_subscriptions.dev.subscriptions[0].display_name}-SERVICE-CONN"
+  service_endpoint_name = "${local.dev_subscription_name}-SERVICE-CONN"
 }
 
 data "azuredevops_serviceendpoint_azurerm" "uat_azurerm_service_conn" {
   project_id            = data.azuredevops_project.this.id
-  service_endpoint_name = "${data.azurerm_subscriptions.uat.subscriptions[0].display_name}-SERVICE-CONN"
+  service_endpoint_name = "${local.uat_subscription_name}-SERVICE-CONN"
 }
 
 data "azuredevops_serviceendpoint_azurerm" "prod_azurerm_service_conn" {
   project_id            = data.azuredevops_project.this.id
-  service_endpoint_name = "${data.azurerm_subscriptions.prod.subscriptions[0].display_name}-SERVICE-CONN"
+  service_endpoint_name = "${local.prod_subscription_name}-SERVICE-CONN"
 }
 
 #
