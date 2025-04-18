@@ -8,7 +8,7 @@ locals {
       subscription_id                     = local.dev_subscription_id
       credential_key_vault_name           = local.dev_kv_domain_name
       credential_key_vault_resource_group = local.dev_kv_domain_resource_group
-      service_endpoint_id                    = module.dev_tls_cert_service_connection.service_endpoint_id
+      service_endpoint_id                 = module.dev_tls_cert_service_connection.service_endpoint_id
       variables = {
         KEY_VAULT_SERVICE_CONNECTION = module.dev_tls_cert_service_connection.service_endpoint_name
       }
@@ -21,7 +21,7 @@ locals {
       subscription_id                     = local.uat_subscription_id
       credential_key_vault_name           = local.uat_kv_domain_name
       credential_key_vault_resource_group = local.uat_kv_domain_resource_group
-      service_endpoint_id                    = module.uat_tls_cert_service_connection.service_endpoint_id
+      service_endpoint_id                 = module.uat_tls_cert_service_connection.service_endpoint_id
       variables = {
         KEY_VAULT_SERVICE_CONNECTION = module.uat_tls_cert_service_connection.service_endpoint_name
       }
@@ -34,7 +34,7 @@ locals {
       subscription_id                     = local.prod_subscription_id
       credential_key_vault_name           = local.prod_kv_domain_name
       credential_key_vault_resource_group = local.prod_kv_domain_resource_group
-      service_endpoint_id                    = module.prod_tls_cert_service_connection.service_endpoint_id
+      service_endpoint_id                 = module.prod_tls_cert_service_connection.service_endpoint_id
       variables = {
         KEY_VAULT_SERVICE_CONNECTION = module.prod_tls_cert_service_connection.service_endpoint_name
       }
@@ -109,7 +109,7 @@ module "federated_cert_pipeline_dev" {
   service_connection_ids_authorization = [local.env_configurations[each.value.env].service_endpoint_id]
 
   schedules = {
-    days_to_build              = ["Wed","Fri"]
+    days_to_build              = ["Wed", "Fri"]
     schedule_only_with_changes = false
     start_hours                = 8
     start_minutes              = 10
@@ -167,7 +167,7 @@ module "federated_cert_pipeline_uat" {
   service_connection_ids_authorization = [local.env_configurations[each.value.env].service_endpoint_id]
 
   schedules = {
-    days_to_build              = ["Wed","Fri"]
+    days_to_build              = ["Wed", "Fri"]
     schedule_only_with_changes = false
     start_hours                = 9
     start_minutes              = 0
@@ -226,7 +226,7 @@ module "federated_cert_pipeline_prod" {
   service_connection_ids_authorization = [local.env_configurations[each.value.env].service_endpoint_id]
 
   schedules = {
-    days_to_build              = ["Wed","Fri"]
+    days_to_build              = ["Wed", "Fri"]
     schedule_only_with_changes = false
     start_hours                = 10
     start_minutes              = 0
