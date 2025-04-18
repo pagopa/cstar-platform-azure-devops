@@ -3,6 +3,7 @@ locals {
   domain         = "idpay"
   location_short = "itn"
   location       = "italynorth"
+  azdo_project_name  = "cstar-platform-app-projects"
 
   # 🔑 Key Vault
   dev_kv_domain_name           = "${local.prefix}-d-${local.location_short}-${local.domain}-kv"

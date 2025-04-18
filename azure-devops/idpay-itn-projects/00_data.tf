@@ -1,7 +1,7 @@
 data "azurerm_client_config" "current" {}
 
 data "azuredevops_project" "this" {
-  name = "cstar-projects"
+  name = local.azdo_project_name
 }
 
 #
