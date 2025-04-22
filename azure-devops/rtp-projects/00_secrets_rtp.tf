@@ -60,4 +60,3 @@ module "domain_prod_secrets" {
     "cstar-p-weu-prod01-aks-apiserver-url"
   ]
 }
-
