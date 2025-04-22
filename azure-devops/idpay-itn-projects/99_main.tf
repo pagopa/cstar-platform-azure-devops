@@ -54,6 +54,6 @@ module "__v3__" {
 }
 
 module "__devops_v0__" {
-  # https://github.com/pagopa/azuredevops-tf-modules/releases/tag/v9.2.1
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git?ref=7e23d73d22e7b37352c25a32cc40f6f42b6569ea"
+  # https://github.com/pagopa/azuredevops-tf-modules/releases/tag/v9.3.2
+  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git?ref=2e3b3d1e6616d9485bc6356d87b3319da3895fc2"
 }

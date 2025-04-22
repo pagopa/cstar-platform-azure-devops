@@ -2,7 +2,8 @@
 # 🟢 DEV - TLS CERTIFICATE
 #
 module "dev_tls_cert_service_connection" {
-  source = "../_module_collection/tls_cert_service_connection"
+  source = "./.terraform/modules/__devops_v0__/workflow_tls_cert_service_connection"
+
 
   providers = {
     azurerm = azurerm.dev
@@ -27,7 +28,7 @@ module "dev_tls_cert_service_connection" {
 # 🟨 UAT - TLS CERTIFICATE
 #
 module "uat_tls_cert_service_connection" {
-  source = "../_module_collection/tls_cert_service_connection"
+  source = "./.terraform/modules/__devops_v0__/workflow_tls_cert_service_connection"
 
   providers = {
     azurerm = azurerm.uat
@@ -52,7 +53,7 @@ module "uat_tls_cert_service_connection" {
 # 🛑 PROD - TLS CERTIFICATE
 #
 module "prod_tls_cert_service_connection" {
-  source = "../_module_collection/tls_cert_service_connection"
+  source = "./.terraform/modules/__devops_v0__/workflow_tls_cert_service_connection"
 
   providers = {
     azurerm = azurerm.prod
