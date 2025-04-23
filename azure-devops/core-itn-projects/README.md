@@ -24,9 +24,9 @@
 | <a name="module___devops_v0__"></a> [\_\_devops\_v0\_\_](#module\_\_\_devops\_v0\_\_) | git::https://github.com/pagopa/azuredevops-tf-modules.git | 2e3b3d1e6616d9485bc6356d87b3319da3895fc2 |
 | <a name="module___v3__"></a> [\_\_v3\_\_](#module\_\_\_v3\_\_) | git::https://github.com/pagopa/terraform-azurerm-v3.git | a88c6d99ec3871db7de57db4280422b02db3e4f0 |
 | <a name="module_dev_tls_cert_service_connection"></a> [dev\_tls\_cert\_service\_connection](#module\_dev\_tls\_cert\_service\_connection) | ./.terraform/modules/__devops_v0__/workflow_tls_cert_service_connection | n/a |
-| <a name="module_itn_core_pipeline_dev"></a> [itn\_core\_pipeline\_dev](#module\_itn\_core\_pipeline\_dev) | ../core-projects/.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated | n/a |
-| <a name="module_itn_core_pipeline_prod"></a> [itn\_core\_pipeline\_prod](#module\_itn\_core\_pipeline\_prod) | ../core-projects/.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated | n/a |
-| <a name="module_itn_core_pipeline_uat"></a> [itn\_core\_pipeline\_uat](#module\_itn\_core\_pipeline\_uat) | ../core-projects/.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated | n/a |
+| <a name="module_itn_core_pipeline_dev"></a> [itn\_core\_pipeline\_dev](#module\_itn\_core\_pipeline\_dev) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated | n/a |
+| <a name="module_itn_core_pipeline_prod"></a> [itn\_core\_pipeline\_prod](#module\_itn\_core\_pipeline\_prod) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated | n/a |
+| <a name="module_itn_core_pipeline_uat"></a> [itn\_core\_pipeline\_uat](#module\_itn\_core\_pipeline\_uat) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated | n/a |
 | <a name="module_prod_tls_cert_service_connection"></a> [prod\_tls\_cert\_service\_connection](#module\_prod\_tls\_cert\_service\_connection) | ./.terraform/modules/__devops_v0__/workflow_tls_cert_service_connection | n/a |
 | <a name="module_uat_tls_cert_service_connection"></a> [uat\_tls\_cert\_service\_connection](#module\_uat\_tls\_cert\_service\_connection) | ./.terraform/modules/__devops_v0__/workflow_tls_cert_service_connection | n/a |
 
