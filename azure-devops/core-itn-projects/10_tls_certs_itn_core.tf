@@ -69,7 +69,7 @@ locals {
 # change only providers
 #tfsec:ignore:general-secrets-no-plaintext-exposure
 module "itn_core_pipeline_dev" {
-  source = "../core-projects/.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated"
+  source = "./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated"
 
   for_each = { for k, v in local.certificates_itn_core : k => v if v.env == "dev" }
 
@@ -127,7 +127,7 @@ module "itn_core_pipeline_dev" {
 # change only providers
 #tfsec:ignore:general-secrets-no-plaintext-exposure
 module "itn_core_pipeline_uat" {
-  source = "../core-projects/.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated"
+  source = "./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated"
 
   for_each = { for k, v in local.certificates_itn_core : k => v if v.env == "uat" }
 
@@ -185,7 +185,7 @@ module "itn_core_pipeline_uat" {
 # change only providers
 #tfsec:ignore:general-secrets-no-plaintext-exposure
 module "itn_core_pipeline_prod" {
-  source = "../core-projects/.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated"
+  source = "./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated"
 
   for_each = { for k, v in local.certificates_itn_core : k => v if v.env == "prod" }
 
