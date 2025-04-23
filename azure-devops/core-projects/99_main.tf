@@ -13,14 +13,12 @@ terraform {
 }
 
 provider "azurerm" {
-  skip_provider_registration = true
 
   features {}
 }
 
 provider "azurerm" {
-  alias                      = "dev"
-  skip_provider_registration = true
+  alias = "dev"
 
   features {
     key_vault {
@@ -31,8 +29,7 @@ provider "azurerm" {
 }
 
 provider "azurerm" {
-  alias                      = "uat"
-  skip_provider_registration = true
+  alias = "uat"
 
   features {
     key_vault {
@@ -43,8 +40,7 @@ provider "azurerm" {
 }
 
 provider "azurerm" {
-  alias                      = "prod"
-  skip_provider_registration = true
+  alias = "prod"
 
   features {
     key_vault {
