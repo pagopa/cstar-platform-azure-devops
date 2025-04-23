@@ -51,21 +51,21 @@ locals {
 
   certificates_legacy = {
     "rtp-cb-cstar-dev-pagopa-it" : {
-      env             = "dev"
-      dns_record_name = "api-rtp-cb"
-      variables = {}
+      env              = "dev"
+      dns_record_name  = "api-rtp-cb"
+      variables        = {}
       variables_secret = {}
     }
     "rtp-cb-cstar-uat-pagopa-it" : {
-      env             = "uat"
-      dns_record_name = "api-rtp-cb"
-      variables = {}
+      env              = "uat"
+      dns_record_name  = "api-rtp-cb"
+      variables        = {}
       variables_secret = {}
     }
     "rtp-cb-cstar-pagopa-it" : {
-      env             = "prod"
-      dns_record_name = "api-rtp-cb"
-      variables = {}
+      env              = "prod"
+      dns_record_name  = "api-rtp-cb"
+      variables        = {}
       variables_secret = {}
     }
   }

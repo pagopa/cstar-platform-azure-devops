@@ -1,6 +1,6 @@
 locals {
   prefix            = "cstar"
-  domain_core            = "core"
+  domain_core       = "core"
   location_short    = "itn"
   location          = "italynorth"
   azdo_project_name = "cstar-platform-app-projects"
@@ -18,7 +18,7 @@ locals {
   # Identity RG
   dev_identity_core_itn_rg_name  = "${local.prefix}-d-${local.location_short}-${local.domain_core}-identity-rg"
   uat_identity_core_itn_rg_name  = "${local.prefix}-u-${local.location_short}-${local.domain_core}-identity-rg"
-  prod_identity_core_itn_rg_name  = "${local.prefix}-p-${local.location_short}-${local.domain_core}-identity-rg"
+  prod_identity_core_itn_rg_name = "${local.prefix}-p-${local.location_short}-${local.domain_core}-identity-rg"
 
   # 🔑 Key Vault
   dev_kv_core_name            = "${local.prefix}-d-${local.location_short}-${local.domain_core}-kv"

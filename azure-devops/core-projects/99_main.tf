@@ -18,7 +18,7 @@ provider "azurerm" {
 }
 
 provider "azurerm" {
-  alias                      = "dev"
+  alias = "dev"
 
   features {
     key_vault {
@@ -29,7 +29,7 @@ provider "azurerm" {
 }
 
 provider "azurerm" {
-  alias                      = "uat"
+  alias = "uat"
 
   features {
     key_vault {
@@ -40,7 +40,7 @@ provider "azurerm" {
 }
 
 provider "azurerm" {
-  alias                      = "prod"
+  alias = "prod"
 
   features {
     key_vault {

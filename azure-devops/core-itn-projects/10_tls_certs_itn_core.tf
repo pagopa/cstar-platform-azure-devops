@@ -1,6 +1,6 @@
 locals {
 
-      # TLS CERTS
+  # TLS CERTS
   certificate_itn_core_env_mappings = {
     dev = {
       dns_zone_name                       = "dev.cstar.pagopa.it"
@@ -108,7 +108,7 @@ module "itn_core_pipeline_dev" {
   service_connection_ids_authorization = [local.certificate_itn_core_env_mappings[each.value.env].service_endpoint]
 
   schedules = {
-    days_to_build              = ["Wed","Fri"]
+    days_to_build              = ["Wed", "Fri"]
     schedule_only_with_changes = false
     start_hours                = 7
     start_minutes              = 0
@@ -166,7 +166,7 @@ module "itn_core_pipeline_uat" {
   service_connection_ids_authorization = [local.certificate_itn_core_env_mappings[each.value.env].service_endpoint]
 
   schedules = {
-    days_to_build              = ["Wed","Fri"]
+    days_to_build              = ["Wed", "Fri"]
     schedule_only_with_changes = false
     start_hours                = 8
     start_minutes              = 0
@@ -224,7 +224,7 @@ module "itn_core_pipeline_prod" {
   service_connection_ids_authorization = [local.certificate_itn_core_env_mappings[each.value.env].service_endpoint]
 
   schedules = {
-    days_to_build              = ["Wed","Fri"]
+    days_to_build              = ["Wed", "Fri"]
     schedule_only_with_changes = false
     start_hours                = 9
     start_minutes              = 0
