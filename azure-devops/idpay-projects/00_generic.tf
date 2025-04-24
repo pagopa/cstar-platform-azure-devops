@@ -44,4 +44,3 @@ data "azuredevops_agent_pool" "cstar_uat_linux" {
 data "azuredevops_agent_pool" "cstar_prod_linux" {
   name = "cstar-prod-linux"
 }
-

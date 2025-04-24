@@ -21,7 +21,7 @@ locals {
   # ⚙️ DevOps
   devops_project_id = data.azuredevops_project.project.project_id
 
-  # 🔐 KV
+  # 🔐 KV Legacy WEU
   prod_key_vault_azdo_name = "${local.project_prefix_short}-p-azdo-weu-kv"
 
   dev_domain_key_vault_name  = "${local.project_prefix_short}-d-kv"
@@ -86,4 +86,5 @@ locals {
     branch_name    = "refs/heads/master"
     pipelines_path = "."
   }
+
 }
