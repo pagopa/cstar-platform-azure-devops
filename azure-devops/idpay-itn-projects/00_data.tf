@@ -46,18 +46,3 @@ data "azurerm_key_vault" "prod_kv_domain" {
   name                = local.prod_kv_domain_name
   resource_group_name = local.prod_kv_domain_resource_group
 }
-
-data "azuredevops_serviceendpoint_azurerm" "dev_azurerm_service_conn" {
-  project_id            = local.devops_project_id
-  service_endpoint_name = "${data.azurerm_subscriptions.dev.subscriptions[0].display_name}-AZURE-SERVICE-CONN"
-}
-
-data "azuredevops_serviceendpoint_azurerm" "uat_azurerm_service_conn" {
-  project_id            = local.devops_project_id
-  service_endpoint_name = "${data.azurerm_subscriptions.uat.subscriptions[0].display_name}-AZURE-SERVICE-CONN"
-}
-
-data "azuredevops_serviceendpoint_azurerm" "prod_azurerm_service_conn" {
-  project_id            = local.devops_project_id
-  service_endpoint_name = "${data.azurerm_subscriptions.prod.subscriptions[0].display_name}-AZURE-SERVICE-CONN"
-}
