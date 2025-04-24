@@ -20,7 +20,7 @@ locals {
   idpay-portal-merchants-frontend-variables_deploy = {
     AZURE_DEVOPS_GITHUB_RO = data.azuredevops_serviceendpoint_github.azure_devops_github_ro.service_endpoint_name
 
-    DEV_AZURE_SUBSCRIPTION                                       = data.azuredevops_serviceendpoint_azurerm.dev_azurerm_service_conn.id
+    DEV_AZURE_SUBSCRIPTION                                       = local.service_endpoint_azure_dev_id
     DEV_CDN_ENDPOINT                                             = local.dev_cdn_endpoint
     DEV_CDN_PROFILE                                              = local.dev_cdn_profile
     DEV_RESOURCE_GROUP                                           = local.dev_storage_account_rg
@@ -44,7 +44,7 @@ locals {
     DEV_REACT_APP_ONE_TRUST_TOS_ID_MERCHANTS                     = local.dev_react_app_one_trust_tos_id_merchants
     DEV_REACT_APP_ONE_TRUST_TOS_JSON_URL_MERCHANTS               = local.dev_react_app_one_trust_tos_json_url_merchants
 
-    UAT_AZURE_SUBSCRIPTION                                       = data.azuredevops_serviceendpoint_azurerm.uat_azurerm_service_conn.id
+    UAT_AZURE_SUBSCRIPTION                                       = local.service_endpoint_azure_uat_id
     UAT_CDN_ENDPOINT                                             = local.uat_cdn_endpoint
     UAT_CDN_PROFILE                                              = local.uat_cdn_profile
     UAT_RESOURCE_GROUP                                           = local.uat_storage_account_rg
@@ -68,7 +68,7 @@ locals {
     UAT_REACT_APP_ONE_TRUST_TOS_ID_MERCHANTS                     = local.uat_react_app_one_trust_tos_id_merchants
     UAT_REACT_APP_ONE_TRUST_TOS_JSON_URL_MERCHANTS               = local.uat_react_app_one_trust_tos_json_url_merchants
 
-    PROD_AZURE_SUBSCRIPTION                                       = data.azuredevops_serviceendpoint_azurerm.prod_azurerm_service_conn.id
+    PROD_AZURE_SUBSCRIPTION                                       = local.service_endpoint_azure_prod_id
     PROD_CDN_ENDPOINT                                             = local.prod_cdn_endpoint
     PROD_CDN_PROFILE                                              = local.prod_cdn_profile
     PROD_RESOURCE_GROUP                                           = local.prod_storage_account_rg

@@ -34,39 +34,15 @@ variable "acr_ita_service_connection_workload_identity_prod" {
 
 
 locals {
-  prefix           = "cstar"
-  azure_devops_org = "pagopaspa"
-  location_short   = "itn"
-  location         = "italynorth"
-  domain           = "idpay"
 
-  product         = "${local.prefix}-${local.domain}"
-  external_domain = "pagopa.it"
 
-  # ⚙️ DevOps
-  devops_project_id = data.azuredevops_project.this.project_id
 
-  # 🔐 KV Domain
-  dev_domain_key_vault_resource_group  = "${local.prefix}-d-${local.domain}-sec-rg"
-  uat_domain_key_vault_resource_group  = "${local.prefix}-u-${local.domain}-sec-rg"
-  prod_domain_key_vault_resource_group = "${local.prefix}-p-${local.domain}-sec-rg"
 
-  dev_domain_key_vault_name  = "${local.prefix}-d-${local.domain}-kv"
-  uat_domain_key_vault_name  = "${local.prefix}-u-${local.domain}-kv"
-  prod_domain_key_vault_name = "${local.prefix}-p-${local.domain}-kv"
 
-  # Agent Pool
-  azdo_agent_pool_dev  = "cstar-dev-linux"
-  azdo_agent_pool_uat  = "cstar-uat-linux"
-  azdo_agent_pool_prod = "cstar-prod-linux"
 
-  dev_aks_name  = "${local.prefix}-d-${local.location_short}-aks"
-  uat_aks_name  = "${local.prefix}-u-${local.location_short}-aks"
-  prod_aks_name = "${local.prefix}-p-${local.location_short}-aks"
 
-  dev_subscription_name  = "dev-${local.prefix}"
-  uat_subscription_name  = "uat-${local.prefix}"
-  prod_subscription_name = "prod-${local.prefix}"
+
+
 
   #
   # Outputs from CORE
@@ -77,30 +53,24 @@ locals {
   # service_endpoint_io_azure_devops_github_ro_id   = data.azuredevops_serviceendpoint_github.io-azure-devops-github-ro.id
 
   # DEV
-  # service_endpoint_azure_devops_docker_dev_name = data.azuredevops_serviceendpoint_azurecr.dev_weu_workload_identity.service_endpoint_name
-  # service_endpoint_azure_devops_docker_dev_id   = data.azuredevops_serviceendpoint_azurecr.dev_weu_workload_identity.id
-  service_endpoint_azure_dev_id   = data.azuredevops_serviceendpoint_azurerm.azure_dev.id
-  service_endpoint_azure_dev_name = data.azuredevops_serviceendpoint_azurerm.azure_dev.service_endpoint_name
+  service_endpoint_azure_dev_id   = data.azuredevops_serviceendpoint_azurerm.dev_azurerm_service_conn.project_id
+  service_endpoint_azure_dev_name = data.azuredevops_serviceendpoint_azurerm.dev_azurerm_service_conn.service_endpoint_name
   dev_cdn_profile            = "${local.prefix}-d-${local.domain}-cdn-profile"
   dev_cdn_endpoint           = "${local.prefix}-d-${local.domain}-cdn-endpoint"
   dev_storage_account_rg     = "${local.prefix}-d-${local.location_short}-${local.domain}-cdn-rg"
   dev_storage_account_name   = replace("${local.prefix}-d-${local.domain}-sa", "-", "")
 
   # UAT
-  # service_endpoint_azure_devops_docker_uat_name = data.azuredevops_serviceendpoint_azurecr.uat_weu_workload_identity.service_endpoint_name
-  # service_endpoint_azure_devops_docker_uat_id   = data.azuredevops_serviceendpoint_azurecr.uat_weu_workload_identity.id
-  service_endpoint_azure_uat_id   = data.azuredevops_serviceendpoint_azurerm.azure_uat.id
-  service_endpoint_azure_uat_name = data.azuredevops_serviceendpoint_azurerm.azure_dev.service_endpoint_name
+  service_endpoint_azure_uat_id   = data.azuredevops_serviceendpoint_azurerm.uat_azurerm_service_conn.project_id
+  service_endpoint_azure_uat_name = data.azuredevops_serviceendpoint_azurerm.uat_azurerm_service_conn.service_endpoint_name
   uat_cdn_profile            = "${local.prefix}-u-${local.domain}-cdn-profile"
   uat_cdn_endpoint           = "${local.prefix}-u-${local.domain}-cdn-endpoint"
   uat_storage_account_rg     = "${local.prefix}-u-${local.location_short}-${local.domain}-cdn-rg"
   uat_storage_account_name   = replace("${local.prefix}-u-${local.domain}-sa", "-", "")
 
   # PROD
-  # service_endpoint_azure_devops_docker_prod_name = data.azuredevops_serviceendpoint_azurecr.prod_weu_workload_identity.service_endpoint_name
-  # service_endpoint_azure_devops_docker_prod_id   = data.azuredevops_serviceendpoint_azurecr.prod_weu_workload_identity.id
-  service_endpoint_azure_prod_id   = data.azuredevops_serviceendpoint_azurerm.azure_prod.id
-  service_endpoint_azure_prod_name = data.azuredevops_serviceendpoint_azurerm.azure_dev.service_endpoint_name
+  service_endpoint_azure_prod_id   = data.azuredevops_serviceendpoint_azurerm.prod_azurerm_service_conn.project_id
+  service_endpoint_azure_prod_name = data.azuredevops_serviceendpoint_azurerm.prod_azurerm_service_conn.service_endpoint_name
   prod_cdn_profile            = "${local.prefix}-p-${local.domain}-cdn-profile"
   prod_cdn_endpoint           = "${local.prefix}-p-${local.domain}-cdn-endpoint"
   prod_storage_account_rg     = "${local.prefix}-p-${local.location_short}-${local.domain}-cdn-rg"

@@ -10,8 +10,8 @@ module "domain_dev_secrets" {
 
   source = "./.terraform/modules/__v3__/key_vault_secrets_query"
 
-  resource_group = local.dev_domain_key_vault_resource_group
-  key_vault_name = local.dev_domain_key_vault_name
+  resource_group = local.dev_kv_domain_resource_group
+  key_vault_name = local.dev_kv_domain_name
 
   secrets = [
     "${local.dev_aks_name}-azure-devops-sa-token",
@@ -30,8 +30,8 @@ module "domain_uat_secrets" {
     azurerm = azurerm.uat
   }
 
-  resource_group = local.uat_domain_key_vault_resource_group
-  key_vault_name = local.uat_domain_key_vault_name
+  resource_group = local.uat_kv_domain_resource_group
+  key_vault_name = local.uat_kv_domain_name
 
   secrets = [
     "${local.uat_aks_name}-azure-devops-sa-token",
@@ -50,8 +50,8 @@ module "domain_prod_secrets" {
     azurerm = azurerm.prod
   }
 
-  resource_group = local.prod_domain_key_vault_resource_group
-  key_vault_name = local.prod_domain_key_vault_name
+  resource_group = local.prod_kv_domain_resource_group
+  key_vault_name = local.prod_kv_domain_name
 
   secrets = [
     "${local.prod_aks_name}-azure-devops-sa-token",

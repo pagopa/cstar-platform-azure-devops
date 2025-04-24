@@ -21,7 +21,7 @@ locals {
   idpay-portal-welfare-frontend-variables_deploy = {
     AZURE_DEVOPS_GITHUB_RO = data.azuredevops_serviceendpoint_github.azure_devops_github_ro.service_endpoint_name
 
-    DEV_AZURE_SUBSCRIPTION                          = data.azuredevops_serviceendpoint_azurerm.dev_azurerm_service_conn.id
+    DEV_AZURE_SUBSCRIPTION                          = local.service_endpoint_azure_dev_id
     DEV_CDN_ENDPOINT                                = local.dev_cdn_endpoint
     DEV_CDN_PROFILE                                 = local.dev_cdn_profile
     DEV_RESOURCE_GROUP                              = local.dev_storage_account_rg
@@ -48,7 +48,7 @@ locals {
     DEV_REACT_APP_ONE_TRUST_TOS_ID                  = local.dev_react_app_one_trust_tos_id
     DEV_REACT_APP_ONE_TRUST_TOS_JSON_URL            = local.dev_react_app_one_trust_tos_json_url
 
-    UAT_AZURE_SUBSCRIPTION                          = data.azuredevops_serviceendpoint_azurerm.dev_azurerm_service_conn.id
+    UAT_AZURE_SUBSCRIPTION                          = local.service_endpoint_azure_uat_id
     UAT_CDN_ENDPOINT                                = local.uat_cdn_endpoint
     UAT_CDN_PROFILE                                 = local.uat_cdn_profile
     UAT_RESOURCE_GROUP                              = local.uat_storage_account_rg
@@ -75,32 +75,32 @@ locals {
     UAT_REACT_APP_ONE_TRUST_TOS_ID                  = local.uat_react_app_one_trust_tos_id
     UAT_REACT_APP_ONE_TRUST_TOS_JSON_URL            = local.uat_react_app_one_trust_tos_json_url
 
-    UAT_AZURE_SUBSCRIPTION                          = data.azuredevops_serviceendpoint_azurerm.dev_azurerm_service_conn.id
-    PROD_CDN_ENDPOINT                                = local.prod_cdn_endpoint
-    PROD_CDN_PROFILE                                 = local.prod_cdn_profile
-    PROD_RESOURCE_GROUP                              = local.prod_storage_account_rg
-    PROD_STORAGE_ACCOUNT                             = local.prod_storage_account_name
-    PROD_REACT_APP_URL_CDN                           = local.prod_react_app_url_cdn
-    PROD_REACT_APP_URL_FE_PRE_LOGIN                  = local.prod_react_app_url_fe_pre_login
-    PROD_REACT_APP_URL_FE_LOGIN                      = local.prod_react_app_url_fe_login
-    PROD_REACT_APP_URL_FE_LANDING                    = local.prod_react_app_url_fe_landing
-    PROD_REACT_APP_URL_FE_ASSISTANCE_PORTAL          = local.prod_react_app_url_fe_assistance_portal
-    PROD_REACT_APP_URL_API_INITIATIVE                = local.prod_react_app_url_api_initiative
-    PROD_REACT_APP_URL_API_GROUPS                    = local.prod_react_app_url_api_groups
-    PROD_REACT_APP_URL_API_ROLE_PERMISSION           = local.prod_react_app_url_api_role_permission
-    PROD_REACT_APP_URL_API_EMAIL_NOTIFICATION        = local.prod_react_app_url_api_email_notification
-    PROD_REACT_APP_URL_API_MERCHANTS                 = local.prod_react_app_url_api_merchants
-    PROD_REACT_APP_URL_STORAGE                       = local.prod_react_app_url_storage
-    PROD_ANALYTICS_ENABLED                           = local.prod_analytics_enabled
-    PROD_ANALYTICS_MOCKED                            = local.prod_analytics_mocked
-    PROD_MIXPANEL_TOKEN                              = local.prod_mixpanel_token
-    PROD_ONETRUST_DOMAIN_ID                          = local.prod_onetrust_domain_id
-    PROD_REACT_APP_ONE_TRUST_OTNOTICE_CDN_URL        = local.prod_react_app_one_trust_otnotice_cdn_url
-    PROD_REACT_APP_ONE_TRUST_OTNOTICE_CDN_SETTINGS   = local.prod_react_app_one_trust_otnotice_cdn_settings
-    PROD_REACT_APP_ONE_TRUST_PRIVACY_POLICY_ID       = local.prod_react_app_one_trust_privacy_policy_id
-    PROD_REACT_APP_ONE_TRUST_PRIVACY_POLICY_JSON_URL = local.prod_react_app_one_trust_privacy_policy_json_url
-    PROD_REACT_APP_ONE_TRUST_TOS_ID                  = local.prod_react_app_one_trust_tos_id
-    PROD_REACT_APP_ONE_TRUST_TOS_JSON_URL            = local.prod_react_app_one_trust_tos_json_url
+    PROD_AZURE_SUBSCRIPTION                         = local.service_endpoint_azure_prod_id
+    PROD_CDN_ENDPOINT                               = local.prod_cdn_endpoint
+    PROD_CDN_PROFILE                                = local.prod_cdn_profile
+    PROD_RESOURCE_GROUP                             = local.prod_storage_account_rg
+    PROD_STORAGE_ACCOUNT                            = local.prod_storage_account_name
+    PROD_REACT_APP_URL_CDN                          = local.prod_react_app_url_cdn
+    PROD_REACT_APP_URL_FE_PRE_LOGIN                 = local.prod_react_app_url_fe_pre_login
+    PROD_REACT_APP_URL_FE_LOGIN                     = local.prod_react_app_url_fe_login
+    PROD_REACT_APP_URL_FE_LANDING                   = local.prod_react_app_url_fe_landing
+    PROD_REACT_APP_URL_FE_ASSISTANCE_PORTAL         = local.prod_react_app_url_fe_assistance_portal
+    PROD_REACT_APP_URL_API_INITIATIVE               = local.prod_react_app_url_api_initiative
+    PROD_REACT_APP_URL_API_GROUPS                   = local.prod_react_app_url_api_groups
+    PROD_REACT_APP_URL_API_ROLE_PERMISSION          = local.prod_react_app_url_api_role_permission
+    PROD_REACT_APP_URL_API_EMAIL_NOTIFICATION       = local.prod_react_app_url_api_email_notification
+    PROD_REACT_APP_URL_API_MERCHANTS                = local.prod_react_app_url_api_merchants
+    PROD_REACT_APP_URL_STORAGE                      = local.prod_react_app_url_storage
+    PROD_ANALYTICS_ENABLED                          = local.prod_analytics_enabled
+    PROD_ANALYTICS_MOCKED                           = local.prod_analytics_mocked
+    PROD_MIXPANEL_TOKEN                             = local.prod_mixpanel_token
+    PROD_ONETRUST_DOMAIN_ID                         = local.prod_onetrust_domain_id
+    PROD_REACT_APP_ONE_TRUST_OTNOTICE_CDN_URL       = local.prod_react_app_one_trust_otnotice_cdn_url
+    PROD_REACT_APP_ONE_TRUST_OTNOTICE_CDN_SETTINGS  = local.prod_react_app_one_trust_otnotice_cdn_settings
+    PROD_REACT_APP_ONE_TRUST_PRIVACY_POLICY_ID      = local.prod_react_app_one_trust_privacy_policy_id
+    PROD_REACT_APP_ONE_TRUST_PRIVACY_POLICY_JSON_URL= local.prod_react_app_one_trust_privacy_policy_json_url
+    PROD_REACT_APP_ONE_TRUST_TOS_ID                 = local.prod_react_app_one_trust_tos_id
+    PROD_REACT_APP_ONE_TRUST_TOS_JSON_URL           = local.prod_react_app_one_trust_tos_json_url
 
 
   }
