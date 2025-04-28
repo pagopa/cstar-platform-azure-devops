@@ -84,7 +84,7 @@ module "federated_cert_pipeline_dev" {
   project_id                   = data.azuredevops_project.this.id
   repository                   = local.tlscert_repository
   path                         = "TLS-Certificates\\${upper(each.value.env)}"
-  github_service_connection_id = data.azuredevops_serviceendpoint_github.azure_devops_github_rw.id
+  github_service_connection_id = azuredevops_serviceendpoint_github.idpay_bot_github_rw.id
 
   dns_record_name         = each.value.dns_record_name
   dns_zone_name           = local.env_configurations[each.value.env].dns_zone_name
@@ -142,7 +142,7 @@ module "federated_cert_pipeline_uat" {
   project_id                   = data.azuredevops_project.this.id
   repository                   = local.tlscert_repository
   path                         = "TLS-Certificates\\${upper(each.value.env)}"
-  github_service_connection_id = data.azuredevops_serviceendpoint_github.azure_devops_github_rw.id
+  github_service_connection_id = azuredevops_serviceendpoint_github.idpay_bot_github_rw.id
 
   dns_record_name         = each.value.dns_record_name
   dns_zone_name           = local.env_configurations[each.value.env].dns_zone_name
@@ -201,7 +201,7 @@ module "federated_cert_pipeline_prod" {
   project_id                   = data.azuredevops_project.this.id
   repository                   = local.tlscert_repository
   path                         = "TLS-Certificates\\${upper(each.value.env)}"
-  github_service_connection_id = data.azuredevops_serviceendpoint_github.azure_devops_github_rw.id
+  github_service_connection_id = azuredevops_serviceendpoint_github.idpay_bot_github_rw.id
 
   dns_record_name         = each.value.dns_record_name
   dns_zone_name           = local.env_configurations[each.value.env].dns_zone_name

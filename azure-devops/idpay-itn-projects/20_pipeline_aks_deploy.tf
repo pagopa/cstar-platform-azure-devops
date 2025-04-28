@@ -37,17 +37,17 @@ locals {
     DEV_POSTMAN_ENV_SECRET_NAME       = "postman-environment"
 
     UAT_AGENT_POOL                    = local.azdo_agent_pool_uat
-    UAT_ARGOCD_SERVER                 = ""#module.domain_uat_secrets.values["argocd-server-url"].value
-    UAT_ARGOCD_USERNAME               = ""#module.domain_uat_secrets.values["argocd-admin-username"].value
-    UAT_ARGOCD_PASSWORD               = ""#module.domain_uat_secrets.values["argocd-admin-password"].value
+    UAT_ARGOCD_SERVER                 = "" #module.domain_uat_secrets.values["argocd-server-url"].value
+    UAT_ARGOCD_USERNAME               = "" #module.domain_uat_secrets.values["argocd-admin-username"].value
+    UAT_ARGOCD_PASSWORD               = "" #module.domain_uat_secrets.values["argocd-admin-password"].value
     UAT_AZURE_SERVICE_CONNECTION_NAME = local.uat_service_endpoint_azure_name
     UAT_POSTMAN_KV_NAME               = local.uat_kv_domain_name
     UAT_POSTMAN_ENV_SECRET_NAME       = "postman-environment"
 
     PROD_AGENT_POOL                    = local.azdo_agent_pool_prod
-    PROD_ARGOCD_SERVER                 = ""#module.domain_prod_secrets.values["argocd-server-url"].value
-    PROD_ARGOCD_USERNAME               = ""#module.domain_prod_secrets.values["argocd-admin-username"].value
-    PROD_ARGOCD_PASSWORD               = ""#module.domain_prod_secrets.values["argocd-admin-password"].value
+    PROD_ARGOCD_SERVER                 = "" #module.domain_prod_secrets.values["argocd-server-url"].value
+    PROD_ARGOCD_USERNAME               = "" #module.domain_prod_secrets.values["argocd-admin-username"].value
+    PROD_ARGOCD_PASSWORD               = "" #module.domain_prod_secrets.values["argocd-admin-password"].value
     PROD_AZURE_SERVICE_CONNECTION_NAME = local.prod_service_endpoint_azure_name
     PROD_POSTMAN_KV_NAME               = local.prod_kv_domain_name
     PROD_POSTMAN_ENV_SECRET_NAME       = "postman-environment"
@@ -63,7 +63,7 @@ module "idpay_aks_deploy" {
 
   project_id                   = local.devops_project_id
   repository                   = var.idpay_aks_deploy.repository
-  github_service_connection_id = data.azuredevops_serviceendpoint_github.azure_devops_github_rw.id
+  github_service_connection_id = azuredevops_serviceendpoint_github.idpay_bot_github_rw.id
 
   pipeline_name         = "${var.idpay_aks_deploy.pipeline.name}.deploy"
   pipeline_yml_filename = "deploy-argocd-apps.yml"

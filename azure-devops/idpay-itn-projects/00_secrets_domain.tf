@@ -64,8 +64,8 @@ module "domain_prod_secrets" {
   resource_group = local.prod_kv_domain_resource_group
 
   secrets = [
-    # "azure-devops-github-ro-TOKEN",
-    # "azure-devops-github-rw-TOKEN",
-    # "azure-devops-github-pr-TOKEN",
+    "idpay-bot-github-rw-TOKEN",
+    "idpay-bot-github-ro-TOKEN",
+    "idpay-bot-github-pr-TOKEN",
   ]
 }
