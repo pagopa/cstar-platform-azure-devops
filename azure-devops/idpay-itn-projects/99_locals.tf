@@ -18,7 +18,7 @@ locals {
   prod_subscription_id = data.azurerm_subscriptions.prod.subscriptions[0].subscription_id
 
 
-  # 🔑 Key Vault
+  ### 🔑 Key Vault
   dev_kv_domain_name            = "${local.prefix}-d-${local.location_short}-${local.domain}-kv"
   dev_kv_domain_resource_group  = "${local.prefix}-d-${local.location_short}-${local.domain}-security-rg"
   uat_kv_domain_name            = "${local.prefix}-u-${local.location_short}-${local.domain}-kv"
@@ -26,7 +26,7 @@ locals {
   prod_kv_domain_name           = "${local.prefix}-p-${local.location_short}-${local.domain}-kv"
   prod_kv_domain_resource_group = "${local.prefix}-p-${local.location_short}-${local.domain}-security-rg"
 
-  # 🌐 Network
+  ### 🌐 Network
   rg_dev_dns_zone_name  = "cstar-d-vnet-rg"
   rg_uat_dns_zone_name  = "cstar-u-vnet-rg"
   rg_prod_dns_zone_name = "cstar-p-vnet-rg"
@@ -35,39 +35,43 @@ locals {
   uat_dns_zone_name  = "uat.cstar.pagopa.it"
   prod_dns_zone_name = "cstar.pagopa.it"
 
-  # Idenity RG
+  ### Idenity RG
   dev_identity_rg_name  = "cstar-d-itn-idpay-cicd-rg"
   uat_identity_rg_name  = "cstar-u-itn-idpay-cicd-rg"
   prod_identity_rg_name = "cstar-p-itn-idpay-cicd-rg"
 
-  # Agent Pool
+  ### Agent Pool
   azdo_agent_pool_dev  = "cstar-dev-linux"
   azdo_agent_pool_uat  = "cstar-uat-linux"
   azdo_agent_pool_prod = "cstar-prod-linux"
 
+  ### AKS
   dev_aks_name  = "${local.prefix}-d-${local.location_short}-aks"
   uat_aks_name  = "${local.prefix}-u-${local.location_short}-aks"
   prod_aks_name = "${local.prefix}-p-${local.location_short}-aks"
 
+  ### Service connections/endpoints
+  dev_service_endpoint_azure_id   = data.azuredevops_serviceendpoint_azurerm.dev_azurerm_service_conn.service_endpoint_id
+  dev_service_endpoint_azure_name = data.azuredevops_serviceendpoint_azurerm.dev_azurerm_service_conn.service_endpoint_name
+  uat_service_endpoint_azure_id   = data.azuredevops_serviceendpoint_azurerm.uat_azurerm_service_conn.service_endpoint_id
+  uat_service_endpoint_azure_name = data.azuredevops_serviceendpoint_azurerm.uat_azurerm_service_conn.service_endpoint_name
+  prod_service_endpoint_azure_id   = data.azuredevops_serviceendpoint_azurerm.prod_azurerm_service_conn.service_endpoint_id
+  prod_service_endpoint_azure_name = data.azuredevops_serviceendpoint_azurerm.prod_azurerm_service_conn.service_endpoint_name
+
+
   # DEV
-  service_endpoint_azure_dev_id   = data.azuredevops_serviceendpoint_azurerm.dev_azurerm_service_conn.project_id
-  service_endpoint_azure_dev_name = data.azuredevops_serviceendpoint_azurerm.dev_azurerm_service_conn.service_endpoint_name
   dev_cdn_profile            = "${local.prefix}-d-${local.domain}-cdn-profile"
   dev_cdn_endpoint           = "${local.prefix}-d-${local.domain}-cdn-endpoint"
   dev_storage_account_rg     = "${local.prefix}-d-${local.location_short}-${local.domain}-cdn-rg"
   dev_storage_account_name   = replace("${local.prefix}-d-${local.domain}-sa", "-", "")
 
   # UAT
-  service_endpoint_azure_uat_id   = data.azuredevops_serviceendpoint_azurerm.uat_azurerm_service_conn.project_id
-  service_endpoint_azure_uat_name = data.azuredevops_serviceendpoint_azurerm.uat_azurerm_service_conn.service_endpoint_name
   uat_cdn_profile            = "${local.prefix}-u-${local.domain}-cdn-profile"
   uat_cdn_endpoint           = "${local.prefix}-u-${local.domain}-cdn-endpoint"
   uat_storage_account_rg     = "${local.prefix}-u-${local.location_short}-${local.domain}-cdn-rg"
   uat_storage_account_name   = replace("${local.prefix}-u-${local.domain}-sa", "-", "")
 
   # PROD
-  service_endpoint_azure_prod_id   = data.azuredevops_serviceendpoint_azurerm.prod_azurerm_service_conn.project_id
-  service_endpoint_azure_prod_name = data.azuredevops_serviceendpoint_azurerm.prod_azurerm_service_conn.service_endpoint_name
   prod_cdn_profile            = "${local.prefix}-p-${local.domain}-cdn-profile"
   prod_cdn_endpoint           = "${local.prefix}-p-${local.domain}-cdn-endpoint"
   prod_storage_account_rg     = "${local.prefix}-p-${local.location_short}-${local.domain}-cdn-rg"

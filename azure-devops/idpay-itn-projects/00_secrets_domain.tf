@@ -2,7 +2,7 @@
 # 🟢 DEV - SECRET
 #
 
-module "idpay_dev_secrets" {
+module "domain_dev_secrets" {
   providers = {
     azurerm = azurerm.dev
   }
@@ -16,9 +16,9 @@ module "idpay_dev_secrets" {
     # "${local.dev_aks_name}-azure-devops-sa-token",
     # "${local.dev_aks_name}-azure-devops-sa-cacrt",
     # "${local.dev_aks_name}-apiserver-url",
-    # "argocd-admin-password",
-    # "argocd-admin-username",
-    # "argocd-server-url",
+    "argocd-admin-password",
+    "argocd-admin-username",
+    "argocd-server-url",
     # "idpay-workload-identity-client-id",
   ]
 }
@@ -28,7 +28,7 @@ module "idpay_dev_secrets" {
 # 🟨 UAT - SECRETS
 #
 
-module "idpay_uat_secrets" {
+module "domain_uat_secrets" {
   providers = {
     azurerm = azurerm.uat
   }
@@ -53,7 +53,7 @@ module "idpay_uat_secrets" {
 # 🛑 PROD - SECRETS
 #
 
-module "idpay_prod_secrets" {
+module "domain_prod_secrets" {
   providers = {
     azurerm = azurerm.prod
   }
