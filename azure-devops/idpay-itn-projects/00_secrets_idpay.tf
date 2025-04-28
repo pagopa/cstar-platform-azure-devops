@@ -14,9 +14,9 @@ module "domain_dev_secrets" {
   key_vault_name = local.dev_kv_domain_name
 
   secrets = [
-    "${local.dev_aks_name}-azure-devops-sa-token",
-    "${local.dev_aks_name}-azure-devops-sa-cacrt",
-    "${local.dev_aks_name}-apiserver-url",
+    # "${local.dev_aks_name}-azure-devops-sa-token",
+    # "${local.dev_aks_name}-azure-devops-sa-cacrt",
+    # "${local.dev_aks_name}-apiserver-url",
     "argocd-admin-password",
     "argocd-admin-username",
     "argocd-server-url",
@@ -34,9 +34,9 @@ module "domain_uat_secrets" {
   key_vault_name = local.uat_kv_domain_name
 
   secrets = [
-    "${local.uat_aks_name}-azure-devops-sa-token",
-    "${local.uat_aks_name}-azure-devops-sa-cacrt",
-    "${local.uat_aks_name}-apiserver-url",
+    # "${local.uat_aks_name}-azure-devops-sa-token",
+    # "${local.uat_aks_name}-azure-devops-sa-cacrt",
+    # "${local.uat_aks_name}-apiserver-url",
     "argocd-admin-password",
     "argocd-admin-username",
     "argocd-server-url",
@@ -54,9 +54,9 @@ module "domain_prod_secrets" {
   key_vault_name = local.prod_kv_domain_name
 
   secrets = [
-    "${local.prod_aks_name}-azure-devops-sa-token",
-    "${local.prod_aks_name}-azure-devops-sa-cacrt",
-    "${local.prod_aks_name}-apiserver-url",
+    # "${local.prod_aks_name}-azure-devops-sa-token",
+    # "${local.prod_aks_name}-azure-devops-sa-cacrt",
+    # "${local.prod_aks_name}-apiserver-url",
     "argocd-admin-password",
     "argocd-admin-username",
     "argocd-server-url",
