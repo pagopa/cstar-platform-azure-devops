@@ -18,7 +18,7 @@ locals {
   prod_subscription_id = data.azurerm_subscriptions.prod.subscriptions[0].subscription_id
 
 
-  # 🔑 Key Vault
+  ### 🔑 Key Vault
   dev_kv_domain_name            = "${local.prefix}-d-${local.location_short}-${local.domain}-kv"
   dev_kv_domain_resource_group  = "${local.prefix}-d-${local.location_short}-${local.domain}-security-rg"
   uat_kv_domain_name            = "${local.prefix}-u-${local.location_short}-${local.domain}-kv"
@@ -26,7 +26,7 @@ locals {
   prod_kv_domain_name           = "${local.prefix}-p-${local.location_short}-${local.domain}-kv"
   prod_kv_domain_resource_group = "${local.prefix}-p-${local.location_short}-${local.domain}-security-rg"
 
-  # 🌐 Network
+  ### 🌐 Network
   rg_dev_dns_zone_name  = "cstar-d-vnet-rg"
   rg_uat_dns_zone_name  = "cstar-u-vnet-rg"
   rg_prod_dns_zone_name = "cstar-p-vnet-rg"
@@ -35,43 +35,47 @@ locals {
   uat_dns_zone_name  = "uat.cstar.pagopa.it"
   prod_dns_zone_name = "cstar.pagopa.it"
 
-  # Idenity RG
+  ### Idenity RG
   dev_identity_rg_name  = "cstar-d-itn-idpay-cicd-rg"
   uat_identity_rg_name  = "cstar-u-itn-idpay-cicd-rg"
   prod_identity_rg_name = "cstar-p-itn-idpay-cicd-rg"
 
-  # Agent Pool
+  ### Agent Pool
   azdo_agent_pool_dev  = "cstar-dev-linux"
   azdo_agent_pool_uat  = "cstar-uat-linux"
   azdo_agent_pool_prod = "cstar-prod-linux"
 
+  ### AKS
   dev_aks_name  = "${local.prefix}-d-${local.location_short}-aks"
   uat_aks_name  = "${local.prefix}-u-${local.location_short}-aks"
   prod_aks_name = "${local.prefix}-p-${local.location_short}-aks"
 
+  ### Service connections/endpoints
+  dev_service_endpoint_azure_id    = data.azuredevops_serviceendpoint_azurerm.dev_azurerm_service_conn.service_endpoint_id
+  dev_service_endpoint_azure_name  = data.azuredevops_serviceendpoint_azurerm.dev_azurerm_service_conn.service_endpoint_name
+  uat_service_endpoint_azure_id    = data.azuredevops_serviceendpoint_azurerm.uat_azurerm_service_conn.service_endpoint_id
+  uat_service_endpoint_azure_name  = data.azuredevops_serviceendpoint_azurerm.uat_azurerm_service_conn.service_endpoint_name
+  prod_service_endpoint_azure_id   = data.azuredevops_serviceendpoint_azurerm.prod_azurerm_service_conn.service_endpoint_id
+  prod_service_endpoint_azure_name = data.azuredevops_serviceendpoint_azurerm.prod_azurerm_service_conn.service_endpoint_name
+
+
   # DEV
-  service_endpoint_azure_dev_id   = data.azuredevops_serviceendpoint_azurerm.dev_azurerm_service_conn.project_id
-  service_endpoint_azure_dev_name = data.azuredevops_serviceendpoint_azurerm.dev_azurerm_service_conn.service_endpoint_name
-  dev_cdn_profile            = "${local.prefix}-d-${local.domain}-cdn-profile"
-  dev_cdn_endpoint           = "${local.prefix}-d-${local.domain}-cdn-endpoint"
-  dev_storage_account_rg     = "${local.prefix}-d-${local.location_short}-${local.domain}-cdn-rg"
-  dev_storage_account_name   = replace("${local.prefix}-d-${local.domain}-sa", "-", "")
+  dev_cdn_profile          = "${local.prefix}-d-${local.domain}-cdn-profile"
+  dev_cdn_endpoint         = "${local.prefix}-d-${local.domain}-cdn-endpoint"
+  dev_storage_account_rg   = "${local.prefix}-d-${local.location_short}-${local.domain}-cdn-rg"
+  dev_storage_account_name = replace("${local.prefix}-d-${local.domain}-sa", "-", "")
 
   # UAT
-  service_endpoint_azure_uat_id   = data.azuredevops_serviceendpoint_azurerm.uat_azurerm_service_conn.project_id
-  service_endpoint_azure_uat_name = data.azuredevops_serviceendpoint_azurerm.uat_azurerm_service_conn.service_endpoint_name
-  uat_cdn_profile            = "${local.prefix}-u-${local.domain}-cdn-profile"
-  uat_cdn_endpoint           = "${local.prefix}-u-${local.domain}-cdn-endpoint"
-  uat_storage_account_rg     = "${local.prefix}-u-${local.location_short}-${local.domain}-cdn-rg"
-  uat_storage_account_name   = replace("${local.prefix}-u-${local.domain}-sa", "-", "")
+  uat_cdn_profile          = "${local.prefix}-u-${local.domain}-cdn-profile"
+  uat_cdn_endpoint         = "${local.prefix}-u-${local.domain}-cdn-endpoint"
+  uat_storage_account_rg   = "${local.prefix}-u-${local.location_short}-${local.domain}-cdn-rg"
+  uat_storage_account_name = replace("${local.prefix}-u-${local.domain}-sa", "-", "")
 
   # PROD
-  service_endpoint_azure_prod_id   = data.azuredevops_serviceendpoint_azurerm.prod_azurerm_service_conn.project_id
-  service_endpoint_azure_prod_name = data.azuredevops_serviceendpoint_azurerm.prod_azurerm_service_conn.service_endpoint_name
-  prod_cdn_profile            = "${local.prefix}-p-${local.domain}-cdn-profile"
-  prod_cdn_endpoint           = "${local.prefix}-p-${local.domain}-cdn-endpoint"
-  prod_storage_account_rg     = "${local.prefix}-p-${local.location_short}-${local.domain}-cdn-rg"
-  prod_storage_account_name   = replace("${local.prefix}-p-${local.domain}-sa", "-", "")
+  prod_cdn_profile          = "${local.prefix}-p-${local.domain}-cdn-profile"
+  prod_cdn_endpoint         = "${local.prefix}-p-${local.domain}-cdn-endpoint"
+  prod_storage_account_rg   = "${local.prefix}-p-${local.location_short}-${local.domain}-cdn-rg"
+  prod_storage_account_name = replace("${local.prefix}-p-${local.domain}-sa", "-", "")
 
   #FRONTEND REACT ENV
   dev_react_app_url_cdn                                     = "https://welfare.dev.cstar.pagopa.it/"
@@ -98,10 +102,10 @@ locals {
   dev_react_app_one_trust_privacy_policy_json_url_merchants = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/draft/5079ee0c-cfa9-42ec-acda-66799bed5039.json"
   dev_react_app_one_trust_tos_id_merchants                  = "otnotice-d99f1397-31cc-4519-9629-785c0d4c9145"
   dev_react_app_one_trust_tos_json_url_merchants            = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/draft/d99f1397-31cc-4519-9629-785c0d4c9145.json"
-  dev_analytics_enabled  = "true"
-  dev_analytics_mocked   = "true" //Put to false when mixpanel available
-  dev_mixpanel_token     = "TODO" //"6e1290bdda5885981a2f443f37444f0f"
-  dev_onetrust_domain_id = "TODO" //"a8f58d7a-7f6a-4fe6-ac02-f95bac3876d4-test"
+  dev_analytics_enabled                                     = "true"
+  dev_analytics_mocked                                      = "true" //Put to false when mixpanel available
+  dev_mixpanel_token                                        = "TODO" //"6e1290bdda5885981a2f443f37444f0f"
+  dev_onetrust_domain_id                                    = "TODO" //"a8f58d7a-7f6a-4fe6-ac02-f95bac3876d4-test"
 
 
   uat_react_app_url_cdn                                     = "https://welfare.uat.cstar.pagopa.it/"
@@ -128,10 +132,10 @@ locals {
   uat_react_app_one_trust_privacy_policy_json_url_merchants = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/draft/5079ee0c-cfa9-42ec-acda-66799bed5039.json"
   uat_react_app_one_trust_tos_id_merchants                  = "otnotice-d99f1397-31cc-4519-9629-785c0d4c9145"
   uat_react_app_one_trust_tos_json_url_merchants            = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/draft/d99f1397-31cc-4519-9629-785c0d4c9145.json"
-  uat_analytics_enabled  = "true"
-  uat_analytics_mocked   = "true" //Put to false when mixpanel available
-  uat_mixpanel_token     = "TODO" //"1d1b09b008638080ab34fe9b75db84fd"
-  uat_onetrust_domain_id = "TODO" //"15a1f042-9257-450f-b9e8-38d019191729"
+  uat_analytics_enabled                                     = "true"
+  uat_analytics_mocked                                      = "true" //Put to false when mixpanel available
+  uat_mixpanel_token                                        = "TODO" //"1d1b09b008638080ab34fe9b75db84fd"
+  uat_onetrust_domain_id                                    = "TODO" //"15a1f042-9257-450f-b9e8-38d019191729"
 
   prod_react_app_url_cdn                                     = "https://welfare.cstar.pagopa.it/"
   prod_react_app_url_storage                                 = "https://cstarpweuidpayidpaycdnsa.z6.web.core.windows.net/"
@@ -157,10 +161,10 @@ locals {
   prod_react_app_one_trust_privacy_policy_json_url_merchants = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/5079ee0c-cfa9-42ec-acda-66799bed5039.json"
   prod_react_app_one_trust_tos_id_merchants                  = "otnotice-d99f1397-31cc-4519-9629-785c0d4c9145"
   prod_react_app_one_trust_tos_json_url_merchants            = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/d99f1397-31cc-4519-9629-785c0d4c9145.json"
-  prod_analytics_enabled  = "true"
-  prod_analytics_mocked   = "true" //Put to false when mixpanel available
-  prod_mixpanel_token     = "TODO" //"1d1b09b008638080ab34fe9b75db84fd"
-  prod_onetrust_domain_id = "TODO" //"084d5de2-d423-458a-9b28-0f8db3e55e71"
+  prod_analytics_enabled                                     = "true"
+  prod_analytics_mocked                                      = "true" //Put to false when mixpanel available
+  prod_mixpanel_token                                        = "TODO" //"1d1b09b008638080ab34fe9b75db84fd"
+  prod_onetrust_domain_id                                    = "TODO" //"084d5de2-d423-458a-9b28-0f8db3e55e71"
 
 
 }
