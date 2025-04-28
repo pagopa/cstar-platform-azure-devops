@@ -50,7 +50,7 @@ locals {
   uat_aks_name  = "${local.prefix}-u-${local.location_short}-aks"
   prod_aks_name = "${local.prefix}-p-${local.location_short}-aks"
 
-  ### Service connections/endpoints
+  ### Service connections/endpoints Azure
   dev_service_endpoint_azure_id    = data.azuredevops_serviceendpoint_azurerm.dev_azurerm_service_conn.service_endpoint_id
   dev_service_endpoint_azure_name  = data.azuredevops_serviceendpoint_azurerm.dev_azurerm_service_conn.service_endpoint_name
   uat_service_endpoint_azure_id    = data.azuredevops_serviceendpoint_azurerm.uat_azurerm_service_conn.service_endpoint_id
@@ -58,6 +58,13 @@ locals {
   prod_service_endpoint_azure_id   = data.azuredevops_serviceendpoint_azurerm.prod_azurerm_service_conn.service_endpoint_id
   prod_service_endpoint_azure_name = data.azuredevops_serviceendpoint_azurerm.prod_azurerm_service_conn.service_endpoint_name
 
+  ### Service connections/endpoints GitHub
+  service_connection_github_rw_id    = azuredevops_serviceendpoint_github.idpay_bot_github_rw.id
+  service_connection_github_rw_name    = azuredevops_serviceendpoint_github.idpay_bot_github_rw.service_endpoint_name
+  service_connection_github_ro_id    = azuredevops_serviceendpoint_github.idpay_bot_github_ro.id
+  service_connection_github_ro_name    = azuredevops_serviceendpoint_github.idpay_bot_github_ro.service_endpoint_name
+  service_connection_github_pr_id    = azuredevops_serviceendpoint_github.idpay_bot_github_pr.id
+  service_connection_github_pr_name    = azuredevops_serviceendpoint_github.idpay_bot_github_pr.service_endpoint_name
 
   # DEV
   dev_cdn_profile          = "${local.prefix}-d-${local.domain}-cdn-profile"
