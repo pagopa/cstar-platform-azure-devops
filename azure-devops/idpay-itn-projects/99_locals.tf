@@ -85,8 +85,8 @@ locals {
   prod_storage_account_name = replace("${local.prefix}-p-${local.domain}-sa", "-", "")
 
   #FRONTEND REACT ENV
-  dev_react_app_url_cdn                                     = "https://welfare.dev.cstar.pagopa.it/"
-  dev_react_app_url_storage                                 = "https://cstarditnidpaywelcdnsa.z6.web.core.windows.net/"
+  dev_react_app_url_cdn                                     = "https://welfare-italy.dev.cstar.pagopa.it/"
+  dev_react_app_url_storage                                 = "https://cstarditnidpaywelcdnsa.z38.web.core.windows.net/"
   dev_react_app_url_fe_pre_login                            = "https://api-io.dev.cstar.pagopa.it/idpay-itn/welfare/token"
   dev_react_app_url_fe_pre_login_merchants                  = "https://api-io.dev.cstar.pagopa.it/idpay-itn/merchant/token"
   dev_react_app_url_fe_login                                = "https://dev.selfcare.pagopa.it/auth"
@@ -115,8 +115,8 @@ locals {
   dev_onetrust_domain_id                                    = "TODO" //"a8f58d7a-7f6a-4fe6-ac02-f95bac3876d4-test"
 
 
-  uat_react_app_url_cdn                                     = "https://welfare.uat.cstar.pagopa.it/"
-  uat_react_app_url_storage                                 = "https://cstaruitnidpaywelcdnsa.z6.web.core.windows.net/"
+  uat_react_app_url_cdn                                     = "https://welfare-italy.uat.cstar.pagopa.it/"
+  uat_react_app_url_storage                                 = "https://cstaruitnidpaywelcdnsa.z38.web.core.windows.net/"
   uat_react_app_url_fe_pre_login                            = "https://api-io.uat.cstar.pagopa.it/idpay-itn/welfare/token"
   uat_react_app_url_fe_pre_login_merchants                  = "https://api-io.uat.cstar.pagopa.it/idpay-itn/merchant/token"
   uat_react_app_url_fe_login                                = "https://uat.selfcare.pagopa.it/auth"
@@ -144,8 +144,8 @@ locals {
   uat_mixpanel_token                                        = "TODO" //"1d1b09b008638080ab34fe9b75db84fd"
   uat_onetrust_domain_id                                    = "TODO" //"15a1f042-9257-450f-b9e8-38d019191729"
 
-  prod_react_app_url_cdn                                     = "https://welfare.cstar.pagopa.it/"
-  prod_react_app_url_storage                                 = "https://cstarpweuidpayidpaycdnsa.z6.web.core.windows.net/"
+  prod_react_app_url_cdn                                     = "https://welfare-italy.cstar.pagopa.it/"
+  prod_react_app_url_storage                                 = "https://cstarpweuidpayidpaycdnsa.z38.web.core.windows.net/"
   prod_react_app_url_fe_pre_login                            = "https://api-io.cstar.pagopa.it/idpay-itn/welfare/token"
   prod_react_app_url_fe_pre_login_merchants                  = "https://api-io.cstar.pagopa.it/idpay-itn/merchant/token"
   prod_react_app_url_fe_login                                = "https://selfcare.pagopa.it/auth"
