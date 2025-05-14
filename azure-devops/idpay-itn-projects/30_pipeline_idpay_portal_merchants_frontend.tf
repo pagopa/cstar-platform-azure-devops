@@ -18,6 +18,8 @@ locals {
 
   # deploy vars
   idpay-portal-merchants-frontend-variables_deploy = {
+
+    blob_container_name = "$web"
     AZURE_DEVOPS_GITHUB_RO = local.service_connection_github_ro_name
 
     DEV_AZURE_SUBSCRIPTION                                    = local.dev_service_endpoint_azure_id
