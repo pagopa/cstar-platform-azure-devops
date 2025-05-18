@@ -105,18 +105,7 @@ locals {
       repository : {
         yml_prefix_name : "core-secrets"
       }
-    },
-    {
-      name : "packer",
-      envs : ["d", "u", "p"],
-      code_review : true,
-      deploy : true,
-      pipeline_prefix : "packer-infra",
-      pipeline_path : "packer-infrastructure",
-      repository : {
-        yml_prefix_name : "packer"
-      }
-    },
+    }
   ]
 
   domain_variables = {
