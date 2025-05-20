@@ -67,22 +67,22 @@ locals {
   service_connection_github_pr_name = azuredevops_serviceendpoint_github.idpay_bot_github_pr.service_endpoint_name
 
   # DEV
-  dev_cdn_profile          = "${local.prefix}-d-${local.domain}-cdn-profile"
-  dev_cdn_endpoint         = "${local.prefix}-d-${local.domain}-cdn-endpoint"
-  dev_storage_account_rg   = "${local.prefix}-d-${local.location_short}-${local.domain}-cdn-rg"
-  dev_storage_account_name = replace("${local.prefix}-d-${local.domain}-sa", "-", "")
+  dev_cdn_profile          = "${local.prefix}-d-weu-${local.domain}-welfare-cdn-profile"
+  dev_cdn_endpoint         = "${local.prefix}-d-weu-${local.domain}-welfare-cdn-endpoint"
+  dev_storage_account_rg   = "${local.prefix}-d-${local.location_short}-${local.domain}-data-rg"
+  dev_storage_account_name = replace("${local.prefix}-d-${local.location_short}-${local.domain}-wel-cdn-sa", "-", "")
 
   # UAT
-  uat_cdn_profile          = "${local.prefix}-u-${local.domain}-cdn-profile"
-  uat_cdn_endpoint         = "${local.prefix}-u-${local.domain}-cdn-endpoint"
-  uat_storage_account_rg   = "${local.prefix}-u-${local.location_short}-${local.domain}-cdn-rg"
-  uat_storage_account_name = replace("${local.prefix}-u-${local.domain}-sa", "-", "")
+  uat_cdn_profile          = "${local.prefix}-u-weu-${local.domain}-welfare-cdn-profile"
+  uat_cdn_endpoint         = "${local.prefix}-u-weu-${local.domain}-welfare-cdn-endpoint"
+  uat_storage_account_rg   = "${local.prefix}-u-${local.location_short}-${local.domain}-data-rg"
+  uat_storage_account_name = replace("${local.prefix}-u-${local.location_short}-${local.domain}-wel-cdn-sa", "-", "")
 
   # PROD
-  prod_cdn_profile          = "${local.prefix}-p-${local.domain}-cdn-profile"
-  prod_cdn_endpoint         = "${local.prefix}-p-${local.domain}-cdn-endpoint"
-  prod_storage_account_rg   = "${local.prefix}-p-${local.location_short}-${local.domain}-cdn-rg"
-  prod_storage_account_name = replace("${local.prefix}-p-${local.domain}-sa", "-", "")
+  prod_cdn_profile          = "${local.prefix}-p-weu-${local.domain}-welfare-cdn-profile"
+  prod_cdn_endpoint         = "${local.prefix}-p-weu-${local.domain}-welfare-cdn-endpoint"
+  prod_storage_account_rg   = "${local.prefix}-p-${local.location_short}-${local.domain}-data-rg"
+  prod_storage_account_name = replace("${local.prefix}-p-${local.location_short}-${local.domain}-wel-cdn-sa", "-", "")
 
   #FRONTEND REACT ENV
   dev_react_app_url_cdn                                     = "https://welfare-italy.dev.cstar.pagopa.it/"
