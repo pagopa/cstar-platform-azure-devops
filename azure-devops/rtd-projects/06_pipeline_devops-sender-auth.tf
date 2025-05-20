@@ -61,7 +61,9 @@ locals {
   }
   # deploy secrets
   rtd-ms-sender-auth-variables_secret_deploy = {
-
+    DEV_RTD_WORKLOAD_IDENTITY_CLIENT_ID  = module.domain_dev_secrets.values["rtd-workload-identity-client-id"].value
+    UAT_RTD_WORKLOAD_IDENTITY_CLIENT_ID  = module.domain_uat_secrets.values["rtd-workload-identity-client-id"].value
+    PROD_RTD_WORKLOAD_IDENTITY_CLIENT_ID = module.domain_prod_secrets.values["rtd-workload-identity-client-id"].value
   }
 }
 
