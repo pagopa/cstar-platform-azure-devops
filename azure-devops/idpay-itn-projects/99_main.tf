@@ -49,11 +49,11 @@ provider "azurerm" {
 }
 
 module "__v3__" {
-  # https://github.com/pagopa/terraform-azurerm-v3/releases/tag/v8.61.0
-  source = "git::https://github.com/pagopa/terraform-azurerm-v3.git?ref=a88c6d99ec3871db7de57db4280422b02db3e4f0"
+  # https://github.com/pagopa/terraform-azurerm-v3/releases/tag/v8.98.0
+  source = "git::https://github.com/pagopa/terraform-azurerm-v3.git?ref=4ac32cd6fb7d56e7be3b1c0dbcbf251f5b0cd199"
 }
 
 module "__devops_v0__" {
-  # https://github.com/pagopa/azuredevops-tf-modules/releases/tag/v9.3.2
-  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git?ref=2e3b3d1e6616d9485bc6356d87b3319da3895fc2"
+  # https://github.com/pagopa/azuredevops-tf-modules/releases/tag/v9.5.0
+  source = "git::https://github.com/pagopa/azuredevops-tf-modules.git?ref=0ae8d9d49f92f690afc66a39f245924a04aa274b"
 }
