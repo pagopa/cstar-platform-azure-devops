@@ -44,22 +44,22 @@ locals {
 
 
   certificates = {
-    # registrobeni.cstar.pagopa.it
-    registrobeni-dev-cstar-pagopa-it : {
+    # registrodeibeni.cstar.pagopa.it
+    registrodeibeni-dev-cstar-pagopa-it : {
       env              = "dev"
-      dns_record_name  = "registrobeni"
+      dns_record_name  = "registrodeibeni"
       variables        = {}
       variables_secret = {}
     }
-    registrobeni-uat-cstar-pagopa-it : {
+    registrodeibeni-uat-cstar-pagopa-it : {
       env              = "uat"
-      dns_record_name  = "registrobeni"
+      dns_record_name  = "registrodeibeni"
       variables        = {}
       variables_secret = {}
     }
-    registrobeni-prod-cstar-pagopa-it : {
+    registrodeibeni-prod-cstar-pagopa-it : {
       env              = "prod"
-      dns_record_name  = "registrobeni"
+      dns_record_name  = "registrodeibeni"
       variables        = {}
       variables_secret = {}
     }
