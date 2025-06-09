@@ -19,12 +19,13 @@ locals {
   # deploy vars
   idpay-register-frontend-variables_deploy = {
     AZURE_DEVOPS_GITHUB_RO = local.service_connection_github_ro_name
+    BLOB_CONTAINER_NAME                                       = "$web"
 
     DEV_AZURE_SUBSCRIPTION                                    = local.dev_service_endpoint_azure_id
     DEV_CDN_ENDPOINT                                          = local.dev_cdn_endpoint
     DEV_CDN_PROFILE                                           = local.dev_cdn_profile
     DEV_RESOURCE_GROUP                                        = local.dev_storage_account_rg
-    DEV_STORAGE_ACCOUNT                                       = local.dev_storage_account_name
+    DEV_STORAGE_ACCOUNT                                       = local.dev_storage_asset_register_account_name
     DEV_REACT_APP_URL_CDN                                     = local.dev_react_app_asset_register_url_cdn
     DEV_REACT_APP_URL_FE_PRE_LOGIN                            = local.dev_react_app_asset_register_url_fe_pre_login
     DEV_REACT_APP_URL_FE_LOGIN                                = local.dev_react_app_asset_register_url_fe_login
@@ -36,7 +37,7 @@ locals {
     UAT_CDN_ENDPOINT                                          = local.uat_cdn_endpoint
     UAT_CDN_PROFILE                                           = local.uat_cdn_profile
     UAT_RESOURCE_GROUP                                        = local.uat_storage_account_rg
-    UAT_STORAGE_ACCOUNT                                       = local.uat_storage_account_name
+    UAT_STORAGE_ACCOUNT                                       = local.uat_storage_asset_register_account_name
     UAT_REACT_APP_URL_CDN                                     = local.uat_react_app_asset_register_url_cdn
     UAT_REACT_APP_URL_FE_PRE_LOGIN                            = local.uat_react_app_asset_register_url_fe_pre_login
     UAT_REACT_APP_URL_FE_LOGIN                                = local.uat_react_app_asset_register_url_fe_login
@@ -48,7 +49,7 @@ locals {
     PROD_CDN_ENDPOINT                                         = local.prod_cdn_endpoint
     PROD_CDN_PROFILE                                          = local.prod_cdn_profile
     PROD_RESOURCE_GROUP                                       = local.prod_storage_account_rg
-    PROD_STORAGE_ACCOUNT                                      = local.prod_storage_account_name
+    PROD_STORAGE_ACCOUNT                                      = local.prod_storage_asset_register_account_name
     PROD_REACT_APP_URL_CDN                                    = local.prod_react_app_asset_register_url_cdn
     PROD_REACT_APP_URL_FE_PRE_LOGIN                           = local.prod_react_app_asset_register_url_fe_pre_login
     PROD_REACT_APP_URL_FE_LOGIN                               = local.prod_react_app_asset_register_url_fe_login

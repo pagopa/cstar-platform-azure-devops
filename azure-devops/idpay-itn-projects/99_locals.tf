@@ -72,17 +72,24 @@ locals {
   dev_storage_account_rg   = "${local.prefix}-d-${local.location_short}-${local.domain}-cdn-rg"
   dev_storage_account_name = replace("${local.prefix}-d-${local.domain}-sa", "-", "")
 
+  dev_storage_asset_register_account_name = "cstarditnidpayregcdnsa"
+
+
   # UAT
   uat_cdn_profile          = "${local.prefix}-u-${local.domain}-cdn-profile"
   uat_cdn_endpoint         = "${local.prefix}-u-${local.domain}-cdn-endpoint"
   uat_storage_account_rg   = "${local.prefix}-u-${local.location_short}-${local.domain}-cdn-rg"
   uat_storage_account_name = replace("${local.prefix}-u-${local.domain}-sa", "-", "")
 
+  uat_storage_asset_register_account_name = "cstaruitnidpayregcdnsa"
+
   # PROD
   prod_cdn_profile          = "${local.prefix}-p-${local.domain}-cdn-profile"
   prod_cdn_endpoint         = "${local.prefix}-p-${local.domain}-cdn-endpoint"
   prod_storage_account_rg   = "${local.prefix}-p-${local.location_short}-${local.domain}-cdn-rg"
   prod_storage_account_name = replace("${local.prefix}-p-${local.domain}-sa", "-", "")
+
+  prod_storage_asset_register_account_name = "cstarpitnidpayregcdnsa"
 
   #FRONTEND REACT ENV PORTALE ENTI/ESERCENTI
   dev_react_app_url_cdn                                     = "https://welfare-italy.dev.cstar.pagopa.it/"
