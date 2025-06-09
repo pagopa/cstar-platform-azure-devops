@@ -84,7 +84,7 @@ locals {
   prod_storage_account_rg   = "${local.prefix}-p-${local.location_short}-${local.domain}-cdn-rg"
   prod_storage_account_name = replace("${local.prefix}-p-${local.domain}-sa", "-", "")
 
-  #FRONTEND REACT ENV
+  #FRONTEND REACT ENV PORTALE ENTI/ESERCENTI
   dev_react_app_url_cdn                                     = "https://welfare-italy.dev.cstar.pagopa.it/"
   dev_react_app_url_storage                                 = "https://cstarditnidpaywelcdnsa.z38.web.core.windows.net/"
   dev_react_app_url_fe_pre_login                            = "https://api-io.dev.cstar.pagopa.it/idpay-itn/welfare/token"
@@ -173,6 +173,29 @@ locals {
   prod_mixpanel_token                                        = "TODO" //"1d1b09b008638080ab34fe9b75db84fd"
   prod_onetrust_domain_id                                    = "TODO" //"084d5de2-d423-458a-9b28-0f8db3e55e71"
 
+
+  #FRONTEND REACT ENV REGISTRO BENI
+
+  dev_react_app_asset_register_url_cdn                                     = "https://registrodeibeni.dev.cstar.pagopa.it/"
+  dev_react_app_asset_register_url_storage                                 = "https://cstarditnidpayregcdnsa.z38.web.core.windows.net"
+  dev_react_app_asset_register_url_fe_pre_login                            = "https://api-io.dev.cstar.pagopa.it/idpay-itn/register/token"
+  dev_react_app_asset_register_url_fe_login                                = "https://dev.selfcare.pagopa.it/auth"
+  dev_react_app_asset_register_url_fe_assistance_portal                    = "/registro-dei-beni/assistenza"
+  dev_react_app_asset_register_url_fe_landing                              = "https://dev.selfcare.pagopa.it/auth/logout"
+
+  uat_react_app_asset_register_url_cdn                                     = "https://registrodeibeni.uat.cstar.pagopa.it/"
+  uat_react_app_asset_register_url_storage                                 = "https://cstaruitnidpayregcdnsa.z38.web.core.windows.net"
+  uat_react_app_asset_register_url_fe_pre_login                            = "https://api-io.uat.cstar.pagopa.it/idpay-itn/register/token"
+  uat_react_app_asset_register_url_fe_login                                = "https://uat.selfcare.pagopa.it/auth"
+  uat_react_app_asset_register_url_fe_assistance_portal                    = "/registro-dei-beni/assistenza"
+  uat_react_app_asset_register_url_fe_landing                              = "https://uat.selfcare.pagopa.it/auth/logout"
+
+  prod_react_app_asset_register_url_cdn                                     = "https://registrodeibeni.cstar.pagopa.it/"
+  prod_react_app_asset_register_url_storage                                 = "https://cstarpitnidpayregcdnsa.z38.web.core.windows.net"
+  prod_react_app_asset_register_url_fe_pre_login                            = "https://api-io.cstar.pagopa.it/idpay-itn/register/token"
+  prod_react_app_asset_register_url_fe_login                                = "https://selfcare.pagopa.it/auth"
+  prod_react_app_asset_register_url_fe_assistance_portal                    = "/registro-dei-beni/assistenza"
+  prod_react_app_asset_register_url_fe_landing                              = "https://selfcare.pagopa.it/auth/logout"
 
 }
 
