@@ -66,6 +66,24 @@ locals {
   service_connection_github_pr_id   = azuredevops_serviceendpoint_github.idpay_bot_github_pr.id
   service_connection_github_pr_name = azuredevops_serviceendpoint_github.idpay_bot_github_pr.service_endpoint_name
 
+  # DEV WELFARE
+  dev_welfare_cdn_profile          = "${local.prefix}-d-weu-${local.domain}-welfare-cdn-profile"
+  dev_welfare_cdn_endpoint         = "${local.prefix}-d-weu-${local.domain}-welfare-cdn-endpoint"
+  dev_welfare_storage_account_rg   = "${local.prefix}-d-${local.location_short}-${local.domain}-data-rg"
+  dev_welfare_storage_account_name = replace("${local.prefix}-d-${local.location_short}-${local.domain}-wel-cdn-sa", "-", "")
+
+  # UAT
+  uat_welfare_cdn_profile          = "${local.prefix}-u-weu-${local.domain}-welfare-cdn-profile"
+  uat_welfare_cdn_endpoint         = "${local.prefix}-u-weu-${local.domain}-welfare-cdn-endpoint"
+  uat_welfare_storage_account_rg   = "${local.prefix}-u-${local.location_short}-${local.domain}-data-rg"
+  uat_welfare_storage_account_name = replace("${local.prefix}-u-${local.location_short}-${local.domain}-wel-cdn-sa", "-", "")
+
+  # PROD
+  prod_welfare_cdn_profile          = "${local.prefix}-p-weu-${local.domain}-welfare-cdn-profile"
+  prod_welfare_cdn_endpoint         = "${local.prefix}-p-weu-${local.domain}-welfare-cdn-endpoint"
+  prod_welfare_storage_account_rg   = "${local.prefix}-p-${local.location_short}-${local.domain}-data-rg"
+  prod_welfare_storage_account_name = replace("${local.prefix}-p-${local.location_short}-${local.domain}-wel-cdn-sa", "-", "")
+  /*
   # DEV
   dev_cdn_profile          = "${local.prefix}-d-${local.domain}-cdn-profile"
   dev_cdn_endpoint         = "${local.prefix}-d-${local.domain}-cdn-endpoint"
@@ -90,8 +108,9 @@ locals {
   prod_storage_account_name = replace("${local.prefix}-p-${local.domain}-sa", "-", "")
 
   prod_storage_asset_register_account_name = "cstarpitnidpayregcdnsa"
+*/
 
-  #FRONTEND REACT ENV PORTALE ENTI/ESERCENTI
+  #FRONTEND REACT ENV
   dev_react_app_url_cdn                                     = "https://welfare-italy.dev.cstar.pagopa.it/"
   dev_react_app_url_storage                                 = "https://cstarditnidpaywelcdnsa.z38.web.core.windows.net/"
   dev_react_app_url_fe_pre_login                            = "https://api-io.dev.cstar.pagopa.it/idpay-itn/welfare/token"
@@ -180,29 +199,6 @@ locals {
   prod_mixpanel_token                                        = "TODO" //"1d1b09b008638080ab34fe9b75db84fd"
   prod_onetrust_domain_id                                    = "TODO" //"084d5de2-d423-458a-9b28-0f8db3e55e71"
 
-
-  #FRONTEND REACT ENV REGISTRO BENI
-
-  dev_react_app_asset_register_url_cdn                  = "https://registrodeibeni.dev.cstar.pagopa.it/"
-  dev_react_app_asset_register_url_storage              = "https://cstarditnidpayregcdnsa.z38.web.core.windows.net"
-  dev_react_app_asset_register_url_fe_pre_login         = "https://api-io.dev.cstar.pagopa.it/idpay-itn/register/token"
-  dev_react_app_asset_register_url_fe_login             = "https://dev.selfcare.pagopa.it/auth"
-  dev_react_app_asset_register_url_fe_assistance_portal = "/registro-dei-beni/assistenza"
-  dev_react_app_asset_register_url_fe_landing           = "https://dev.selfcare.pagopa.it/auth/logout"
-
-  uat_react_app_asset_register_url_cdn                  = "https://registrodeibeni.uat.cstar.pagopa.it/"
-  uat_react_app_asset_register_url_storage              = "https://cstaruitnidpayregcdnsa.z38.web.core.windows.net"
-  uat_react_app_asset_register_url_fe_pre_login         = "https://api-io.uat.cstar.pagopa.it/idpay-itn/register/token"
-  uat_react_app_asset_register_url_fe_login             = "https://uat.selfcare.pagopa.it/auth"
-  uat_react_app_asset_register_url_fe_assistance_portal = "/registro-dei-beni/assistenza"
-  uat_react_app_asset_register_url_fe_landing           = "https://uat.selfcare.pagopa.it/auth/logout"
-
-  prod_react_app_asset_register_url_cdn                  = "https://registrodeibeni.cstar.pagopa.it/"
-  prod_react_app_asset_register_url_storage              = "https://cstarpitnidpayregcdnsa.z38.web.core.windows.net"
-  prod_react_app_asset_register_url_fe_pre_login         = "https://api-io.cstar.pagopa.it/idpay-itn/register/token"
-  prod_react_app_asset_register_url_fe_login             = "https://selfcare.pagopa.it/auth"
-  prod_react_app_asset_register_url_fe_assistance_portal = "/registro-dei-beni/assistenza"
-  prod_react_app_asset_register_url_fe_landing           = "https://selfcare.pagopa.it/auth/logout"
 
 }
 
