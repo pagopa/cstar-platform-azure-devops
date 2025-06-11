@@ -50,8 +50,8 @@ module "domain_prod_secrets" {
   resource_group = local.prod_kv_domain_resource_group
 
   secrets = [
-    # "srtp-bot-github-rw-TOKEN",
-    # "srtp-bot-github-ro-TOKEN",
-    # "srtp-bot-github-pr-TOKEN",
+    "srtp-bot-github-rw-TOKEN",
+    "srtp-bot-github-ro-TOKEN",
+    "srtp-bot-github-pr-TOKEN",
   ]
 }
