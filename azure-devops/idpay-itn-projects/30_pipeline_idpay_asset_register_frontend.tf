@@ -1,4 +1,4 @@
-variable "idpay-asset-register-frontend" {
+variable "idpay_asset_register_frontend" {
   default = {
     repository = {
       organization    = "pagopa"
@@ -68,13 +68,13 @@ module "idpay-fe-register_deploy" {
   }
 
   project_id                   = local.devops_project_id
-  repository                   = var.idpay-asset-register-frontend.repository
+  repository                   = var.idpay_asset_register_frontend.repository
   github_service_connection_id = local.service_connection_github_ro_id
 
 
   pipeline_name         = "${local.product}-fe-asset-register.deploy"
   pipeline_yml_filename = "deploy-pipelines.yml"
-  path                  = var.idpay-asset-register-frontend.pipeline.path
+  path                  = var.idpay_asset_register_frontend.pipeline.path
 
   ci_trigger_enabled  = true
   ci_trigger_use_yaml = true
