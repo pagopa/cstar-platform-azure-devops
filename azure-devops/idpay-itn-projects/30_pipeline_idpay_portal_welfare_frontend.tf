@@ -18,7 +18,7 @@ locals {
 
 
   # deploy vars
-  idpay-portal-welfare-frontend-variables_deploy = {
+  idpay_portal_welfare_frontend_variables_deploy = {
 
     blob_container_name    = "$web"
     AZURE_DEVOPS_GITHUB_RO = local.service_connection_github_ro_name
@@ -130,7 +130,7 @@ module "idpay-fe-welfare_deploy" {
   ci_trigger_use_yaml = true
 
   variables = merge(
-    local.idpay-portal-welfare-frontend-variables_deploy,
+    local.idpay_portal_welfare_frontend_variables_deploy,
   )
 
   variables_secret = {}

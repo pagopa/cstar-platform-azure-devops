@@ -17,7 +17,7 @@ variable "idpay-portal-merchants-frontend" {
 locals {
 
   # deploy vars
-  idpay-portal-merchants-frontend-variables_deploy = {
+  idpay_portal_merchants_frontend_variables_deploy = {
 
     blob_container_name    = "$web"
     AZURE_DEVOPS_GITHUB_RO = local.service_connection_github_ro_name
@@ -118,7 +118,7 @@ module "idpay-fe-merchants_deploy" {
   ci_trigger_use_yaml = true
 
   variables = merge(
-    local.idpay-portal-merchants-frontend-variables_deploy,
+    local.idpay_portal_merchants_frontend_variables_deploy,
   )
 
   variables_secret = {}
