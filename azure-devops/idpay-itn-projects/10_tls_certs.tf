@@ -44,26 +44,6 @@ locals {
 
 
   certificates = {
-    # registrobeni.cstar.pagopa.it
-    registrobeni-dev-cstar-pagopa-it : {
-      env              = "dev"
-      dns_record_name  = "registrobeni"
-      variables        = {}
-      variables_secret = {}
-    }
-    registrobeni-uat-cstar-pagopa-it : {
-      env              = "uat"
-      dns_record_name  = "registrobeni"
-      variables        = {}
-      variables_secret = {}
-    }
-    registrobeni-prod-cstar-pagopa-it : {
-      env              = "prod"
-      dns_record_name  = "registrobeni"
-      variables        = {}
-      variables_secret = {}
-    }
-
     # idpay.itn.internl.cstar.pagopa.it
     idpay-itn-internal-dev-cstar-pagopa-it : {
       env              = "dev"
