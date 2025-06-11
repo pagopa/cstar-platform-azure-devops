@@ -83,7 +83,7 @@ locals {
   prod_welfare_cdn_endpoint         = "${local.prefix}-p-weu-${local.domain}-welfare-cdn-endpoint"
   prod_welfare_storage_account_rg   = "${local.prefix}-p-${local.location_short}-${local.domain}-data-rg"
   prod_welfare_storage_account_name = replace("${local.prefix}-p-${local.location_short}-${local.domain}-wel-cdn-sa", "-", "")
-/*
+  /*
   # DEV
   dev_cdn_profile          = "${local.prefix}-d-${local.domain}-cdn-profile"
   dev_cdn_endpoint         = "${local.prefix}-d-${local.domain}-cdn-endpoint"
