@@ -44,22 +44,22 @@ locals {
 
 
   certificates = {
-    # idpay.itn.internl.cstar.pagopa.it
-    idpay-itn-internal-dev-cstar-pagopa-it : {
+    # srtp.itn.internl.cstar.pagopa.it
+    srtp-itn-internal-dev-cstar-pagopa-it : {
       env              = "dev"
-      dns_record_name  = "idpay.itn.internal"
+      dns_record_name  = "srtp.itn.internal"
       variables        = {}
       variables_secret = {}
     }
-    idpay-itn-internal-uat-cstar-pagopa-it : {
+    srtp-itn-internal-uat-cstar-pagopa-it : {
       env              = "uat"
-      dns_record_name  = "idpay.itn.internal"
+      dns_record_name  = "srtp.itn.internal"
       variables        = {}
       variables_secret = {}
     }
-    idpay-itn-internal-cstar-pagopa-it : {
+    srtp-itn-internal-cstar-pagopa-it : {
       env              = "prod"
-      dns_record_name  = "idpay.itn.internal"
+      dns_record_name  = "srtp.itn.internal"
       variables        = {}
       variables_secret = {}
     }
@@ -83,7 +83,7 @@ module "federated_cert_pipeline_dev" {
   project_id                   = data.azuredevops_project.this.id
   repository                   = local.tlscert_repository
   path                         = "TLS-Certificates\\${upper(each.value.env)}"
-  github_service_connection_id = azuredevops_serviceendpoint_github.idpay_bot_github_rw.id
+  github_service_connection_id = azuredevops_serviceendpoint_github.bot_github_rw.id
 
   dns_record_name         = each.value.dns_record_name
   dns_zone_name           = local.env_configurations[each.value.env].dns_zone_name
@@ -108,7 +108,7 @@ module "federated_cert_pipeline_dev" {
   service_connection_ids_authorization = [local.env_configurations[each.value.env].service_endpoint_id]
 
   schedules = {
-    days_to_build              = try(each.value.schedules.days_to_build, ["Fri"])
+    days_to_build              = try(each.value.schedules.days_to_build, ["Wed","Fri"])
     schedule_only_with_changes = false
     start_hours                = try(each.value.schedules.start_hours, 4)
     start_minutes              = try(each.value.schedules.start_minutes, 30)
@@ -150,7 +150,7 @@ module "federated_cert_pipeline_uat" {
   project_id                   = data.azuredevops_project.this.id
   repository                   = local.tlscert_repository
   path                         = "TLS-Certificates\\${upper(each.value.env)}"
-  github_service_connection_id = azuredevops_serviceendpoint_github.idpay_bot_github_rw.id
+  github_service_connection_id = azuredevops_serviceendpoint_github.bot_github_rw.id
 
   dns_record_name         = each.value.dns_record_name
   dns_zone_name           = local.env_configurations[each.value.env].dns_zone_name
@@ -217,7 +217,7 @@ module "federated_cert_pipeline_prod" {
   project_id                   = data.azuredevops_project.this.id
   repository                   = local.tlscert_repository
   path                         = "TLS-Certificates\\${upper(each.value.env)}"
-  github_service_connection_id = azuredevops_serviceendpoint_github.idpay_bot_github_rw.id
+  github_service_connection_id = azuredevops_serviceendpoint_github.bot_github_rw.id
 
   dns_record_name         = each.value.dns_record_name
   dns_zone_name           = local.env_configurations[each.value.env].dns_zone_name
