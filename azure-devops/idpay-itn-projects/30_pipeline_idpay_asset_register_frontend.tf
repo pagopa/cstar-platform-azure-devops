@@ -17,7 +17,7 @@ variable "idpay-asset-register-frontend" {
 locals {
 
   # deploy vars
-  idpay-register-frontend-variables_deploy = {
+  idpay_register_frontend_variables_deploy = {
     AZURE_DEVOPS_GITHUB_RO = local.service_connection_github_ro_name
     BLOB_CONTAINER_NAME    = "$web"
 
@@ -80,7 +80,7 @@ module "idpay-fe-register_deploy" {
   ci_trigger_use_yaml = true
 
   variables = merge(
-    local.idpay-register-frontend-variables_deploy,
+    local.idpay_register_frontend_variables_deploy,
   )
 
   variables_secret = {}
