@@ -85,22 +85,22 @@ locals {
   prod_welfare_storage_account_name = replace("${local.prefix}-p-${local.location_short}-${local.domain}-wel-cdn-sa", "-", "")
 
   # DEV REGISTRO DEI BENI
-  dev_cdn_profile          = "${local.prefix}-d-${local.domain}-cdn-profile"
-  dev_cdn_endpoint         = "${local.prefix}-d-${local.domain}-cdn-endpoint"
-  dev_storage_account_rg   = "${local.prefix}-d-${local.location_short}-${local.domain}-cdn-rg"
+  dev_cdn_profile                         = "${local.prefix}-d-${local.domain}-cdn-profile"
+  dev_cdn_endpoint                        = "${local.prefix}-d-${local.domain}-cdn-endpoint"
+  dev_storage_account_rg                  = "${local.prefix}-d-${local.location_short}-${local.domain}-cdn-rg"
   dev_storage_asset_register_account_name = "cstarditnidpayregcdnsa"
 
 
   # UAT REGISTRO DEI BENI
-  uat_cdn_profile          = "${local.prefix}-u-${local.domain}-cdn-profile"
-  uat_cdn_endpoint         = "${local.prefix}-u-${local.domain}-cdn-endpoint"
-  uat_storage_account_rg   = "${local.prefix}-u-${local.location_short}-${local.domain}-cdn-rg"
+  uat_cdn_profile                         = "${local.prefix}-u-${local.domain}-cdn-profile"
+  uat_cdn_endpoint                        = "${local.prefix}-u-${local.domain}-cdn-endpoint"
+  uat_storage_account_rg                  = "${local.prefix}-u-${local.location_short}-${local.domain}-cdn-rg"
   uat_storage_asset_register_account_name = "cstaruitnidpayregcdnsa"
 
   # PROD REGISTRO DEI BENI
-  prod_cdn_profile          = "${local.prefix}-p-${local.domain}-cdn-profile"
-  prod_cdn_endpoint         = "${local.prefix}-p-${local.domain}-cdn-endpoint"
-  prod_storage_account_rg   = "${local.prefix}-p-${local.location_short}-${local.domain}-cdn-rg"
+  prod_cdn_profile                         = "${local.prefix}-p-${local.domain}-cdn-profile"
+  prod_cdn_endpoint                        = "${local.prefix}-p-${local.domain}-cdn-endpoint"
+  prod_storage_account_rg                  = "${local.prefix}-p-${local.location_short}-${local.domain}-cdn-rg"
   prod_storage_asset_register_account_name = "cstarpitnidpayregcdnsa"
 
 
