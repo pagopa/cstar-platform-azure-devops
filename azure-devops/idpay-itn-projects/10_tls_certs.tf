@@ -108,7 +108,7 @@ module "federated_cert_pipeline_dev" {
   service_connection_ids_authorization = [local.env_configurations[each.value.env].service_endpoint_id]
 
   schedules = {
-    days_to_build              = try(each.value.schedules.days_to_build, ["Fri"])
+    days_to_build              = try(each.value.schedules.days_to_build, ["Wed", "Fri"])
     schedule_only_with_changes = false
     start_hours                = try(each.value.schedules.start_hours, 4)
     start_minutes              = try(each.value.schedules.start_minutes, 30)
