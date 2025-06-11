@@ -44,19 +44,20 @@ locals {
 
 
   certificates = {
-    "idpay-itn-internal-dev-cstar-pagopa-it" : {
+    # idpay.itn.internl.cstar.pagopa.it
+    idpay-itn-internal-dev-cstar-pagopa-it : {
       env              = "dev"
       dns_record_name  = "idpay.itn.internal"
       variables        = {}
       variables_secret = {}
     }
-    "idpay-itn-internal-uat-cstar-pagopa-it" : {
+    idpay-itn-internal-uat-cstar-pagopa-it : {
       env              = "uat"
       dns_record_name  = "idpay.itn.internal"
       variables        = {}
       variables_secret = {}
     }
-    "idpay-itn-internal-cstar-pagopa-it" : {
+    idpay-itn-internal-cstar-pagopa-it : {
       env              = "prod"
       dns_record_name  = "idpay.itn.internal"
       variables        = {}
@@ -64,8 +65,6 @@ locals {
     }
   }
 }
-
-
 
 # change only providers
 #tfsec:ignore:general-secrets-no-plaintext-exposure
@@ -109,15 +108,24 @@ module "federated_cert_pipeline_dev" {
   service_connection_ids_authorization = [local.env_configurations[each.value.env].service_endpoint_id]
 
   schedules = {
-    days_to_build              = ["Wed", "Fri"]
+    days_to_build              = try(each.value.schedules.days_to_build, ["Fri"])
     schedule_only_with_changes = false
-    start_hours                = 8
-    start_minutes              = 10
+    start_hours                = try(each.value.schedules.start_hours, 4)
+    start_minutes              = try(each.value.schedules.start_minutes, 30)
     time_zone                  = "(UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna"
     branch_filter = {
-      include = ["refs/heads/master"]
+      include = [local.tlscert_repository.branch_name]
       exclude = []
     }
+  }
+
+  cert_diff_variables = {
+    enabled           = try(each.value.cert_diff_variables.enabled, false)
+    alert_enabled     = try(each.value.cert_diff_variables.alert_enabled, false)
+    cert_diff_version = try(each.value.cert_diff_variables.cert_diff_version, "")
+    app_insights_name = try(each.value.cert_diff_variables.app_insights_name, "")
+    app_insights_rg   = try(each.value.cert_diff_variables.app_insights_rg, "")
+    actions_group     = try(each.value.cert_diff_variables.actions_group, [""])
   }
 
   depends_on = [
@@ -178,11 +186,19 @@ module "federated_cert_pipeline_uat" {
     }
   }
 
+  cert_diff_variables = {
+    enabled           = try(each.value.cert_diff_variables.enabled, false)
+    alert_enabled     = try(each.value.cert_diff_variables.alert_enabled, false)
+    cert_diff_version = try(each.value.cert_diff_variables.cert_diff_version, "")
+    app_insights_name = try(each.value.cert_diff_variables.app_insights_name, "")
+    app_insights_rg   = try(each.value.cert_diff_variables.app_insights_rg, "")
+    actions_group     = try(each.value.cert_diff_variables.actions_group, [""])
+  }
+
   depends_on = [
     module.dev_tls_cert_service_connection
   ]
 }
-
 
 # change only providers
 #tfsec:ignore:general-secrets-no-plaintext-exposure
@@ -235,6 +251,15 @@ module "federated_cert_pipeline_prod" {
       include = ["refs/heads/master"]
       exclude = []
     }
+  }
+
+  cert_diff_variables = {
+    enabled           = try(each.value.cert_diff_variables.enabled, false)
+    alert_enabled     = try(each.value.cert_diff_variables.alert_enabled, false)
+    cert_diff_version = try(each.value.cert_diff_variables.cert_diff_version, "")
+    app_insights_name = try(each.value.cert_diff_variables.app_insights_name, "")
+    app_insights_rg   = try(each.value.cert_diff_variables.app_insights_rg, "")
+    actions_group     = try(each.value.cert_diff_variables.actions_group, [""])
   }
 
   depends_on = [
