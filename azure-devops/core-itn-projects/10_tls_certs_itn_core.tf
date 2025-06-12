@@ -1,5 +1,46 @@
 locals {
 
+  certificates_itn_core = {
+    ### ARGOCD TLS CERTIFICATES
+    "argo-itn-internal-dev-cstar-pagopa-it" : {
+      env              = "dev"
+      dns_record_name  = "argocd.itn.internal"
+      variables        = {}
+      variables_secret = {}
+    }
+    "argo-itn-internal-uat-cstar-pagopa-it" : {
+      env              = "uat"
+      dns_record_name  = "argocd.itn.internal"
+      variables        = {}
+      variables_secret = {}
+    }
+    "argo-itn-internal-cstar-pagopa-it" : {
+      env              = "prod"
+      dns_record_name  = "argocd.itn.internal"
+      variables        = {}
+      variables_secret = {}
+    }
+    ### KeyCloak TLS CERTIFICATES
+    "keycloak-itn-internal-dev-cstar-pagopa-it" : {
+      env              = "dev"
+      dns_record_name  = "keycloak.itn.internal"
+      variables        = {}
+      variables_secret = {}
+    }
+    "keycloak-itn-internal-uat-cstar-pagopa-it" : {
+      env              = "uat"
+      dns_record_name  = "keycloak.itn.internal"
+      variables        = {}
+      variables_secret = {}
+    }
+    "keycloak-itn-internal-cstar-pagopa-it" : {
+      env              = "prod"
+      dns_record_name  = "keycloak.itn.internal"
+      variables        = {}
+      variables_secret = {}
+    }
+  }
+
   # TLS CERTS
   certificate_itn_core_env_mappings = {
     dev = {
@@ -39,28 +80,6 @@ locals {
       variables = {
         KEY_VAULT_SERVICE_CONNECTION = module.prod_tls_cert_service_connection.service_endpoint_name
       }
-      variables_secret = {}
-    }
-  }
-
-
-  certificates_itn_core = {
-    "argo-itn-internal-dev-cstar-pagopa-it" : {
-      env              = "dev"
-      dns_record_name  = "argocd.itn.internal"
-      variables        = {}
-      variables_secret = {}
-    }
-    "argo-itn-internal-uat-cstar-pagopa-it" : {
-      env              = "uat"
-      dns_record_name  = "argocd.itn.internal"
-      variables        = {}
-      variables_secret = {}
-    }
-    "argo-itn-internal-cstar-pagopa-it" : {
-      env              = "prod"
-      dns_record_name  = "argocd.itn.internal"
-      variables        = {}
       variables_secret = {}
     }
   }

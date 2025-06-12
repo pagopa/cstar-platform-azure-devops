@@ -1,5 +1,27 @@
 locals {
 
+  certificates = {
+    # idpay.itn.internl.cstar.pagopa.it
+    idpay-itn-internal-dev-cstar-pagopa-it : {
+      env              = "dev"
+      dns_record_name  = "idpay.itn.internal"
+      variables        = {}
+      variables_secret = {}
+    }
+    idpay-itn-internal-uat-cstar-pagopa-it : {
+      env              = "uat"
+      dns_record_name  = "idpay.itn.internal"
+      variables        = {}
+      variables_secret = {}
+    }
+    idpay-itn-internal-cstar-pagopa-it : {
+      env              = "prod"
+      dns_record_name  = "idpay.itn.internal"
+      variables        = {}
+      variables_secret = {}
+    }
+  }
+
   env_configurations = {
     dev = {
       dns_zone_name                       = "dev.cstar.pagopa.it"
@@ -42,28 +64,6 @@ locals {
     }
   }
 
-
-  certificates = {
-    # idpay.itn.internl.cstar.pagopa.it
-    idpay-itn-internal-dev-cstar-pagopa-it : {
-      env              = "dev"
-      dns_record_name  = "idpay.itn.internal"
-      variables        = {}
-      variables_secret = {}
-    }
-    idpay-itn-internal-uat-cstar-pagopa-it : {
-      env              = "uat"
-      dns_record_name  = "idpay.itn.internal"
-      variables        = {}
-      variables_secret = {}
-    }
-    idpay-itn-internal-cstar-pagopa-it : {
-      env              = "prod"
-      dns_record_name  = "idpay.itn.internal"
-      variables        = {}
-      variables_secret = {}
-    }
-  }
 }
 
 # change only providers
