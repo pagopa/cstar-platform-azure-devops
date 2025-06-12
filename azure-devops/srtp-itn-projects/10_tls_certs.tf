@@ -1,5 +1,27 @@
 locals {
 
+  certificates = {
+    # srtp.itn.internl.cstar.pagopa.it
+    srtp-itn-internal-dev-cstar-pagopa-it : {
+      env              = "dev"
+      dns_record_name  = "srtp.itn.internal"
+      variables        = {}
+      variables_secret = {}
+    }
+    srtp-itn-internal-uat-cstar-pagopa-it : {
+      env              = "uat"
+      dns_record_name  = "srtp.itn.internal"
+      variables        = {}
+      variables_secret = {}
+    }
+    srtp-itn-internal-cstar-pagopa-it : {
+      env              = "prod"
+      dns_record_name  = "srtp.itn.internal"
+      variables        = {}
+      variables_secret = {}
+    }
+  }
+
   env_configurations = {
     dev = {
       dns_zone_name                       = "dev.cstar.pagopa.it"
@@ -43,27 +65,7 @@ locals {
   }
 
 
-  certificates = {
-    # srtp.itn.internl.cstar.pagopa.it
-    srtp-itn-internal-dev-cstar-pagopa-it : {
-      env              = "dev"
-      dns_record_name  = "srtp.itn.internal"
-      variables        = {}
-      variables_secret = {}
-    }
-    srtp-itn-internal-uat-cstar-pagopa-it : {
-      env              = "uat"
-      dns_record_name  = "srtp.itn.internal"
-      variables        = {}
-      variables_secret = {}
-    }
-    srtp-itn-internal-cstar-pagopa-it : {
-      env              = "prod"
-      dns_record_name  = "srtp.itn.internal"
-      variables        = {}
-      variables_secret = {}
-    }
-  }
+
 }
 
 # change only providers
