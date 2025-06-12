@@ -1,6 +1,6 @@
 locals {
 
-    certificates = {
+  certificates = {
     # idpay.itn.internl.cstar.pagopa.it
     idpay-itn-internal-dev-cstar-pagopa-it : {
       env              = "dev"
