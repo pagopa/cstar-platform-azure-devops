@@ -33,7 +33,6 @@ locals {
     DEV_REACT_APP_URL_FE_ASSISTANCE_PORTAL                          = local.dev_react_app_asset_register_url_fe_assistance_portal
     DEV_REACT_APP_URL_STORAGE                                       = local.dev_react_app_asset_register_url_storage
     DEV_REACT_APP_URL_API_ROLE_PERMISSION                           = local.dev_react_app_url_api_role_permission
-    DEV_REACT_APP_URL_API_ROLE_PERMISSION                           = local.dev_react_app_url_api_role_permission
     DEV_REACT_APP_ONE_TRUST_OTNOTICE_CDN_URL                        = local.dev_react_app_one_trust_otnotice_cdn_url
     DEV_REACT_APP_ONE_TRUST_OTNOTICE_CDN_SETTINGS                   = local.dev_react_app_one_trust_otnotice_cdn_settings
     DEV_REACT_APP_ONE_TRUST_PRIVACY_POLICY_ID_ASSET_REGISTER        = local.dev_react_app_one_trust_privacy_policy_id_register
