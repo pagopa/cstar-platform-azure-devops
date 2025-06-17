@@ -129,6 +129,10 @@ locals {
   dev_react_app_one_trust_privacy_policy_json_url_merchants = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/draft/5079ee0c-cfa9-42ec-acda-66799bed5039.json"
   dev_react_app_one_trust_tos_id_merchants                  = "otnotice-d99f1397-31cc-4519-9629-785c0d4c9145"
   dev_react_app_one_trust_tos_json_url_merchants            = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/draft/d99f1397-31cc-4519-9629-785c0d4c9145.json"
+  dev_react_app_one_trust_tos_id_register                   = "otnotice-f1b252d1-de0a-4e99-859c-47918b46876e"
+  dev_react_app_one_trust_tos_json_url_register             = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/draft/f1b252d1-de0a-4e99-859c-47918b46876e.json"
+  dev_react_app_one_trust_privacy_policy_id_register       = "otnotice-44d36c0c-f859-4437-ae03-7da3c8b660f2"
+  dev_react_app_one_trust_privacy_policy_json_url_register = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/draft/44d36c0c-f859-4437-ae03-7da3c8b660f2.json"
   dev_analytics_enabled                                     = "true"
   dev_analytics_mocked                                      = "true" //Put to false when mixpanel available
   dev_mixpanel_token                                        = "TODO" //"6e1290bdda5885981a2f443f37444f0f"
@@ -159,6 +163,11 @@ locals {
   uat_react_app_one_trust_privacy_policy_json_url_merchants = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/draft/5079ee0c-cfa9-42ec-acda-66799bed5039.json"
   uat_react_app_one_trust_tos_id_merchants                  = "otnotice-d99f1397-31cc-4519-9629-785c0d4c9145"
   uat_react_app_one_trust_tos_json_url_merchants            = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/draft/d99f1397-31cc-4519-9629-785c0d4c9145.json"
+  //TODO replace dev value with uat value
+  uat_react_app_one_trust_tos_id_register                   = "otnotice-f1b252d1-de0a-4e99-859c-47918b46876e"
+  uat_react_app_one_trust_tos_json_url_register             = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/draft/f1b252d1-de0a-4e99-859c-47918b46876e.json"
+  uat_react_app_one_trust_privacy_policy_id_register       = "otnotice-44d36c0c-f859-4437-ae03-7da3c8b660f2"
+  uat_react_app_one_trust_privacy_policy_json_url_register = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/draft/44d36c0c-f859-4437-ae03-7da3c8b660f2.json"
   uat_analytics_enabled                                     = "true"
   uat_analytics_mocked                                      = "true" //Put to false when mixpanel available
   uat_mixpanel_token                                        = "TODO" //"1d1b09b008638080ab34fe9b75db84fd"
@@ -188,6 +197,11 @@ locals {
   prod_react_app_one_trust_privacy_policy_json_url_merchants = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/5079ee0c-cfa9-42ec-acda-66799bed5039.json"
   prod_react_app_one_trust_tos_id_merchants                  = "otnotice-d99f1397-31cc-4519-9629-785c0d4c9145"
   prod_react_app_one_trust_tos_json_url_merchants            = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/d99f1397-31cc-4519-9629-785c0d4c9145.json"
+  //TODO replace dev value with uat value
+  prod_react_app_one_trust_tos_id_register                   = "otnotice-f1b252d1-de0a-4e99-859c-47918b46876e"
+  prod_react_app_one_trust_tos_json_url_register             = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/draft/f1b252d1-de0a-4e99-859c-47918b46876e.json"
+  prod_react_app_one_trust_privacy_policy_id_register       = "otnotice-44d36c0c-f859-4437-ae03-7da3c8b660f2"
+  prod_react_app_one_trust_privacy_policy_json_url_register = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/draft/44d36c0c-f859-4437-ae03-7da3c8b660f2.json"
   prod_analytics_enabled                                     = "true"
   prod_analytics_mocked                                      = "true" //Put to false when mixpanel available
   prod_mixpanel_token                                        = "TODO" //"1d1b09b008638080ab34fe9b75db84fd"
