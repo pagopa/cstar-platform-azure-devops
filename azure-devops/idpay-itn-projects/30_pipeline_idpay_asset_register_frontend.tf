@@ -32,7 +32,7 @@ locals {
     DEV_REACT_APP_URL_FE_LANDING                                    = local.dev_react_app_asset_register_url_fe_landing
     DEV_REACT_APP_URL_FE_ASSISTANCE_PORTAL                          = local.dev_react_app_asset_register_url_fe_assistance_portal
     DEV_REACT_APP_URL_STORAGE                                       = local.dev_react_app_asset_register_url_storage
-    DEV_REACT_APP_URL_API_ROLE_PERMISSION                           = local.dev_react_app_url_api_role_permission
+    DEV_REACT_APP_URL_API_ROLE_PERMISSION                           = local.dev_react_app_url_api_register_role_permission
     DEV_REACT_APP_ONE_TRUST_OTNOTICE_CDN_URL                        = local.dev_react_app_one_trust_otnotice_cdn_url
     DEV_REACT_APP_ONE_TRUST_OTNOTICE_CDN_SETTINGS                   = local.dev_react_app_one_trust_otnotice_cdn_settings
     DEV_REACT_APP_ONE_TRUST_PRIVACY_POLICY_ID_ASSET_REGISTER        = local.dev_react_app_one_trust_privacy_policy_id_register
@@ -51,7 +51,7 @@ locals {
     UAT_REACT_APP_URL_FE_LANDING                                    = local.uat_react_app_asset_register_url_fe_landing
     UAT_REACT_APP_URL_FE_ASSISTANCE_PORTAL                          = local.uat_react_app_asset_register_url_fe_assistance_portal
     UAT_REACT_APP_URL_STORAGE                                       = local.uat_react_app_asset_register_url_storage
-    UAT_REACT_APP_URL_API_ROLE_PERMISSION                           = local.uat_react_app_url_api_role_permission
+    UAT_REACT_APP_URL_API_ROLE_PERMISSION                           = local.uat_react_app_url_api_register_role_permission
     UAT_REACT_APP_ONE_TRUST_OTNOTICE_CDN_URL                        = local.uat_react_app_one_trust_otnotice_cdn_url
     UAT_REACT_APP_ONE_TRUST_OTNOTICE_CDN_SETTINGS                   = local.uat_react_app_one_trust_otnotice_cdn_settings
     UAT_REACT_APP_ONE_TRUST_PRIVACY_POLICY_ID_ASSET_REGISTER        = local.uat_react_app_one_trust_privacy_policy_id_register
@@ -70,7 +70,7 @@ locals {
     PROD_REACT_APP_URL_FE_LANDING                                   = local.prod_react_app_asset_register_url_fe_landing
     PROD_REACT_APP_URL_FE_ASSISTANCE_PORTAL                         = local.prod_react_app_asset_register_url_fe_assistance_portal
     PROD_REACT_APP_URL_STORAGE                                      = local.prod_react_app_asset_register_url_storage
-    PROD_REACT_APP_URL_API_ROLE_PERMISSION                          = local.prod_react_app_url_api_role_permission
+    PROD_REACT_APP_URL_API_ROLE_PERMISSION                          = local.prod_react_app_url_api_register_role_permission
     PROD_REACT_APP_ONE_TRUST_OTNOTICE_CDN_URL                       = local.prod_react_app_one_trust_otnotice_cdn_url
     PROD_REACT_APP_ONE_TRUST_OTNOTICE_CDN_SETTINGS                  = local.prod_react_app_one_trust_otnotice_cdn_settings
     PROD_REACT_APP_ONE_TRUST_PRIVACY_POLICY_ID_ASSET_REGISTER       = local.prod_react_app_one_trust_privacy_policy_id_register
