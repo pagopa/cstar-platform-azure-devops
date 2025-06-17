@@ -27,7 +27,7 @@ locals {
     DEV_RESOURCE_GROUP                                              = local.dev_storage_account_rg
     DEV_STORAGE_ACCOUNT                                             = local.dev_storage_asset_register_account_name
     DEV_REACT_APP_URL_CDN                                           = local.dev_react_app_asset_register_url_cdn
-    DEV_REACT_APP_URL_FE_PRE_LOGI                                   = local.dev_react_app_asset_register_url_fe_pre_login
+    DEV_REACT_APP_URL_FE_PRE_LOGIN                                  = local.dev_react_app_asset_register_url_fe_pre_login
     DEV_REACT_APP_URL_FE_LOGIN                                      = local.dev_react_app_asset_register_url_fe_login
     DEV_REACT_APP_URL_FE_LANDING                                    = local.dev_react_app_asset_register_url_fe_landing
     DEV_REACT_APP_URL_FE_ASSISTANCE_PORTAL                          = local.dev_react_app_asset_register_url_fe_assistance_portal
