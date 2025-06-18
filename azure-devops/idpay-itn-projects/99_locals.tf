@@ -195,12 +195,12 @@ locals {
 
   #FRONTEND REACT ENV REGISTRO BENI
 
-  dev_react_app_asset_register_url_cdn                  = "https://registrodeibeni.dev.cstar.pagopa.it/"
-  dev_react_app_asset_register_url_storage              = "https://cstarditnidpayregcdnsa.z38.web.core.windows.net"
-  dev_react_app_asset_register_url_fe_pre_login         = "https://api-io.dev.cstar.pagopa.it/idpay-itn/register/token"
-  dev_react_app_asset_register_url_fe_login             = "https://dev.selfcare.pagopa.it/auth"
-  dev_react_app_asset_register_url_fe_assistance_portal = "/registro-dei-beni/assistenza"
-  dev_react_app_asset_register_url_fe_landing           = "https://dev.selfcare.pagopa.it/auth/logout"
+  dev_react_app_asset_register_url_cdn                     = "https://registrodeibeni.dev.cstar.pagopa.it/"
+  dev_react_app_asset_register_url_storage                 = "https://cstarditnidpayregcdnsa.z38.web.core.windows.net"
+  dev_react_app_asset_register_url_fe_pre_login            = "https://api-io.dev.cstar.pagopa.it/idpay-itn/register/token"
+  dev_react_app_asset_register_url_fe_login                = "https://dev.selfcare.pagopa.it/auth"
+  dev_react_app_asset_register_url_fe_assistance_portal    = "/registro-dei-beni/assistenza"
+  dev_react_app_asset_register_url_fe_landing              = "https://dev.selfcare.pagopa.it/auth/logout"
   dev_react_app_one_trust_tos_id_register                  = "otnotice-f1b252d1-de0a-4e99-859c-47918b46876e"
   dev_react_app_one_trust_tos_json_url_register            = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/draft/f1b252d1-de0a-4e99-859c-47918b46876e.json"
   dev_react_app_one_trust_privacy_policy_id_register       = "otnotice-44d36c0c-f859-4437-ae03-7da3c8b660f2"
