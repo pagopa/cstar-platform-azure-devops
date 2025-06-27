@@ -1,4 +1,3 @@
-<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
@@ -30,6 +29,7 @@
 | <a name="module_federated_cert_pipeline_dev"></a> [federated\_cert\_pipeline\_dev](#module\_federated\_cert\_pipeline\_dev) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated | n/a |
 | <a name="module_federated_cert_pipeline_prod"></a> [federated\_cert\_pipeline\_prod](#module\_federated\_cert\_pipeline\_prod) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated | n/a |
 | <a name="module_federated_cert_pipeline_uat"></a> [federated\_cert\_pipeline\_uat](#module\_federated\_cert\_pipeline\_uat) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated | n/a |
+| <a name="module_idpay-fe-merchants-operator_deploy"></a> [idpay-fe-merchants-operator\_deploy](#module\_idpay-fe-merchants-operator\_deploy) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_generic | n/a |
 | <a name="module_idpay-fe-merchants_deploy"></a> [idpay-fe-merchants\_deploy](#module\_idpay-fe-merchants\_deploy) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_generic | n/a |
 | <a name="module_idpay-fe-register_deploy"></a> [idpay-fe-register\_deploy](#module\_idpay-fe-register\_deploy) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_generic | n/a |
 | <a name="module_idpay-fe-welfare_deploy"></a> [idpay-fe-welfare\_deploy](#module\_idpay-fe-welfare\_deploy) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_generic | n/a |
@@ -67,6 +67,7 @@
 | <a name="input_acr_ita_service_connection_workload_identity_uat"></a> [acr\_ita\_service\_connection\_workload\_identity\_uat](#input\_acr\_ita\_service\_connection\_workload\_identity\_uat) | The service connection ID for the ITA UAT workload identity in Azure Container Registry | `string` | `""` | no |
 | <a name="input_dev_subscription_name"></a> [dev\_subscription\_name](#input\_dev\_subscription\_name) | DEV Subscription name | `string` | n/a | yes |
 | <a name="input_idpay-portal-merchants-frontend"></a> [idpay-portal-merchants-frontend](#input\_idpay-portal-merchants-frontend) | n/a | `map` | <pre>{<br/>  "pipeline": {<br/>    "path": "idpay\\idpay-portal-merchants-frontend"<br/>  },<br/>  "repository": {<br/>    "branch_name": "refs/heads/main",<br/>    "name": "idpay-portal-merchants-frontend",<br/>    "organization": "pagopa",<br/>    "path": "idpay\\frontend",<br/>    "pipelines_path": ".devops",<br/>    "yml_prefix_name": null<br/>  }<br/>}</pre> | no |
+| <a name="input_idpay-portal-merchants-operator-frontend"></a> [idpay-portal-merchants-operator-frontend](#input\_idpay-portal-merchants-operator-frontend) | n/a | `map` | <pre>{<br/>  "pipeline": {<br/>    "path": "idpay\\idpay-portal-merchants-operator-frontend"<br/>  },<br/>  "repository": {<br/>    "branch_name": "refs/heads/main",<br/>    "name": "idpay-portal-merchants-operator-frontend",<br/>    "organization": "pagopa",<br/>    "path": "idpay\\frontend",<br/>    "pipelines_path": ".devops",<br/>    "yml_prefix_name": null<br/>  }<br/>}</pre> | no |
 | <a name="input_idpay-portal-welfare-frontend"></a> [idpay-portal-welfare-frontend](#input\_idpay-portal-welfare-frontend) | n/a | `map` | <pre>{<br/>  "pipeline": {<br/>    "path": "idpay\\idpay-portal-welfare-frontend"<br/>  },<br/>  "repository": {<br/>    "branch_name": "refs/heads/main",<br/>    "name": "idpay-portal-welfare-frontend",<br/>    "organization": "pagopa",<br/>    "path": "idpay\\frontend",<br/>    "pipelines_path": ".devops",<br/>    "yml_prefix_name": null<br/>  }<br/>}</pre> | no |
 | <a name="input_idpay_aks_deploy"></a> [idpay\_aks\_deploy](#input\_idpay\_aks\_deploy) | n/a | `map` | <pre>{<br/>  "pipeline": {<br/>    "name": "idpay-deploy-aks",<br/>    "path": "argocd"<br/>  },<br/>  "repository": {<br/>    "branch_name": "refs/heads/main",<br/>    "name": "idpay-deploy-aks",<br/>    "organization": "pagopa",<br/>    "pipelines_path": ".devops"<br/>  }<br/>}</pre> | no |
 | <a name="input_idpay_asset_register_frontend"></a> [idpay\_asset\_register\_frontend](#input\_idpay\_asset\_register\_frontend) | n/a | `map` | <pre>{<br/>  "pipeline": {<br/>    "path": "idpay\\idpay-asset-register-frontend"<br/>  },<br/>  "repository": {<br/>    "branch_name": "refs/heads/main",<br/>    "name": "idpay-asset-register-frontend",<br/>    "organization": "pagopa",<br/>    "path": "idpay\\frontend",<br/>    "pipelines_path": ".devops",<br/>    "yml_prefix_name": null<br/>  }<br/>}</pre> | no |
@@ -76,4 +77,3 @@
 ## Outputs
 
 No outputs.
-<!-- END_TF_DOCS -->
