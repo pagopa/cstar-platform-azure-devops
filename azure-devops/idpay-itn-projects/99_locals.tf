@@ -201,6 +201,9 @@ locals {
   dev_react_app_asset_register_url_fe_login             = "https://dev.selfcare.pagopa.it/auth"
   dev_react_app_asset_register_url_fe_assistance_portal = "/registro-dei-beni/assistenza"
   dev_react_app_asset_register_url_fe_landing           = "https://dev.selfcare.pagopa.it/auth/logout"
+  dev_react_app_url_keycloak                            = "https://keycloak.itn.internal.dev.cstar.pagopa.it/"
+  dev_react_app_keycloak_realm                          = "merchant-operator"
+  dev_react_app_keycloak_client_id                      = "frontend"
 
   uat_react_app_asset_register_url_cdn                  = "https://registrodeibeni.uat.cstar.pagopa.it/"
   uat_react_app_asset_register_url_storage              = "https://cstaruitnidpayregcdnsa.z38.web.core.windows.net"
@@ -208,6 +211,9 @@ locals {
   uat_react_app_asset_register_url_fe_login             = "https://uat.selfcare.pagopa.it/auth"
   uat_react_app_asset_register_url_fe_assistance_portal = "/registro-dei-beni/assistenza"
   uat_react_app_asset_register_url_fe_landing           = "https://uat.selfcare.pagopa.it/auth/logout"
+  uat_react_app_url_keycloak                            = "TODO"
+  uat_react_app_keycloak_realm                          = "merchant-operator"
+  uat_react_app_keycloak_client_id                      = "frontend"
 
   prod_react_app_asset_register_url_cdn                  = "https://registrodeibeni.cstar.pagopa.it/"
   prod_react_app_asset_register_url_storage              = "https://cstarpitnidpayregcdnsa.z38.web.core.windows.net"
@@ -215,7 +221,9 @@ locals {
   prod_react_app_asset_register_url_fe_login             = "https://selfcare.pagopa.it/auth"
   prod_react_app_asset_register_url_fe_assistance_portal = "/registro-dei-beni/assistenza"
   prod_react_app_asset_register_url_fe_landing           = "https://selfcare.pagopa.it/auth/logout"
-
+  prod_react_app_url_keycloak                            = "TODO"
+  prod_react_app_keycloak_realm                          = "merchant-operator"
+  prod_react_app_keycloak_client_id                      = "frontend"
 }
 
 # LOCAL TLS CERT
