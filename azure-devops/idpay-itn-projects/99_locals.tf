@@ -201,7 +201,7 @@ locals {
   dev_react_app_asset_register_url_fe_login             = "https://dev.selfcare.pagopa.it/auth"
   dev_react_app_asset_register_url_fe_assistance_portal = "/registro-dei-beni/assistenza"
   dev_react_app_asset_register_url_fe_landing           = "https://dev.selfcare.pagopa.it/auth/logout"
-  dev_vite_keycloak_url                                 = "https://keycloak.itn.internal.dev.cstar.pagopa.it/"
+  dev_vite_keycloak_url                                 = "https://api-mcshared.dev.cstar.pagopa.it/auth-itn"
   dev_vite_keycloak_realm                               = "merchant-operator"
   dev_vite_keycloak_client_id                           = "frontend"
 
