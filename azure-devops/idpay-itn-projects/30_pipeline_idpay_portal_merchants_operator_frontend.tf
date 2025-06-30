@@ -45,9 +45,9 @@ locals {
     # DEV_REACT_APP_ONE_TRUST_PRIVACY_POLICY_JSON_URL_MERCHANTS = local.dev_react_app_one_trust_privacy_policy_json_url_merchants
     # DEV_REACT_APP_ONE_TRUST_TOS_ID_MERCHANTS                  = local.dev_react_app_one_trust_tos_id_merchants
     # DEV_REACT_APP_ONE_TRUST_TOS_JSON_URL_MERCHANTS            = local.dev_react_app_one_trust_tos_json_url_merchants
-    DEV_VITE_KEYCLOAK_URL           = local.dev_vite_keycloak_url
-    DEV_VITE_KEYCLOAK_REALM         = local.dev_vite_keycloak_realm
-    DEV_VITE_KEYCLOAK_CLIENT_ID     = local.dev_vite_keycloak_client_id
+    DEV_VITE_KEYCLOAK_URL       = local.dev_vite_keycloak_url
+    DEV_VITE_KEYCLOAK_REALM     = local.dev_vite_keycloak_realm
+    DEV_VITE_KEYCLOAK_CLIENT_ID = local.dev_vite_keycloak_client_id
 
     UAT_AZURE_SUBSCRIPTION                    = local.uat_service_endpoint_azure_id
     UAT_CDN_ENDPOINT                          = local.uat_welfare_cdn_endpoint
@@ -72,9 +72,9 @@ locals {
     # UAT_REACT_APP_ONE_TRUST_PRIVACY_POLICY_JSON_URL_MERCHANTS = local.uat_react_app_one_trust_privacy_policy_json_url_merchants
     # UAT_REACT_APP_ONE_TRUST_TOS_ID_MERCHANTS                  = local.uat_react_app_one_trust_tos_id_merchants
     # UAT_REACT_APP_ONE_TRUST_TOS_JSON_URL_MERCHANTS            = local.uat_react_app_one_trust_tos_json_url_merchants
-    UAT_VITE_KEYCLOAK_URL           = local.uat_vite_keycloak_url
-    UAT_VITE_KEYCLOAK_REALM         = local.uat_vite_keycloak_realm
-    UAT_VITE_KEYCLOAK_CLIENT_ID     = local.uat_vite_keycloak_client_id
+    UAT_VITE_KEYCLOAK_URL       = local.uat_vite_keycloak_url
+    UAT_VITE_KEYCLOAK_REALM     = local.uat_vite_keycloak_realm
+    UAT_VITE_KEYCLOAK_CLIENT_ID = local.uat_vite_keycloak_client_id
 
     PROD_AZURE_SUBSCRIPTION                    = local.prod_service_endpoint_azure_id
     PROD_CDN_ENDPOINT                          = local.prod_welfare_cdn_endpoint
@@ -100,9 +100,9 @@ locals {
     # PROD_REACT_APP_ONE_TRUST_TOS_ID_MERCHANTS                  = local.prod_react_app_one_trust_tos_id_merchants
     # PROD_REACT_APP_ONE_TRUST_TOS_JSON_URL_MERCHANTS            = local.prod_react_app_one_trust_tos_json_url_merchants
 
-    PROD_VITE_KEYCLOAK_URL           = local.prod_vite_keycloak_url
-    PROD_VITE_KEYCLOAK_REALM         = local.prod_vite_keycloak_realm
-    PROD_VITE_KEYCLOAK_CLIENT_ID     = local.prod_vite_keycloak_client_id
+    PROD_VITE_KEYCLOAK_URL       = local.prod_vite_keycloak_url
+    PROD_VITE_KEYCLOAK_REALM     = local.prod_vite_keycloak_realm
+    PROD_VITE_KEYCLOAK_CLIENT_ID = local.prod_vite_keycloak_client_id
 
   }
 }
