@@ -195,19 +195,24 @@ locals {
 
   #FRONTEND REACT ENV REGISTRO BENI
 
-  dev_react_app_asset_register_url_cdn                     = "https://registrodeibeni.dev.cstar.pagopa.it/"
-  dev_react_app_asset_register_url_storage                 = "https://cstarditnidpayregcdnsa.z38.web.core.windows.net"
-  dev_react_app_asset_register_url_fe_pre_login            = "https://api-io.dev.cstar.pagopa.it/idpay-itn/register/token"
-  dev_react_app_asset_register_url_fe_login                = "https://dev.selfcare.pagopa.it/auth"
-  dev_react_app_asset_register_url_fe_assistance_portal    = "/registro-dei-beni/assistenza"
-  dev_react_app_asset_register_url_fe_landing              = "https://dev.selfcare.pagopa.it/auth/logout"
+  dev_react_app_asset_register_url_cdn                  = "https://registrodeibeni.dev.cstar.pagopa.it/"
+  dev_react_app_asset_register_url_storage              = "https://cstarditnidpayregcdnsa.z38.web.core.windows.net"
+  dev_react_app_asset_register_url_fe_pre_login         = "https://api-io.dev.cstar.pagopa.it/idpay-itn/register/token"
+  dev_react_app_asset_register_url_fe_login             = "https://dev.selfcare.pagopa.it/auth"
+  dev_react_app_asset_register_url_fe_assistance_portal = "/registro-dei-beni/assistenza"
+  dev_react_app_asset_register_url_fe_landing           = "https://dev.selfcare.pagopa.it/auth/logout"
   dev_react_app_one_trust_tos_id_register                  = "otnotice-f1b252d1-de0a-4e99-859c-47918b46876e"
   dev_react_app_one_trust_tos_json_url_register            = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/draft/f1b252d1-de0a-4e99-859c-47918b46876e.json"
   dev_react_app_one_trust_privacy_policy_id_register       = "otnotice-44d36c0c-f859-4437-ae03-7da3c8b660f2"
   dev_react_app_one_trust_privacy_policy_json_url_register = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/draft/44d36c0c-f859-4437-ae03-7da3c8b660f2.json"
   dev_react_app_url_api_register_role_permission           = "https://api-io.dev.cstar.pagopa.it/idpay-itn/register/authorization"
 
-  uat_react_app_asset_register_url_cdn                  = "https://registrodeibeni.uat.cstar.pagopa.it/"
+  dev_vite_keycloak_url                                 = "https://api-mcshared.dev.cstar.pagopa.it/auth-itn"
+  dev_vite_keycloak_realm                               = "merchant-operator"
+  dev_vite_keycloak_client_id                           = "frontend"
+
+
+uat_react_app_asset_register_url_cdn                  = "https://registrodeibeni.uat.cstar.pagopa.it/"
   uat_react_app_asset_register_url_storage              = "https://cstaruitnidpayregcdnsa.z38.web.core.windows.net"
   uat_react_app_asset_register_url_fe_pre_login         = "https://api-io.uat.cstar.pagopa.it/idpay-itn/register/token"
   uat_react_app_asset_register_url_fe_login             = "https://uat.selfcare.pagopa.it/auth"
@@ -219,6 +224,10 @@ locals {
   uat_react_app_one_trust_privacy_policy_id_register       = "otnotice-44d36c0c-f859-4437-ae03-7da3c8b660f2"
   uat_react_app_one_trust_privacy_policy_json_url_register = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/draft/44d36c0c-f859-4437-ae03-7da3c8b660f2.json"
   uat_react_app_url_api_register_role_permission           = "https://api-io.dev.cstar.pagopa.it/idpay-itn/register/authorization"
+
+  uat_vite_keycloak_url                                 = "TODO"
+  uat_vite_keycloak_realm                               = "merchant-operator"
+  uat_vite_keycloak_client_id                           = "frontend"
 
   prod_react_app_asset_register_url_cdn                  = "https://registrodeibeni.cstar.pagopa.it/"
   prod_react_app_asset_register_url_storage              = "https://cstarpitnidpayregcdnsa.z38.web.core.windows.net"
@@ -232,6 +241,11 @@ locals {
   prod_react_app_one_trust_privacy_policy_id_register       = "otnotice-44d36c0c-f859-4437-ae03-7da3c8b660f2"
   prod_react_app_one_trust_privacy_policy_json_url_register = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/draft/44d36c0c-f859-4437-ae03-7da3c8b660f2.json"
   prod_react_app_url_api_register_role_permission           = "https://api-io.dev.cstar.pagopa.it/idpay-itn/register/authorization"
+
+  prod_vite_keycloak_url                                 = "TODO"
+  prod_vite_keycloak_realm                               = "merchant-operator"
+  prod_vite_keycloak_client_id                           = "frontend"
+
 }
 
 # LOCAL TLS CERT
