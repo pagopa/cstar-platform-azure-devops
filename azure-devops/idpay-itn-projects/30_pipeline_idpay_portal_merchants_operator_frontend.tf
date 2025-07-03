@@ -22,16 +22,17 @@ locals {
     blob_container_name    = "$web"
     AZURE_DEVOPS_GITHUB_RO = local.service_connection_github_ro_name
 
-    DEV_AZURE_SUBSCRIPTION      = local.dev_service_endpoint_azure_id
-    DEV_CDN_ENDPOINT            = local.dev_merchant_op_cdn_endpoint
-    DEV_CDN_PROFILE             = local.dev_merchant_op_cdn_profile
-    DEV_RESOURCE_GROUP          = local.dev_storage_account_rg
-    DEV_STORAGE_ACCOUNT         = local.dev_merchant_op_account_name
-    DEV_ANALYTICS_ENABLED       = local.dev_analytics_enabled
-    DEV_ANALYTICS_MOCKED        = local.dev_analytics_mocked
-    DEV_VITE_KEYCLOAK_URL       = local.dev_vite_keycloak_url
-    DEV_VITE_KEYCLOAK_REALM     = local.dev_vite_keycloak_realm
-    DEV_VITE_KEYCLOAK_CLIENT_ID = local.dev_vite_keycloak_client_id
+    DEV_AZURE_SUBSCRIPTION         = local.dev_service_endpoint_azure_id
+    DEV_CDN_ENDPOINT               = local.dev_merchant_op_cdn_endpoint
+    DEV_CDN_PROFILE                = local.dev_merchant_op_cdn_profile
+    DEV_RESOURCE_GROUP             = local.dev_storage_account_rg
+    DEV_STORAGE_ACCOUNT            = local.dev_merchant_op_account_name
+    DEV_ANALYTICS_ENABLED          = local.dev_analytics_enabled
+    DEV_ANALYTICS_MOCKED           = local.dev_analytics_mocked
+    DEV_VITE_KEYCLOAK_URL          = local.dev_vite_keycloak_url
+    DEV_VITE_KEYCLOAK_REALM        = local.dev_vite_keycloak_realm
+    DEV_VITE_KEYCLOAK_CLIENT_ID    = local.dev_vite_keycloak_client_id
+    DEV_VITE_KEYCLOAK_REDIRECT_URI = local.dev_vite_keycloak_redirect_uri
 
     UAT_AZURE_SUBSCRIPTION      = local.uat_service_endpoint_azure_id
     UAT_CDN_ENDPOINT            = local.uat_merchant_op_cdn_endpoint

@@ -219,6 +219,7 @@ locals {
   dev_vite_keycloak_url                                 = "https://api-mcshared.dev.cstar.pagopa.it/auth-itn"
   dev_vite_keycloak_realm                               = "merchant-operator"
   dev_vite_keycloak_client_id                           = "frontend"
+  dev_vite_keycloak_redirect_uri                        = "https://portaleesercenti.dev.cstar.pagopa.it/portale-esercenti/"
 
   uat_react_app_asset_register_url_cdn                  = "https://registrodeibeni.uat.cstar.pagopa.it/"
   uat_react_app_asset_register_url_storage              = "https://cstaruitnidpayregcdnsa.z38.web.core.windows.net"
