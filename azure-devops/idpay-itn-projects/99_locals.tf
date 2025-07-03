@@ -104,19 +104,19 @@ locals {
   prod_storage_asset_register_account_name = "cstarpitnidpayregcdnsa"
 
   # DEV PORTALE ESERCENTI OPERATOR
-  dev_merchant_op_cdn_profile         = "${local.prefix}-d-${local.location_short}-${local.domain}-portal-merchants-op-cdn-profile"
-  dev_merchant_op_cdn_endpoint        = "${local.prefix}-d-${local.domain}-portal-merchants-op-cdn-endpoint"
-  dev_merchant_portal_op_account_name = "cstarditnidpaymeropcdnsa"
+  dev_merchant_op_cdn_profile  = "${local.prefix}-d-${local.location_short}-${local.domain}-portal-merchants-op-cdn-profile"
+  dev_merchant_op_cdn_endpoint = "${local.prefix}-d-${local.domain}-portal-merchants-op-cdn-endpoint"
+  dev_merchant_op_account_name = "cstarditnidpaymeropcdnsa"
 
   # UAT PORTALE ESERCENTI OPERATOR
-  uat_merchant_op_cdn_profile         = "TODO"
-  uat_merchant_op_cdn_endpoint        = "TODO"
-  uat_merchant_portal_op_account_name = "TODO"
+  uat_merchant_op_cdn_profile  = "TODO"
+  uat_merchant_op_cdn_endpoint = "TODO"
+  uat_merchant_op_account_name = "TODO"
 
   # PROD PORTALE ESERCENTI
-  prod_merchant_op_cdn_profile         = "TODO"
-  prod_merchant_op_cdn_endpoint        = "TODO"
-  prod_merchant_portal_op_account_name = "TODO"
+  prod_merchant_op_cdn_profile  = "TODO"
+  prod_merchant_op_cdn_endpoint = "TODO"
+  prod_merchant_op_account_name = "TODO"
 
 
   #FRONTEND REACT ENV
