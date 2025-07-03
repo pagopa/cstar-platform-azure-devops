@@ -85,7 +85,7 @@ locals {
   prod_welfare_storage_account_name = replace("${local.prefix}-p-${local.location_short}-${local.domain}-wel-cdn-sa", "-", "")
 
   # DEV REGISTRO DEI BENI
-  dev_cdn_profile                         = "${local.prefix}-d-${local.domain}-cdn-profile"
+  dev_cdn_profile                         = "${local.prefix}-d--${local.domain}-cdn-profile"
   dev_cdn_endpoint                        = "${local.prefix}-d-${local.domain}-cdn-endpoint"
   dev_storage_account_rg                  = "${local.prefix}-d-${local.location_short}-${local.domain}-cdn-rg"
   dev_storage_asset_register_account_name = "cstarditnidpayregcdnsa"
@@ -102,6 +102,21 @@ locals {
   prod_cdn_endpoint                        = "${local.prefix}-p-${local.domain}-cdn-endpoint"
   prod_storage_account_rg                  = "${local.prefix}-p-${local.location_short}-${local.domain}-cdn-rg"
   prod_storage_asset_register_account_name = "cstarpitnidpayregcdnsa"
+
+  # DEV PORTALE ESERCENTI OPERATOR
+  dev_merchant_op_cdn_profile         = "${local.prefix}-d-${local.location_short}-${local.domain}-portal-merchants-op-cdn-profile"
+  dev_merchant_op_cdn_endpoint        = "${local.prefix}-d-${local.domain}-portal-merchants-op-cdn-endpoint"
+  dev_merchant_portal_op_account_name = "cstarditnidpaymeropcdnsa"
+
+  # UAT PORTALE ESERCENTI OPERATOR
+  uat_merchant_op_cdn_profile         = "TODO"
+  uat_merchant_op_cdn_endpoint        = "TODO"
+  uat_merchant_portal_op_account_name = "TODO"
+
+  # PROD PORTALE ESERCENTI
+  prod_merchant_op_cdn_profile         = "TODO"
+  prod_merchant_op_cdn_endpoint        = "TODO"
+  prod_merchant_portal_op_account_name = "TODO"
 
 
   #FRONTEND REACT ENV
