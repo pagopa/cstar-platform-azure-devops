@@ -85,7 +85,7 @@ locals {
   prod_welfare_storage_account_name = replace("${local.prefix}-p-${local.location_short}-${local.domain}-wel-cdn-sa", "-", "")
 
   # DEV REGISTRO DEI BENI
-  dev_cdn_profile                         = "${local.prefix}-d--${local.domain}-cdn-profile"
+  dev_cdn_profile                         = "${local.prefix}-d-${local.domain}-cdn-profile"
   dev_cdn_endpoint                        = "${local.prefix}-d-${local.domain}-cdn-endpoint"
   dev_storage_account_rg                  = "${local.prefix}-d-${local.location_short}-${local.domain}-cdn-rg"
   dev_storage_asset_register_account_name = "cstarditnidpayregcdnsa"
