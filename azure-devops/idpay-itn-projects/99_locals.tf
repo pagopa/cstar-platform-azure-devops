@@ -103,6 +103,21 @@ locals {
   prod_storage_account_rg                  = "${local.prefix}-p-${local.location_short}-${local.domain}-cdn-rg"
   prod_storage_asset_register_account_name = "cstarpitnidpayregcdnsa"
 
+  # DEV PORTALE ESERCENTI OPERATOR
+  dev_merchant_op_cdn_profile  = "${local.prefix}-d-${local.location_short}-${local.domain}-portal-merchants-op-cdn-profile"
+  dev_merchant_op_cdn_endpoint = "${local.prefix}-d-${local.domain}-portal-merchants-op-cdn-endpoint"
+  dev_merchant_op_account_name = "cstarditnidpaymeropcdnsa"
+
+  # UAT PORTALE ESERCENTI OPERATOR
+  uat_merchant_op_cdn_profile  = "TODO"
+  uat_merchant_op_cdn_endpoint = "TODO"
+  uat_merchant_op_account_name = "TODO"
+
+  # PROD PORTALE ESERCENTI OPERATOR
+  prod_merchant_op_cdn_profile  = "TODO"
+  prod_merchant_op_cdn_endpoint = "TODO"
+  prod_merchant_op_account_name = "TODO"
+
 
   #FRONTEND REACT ENV
   dev_react_app_url_cdn                                     = "https://welfare-italy.dev.cstar.pagopa.it/"
@@ -204,6 +219,7 @@ locals {
   dev_vite_keycloak_url                                 = "https://api-mcshared.dev.cstar.pagopa.it/auth-itn"
   dev_vite_keycloak_realm                               = "merchant-operator"
   dev_vite_keycloak_client_id                           = "frontend"
+  dev_vite_keycloak_redirect_uri                        = "https://portaleesercenti.dev.cstar.pagopa.it/portale-esercenti/"
 
   uat_react_app_asset_register_url_cdn                  = "https://registrodeibeni.uat.cstar.pagopa.it/"
   uat_react_app_asset_register_url_storage              = "https://cstaruitnidpayregcdnsa.z38.web.core.windows.net"
@@ -214,6 +230,7 @@ locals {
   uat_vite_keycloak_url                                 = "TODO"
   uat_vite_keycloak_realm                               = "merchant-operator"
   uat_vite_keycloak_client_id                           = "frontend"
+  uat_vite_keycloak_redirect_uri                        = "TODO"
 
   prod_react_app_asset_register_url_cdn                  = "https://registrodeibeni.cstar.pagopa.it/"
   prod_react_app_asset_register_url_storage              = "https://cstarpitnidpayregcdnsa.z38.web.core.windows.net"
@@ -224,6 +241,7 @@ locals {
   prod_vite_keycloak_url                                 = "TODO"
   prod_vite_keycloak_realm                               = "merchant-operator"
   prod_vite_keycloak_client_id                           = "frontend"
+  prod_vite_keycloak_redirect_uri                        = "TODO"
 }
 
 # LOCAL TLS CERT
