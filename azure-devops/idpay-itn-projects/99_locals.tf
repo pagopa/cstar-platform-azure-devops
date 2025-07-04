@@ -113,7 +113,7 @@ locals {
   uat_merchant_op_cdn_endpoint = "TODO"
   uat_merchant_op_account_name = "TODO"
 
-  # PROD PORTALE ESERCENTI
+  # PROD PORTALE ESERCENTI OPERATOR
   prod_merchant_op_cdn_profile  = "TODO"
   prod_merchant_op_cdn_endpoint = "TODO"
   prod_merchant_op_account_name = "TODO"
@@ -230,6 +230,7 @@ locals {
   uat_vite_keycloak_url                                 = "TODO"
   uat_vite_keycloak_realm                               = "merchant-operator"
   uat_vite_keycloak_client_id                           = "frontend"
+  uat_vite_keycloak_redirect_uri                        = "TODO"
 
   prod_react_app_asset_register_url_cdn                  = "https://registrodeibeni.cstar.pagopa.it/"
   prod_react_app_asset_register_url_storage              = "https://cstarpitnidpayregcdnsa.z38.web.core.windows.net"
@@ -240,6 +241,7 @@ locals {
   prod_vite_keycloak_url                                 = "TODO"
   prod_vite_keycloak_realm                               = "merchant-operator"
   prod_vite_keycloak_client_id                           = "frontend"
+  prod_vite_keycloak_redirect_uri                        = "TODO"
 }
 
 # LOCAL TLS CERT
