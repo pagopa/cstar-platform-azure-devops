@@ -109,14 +109,14 @@ locals {
   dev_merchant_op_account_name = "cstarditnidpaymeropcdnsa"
 
   # UAT PORTALE ESERCENTI OPERATOR
-  uat_merchant_op_cdn_profile  = "TODO"
-  uat_merchant_op_cdn_endpoint = "TODO"
-  uat_merchant_op_account_name = "TODO"
+  uat_merchant_op_cdn_profile  = "${local.prefix}-u-${local.location_short}-${local.domain}-portal-merchants-op-cdn-profile"
+  uat_merchant_op_cdn_endpoint = "${local.prefix}-u-${local.domain}-portal-merchants-op-cdn-endpoint"
+  uat_merchant_op_account_name = "cstarditnidpaymeropcdnsa"
 
   # PROD PORTALE ESERCENTI OPERATOR
-  prod_merchant_op_cdn_profile  = "TODO"
-  prod_merchant_op_cdn_endpoint = "TODO"
-  prod_merchant_op_account_name = "TODO"
+  prod_merchant_op_cdn_profile  = "${local.prefix}-p-${local.location_short}-${local.domain}-portal-merchants-op-cdn-profile"
+  prod_merchant_op_cdn_endpoint = "${local.prefix}-p-${local.domain}-portal-merchants-op-cdn-endpoint"
+  prod_merchant_op_account_name = "cstarditnidpaymeropcdnsa"
 
 
   #FRONTEND REACT ENV
@@ -227,10 +227,10 @@ locals {
   uat_react_app_asset_register_url_fe_login             = "https://uat.selfcare.pagopa.it/auth"
   uat_react_app_asset_register_url_fe_assistance_portal = "/registro-dei-beni/assistenza"
   uat_react_app_asset_register_url_fe_landing           = "https://uat.selfcare.pagopa.it/auth/logout"
-  uat_vite_keycloak_url                                 = "TODO"
+  uat_vite_keycloak_url                                 = "https://api-mcshared.uat.cstar.pagopa.it/auth-itn"
   uat_vite_keycloak_realm                               = "merchant-operator"
   uat_vite_keycloak_client_id                           = "frontend"
-  uat_vite_keycloak_redirect_uri                        = "TODO"
+  uat_vite_keycloak_redirect_uri                        = "https://portaleesercenti.uat.cstar.pagopa.it/portale-esercenti/"
 
   prod_react_app_asset_register_url_cdn                  = "https://registrodeibeni.cstar.pagopa.it/"
   prod_react_app_asset_register_url_storage              = "https://cstarpitnidpayregcdnsa.z38.web.core.windows.net"
@@ -238,10 +238,10 @@ locals {
   prod_react_app_asset_register_url_fe_login             = "https://selfcare.pagopa.it/auth"
   prod_react_app_asset_register_url_fe_assistance_portal = "/registro-dei-beni/assistenza"
   prod_react_app_asset_register_url_fe_landing           = "https://selfcare.pagopa.it/auth/logout"
-  prod_vite_keycloak_url                                 = "TODO"
+  prod_vite_keycloak_url                                 = "https://api-mcshared.cstar.pagopa.it/auth-itn"
   prod_vite_keycloak_realm                               = "merchant-operator"
   prod_vite_keycloak_client_id                           = "frontend"
-  prod_vite_keycloak_redirect_uri                        = "TODO"
+  prod_vite_keycloak_redirect_uri                        = "https://portaleesercenti.cstar.pagopa.it/portale-esercenti/"
 }
 
 # LOCAL TLS CERT
