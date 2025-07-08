@@ -40,7 +40,7 @@ source "${BACKEND_INI_PATH}"
 
 az account set -s "${subscription}"
 
-if echo "init plan apply refresh import output state taint destroy" | grep -w "$ACTION" > /dev/null; then
+if echo "init plan apply refresh import output state taint destroy console" | grep -w "$ACTION" > /dev/null; then
   if [ "$ACTION" = "init" ]; then
     echo "[INFO] 🧭 init terraform"
     terraform "$ACTION" -backend-config="${BACKEND_CONFIG_PATH}" $other
