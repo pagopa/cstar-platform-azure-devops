@@ -31,6 +31,10 @@ locals {
   rg_uat_dns_zone_name  = "cstar-u-vnet-rg"
   rg_prod_dns_zone_name = "cstar-p-vnet-rg"
 
+  rg_dev_itn_dns_zone_name  = "cstar-d-itn-core-network-rg"
+  rg_uat_itn_dns_zone_name  = "cstar-u-itn-core-network-rg"
+  rg_prod_itn_dns_zone_name = "cstar-p-itn-core-network-rg"
+
   dev_dns_zone_name  = "dev.cstar.pagopa.it"
   uat_dns_zone_name  = "uat.cstar.pagopa.it"
   prod_dns_zone_name = "cstar.pagopa.it"
