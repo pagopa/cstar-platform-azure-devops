@@ -111,12 +111,12 @@ locals {
   # UAT PORTALE ESERCENTI OPERATOR
   uat_merchant_op_cdn_profile  = "${local.prefix}-u-${local.location_short}-${local.domain}-portal-merchants-op-cdn-profile"
   uat_merchant_op_cdn_endpoint = "${local.prefix}-u-${local.domain}-portal-merchants-op-cdn-endpoint"
-  uat_merchant_op_account_name = "cstarditnidpaymeropcdnsa"
+  uat_merchant_op_account_name = "cstaruitnidpaymeropcdnsa"
 
   # PROD PORTALE ESERCENTI OPERATOR
   prod_merchant_op_cdn_profile  = "${local.prefix}-p-${local.location_short}-${local.domain}-portal-merchants-op-cdn-profile"
   prod_merchant_op_cdn_endpoint = "${local.prefix}-p-${local.domain}-portal-merchants-op-cdn-endpoint"
-  prod_merchant_op_account_name = "cstarditnidpaymeropcdnsa"
+  prod_merchant_op_account_name = "cstarpitnidpaymeropcdnsa"
 
 
   #FRONTEND REACT ENV
