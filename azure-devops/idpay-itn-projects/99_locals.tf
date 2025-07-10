@@ -115,12 +115,12 @@ locals {
   # UAT PORTALE UTENTI
   uat_portal_users_cdn_profile  = "${local.prefix}-u-${local.location_short}-${local.domain}-users-portal-cdn-profile"
   uat_portal_users_cdn_endpoint = "${local.prefix}-u-${local.domain}-users-portal-cdn-endpoint"
-  uat_portal_users_account_name = "cstaruitnidpaymeropcdnsa"
+  uat_portal_users_account_name = "cstaruitnidpayuserscdnsa"
 
   # PROD PORTALE UTENTI
   prod_portal_users_cdn_profile  = "${local.prefix}-p-${local.location_short}-${local.domain}-users-portal-cdn-profile"
   prod_portal_users_cdn_endpoint = "${local.prefix}-p-${local.domain}-users-portal-cdn-endpoint"
-  prod_portal_users_account_name = "cstarpitnidpaymeropcdnsa"
+  prod_portal_users_account_name = "cstarpitnidpayuserscdnsa"
 
   #FRONTEND REACT ENV
   dev_react_app_url_cdn                                     = "https://welfare-italy.dev.cstar.pagopa.it/"
