@@ -108,19 +108,19 @@ locals {
   prod_storage_asset_register_account_name = "cstarpitnidpayregcdnsa"
 
   # DEV PORTALE UTENTI
-  dev_portal_users_cdn_profile  = "${local.prefix}-d-${local.location_short}-${local.domain}-users-portal-cdn-profile"
-  dev_portal_users_cdn_endpoint = "${local.prefix}-d-${local.domain}-users-portal-cdn-endpoint"
-  dev_portal_users_account_name = "cstarditnidpayuserscdnsa"
+  dev_portal_users_cdn_profile  = "${local.prefix}-d-${local.location_short}-${local.domain}-bonus-cdn-profile"
+  dev_portal_users_cdn_endpoint = "${local.prefix}-d-${local.domain}-bonus-cdn-endpoint"
+  dev_portal_users_account_name = "cstarditnidpaybonuscdnsa"
 
   # UAT PORTALE UTENTI
-  uat_portal_users_cdn_profile  = "${local.prefix}-u-${local.location_short}-${local.domain}-users-portal-cdn-profile"
-  uat_portal_users_cdn_endpoint = "${local.prefix}-u-${local.domain}-users-portal-cdn-endpoint"
-  uat_portal_users_account_name = "cstaruitnidpayuserscdnsa"
+  uat_portal_users_cdn_profile  = "${local.prefix}-u-${local.location_short}-${local.domain}-bonus-cdn-profile"
+  uat_portal_users_cdn_endpoint = "${local.prefix}-u-${local.domain}-bonus-cdn-endpoint"
+  uat_portal_users_account_name = "cstaruitnidpaybonuscdnsa"
 
   # PROD PORTALE UTENTI
-  prod_portal_users_cdn_profile  = "${local.prefix}-p-${local.location_short}-${local.domain}-users-portal-cdn-profile"
-  prod_portal_users_cdn_endpoint = "${local.prefix}-p-${local.domain}-users-portal-cdn-endpoint"
-  prod_portal_users_account_name = "cstarpitnidpayuserscdnsa"
+  prod_portal_users_cdn_profile  = "${local.prefix}-p-${local.location_short}-${local.domain}-bonus-cdn-profile"
+  prod_portal_users_cdn_endpoint = "${local.prefix}-p-${local.domain}-bonus-cdn-endpoint"
+  prod_portal_users_account_name = "cstarpitnidpaybonuscdnsa"
 
   #FRONTEND REACT ENV
   dev_react_app_url_cdn                                     = "https://welfare-italy.dev.cstar.pagopa.it/"
