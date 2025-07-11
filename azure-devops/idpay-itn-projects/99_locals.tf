@@ -122,7 +122,6 @@ locals {
   prod_merchant_op_cdn_endpoint = "${local.prefix}-p-${local.domain}-portal-merchants-op-cdn-endpoint"
   prod_merchant_op_account_name = "cstarpitnidpaymeropcdnsa"
 
-
   #FRONTEND REACT ENV
   dev_react_app_url_cdn                                     = "https://welfare-italy.dev.cstar.pagopa.it/"
   dev_react_app_url_storage                                 = "https://cstarditnidpaywelcdnsa.z38.web.core.windows.net/"
