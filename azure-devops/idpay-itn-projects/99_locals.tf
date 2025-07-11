@@ -108,19 +108,22 @@ locals {
   prod_storage_asset_register_account_name = "cstarpitnidpayregcdnsa"
 
   # DEV PORTALE ESERCENTI OPERATOR
-  dev_merchant_op_cdn_profile  = "${local.prefix}-d-${local.location_short}-${local.domain}-portal-merchants-op-cdn-profile"
-  dev_merchant_op_cdn_endpoint = "${local.prefix}-d-${local.domain}-portal-merchants-op-cdn-endpoint"
-  dev_merchant_op_account_name = "cstarditnidpaymeropcdnsa"
+  dev_merchant_op_account_rg                  = "${local.prefix}-d-${local.location_short}-${local.domain}-data-rg"
+  dev_merchant_op_cdn_profile  = "${local.prefix}-d-weu-${local.domain}-portal-merchants-op-cdn-profile"
+  dev_merchant_op_cdn_endpoint = "${local.prefix}-d-weu-${local.domain}-portal-merchants-op-cdn-endpoint"
+  dev_merchant_op_account_name = "cstarditnidpaybonuscdnsa"
 
   # UAT PORTALE ESERCENTI OPERATOR
-  uat_merchant_op_cdn_profile  = "${local.prefix}-u-${local.location_short}-${local.domain}-portal-merchants-op-cdn-profile"
-  uat_merchant_op_cdn_endpoint = "${local.prefix}-u-${local.domain}-portal-merchants-op-cdn-endpoint"
-  uat_merchant_op_account_name = "cstaruitnidpaymeropcdnsa"
+  uat_merchant_op_account_rg                  = "${local.prefix}-u-${local.location_short}-${local.domain}-data-rg"
+  uat_merchant_op_cdn_profile  = "${local.prefix}-u-weu-${local.domain}-portal-merchants-op-cdn-profile"
+  uat_merchant_op_cdn_endpoint = "${local.prefix}-u-weu-${local.domain}-portal-merchants-op-cdn-endpoint"
+  uat_merchant_op_account_name = "cstaruitnidpaybonuscdnsa"
 
   # PROD PORTALE ESERCENTI OPERATOR
-  prod_merchant_op_cdn_profile  = "${local.prefix}-p-${local.location_short}-${local.domain}-portal-merchants-op-cdn-profile"
-  prod_merchant_op_cdn_endpoint = "${local.prefix}-p-${local.domain}-portal-merchants-op-cdn-endpoint"
-  prod_merchant_op_account_name = "cstarpitnidpaymeropcdnsa"
+  prod_merchant_op_account_rg                  = "${local.prefix}-p-${local.location_short}-${local.domain}-data-rg"
+  prod_merchant_op_cdn_profile  = "${local.prefix}-p-weu-${local.domain}-portal-merchants-op-cdn-profile"
+  prod_merchant_op_cdn_endpoint = "${local.prefix}-p-weu-${local.domain}-portal-merchants-op-cdn-endpoint"
+  prod_merchant_op_account_name = "cstarpitnidpaybonuscdnsa"
 
   #FRONTEND REACT ENV
   dev_react_app_url_cdn                                     = "https://welfare-italy.dev.cstar.pagopa.it/"

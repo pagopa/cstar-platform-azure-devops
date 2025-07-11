@@ -25,7 +25,7 @@ locals {
     DEV_AZURE_SUBSCRIPTION         = local.dev_service_endpoint_azure_id
     DEV_CDN_ENDPOINT               = local.dev_merchant_op_cdn_endpoint
     DEV_CDN_PROFILE                = local.dev_merchant_op_cdn_profile
-    DEV_RESOURCE_GROUP             = local.dev_storage_account_rg
+    DEV_RESOURCE_GROUP             = local.dev_merchant_op_account_rg
     DEV_STORAGE_ACCOUNT            = local.dev_merchant_op_account_name
     DEV_ANALYTICS_ENABLED          = local.dev_analytics_enabled
     DEV_ANALYTICS_MOCKED           = local.dev_analytics_mocked
@@ -37,7 +37,7 @@ locals {
     UAT_AZURE_SUBSCRIPTION         = local.uat_service_endpoint_azure_id
     UAT_CDN_ENDPOINT               = local.uat_merchant_op_cdn_endpoint
     UAT_CDN_PROFILE                = local.uat_merchant_op_cdn_profile
-    UAT_RESOURCE_GROUP             = local.uat_storage_account_rg
+    UAT_RESOURCE_GROUP             = local.uat_merchant_op_account_rg
     UAT_STORAGE_ACCOUNT            = local.uat_merchant_op_account_name
     UAT_ANALYTICS_ENABLED          = local.uat_analytics_enabled
     UAT_ANALYTICS_MOCKED           = local.uat_analytics_mocked
@@ -49,7 +49,7 @@ locals {
     PROD_AZURE_SUBSCRIPTION         = local.prod_service_endpoint_azure_id
     PROD_CDN_ENDPOINT               = local.prod_merchant_op_cdn_endpoint
     PROD_CDN_PROFILE                = local.prod_merchant_op_cdn_profile
-    PROD_RESOURCE_GROUP             = local.prod_storage_account_rg
+    PROD_RESOURCE_GROUP             = local.prod_merchant_op_account_rg
     PROD_STORAGE_ACCOUNT            = local.prod_merchant_op_account_name
     PROD_ANALYTICS_ENABLED          = local.prod_analytics_enabled
     PROD_ANALYTICS_MOCKED           = local.prod_analytics_mocked
