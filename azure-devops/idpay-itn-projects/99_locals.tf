@@ -100,9 +100,9 @@ locals {
   uat_storage_asset_register_account_name = "cstaruitnidpayregcdnsa"
 
   # PROD REGISTRO DEI BENI
-  prod_cdn_profile                          = "${local.prefix}-p-weu-${local.domain}-asset-register-cdn-profile"
-  prod_cdn_endpoint                         = "${local.prefix}-p-weu-${local.domain}-asset-register-cdn-endpoint"
-  prod_storage_asset_register_account_name  = "cstarpitnidpayregcdnsa"
+  prod_cdn_profile                         = "${local.prefix}-p-weu-${local.domain}-asset-register-cdn-profile"
+  prod_cdn_endpoint                        = "${local.prefix}-p-weu-${local.domain}-asset-register-cdn-endpoint"
+  prod_storage_asset_register_account_name = "cstarpitnidpayregcdnsa"
 
   # DEV PORTALE UTENTI
   dev_portal_users_cdn_profile  = "${local.prefix}-d-weu-${local.domain}-bonus-cdn-profile"
@@ -256,7 +256,6 @@ locals {
   prod_vite_keycloak_url                                 = "https://api-mcshared.cstar.pagopa.it/auth-itn"
   prod_vite_keycloak_realm                               = "merchant-operator"
   prod_vite_keycloak_client_id                           = "frontend"
-  prod_vite_keycloak_url                                 = "https://api-mcshared.cstar.pagopa.it/auth-itn"
   prod_vite_keycloak_redirect_uri                        = "https://bonuselettrodomestici.it/esercente"
 }
 
