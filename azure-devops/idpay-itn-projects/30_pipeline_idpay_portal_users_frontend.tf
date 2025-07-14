@@ -25,7 +25,7 @@ locals {
     DEV_AZURE_SUBSCRIPTION = local.dev_service_endpoint_azure_id
     DEV_CDN_ENDPOINT       = local.dev_portal_users_cdn_endpoint
     DEV_CDN_PROFILE        = local.dev_portal_users_cdn_profile
-    DEV_RESOURCE_GROUP     = local.dev_storage_account_rg
+    DEV_RESOURCE_GROUP     = local.dev_welfare_storage_account_rg
     DEV_STORAGE_ACCOUNT    = local.dev_portal_users_account_name
     DEV_ANALYTICS_ENABLED  = local.dev_analytics_enabled
     DEV_ANALYTICS_MOCKED   = local.dev_analytics_mocked
@@ -39,7 +39,7 @@ locals {
     UAT_ANALYTICS_MOCKED   = local.uat_analytics_mocked
     UAT_CDN_ENDPOINT       = local.uat_portal_users_cdn_endpoint
     UAT_CDN_PROFILE        = local.uat_portal_users_cdn_profile
-    UAT_RESOURCE_GROUP     = local.uat_storage_account_rg
+    UAT_RESOURCE_GROUP     = local.uat_welfare_storage_account_rg
     UAT_STORAGE_ACCOUNT    = local.uat_portal_users_account_name
     #UAT_VITE_KEYCLOAK_URL       = local.uat_vite_keycloak_url
     #UAT_VITE_KEYCLOAK_REALM     = local.uat_vite_keycloak_realm
@@ -50,7 +50,7 @@ locals {
     PROD_ANALYTICS_MOCKED   = local.prod_analytics_mocked
     PROD_CDN_ENDPOINT       = local.prod_portal_users_cdn_endpoint
     PROD_CDN_PROFILE        = local.prod_portal_users_cdn_profile
-    PROD_RESOURCE_GROUP     = local.prod_storage_account_rg
+    PROD_RESOURCE_GROUP     = local.prod_welfare_storage_account_rg
     PROD_STORAGE_ACCOUNT    = local.prod_portal_users_account_name
     #PROD_VITE_KEYCLOAK_URL       = local.prod_vite_keycloak_url
     #PROD_VITE_KEYCLOAK_REALM     = local.prod_vite_keycloak_realm

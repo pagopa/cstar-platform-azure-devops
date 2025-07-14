@@ -89,38 +89,50 @@ locals {
   prod_welfare_storage_account_name = replace("${local.prefix}-p-${local.location_short}-${local.domain}-wel-cdn-sa", "-", "")
 
   # DEV REGISTRO DEI BENI
-  dev_cdn_profile                         = "${local.prefix}-d-${local.domain}-cdn-profile"
-  dev_cdn_endpoint                        = "${local.prefix}-d-${local.domain}-cdn-endpoint"
-  dev_storage_account_rg                  = "${local.prefix}-d-${local.location_short}-${local.domain}-cdn-rg"
+  dev_cdn_profile                         = "${local.prefix}-d-weu-${local.domain}-asset-register-cdn-profile"
+  dev_cdn_endpoint                        = "${local.prefix}-d-weu-${local.domain}-asset-register-cdn-endpoint"
   dev_storage_asset_register_account_name = "cstarditnidpayregcdnsa"
 
 
   # UAT REGISTRO DEI BENI
-  uat_cdn_profile                         = "${local.prefix}-u-${local.domain}-cdn-profile"
-  uat_cdn_endpoint                        = "${local.prefix}-u-${local.domain}-cdn-endpoint"
-  uat_storage_account_rg                  = "${local.prefix}-u-${local.location_short}-${local.domain}-cdn-rg"
+  uat_cdn_profile                         = "${local.prefix}-u-weu-${local.domain}-asset-register-cdn-profile"
+  uat_cdn_endpoint                        = "${local.prefix}-u-weu-${local.domain}-asset-register-cdn-endpoint"
   uat_storage_asset_register_account_name = "cstaruitnidpayregcdnsa"
 
   # PROD REGISTRO DEI BENI
-  prod_cdn_profile                         = "${local.prefix}-p-${local.domain}-cdn-profile"
-  prod_cdn_endpoint                        = "${local.prefix}-p-${local.domain}-cdn-endpoint"
-  prod_storage_account_rg                  = "${local.prefix}-p-${local.location_short}-${local.domain}-cdn-rg"
+  prod_cdn_profile                         = "${local.prefix}-p-weu-${local.domain}-asset-register-cdn-profile"
+  prod_cdn_endpoint                        = "${local.prefix}-p-weu-${local.domain}-asset-register-cdn-endpoint"
   prod_storage_asset_register_account_name = "cstarpitnidpayregcdnsa"
 
   # DEV PORTALE UTENTI
-  dev_portal_users_cdn_profile  = "${local.prefix}-d-${local.location_short}-${local.domain}-bonus-cdn-profile"
-  dev_portal_users_cdn_endpoint = "${local.prefix}-d-${local.domain}-bonus-cdn-endpoint"
+  dev_portal_users_cdn_profile  = "${local.prefix}-d-weu-${local.domain}-bonus-cdn-profile"
+  dev_portal_users_cdn_endpoint = "${local.prefix}-d-weu-${local.domain}-bonus-cdn-endpoint"
   dev_portal_users_account_name = "cstarditnidpaybonuscdnsa"
 
   # UAT PORTALE UTENTI
-  uat_portal_users_cdn_profile  = "${local.prefix}-u-${local.location_short}-${local.domain}-bonus-cdn-profile"
-  uat_portal_users_cdn_endpoint = "${local.prefix}-u-${local.domain}-bonus-cdn-endpoint"
+  uat_portal_users_cdn_profile  = "${local.prefix}-u-weu-${local.domain}-bonus-cdn-profile"
+  uat_portal_users_cdn_endpoint = "${local.prefix}-u-weu-${local.domain}-bonus-cdn-endpoint"
   uat_portal_users_account_name = "cstaruitnidpaybonuscdnsa"
 
   # PROD PORTALE UTENTI
-  prod_portal_users_cdn_profile  = "${local.prefix}-p-${local.location_short}-${local.domain}-bonus-cdn-profile"
-  prod_portal_users_cdn_endpoint = "${local.prefix}-p-${local.domain}-bonus-cdn-endpoint"
+  prod_portal_users_cdn_profile  = "${local.prefix}-p-weu-${local.domain}-bonus-cdn-profile"
+  prod_portal_users_cdn_endpoint = "${local.prefix}-p-weu-${local.domain}-bonus-cdn-endpoint"
   prod_portal_users_account_name = "cstarpitnidpaybonuscdnsa"
+
+  # DEV PORTALE ESERCENTI OPERATOR
+  dev_merchant_op_cdn_profile  = "${local.prefix}-d-weu-${local.domain}-bonus-cdn-profile"
+  dev_merchant_op_cdn_endpoint = "${local.prefix}-d-weu-${local.domain}-bonus-cdn-endpoint"
+  dev_merchant_op_account_name = "cstarditnidpaybonuscdnsa"
+
+  # UAT PORTALE ESERCENTI OPERATOR
+  uat_merchant_op_cdn_profile  = "${local.prefix}-u-weu-${local.domain}-bonus-cdn-profile"
+  uat_merchant_op_cdn_endpoint = "${local.prefix}-u-weu-${local.domain}-bonus-cdn-endpoint"
+  uat_merchant_op_account_name = "cstaruitnidpaybonuscdnsa"
+
+  # PROD PORTALE ESERCENTI OPERATOR
+  prod_merchant_op_cdn_profile  = "${local.prefix}-p-weu-${local.domain}-bonus-cdn-profile"
+  prod_merchant_op_cdn_endpoint = "${local.prefix}-p-weu-${local.domain}-bonus-cdn-endpoint"
+  prod_merchant_op_account_name = "cstarpitnidpaybonuscdnsa"
 
   #FRONTEND REACT ENV
   dev_react_app_url_cdn                                     = "https://welfare-italy.dev.cstar.pagopa.it/"
@@ -222,6 +234,7 @@ locals {
   dev_vite_keycloak_url                                 = "https://api-mcshared.dev.cstar.pagopa.it/auth-itn"
   dev_vite_keycloak_realm                               = "merchant-operator"
   dev_vite_keycloak_client_id                           = "frontend"
+  dev_vite_keycloak_redirect_uri                        = "https://dev.bonuselettrodomestici.it/esercente"
 
   uat_react_app_asset_register_url_cdn                  = "https://registrodeibeni.uat.cstar.pagopa.it/"
   uat_react_app_asset_register_url_storage              = "https://cstaruitnidpayregcdnsa.z38.web.core.windows.net"
@@ -229,9 +242,10 @@ locals {
   uat_react_app_asset_register_url_fe_login             = "https://uat.selfcare.pagopa.it/auth"
   uat_react_app_asset_register_url_fe_assistance_portal = "/registro-dei-beni/assistenza"
   uat_react_app_asset_register_url_fe_landing           = "https://uat.selfcare.pagopa.it/auth/logout"
-  uat_vite_keycloak_url                                 = "TODO"
+  uat_vite_keycloak_url                                 = "https://api-mcshared.uat.cstar.pagopa.it/auth-itn"
   uat_vite_keycloak_realm                               = "merchant-operator"
   uat_vite_keycloak_client_id                           = "frontend"
+  uat_vite_keycloak_redirect_uri                        = "https://uat.bonuselettrodomestici.it/esercente"
 
   prod_react_app_asset_register_url_cdn                  = "https://registrodeibeni.cstar.pagopa.it/"
   prod_react_app_asset_register_url_storage              = "https://cstarpitnidpayregcdnsa.z38.web.core.windows.net"
@@ -239,9 +253,10 @@ locals {
   prod_react_app_asset_register_url_fe_login             = "https://selfcare.pagopa.it/auth"
   prod_react_app_asset_register_url_fe_assistance_portal = "/registro-dei-beni/assistenza"
   prod_react_app_asset_register_url_fe_landing           = "https://selfcare.pagopa.it/auth/logout"
-  prod_vite_keycloak_url                                 = "TODO"
+  prod_vite_keycloak_url                                 = "https://api-mcshared.cstar.pagopa.it/auth-itn"
   prod_vite_keycloak_realm                               = "merchant-operator"
   prod_vite_keycloak_client_id                           = "frontend"
+  prod_vite_keycloak_redirect_uri                        = "https://bonuselettrodomestici.it/esercente"
 }
 
 # LOCAL TLS CERT
