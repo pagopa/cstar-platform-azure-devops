@@ -8,6 +8,25 @@ locals {
 
   devops_project_id = data.azuredevops_project.this.project_id
 
+  # Default Domain Resource Group
+  dev_data_rg_name  = "${local.prefix}-d-${local.location_short}-${local.domain}-data-rg"
+  uat_data_rg_name  = "${local.prefix}-u-${local.location_short}-${local.domain}-data-rg"
+  prod_data_rg_name = "${local.prefix}-p-${local.location_short}-${local.domain}-data-rg"
+
+  # Storage Accounts
+  dev_storage_account_name  = "${local.prefix}d${local.location_short}${local.domain}fesa"
+  uat_storage_account_name  = "${local.prefix}u${local.location_short}${local.domain}fesa"
+  prod_storage_account_name = "${local.prefix}p${local.location_short}${local.domain}fesa"
+
+  # CDN
+  dev_cdn_endpoint  = "${local.prefix}-d-${local.location_short}-${local.domain}-fe-cdn-endpoint"
+  dev_cdn_profile   = "${local.prefix}-d-${local.location_short}-${local.domain}-fe-cdn-profile"
+  uat_cdn_endpoint  = "${local.prefix}-u-${local.location_short}-${local.domain}-fe-cdn-endpoint"
+  uat_cdn_profile   = "${local.prefix}-u-${local.location_short}-${local.domain}-fe-cdn-profile"
+  prod_cdn_endpoint = "${local.prefix}-p-${local.location_short}-${local.domain}-fe-cdn-endpoint"
+  prod_cdn_profile  = "${local.prefix}-p-${local.location_short}-${local.domain}-fe-cdn-profile"
+
+  #
   # Subscriptions
   dev_subscription_name  = data.azurerm_subscriptions.dev.subscriptions[0].display_name
   uat_subscription_name  = data.azurerm_subscriptions.uat.subscriptions[0].display_name
@@ -39,16 +58,6 @@ locals {
   dev_identity_rg_name  = "cstar-d-itn-srtp-cicd-rg"
   uat_identity_rg_name  = "cstar-u-itn-srtp-cicd-rg"
   prod_identity_rg_name = "cstar-p-itn-srtp-cicd-rg"
-
-  ### Agent Pool
-  azdo_agent_pool_dev  = "cstar-dev-linux"
-  azdo_agent_pool_uat  = "cstar-uat-linux"
-  azdo_agent_pool_prod = "cstar-prod-linux"
-
-  ### AKS
-  dev_aks_name  = "${local.prefix}-d-${local.location_short}-aks"
-  uat_aks_name  = "${local.prefix}-u-${local.location_short}-aks"
-  prod_aks_name = "${local.prefix}-p-${local.location_short}-aks"
 
   ### Service connections/endpoints Azure
   dev_service_endpoint_azure_id    = data.azuredevops_serviceendpoint_azurerm.dev_azurerm_service_conn.service_endpoint_id
