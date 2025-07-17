@@ -32,6 +32,7 @@ locals {
     DEV_REACT_APP_URL_FE_LANDING           = local.dev_react_app_asset_register_url_fe_landing
     DEV_REACT_APP_URL_FE_ASSISTANCE_PORTAL = local.dev_react_app_asset_register_url_fe_assistance_portal
     DEV_REACT_APP_URL_STORAGE              = local.dev_react_app_asset_register_url_storage
+    DEV_REACT_APP_URL_API_REGISTER         = local.dev_react_app_url_api_register
 
     UAT_AZURE_SUBSCRIPTION                 = local.uat_service_endpoint_azure_id
     UAT_CDN_ENDPOINT                       = local.uat_cdn_endpoint
@@ -44,6 +45,7 @@ locals {
     UAT_REACT_APP_URL_FE_LANDING           = local.uat_react_app_asset_register_url_fe_landing
     UAT_REACT_APP_URL_FE_ASSISTANCE_PORTAL = local.uat_react_app_asset_register_url_fe_assistance_portal
     UAT_REACT_APP_URL_STORAGE              = local.uat_react_app_asset_register_url_storage
+    UAT_REACT_APP_URL_API_REGISTER         = local.uat_react_app_url_api_register
 
     PROD_AZURE_SUBSCRIPTION                 = local.prod_service_endpoint_azure_id
     PROD_CDN_ENDPOINT                       = local.prod_cdn_endpoint
@@ -56,6 +58,7 @@ locals {
     PROD_REACT_APP_URL_FE_LANDING           = local.prod_react_app_asset_register_url_fe_landing
     PROD_REACT_APP_URL_FE_ASSISTANCE_PORTAL = local.prod_react_app_asset_register_url_fe_assistance_portal
     PROD_REACT_APP_URL_STORAGE              = local.prod_react_app_asset_register_url_storage
+    PROD_REACT_APP_URL_API_REGISTER         = local.prod_react_app_url_api_register
 
   }
 }
