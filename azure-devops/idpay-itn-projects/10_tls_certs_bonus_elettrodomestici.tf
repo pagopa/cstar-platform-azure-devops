@@ -1,6 +1,6 @@
 locals {
   # Domains and environment configs
-  bonus_elettrodomestici_domains   = ["it", "com", "info", "io", "net", "eu"]
+  bonus_elettrodomestici_domains   = ["it", "com", "info", "io", "net", "eu", "pagopa.it"]
   environments                     = ["dev", "uat", "prod"]
   key_vault_service_connection_key = "KEY_VAULT_SERVICE_CONNECTION"
 
