@@ -45,9 +45,9 @@ locals {
     UAT_POSTMAN_ENV_SECRET_NAME       = "postman-environment"
 
     PROD_AGENT_POOL                    = local.azdo_agent_pool_prod
-    PROD_ARGOCD_SERVER                 = "" #module.domain_prod_secrets.values["argocd-server-url"].value
-    PROD_ARGOCD_USERNAME               = "" #module.domain_prod_secrets.values["argocd-admin-username"].value
-    PROD_ARGOCD_PASSWORD               = "" #module.domain_prod_secrets.values["argocd-admin-password"].value
+    PROD_ARGOCD_SERVER                 = module.domain_prod_secrets.values["argocd-server-url"].value
+    PROD_ARGOCD_USERNAME               = module.domain_prod_secrets.values["argocd-admin-username"].value
+    PROD_ARGOCD_PASSWORD               = module.domain_prod_secrets.values["argocd-admin-password"].value
     PROD_AZURE_SERVICE_CONNECTION_NAME = local.prod_service_endpoint_azure_name
     PROD_POSTMAN_KV_NAME               = local.prod_kv_domain_name
     PROD_POSTMAN_ENV_SECRET_NAME       = "postman-environment"
