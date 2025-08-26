@@ -71,9 +71,9 @@ locals {
   service_connection_github_pr_name = azuredevops_serviceendpoint_github.idpay_bot_github_pr.service_endpoint_name
 
   # Storage Account & CDN
-  dev_storage_account_rg   = "${local.prefix}-d-${local.location_short}-${local.domain}-data-rg"
-  uat_storage_account_rg   = "${local.prefix}-u-${local.location_short}-${local.domain}-data-rg"
-  prod_storage_account_rg   = "${local.prefix}-p-${local.location_short}-${local.domain}-data-rg"
+  dev_storage_account_rg  = "${local.prefix}-d-${local.location_short}-${local.domain}-data-rg"
+  uat_storage_account_rg  = "${local.prefix}-u-${local.location_short}-${local.domain}-data-rg"
+  prod_storage_account_rg = "${local.prefix}-p-${local.location_short}-${local.domain}-data-rg"
 
   #---------------------------------------------------------------------------------------------------------
   # WELFARE
@@ -133,8 +133,8 @@ locals {
   prod_bonus_portal_users_account_name = "cstarpitnidpaybonuscdnsa"
 
   # DEV PORTALE ESERCENTI OPERATOR
-  dev_bonus_merchant_op_cdn_profile  = "${local.prefix}-d-itn-${local.domain}-bonus-cdn-profile"
-  dev_bonus_merchant_op_cdn_endpoint = "${local.prefix}-d-itn-${local.domain}-bonus-cdn-endpoint"
+  dev_bonus_merchant_op_cdn_profile          = "${local.prefix}-d-itn-${local.domain}-bonus-cdn-profile"
+  dev_bonus_merchant_op_cdn_endpoint         = "${local.prefix}-d-itn-${local.domain}-bonus-cdn-endpoint"
   dev_bonus_merchant_op_storage_account_name = "cstarditnidpaybonuscdnsa"
 
   # UAT PORTALE ESERCENTI OPERATOR
