@@ -9,7 +9,7 @@ variable "idpay_asset_register_frontend" {
       yml_prefix_name = null
     }
     pipeline = {
-      path = "idpay\\idpay-asset-register-frontend"
+      path = "idpay\\idpay-portal-asset-register-frontend"
     }
   }
 }

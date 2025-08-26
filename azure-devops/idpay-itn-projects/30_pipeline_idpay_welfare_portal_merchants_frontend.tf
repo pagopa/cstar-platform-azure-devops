@@ -9,7 +9,7 @@ variable "idpay-portal-merchants-frontend" {
       yml_prefix_name = null
     }
     pipeline = {
-      path = "idpay\\idpay-welfare-portal-merchants-frontend"
+      path = "idpay\\idpay-portal-welfare-merchants-frontend"
     }
   }
 }
