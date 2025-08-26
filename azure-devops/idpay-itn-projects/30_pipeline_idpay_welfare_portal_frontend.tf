@@ -2,7 +2,7 @@ variable "idpay-portal-welfare-frontend" {
   default = {
     repository = {
       organization    = "pagopa"
-      name            = "idpay-portal-welfare-frontend"
+      name            = "idpay-welfare-portal-frontend"
       path            = "idpay\\frontend"
       branch_name     = "refs/heads/main"
       pipelines_path  = ".devops"
@@ -26,7 +26,7 @@ locals {
     DEV_AZURE_SUBSCRIPTION                          = local.dev_service_endpoint_azure_id
     DEV_CDN_ENDPOINT                                = local.dev_welfare_cdn_endpoint
     DEV_CDN_PROFILE                                 = local.dev_welfare_cdn_profile
-    DEV_RESOURCE_GROUP                              = local.dev_welfare_storage_account_rg
+    DEV_RESOURCE_GROUP                              = local.dev_storage_account_rg
     DEV_STORAGE_ACCOUNT                             = local.dev_welfare_storage_account_name
     DEV_REACT_APP_URL_CDN                           = local.dev_react_app_url_cdn
     DEV_REACT_APP_URL_FE_PRE_LOGIN                  = local.dev_react_app_url_fe_pre_login
@@ -53,7 +53,7 @@ locals {
     UAT_AZURE_SUBSCRIPTION                          = local.uat_service_endpoint_azure_id
     UAT_CDN_ENDPOINT                                = local.uat_welfare_cdn_endpoint
     UAT_CDN_PROFILE                                 = local.uat_welfare_cdn_profile
-    UAT_RESOURCE_GROUP                              = local.uat_welfare_storage_account_rg
+    UAT_RESOURCE_GROUP                              = local.uat_storage_account_rg
     UAT_STORAGE_ACCOUNT                             = local.uat_welfare_storage_account_name
     UAT_REACT_APP_URL_CDN                           = local.uat_react_app_url_cdn
     UAT_REACT_APP_URL_FE_PRE_LOGIN                  = local.uat_react_app_url_fe_pre_login
@@ -80,7 +80,7 @@ locals {
     PROD_AZURE_SUBSCRIPTION                          = local.prod_service_endpoint_azure_id
     PROD_CDN_ENDPOINT                                = local.prod_welfare_cdn_endpoint
     PROD_CDN_PROFILE                                 = local.prod_welfare_cdn_profile
-    PROD_RESOURCE_GROUP                              = local.prod_welfare_storage_account_rg
+    PROD_RESOURCE_GROUP                              = local.prod_storage_account_rg
     PROD_STORAGE_ACCOUNT                             = local.prod_welfare_storage_account_name
     PROD_REACT_APP_URL_CDN                           = local.prod_react_app_url_cdn
     PROD_REACT_APP_URL_FE_PRE_LOGIN                  = local.prod_react_app_url_fe_pre_login

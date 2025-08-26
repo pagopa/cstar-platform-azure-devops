@@ -70,69 +70,70 @@ locals {
   service_connection_github_pr_id   = azuredevops_serviceendpoint_github.idpay_bot_github_pr.id
   service_connection_github_pr_name = azuredevops_serviceendpoint_github.idpay_bot_github_pr.service_endpoint_name
 
+  # Storage Account & CDN
+  dev_storage_account_rg   = "${local.prefix}-d-${local.location_short}-${local.domain}-data-rg"
+  uat_storage_account_rg   = "${local.prefix}-u-${local.location_short}-${local.domain}-data-rg"
+  prod_storage_account_rg   = "${local.prefix}-p-${local.location_short}-${local.domain}-data-rg"
+
   # DEV WELFARE
   dev_welfare_cdn_profile          = "${local.prefix}-d-weu-${local.domain}-welfare-cdn-profile"
   dev_welfare_cdn_endpoint         = "${local.prefix}-d-weu-${local.domain}-welfare-cdn-endpoint"
-  dev_welfare_storage_account_rg   = "${local.prefix}-d-${local.location_short}-${local.domain}-data-rg"
   dev_welfare_storage_account_name = replace("${local.prefix}-d-${local.location_short}-${local.domain}-wel-cdn-sa", "-", "")
 
   # UAT
   uat_welfare_cdn_profile          = "${local.prefix}-u-weu-${local.domain}-welfare-cdn-profile"
   uat_welfare_cdn_endpoint         = "${local.prefix}-u-weu-${local.domain}-welfare-cdn-endpoint"
-  uat_welfare_storage_account_rg   = "${local.prefix}-u-${local.location_short}-${local.domain}-data-rg"
   uat_welfare_storage_account_name = replace("${local.prefix}-u-${local.location_short}-${local.domain}-wel-cdn-sa", "-", "")
 
   # PROD
   prod_welfare_cdn_profile          = "${local.prefix}-p-weu-${local.domain}-welfare-cdn-profile"
   prod_welfare_cdn_endpoint         = "${local.prefix}-p-weu-${local.domain}-welfare-cdn-endpoint"
-  prod_welfare_storage_account_rg   = "${local.prefix}-p-${local.location_short}-${local.domain}-data-rg"
   prod_welfare_storage_account_name = replace("${local.prefix}-p-${local.location_short}-${local.domain}-wel-cdn-sa", "-", "")
 
   # DEV REGISTRO DEI BENI
-  dev_cdn_profile                         = "${local.prefix}-d-weu-${local.domain}-asset-register-cdn-profile"
-  dev_cdn_endpoint                        = "${local.prefix}-d-weu-${local.domain}-asset-register-cdn-endpoint"
-  dev_storage_asset_register_account_name = "cstarditnidpayregcdnsa"
-
+  dev_asset_cdn_profile                         = "${local.prefix}-d-weu-${local.domain}-asset-register-cdn-profile"
+  dev_asset_cdn_endpoint                        = "${local.prefix}-d-weu-${local.domain}-asset-register-cdn-endpoint"
+  dev_asset_storage_asset_register_account_name = "cstarditnidpayregcdnsa"
 
   # UAT REGISTRO DEI BENI
-  uat_cdn_profile                         = "${local.prefix}-u-weu-${local.domain}-asset-register-cdn-profile"
-  uat_cdn_endpoint                        = "${local.prefix}-u-weu-${local.domain}-asset-register-cdn-endpoint"
-  uat_storage_asset_register_account_name = "cstaruitnidpayregcdnsa"
+  uat_asset_cdn_profile                         = "${local.prefix}-u-weu-${local.domain}-asset-register-cdn-profile"
+  uat_asset_cdn_endpoint                        = "${local.prefix}-u-weu-${local.domain}-asset-register-cdn-endpoint"
+  uat_asset_storage_asset_register_account_name = "cstaruitnidpayregcdnsa"
 
   # PROD REGISTRO DEI BENI
-  prod_cdn_profile                         = "${local.prefix}-p-weu-${local.domain}-asset-register-cdn-profile"
-  prod_cdn_endpoint                        = "${local.prefix}-p-weu-${local.domain}-asset-register-cdn-endpoint"
-  prod_storage_asset_register_account_name = "cstarpitnidpayregcdnsa"
+  prod_asset_cdn_profile                         = "${local.prefix}-p-weu-${local.domain}-asset-register-cdn-profile"
+  prod_asset_cdn_endpoint                        = "${local.prefix}-p-weu-${local.domain}-asset-register-cdn-endpoint"
+  prod_asset_storage_asset_register_account_name = "cstarpitnidpayregcdnsa"
 
   # DEV PORTALE UTENTI
-  dev_portal_users_cdn_profile  = "${local.prefix}-d-weu-${local.domain}-bonus-cdn-profile"
-  dev_portal_users_cdn_endpoint = "${local.prefix}-d-weu-${local.domain}-bonus-cdn-endpoint"
-  dev_portal_users_account_name = "cstarditnidpaybonuscdnsa"
+  dev_bonus_portal_users_cdn_profile  = "${local.prefix}-d-weu-${local.domain}-bonus-cdn-profile"
+  dev_bonus_portal_users_cdn_endpoint = "${local.prefix}-d-weu-${local.domain}-bonus-cdn-endpoint"
+  dev_bonus_portal_users_account_name = "cstarditnidpaybonuscdnsa"
 
   # UAT PORTALE UTENTI
-  uat_portal_users_cdn_profile  = "${local.prefix}-u-weu-${local.domain}-bonus-cdn-profile"
-  uat_portal_users_cdn_endpoint = "${local.prefix}-u-weu-${local.domain}-bonus-cdn-endpoint"
-  uat_portal_users_account_name = "cstaruitnidpaybonuscdnsa"
+  uat_bonus_portal_users_cdn_profile  = "${local.prefix}-u-weu-${local.domain}-bonus-cdn-profile"
+  uat_bonus_portal_users_cdn_endpoint = "${local.prefix}-u-weu-${local.domain}-bonus-cdn-endpoint"
+  uat_bonus_portal_users_account_name = "cstaruitnidpaybonuscdnsa"
 
   # PROD PORTALE UTENTI
-  prod_portal_users_cdn_profile  = "${local.prefix}-p-weu-${local.domain}-bonus-cdn-profile"
-  prod_portal_users_cdn_endpoint = "${local.prefix}-p-weu-${local.domain}-bonus-cdn-endpoint"
-  prod_portal_users_account_name = "cstarpitnidpaybonuscdnsa"
+  prod_bonus_portal_users_cdn_profile  = "${local.prefix}-p-weu-${local.domain}-bonus-cdn-profile"
+  prod_bonus_portal_users_cdn_endpoint = "${local.prefix}-p-weu-${local.domain}-bonus-cdn-endpoint"
+  prod_bonus_portal_users_account_name = "cstarpitnidpaybonuscdnsa"
 
   # DEV PORTALE ESERCENTI OPERATOR
-  dev_merchant_op_cdn_profile  = "${local.prefix}-d-weu-${local.domain}-bonus-cdn-profile"
-  dev_merchant_op_cdn_endpoint = "${local.prefix}-d-weu-${local.domain}-bonus-cdn-endpoint"
-  dev_merchant_op_account_name = "cstarditnidpaybonuscdnsa"
+  dev_bonus_merchant_op_cdn_profile  = "${local.prefix}-d-weu-${local.domain}-bonus-cdn-profile"
+  dev_bonus_merchant_op_cdn_endpoint = "${local.prefix}-d-weu-${local.domain}-bonus-cdn-endpoint"
+  dev_bonus_merchant_op_storage_account_name = "cstarditnidpaybonuscdnsa"
 
   # UAT PORTALE ESERCENTI OPERATOR
-  uat_merchant_op_cdn_profile  = "${local.prefix}-u-weu-${local.domain}-bonus-cdn-profile"
-  uat_merchant_op_cdn_endpoint = "${local.prefix}-u-weu-${local.domain}-bonus-cdn-endpoint"
-  uat_merchant_op_account_name = "cstaruitnidpaybonuscdnsa"
+  uat_bonus_merchant_op_cdn_profile  = "${local.prefix}-u-weu-${local.domain}-bonus-cdn-profile"
+  uat_bonus_merchant_op_cdn_endpoint = "${local.prefix}-u-weu-${local.domain}-bonus-cdn-endpoint"
+  uat_bonus_merchant_op_account_name = "cstaruitnidpaybonuscdnsa"
 
   # PROD PORTALE ESERCENTI OPERATOR
-  prod_merchant_op_cdn_profile  = "${local.prefix}-p-weu-${local.domain}-bonus-cdn-profile"
-  prod_merchant_op_cdn_endpoint = "${local.prefix}-p-weu-${local.domain}-bonus-cdn-endpoint"
-  prod_merchant_op_account_name = "cstarpitnidpaybonuscdnsa"
+  prod_bonus_merchant_op_cdn_profile  = "${local.prefix}-p-weu-${local.domain}-bonus-cdn-profile"
+  prod_bonus_merchant_op_cdn_endpoint = "${local.prefix}-p-weu-${local.domain}-bonus-cdn-endpoint"
+  prod_bonus_merchant_op_account_name = "cstarpitnidpaybonuscdnsa"
 
   #FRONTEND REACT ENV
   dev_react_app_url_cdn                                     = "https://welfare-italy.dev.cstar.pagopa.it/"
