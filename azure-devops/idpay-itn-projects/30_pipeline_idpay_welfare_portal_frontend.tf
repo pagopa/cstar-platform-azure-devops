@@ -2,14 +2,14 @@ variable "idpay-portal-welfare-frontend" {
   default = {
     repository = {
       organization    = "pagopa"
-      name            = "idpay-welfare-portal-frontend"
+      name            = "idpay-portal-welfare-frontend"
       path            = "idpay\\frontend"
       branch_name     = "refs/heads/main"
       pipelines_path  = ".devops"
       yml_prefix_name = null
     }
     pipeline = {
-      path = "idpay\\idpay-portal-welfare-frontend"
+      path = "idpay\\idpay-welfare-portal-frontend"
     }
   }
 }
