@@ -75,9 +75,13 @@ locals {
   uat_storage_account_rg   = "${local.prefix}-u-${local.location_short}-${local.domain}-data-rg"
   prod_storage_account_rg   = "${local.prefix}-p-${local.location_short}-${local.domain}-data-rg"
 
+  #---------------------------------------------------------------------------------------------------------
+  # WELFARE
+  #---------------------------------------------------------------------------------------------------------
+
   # DEV WELFARE
-  dev_welfare_cdn_profile          = "${local.prefix}-d-weu-${local.domain}-welfare-cdn-profile"
-  dev_welfare_cdn_endpoint         = "${local.prefix}-d-weu-${local.domain}-welfare-cdn-endpoint"
+  dev_welfare_cdn_profile          = "${local.prefix}-d-itn-${local.domain}-welfare-cdn-profile"
+  dev_welfare_cdn_endpoint         = "${local.prefix}-d-itn-${local.domain}-welfare-cdn-endpoint"
   dev_welfare_storage_account_name = replace("${local.prefix}-d-${local.location_short}-${local.domain}-wel-cdn-sa", "-", "")
 
   # UAT
@@ -90,9 +94,13 @@ locals {
   prod_welfare_cdn_endpoint         = "${local.prefix}-p-weu-${local.domain}-welfare-cdn-endpoint"
   prod_welfare_storage_account_name = replace("${local.prefix}-p-${local.location_short}-${local.domain}-wel-cdn-sa", "-", "")
 
+  #---------------------------------------------------------------------------------------------------------
+  # ASSET REGISTRATION
+  #---------------------------------------------------------------------------------------------------------
+
   # DEV REGISTRO DEI BENI
-  dev_asset_cdn_profile                         = "${local.prefix}-d-weu-${local.domain}-asset-register-cdn-profile"
-  dev_asset_cdn_endpoint                        = "${local.prefix}-d-weu-${local.domain}-asset-register-cdn-endpoint"
+  dev_asset_cdn_profile                         = "${local.prefix}-d-itn-${local.domain}-asset-register-cdn-profile"
+  dev_asset_cdn_endpoint                        = "${local.prefix}-d-itn-${local.domain}-asset-register-cdn-endpoint"
   dev_asset_storage_asset_register_account_name = "cstarditnidpayregcdnsa"
 
   # UAT REGISTRO DEI BENI
@@ -105,9 +113,13 @@ locals {
   prod_asset_cdn_endpoint                        = "${local.prefix}-p-weu-${local.domain}-asset-register-cdn-endpoint"
   prod_asset_storage_asset_register_account_name = "cstarpitnidpayregcdnsa"
 
+  #---------------------------------------------------------------------------------------------------------
+  # BONUS
+  #---------------------------------------------------------------------------------------------------------
+
   # DEV PORTALE UTENTI
-  dev_bonus_portal_users_cdn_profile  = "${local.prefix}-d-weu-${local.domain}-bonus-cdn-profile"
-  dev_bonus_portal_users_cdn_endpoint = "${local.prefix}-d-weu-${local.domain}-bonus-cdn-endpoint"
+  dev_bonus_portal_users_cdn_profile  = "${local.prefix}-d-itn-${local.domain}-bonus-cdn-profile"
+  dev_bonus_portal_users_cdn_endpoint = "${local.prefix}-d-itn-${local.domain}-bonus-cdn-endpoint"
   dev_bonus_portal_users_account_name = "cstarditnidpaybonuscdnsa"
 
   # UAT PORTALE UTENTI
@@ -121,8 +133,8 @@ locals {
   prod_bonus_portal_users_account_name = "cstarpitnidpaybonuscdnsa"
 
   # DEV PORTALE ESERCENTI OPERATOR
-  dev_bonus_merchant_op_cdn_profile  = "${local.prefix}-d-weu-${local.domain}-bonus-cdn-profile"
-  dev_bonus_merchant_op_cdn_endpoint = "${local.prefix}-d-weu-${local.domain}-bonus-cdn-endpoint"
+  dev_bonus_merchant_op_cdn_profile  = "${local.prefix}-d-itn-${local.domain}-bonus-cdn-profile"
+  dev_bonus_merchant_op_cdn_endpoint = "${local.prefix}-d-itn-${local.domain}-bonus-cdn-endpoint"
   dev_bonus_merchant_op_storage_account_name = "cstarditnidpaybonuscdnsa"
 
   # UAT PORTALE ESERCENTI OPERATOR
@@ -135,7 +147,7 @@ locals {
   prod_bonus_merchant_op_cdn_endpoint = "${local.prefix}-p-weu-${local.domain}-bonus-cdn-endpoint"
   prod_bonus_merchant_op_account_name = "cstarpitnidpaybonuscdnsa"
 
-  #FRONTEND REACT ENV
+  #WELFARE: FRONTEND REACT ENV
   dev_react_app_url_cdn                                     = "https://welfare-italy.dev.cstar.pagopa.it/"
   dev_react_app_url_storage                                 = "https://cstarditnidpaywelcdnsa.z38.web.core.windows.net/"
   dev_react_app_url_fe_pre_login                            = "https://api-io.dev.cstar.pagopa.it/idpay-itn/welfare/token"
@@ -224,7 +236,7 @@ locals {
   prod_mixpanel_token                                        = "TODO" //"1d1b09b008638080ab34fe9b75db84fd"
   prod_onetrust_domain_id                                    = "TODO" //"084d5de2-d423-458a-9b28-0f8db3e55e71"
 
-  #FRONTEND REACT ENV REGISTRO BENI
+  #REGISTRO BENI: FRONTEND REACT ENV
 
   dev_react_app_asset_register_url_cdn                  = "https://registrodeibeni.dev.cstar.pagopa.it/"
   dev_react_app_asset_register_url_storage              = "https://cstarditnidpayregcdnsa.z38.web.core.windows.net"
@@ -251,7 +263,7 @@ locals {
   prod_react_app_url_api_register                        = "https://api-io.cstar.pagopa.it/idpay-itn/register"
 
 
-  #FRONTEND REACT ENV MERCHANT OPERATOR PORTAL
+  #BONUS FRONTEND REACT ENV MERCHANT OPERATOR PORTAL
 
   dev_vite_keycloak_url          = "https://api-mcshared.dev.cstar.pagopa.it/auth-itn"
   dev_vite_keycloak_realm        = "merchant-operator"
