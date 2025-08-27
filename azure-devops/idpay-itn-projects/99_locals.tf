@@ -148,7 +148,7 @@ locals {
   prod_bonus_merchant_op_account_name = "cstarpitnidpaybonuscdnsa"
 
   #WELFARE: FRONTEND REACT ENV
-  dev_react_app_url_cdn                                     = "https://welfare-italy.dev.cstar.pagopa.it/"
+  dev_react_app_url_cdn                                     = "https://welfare.dev.cstar.pagopa.it/"
   dev_react_app_url_storage                                 = "https://cstarditnidpaywelcdnsa.z38.web.core.windows.net/"
   dev_react_app_url_fe_pre_login                            = "https://api-io.dev.cstar.pagopa.it/idpay-itn/welfare/token"
   dev_react_app_url_fe_pre_login_merchants                  = "https://api-io.dev.cstar.pagopa.it/idpay-itn/merchant/token"
