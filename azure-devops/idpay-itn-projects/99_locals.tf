@@ -279,6 +279,23 @@ locals {
   prod_vite_keycloak_realm        = "merchant-operator"
   prod_vite_keycloak_client_id    = "frontend"
   prod_vite_keycloak_redirect_uri = "https://bonuselettrodomestici.it/esercente"
+
+  #BONUS USER REALM PORTAL
+
+  dev_vite_user_keycloak_realm        = "user"
+  dev_vite_user_keycloak_client_id    = "frontend"
+  dev_vite_user_keycloak_redirect_uri = "https://dev.bonuselettrodomestici.it/utente"
+
+  uat_vite_user_keycloak_realm        = "user"
+  uat_vite_user_keycloak_client_id    = "frontend"
+  uat_vite_user_keycloak_redirect_uri = "https://uat.bonuselettrodomestici.it/utente"
+
+  prod_vite_user_keycloak_realm        = "user"
+  prod_vite_user_keycloak_client_id    = "frontend"
+  prod_vite_user_keycloak_redirect_uri = "https://bonuselettrodomestici.it/utente"
+
+
+
 }
 
 # LOCAL TLS CERT
