@@ -49,6 +49,7 @@ locals {
     DEV_REACT_APP_ONE_TRUST_PRIVACY_POLICY_JSON_URL = local.dev_react_app_one_trust_privacy_policy_json_url
     DEV_REACT_APP_ONE_TRUST_TOS_ID                  = local.dev_react_app_one_trust_tos_id
     DEV_REACT_APP_ONE_TRUST_TOS_JSON_URL            = local.dev_react_app_one_trust_tos_json_url
+    DEV_CDN_DOMAINS                                 = local.dev_welfare_dns_domain
 
     UAT_AZURE_SUBSCRIPTION                          = local.uat_service_endpoint_azure_id
     UAT_CDN_ENDPOINT                                = local.uat_welfare_cdn_endpoint
@@ -76,6 +77,7 @@ locals {
     UAT_REACT_APP_ONE_TRUST_PRIVACY_POLICY_JSON_URL = local.uat_react_app_one_trust_privacy_policy_json_url
     UAT_REACT_APP_ONE_TRUST_TOS_ID                  = local.uat_react_app_one_trust_tos_id
     UAT_REACT_APP_ONE_TRUST_TOS_JSON_URL            = local.uat_react_app_one_trust_tos_json_url
+    UAT_CDN_DOMAINS                                 = local.uat_welfare_dns_domain
 
     PROD_AZURE_SUBSCRIPTION                          = local.prod_service_endpoint_azure_id
     PROD_CDN_ENDPOINT                                = local.prod_welfare_cdn_endpoint
@@ -103,6 +105,7 @@ locals {
     PROD_REACT_APP_ONE_TRUST_PRIVACY_POLICY_JSON_URL = local.prod_react_app_one_trust_privacy_policy_json_url
     PROD_REACT_APP_ONE_TRUST_TOS_ID                  = local.prod_react_app_one_trust_tos_id
     PROD_REACT_APP_ONE_TRUST_TOS_JSON_URL            = local.prod_react_app_one_trust_tos_json_url
+    PROD_CDN_DOMAINS                                 = local.prod_welfare_dns_domain
 
 
   }
