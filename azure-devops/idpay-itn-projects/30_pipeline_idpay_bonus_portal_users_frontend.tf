@@ -22,39 +22,45 @@ locals {
     blob_container_name    = "$web"
     AZURE_DEVOPS_GITHUB_RO = local.service_connection_github_ro_name
 
-    DEV_AZURE_SUBSCRIPTION = local.dev_service_endpoint_azure_id
-    DEV_CDN_ENDPOINT       = local.dev_bonus_portal_users_cdn_endpoint
-    DEV_CDN_PROFILE        = local.dev_bonus_portal_users_cdn_profile
-    DEV_RESOURCE_GROUP     = local.dev_storage_account_rg
-    DEV_STORAGE_ACCOUNT    = local.dev_bonus_portal_users_account_name
-    DEV_ANALYTICS_ENABLED  = local.dev_analytics_enabled
-    DEV_ANALYTICS_MOCKED   = local.dev_analytics_mocked
-    #DEV_VITE_KEYCLOAK_URL       = local.dev_vite_keycloak_url
-    #DEV_VITE_KEYCLOAK_REALM     = local.dev_vite_keycloak_realm
-    #DEV_VITE_KEYCLOAK_CLIENT_ID = local.dev_vite_keycloak_client_id
+    DEV_AZURE_SUBSCRIPTION         = local.dev_service_endpoint_azure_id
+    DEV_CDN_ENDPOINT               = local.dev_bonus_portal_users_cdn_endpoint
+    DEV_CDN_PROFILE                = local.dev_bonus_portal_users_cdn_profile
+    DEV_RESOURCE_GROUP             = local.dev_storage_account_rg
+    DEV_STORAGE_ACCOUNT            = local.dev_bonus_portal_users_account_name
+    DEV_ANALYTICS_ENABLED          = local.dev_analytics_enabled
+    DEV_ANALYTICS_MOCKED           = local.dev_analytics_mocked
+    DEV_VITE_KEYCLOAK_URL          = local.dev_vite_keycloak_url
+    DEV_VITE_KEYCLOAK_REALM        = local.dev_vite_user_keycloak_realm
+    DEV_VITE_KEYCLOAK_CLIENT_ID    = local.dev_vite_user_keycloak_client_id
+    DEV_VITE_KEYCLOAK_REDIRECT_URI = local.dev_vite_user_keycloak_redirect_uri
+    DEV_VITE_URL_API_PORTAL_USERS  = local.dev_vite_url_api_portal_users
 
 
-    UAT_AZURE_SUBSCRIPTION = local.uat_service_endpoint_azure_id
-    UAT_ANALYTICS_ENABLED  = local.uat_analytics_enabled
-    UAT_ANALYTICS_MOCKED   = local.uat_analytics_mocked
-    UAT_CDN_ENDPOINT       = local.uat_bonus_portal_users_cdn_endpoint
-    UAT_CDN_PROFILE        = local.uat_bonus_portal_users_cdn_profile
-    UAT_RESOURCE_GROUP     = local.uat_storage_account_rg
-    UAT_STORAGE_ACCOUNT    = local.uat_bonus_portal_users_account_name
-    #UAT_VITE_KEYCLOAK_URL       = local.uat_vite_keycloak_url
-    #UAT_VITE_KEYCLOAK_REALM     = local.uat_vite_keycloak_realm
-    #UAT_VITE_KEYCLOAK_CLIENT_ID = local.uat_vite_keycloak_client_id
+    UAT_AZURE_SUBSCRIPTION         = local.uat_service_endpoint_azure_id
+    UAT_ANALYTICS_ENABLED          = local.uat_analytics_enabled
+    UAT_ANALYTICS_MOCKED           = local.uat_analytics_mocked
+    UAT_CDN_ENDPOINT               = local.uat_bonus_portal_users_cdn_endpoint
+    UAT_CDN_PROFILE                = local.uat_bonus_portal_users_cdn_profile
+    UAT_RESOURCE_GROUP             = local.uat_storage_account_rg
+    UAT_STORAGE_ACCOUNT            = local.uat_bonus_portal_users_account_name
+    UAT_VITE_KEYCLOAK_URL          = local.uat_vite_keycloak_url
+    UAT_VITE_KEYCLOAK_REALM        = local.uat_vite_user_keycloak_realm
+    UAT_VITE_KEYCLOAK_CLIENT_ID    = local.uat_vite_user_keycloak_client_id
+    UAT_VITE_KEYCLOAK_REDIRECT_URI = local.uat_vite_user_keycloak_redirect_uri
+    UAT_VITE_URL_API_PORTAL_USERS  = local.uat_vite_url_api_portal_users
 
-    PROD_AZURE_SUBSCRIPTION = local.prod_service_endpoint_azure_id
-    PROD_ANALYTICS_ENABLED  = local.prod_analytics_enabled
-    PROD_ANALYTICS_MOCKED   = local.prod_analytics_mocked
-    PROD_CDN_ENDPOINT       = local.prod_bonus_portal_users_cdn_endpoint
-    PROD_CDN_PROFILE        = local.prod_bonus_portal_users_cdn_profile
-    PROD_RESOURCE_GROUP     = local.prod_storage_account_rg
-    PROD_STORAGE_ACCOUNT    = local.prod_bonus_portal_users_account_name
-    #PROD_VITE_KEYCLOAK_URL       = local.prod_vite_keycloak_url
-    #PROD_VITE_KEYCLOAK_REALM     = local.prod_vite_keycloak_realm
-    #PROD_VITE_KEYCLOAK_CLIENT_ID = local.prod_vite_keycloak_client_id
+    PROD_AZURE_SUBSCRIPTION         = local.prod_service_endpoint_azure_id
+    PROD_ANALYTICS_ENABLED          = local.prod_analytics_enabled
+    PROD_ANALYTICS_MOCKED           = local.prod_analytics_mocked
+    PROD_CDN_ENDPOINT               = local.prod_bonus_portal_users_cdn_endpoint
+    PROD_CDN_PROFILE                = local.prod_bonus_portal_users_cdn_profile
+    PROD_RESOURCE_GROUP             = local.prod_storage_account_rg
+    PROD_STORAGE_ACCOUNT            = local.prod_bonus_portal_users_account_name
+    PROD_VITE_KEYCLOAK_URL          = local.prod_vite_keycloak_url
+    PROD_VITE_KEYCLOAK_REALM        = local.prod_vite_user_keycloak_realm
+    PROD_VITE_KEYCLOAK_CLIENT_ID    = local.prod_vite_user_keycloak_client_id
+    PROD_VITE_KEYCLOAK_REDIRECT_URI = local.prod_vite_user_keycloak_redirect_uri
+    PROD_VITE_URL_API_PORTAL_USERS  = local.prod_vite_url_api_portal_users
 
   }
 }
