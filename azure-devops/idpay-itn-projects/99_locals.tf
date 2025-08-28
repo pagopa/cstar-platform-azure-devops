@@ -92,16 +92,19 @@ locals {
   dev_welfare_cdn_profile          = "${local.prefix}-d-itn-${local.domain}-welfare-cdn-profile"
   dev_welfare_cdn_endpoint         = "${local.prefix}-d-itn-${local.domain}-welfare-cdn-endpoint"
   dev_welfare_storage_account_name = replace("${local.prefix}-d-${local.location_short}-${local.domain}-wel-cdn-sa", "-", "")
+  dev_welfare_dns_domain           = "welfare.dev.cstar.pagopa.it"
 
   # UAT
   uat_welfare_cdn_profile          = "${local.prefix}-u-weu-${local.domain}-welfare-cdn-profile"
   uat_welfare_cdn_endpoint         = "${local.prefix}-u-weu-${local.domain}-welfare-cdn-endpoint"
   uat_welfare_storage_account_name = replace("${local.prefix}-u-${local.location_short}-${local.domain}-wel-cdn-sa", "-", "")
+  uat_welfare_dns_domain           = "welfare.uat.cstar.pagopa.it"
 
   # PROD
   prod_welfare_cdn_profile          = "${local.prefix}-p-weu-${local.domain}-welfare-cdn-profile"
   prod_welfare_cdn_endpoint         = "${local.prefix}-p-weu-${local.domain}-welfare-cdn-endpoint"
   prod_welfare_storage_account_name = replace("${local.prefix}-p-${local.location_short}-${local.domain}-wel-cdn-sa", "-", "")
+  prod_welfare_dns_domain           = "welfare.cstar.pagopa.it"
 
   #---------------------------------------------------------------------------------------------------------
   # ASSET REGISTRATION
@@ -111,16 +114,19 @@ locals {
   dev_asset_cdn_profile                         = "${local.prefix}-d-itn-${local.domain}-asset-register-cdn-profile"
   dev_asset_cdn_endpoint                        = "${local.prefix}-d-itn-${local.domain}-asset-register-cdn-endpoint"
   dev_asset_storage_asset_register_account_name = "cstarditnidpayregcdnsa"
+  dev_asset_cdn_domain                          = "registrodeibeni.dev.cstar.pagopa.it"
 
   # UAT REGISTRO DEI BENI
   uat_asset_cdn_profile                         = "${local.prefix}-u-weu-${local.domain}-asset-register-cdn-profile"
   uat_asset_cdn_endpoint                        = "${local.prefix}-u-weu-${local.domain}-asset-register-cdn-endpoint"
   uat_asset_storage_asset_register_account_name = "cstaruitnidpayregcdnsa"
+  uat_asset_cdn_domain                          = "registrodeibeni.uat.cstar.pagopa.it"
 
   # PROD REGISTRO DEI BENI
   prod_asset_cdn_profile                         = "${local.prefix}-p-weu-${local.domain}-asset-register-cdn-profile"
   prod_asset_cdn_endpoint                        = "${local.prefix}-p-weu-${local.domain}-asset-register-cdn-endpoint"
   prod_asset_storage_asset_register_account_name = "cstarpitnidpayregcdnsa"
+  prod_asset_cdn_domain                          = "registrodeibeni.cstar.pagopa.it"
 
   #---------------------------------------------------------------------------------------------------------
   # BONUS
