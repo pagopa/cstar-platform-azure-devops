@@ -38,6 +38,15 @@ locals {
   dev_dns_zone_name  = "dev.cstar.pagopa.it"
   uat_dns_zone_name  = "uat.cstar.pagopa.it"
   prod_dns_zone_name = "cstar.pagopa.it"
+  bonus_dns_zone_name = [
+    "bonuselettrodomestici.com",
+    "bonuselettrodomestici.eu",
+    "bonuselettrodomestici.info",
+    "bonuselettrodomestici.io",
+    "bonuselettrodomestici.net",
+    "bonuselettrodomestici.it",
+    "bonuselettrodomestici.pagopa.it"
+  ]
 
   ### Idenity RG
   dev_identity_rg_name  = "cstar-d-itn-idpay-cicd-rg"
@@ -121,16 +130,19 @@ locals {
   dev_bonus_portal_users_cdn_profile  = "${local.prefix}-d-itn-${local.domain}-bonus-cdn-profile"
   dev_bonus_portal_users_cdn_endpoint = "${local.prefix}-d-itn-${local.domain}-bonus-cdn-endpoint"
   dev_bonus_portal_users_account_name = "cstarditnidpaybonuscdnsa"
+  dev_bonus_cdn_domains               = [for i in local.bonus_dns_zone_name : "dev.${i}"]
 
   # UAT PORTALE UTENTI
   uat_bonus_portal_users_cdn_profile  = "${local.prefix}-u-weu-${local.domain}-bonus-cdn-profile"
   uat_bonus_portal_users_cdn_endpoint = "${local.prefix}-u-weu-${local.domain}-bonus-cdn-endpoint"
   uat_bonus_portal_users_account_name = "cstaruitnidpaybonuscdnsa"
+  uat_bonus_cdn_domains               = [for i in local.bonus_dns_zone_name : "uat.${i}"]
 
   # PROD PORTALE UTENTI
   prod_bonus_portal_users_cdn_profile  = "${local.prefix}-p-weu-${local.domain}-bonus-cdn-profile"
   prod_bonus_portal_users_cdn_endpoint = "${local.prefix}-p-weu-${local.domain}-bonus-cdn-endpoint"
   prod_bonus_portal_users_account_name = "cstarpitnidpaybonuscdnsa"
+  prod_bonus_cdn_domains               = [for i in local.bonus_dns_zone_name : i]
 
   # DEV PORTALE ESERCENTI OPERATOR
   dev_bonus_merchant_op_cdn_profile          = "${local.prefix}-d-itn-${local.domain}-bonus-cdn-profile"
