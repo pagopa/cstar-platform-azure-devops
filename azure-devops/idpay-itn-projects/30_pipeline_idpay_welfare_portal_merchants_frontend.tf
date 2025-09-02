@@ -9,7 +9,7 @@ variable "idpay-portal-merchants-frontend" {
       yml_prefix_name = null
     }
     pipeline = {
-      path = "idpay\\idpay-portal-merchants-frontend"
+      path = "idpay\\idpay-portal-welfare-merchants-frontend"
     }
   }
 }
@@ -25,7 +25,7 @@ locals {
     DEV_AZURE_SUBSCRIPTION                                    = local.dev_service_endpoint_azure_id
     DEV_CDN_ENDPOINT                                          = local.dev_welfare_cdn_endpoint
     DEV_CDN_PROFILE                                           = local.dev_welfare_cdn_profile
-    DEV_RESOURCE_GROUP                                        = local.dev_welfare_storage_account_rg
+    DEV_RESOURCE_GROUP                                        = local.dev_storage_account_rg
     DEV_STORAGE_ACCOUNT                                       = local.dev_welfare_storage_account_name
     DEV_REACT_APP_URL_CDN                                     = local.dev_react_app_url_cdn
     DEV_REACT_APP_URL_FE_PRE_LOGIN_MERCHANTS                  = local.dev_react_app_url_fe_pre_login_merchants
@@ -45,11 +45,12 @@ locals {
     DEV_REACT_APP_ONE_TRUST_PRIVACY_POLICY_JSON_URL_MERCHANTS = local.dev_react_app_one_trust_privacy_policy_json_url_merchants
     DEV_REACT_APP_ONE_TRUST_TOS_ID_MERCHANTS                  = local.dev_react_app_one_trust_tos_id_merchants
     DEV_REACT_APP_ONE_TRUST_TOS_JSON_URL_MERCHANTS            = local.dev_react_app_one_trust_tos_json_url_merchants
+    DEV_CDN_DOMAINS                                           = local.dev_welfare_dns_domain
 
     UAT_AZURE_SUBSCRIPTION                                    = local.uat_service_endpoint_azure_id
     UAT_CDN_ENDPOINT                                          = local.uat_welfare_cdn_endpoint
     UAT_CDN_PROFILE                                           = local.uat_welfare_cdn_profile
-    UAT_RESOURCE_GROUP                                        = local.uat_welfare_storage_account_rg
+    UAT_RESOURCE_GROUP                                        = local.uat_storage_account_rg
     UAT_STORAGE_ACCOUNT                                       = local.uat_welfare_storage_account_name
     UAT_REACT_APP_URL_CDN                                     = local.uat_react_app_url_cdn
     UAT_REACT_APP_URL_FE_PRE_LOGIN_MERCHANTS                  = local.uat_react_app_url_fe_pre_login_merchants
@@ -69,11 +70,12 @@ locals {
     UAT_REACT_APP_ONE_TRUST_PRIVACY_POLICY_JSON_URL_MERCHANTS = local.uat_react_app_one_trust_privacy_policy_json_url_merchants
     UAT_REACT_APP_ONE_TRUST_TOS_ID_MERCHANTS                  = local.uat_react_app_one_trust_tos_id_merchants
     UAT_REACT_APP_ONE_TRUST_TOS_JSON_URL_MERCHANTS            = local.uat_react_app_one_trust_tos_json_url_merchants
+    UAT_CDN_DOMAINS                                           = local.uat_welfare_dns_domain
 
     PROD_AZURE_SUBSCRIPTION                                    = local.prod_service_endpoint_azure_id
     PROD_CDN_ENDPOINT                                          = local.prod_welfare_cdn_endpoint
     PROD_CDN_PROFILE                                           = local.prod_welfare_cdn_profile
-    PROD_RESOURCE_GROUP                                        = local.prod_welfare_storage_account_rg
+    PROD_RESOURCE_GROUP                                        = local.prod_storage_account_rg
     PROD_STORAGE_ACCOUNT                                       = local.prod_welfare_storage_account_name
     PROD_REACT_APP_URL_CDN                                     = local.prod_react_app_url_cdn
     PROD_REACT_APP_URL_FE_PRE_LOGIN_MERCHANTS                  = local.prod_react_app_url_fe_pre_login_merchants
@@ -93,6 +95,7 @@ locals {
     PROD_REACT_APP_ONE_TRUST_PRIVACY_POLICY_JSON_URL_MERCHANTS = local.prod_react_app_one_trust_privacy_policy_json_url_merchants
     PROD_REACT_APP_ONE_TRUST_TOS_ID_MERCHANTS                  = local.prod_react_app_one_trust_tos_id_merchants
     PROD_REACT_APP_ONE_TRUST_TOS_JSON_URL_MERCHANTS            = local.prod_react_app_one_trust_tos_json_url_merchants
+    PROD_CDN_DOMAINS                                           = local.prod_welfare_dns_domain
 
 
   }
