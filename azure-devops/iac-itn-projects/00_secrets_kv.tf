@@ -41,22 +41,22 @@ module "uat_secrets" {
   ]
 }
 
-# module "prod_secrets" {
-#   source = "./.terraform/modules/__v3__/key_vault_secrets_query"
-#
-#   for_each = { for d in local.domains : d.name => d if contains(d.envs, "p") && try(d.kv_name, "") != "" }
-#
-#   providers = {
-#     azurerm = azurerm.prod
-#   }
-#
-#   resource_group = format(each.value.rg_name, "p")
-#   key_vault_name = format(each.value.kv_name, "p")
-#
-#
-#   secrets = [
-#     "${local.aks_prod_platform_name}-azure-devops-sa-token",
-#     "${local.aks_prod_platform_name}-azure-devops-sa-cacrt",
-#     "${local.aks_prod_platform_name}-apiserver-url"
-#   ]
-# }
+module "prod_secrets" {
+  source = "./.terraform/modules/__v3__/key_vault_secrets_query"
+
+  for_each = { for d in local.domains : d.name => d if contains(d.envs, "p") && try(d.kv_name, "") != "" }
+
+  providers = {
+    azurerm = azurerm.prod
+  }
+
+  resource_group = format(each.value.rg_name, "p")
+  key_vault_name = format(each.value.kv_name, "p")
+
+
+  secrets = [
+    "${local.aks_prod_platform_name}-azure-devops-sa-token",
+    "${local.aks_prod_platform_name}-azure-devops-sa-cacrt",
+    "${local.aks_prod_platform_name}-apiserver-url"
+  ]
+}

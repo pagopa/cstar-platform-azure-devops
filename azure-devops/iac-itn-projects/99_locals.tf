@@ -25,7 +25,7 @@ locals {
   domains = [
     {
       name : "srtp",
-      envs : ["d", "u"],
+      envs : ["d", "u", "p"],
       code_review : true,
       deploy : true,
       pipeline_prefix : "srtp-infra",
@@ -34,6 +34,49 @@ locals {
       rg_name : "cstar-%s-itn-srtp-security-rg",
       repository : {
         yml_prefix_name : "srtp"
+      }
+    },
+    {
+      name : "srtp-api-spec",
+      envs : ["d", "u", "p"],
+      kv_name : "",
+      rg_name : "",
+      code_review : true,
+      deploy : true,
+      pipeline_prefix : "srtp-api-spec",
+      pipeline_path : "srtp-infrastructure",
+      repository : {
+        name = "cstar-securehub-infra-api-spec"
+        yml_prefix_name : "srtp"
+        branch_name = "refs/heads/PAYMCLOUD-473/iac-itn"
+      }
+    },
+    {
+      name : "idpay",
+      envs : ["d", "u", "p"],
+      code_review : true,
+      deploy : true,
+      pipeline_prefix : "idpay-infra",
+      pipeline_path : "idpay-infrastructure",
+      kv_name : "cstar-%s-itn-idpay-kv",
+      rg_name : "cstar-%s-itn-idpay-security-rg",
+      repository : {
+        yml_prefix_name : "idpay"
+      }
+    },
+    {
+      name : "idpay-api-spec",
+      envs : ["d", "u", "p"],
+      kv_name : "",
+      rg_name : "",
+      code_review : true,
+      deploy : true,
+      pipeline_prefix : "idpay-api-spec",
+      pipeline_path : "idpay-infrastructure",
+      repository : {
+        name = "cstar-securehub-infra-api-spec"
+        yml_prefix_name : "idpay"
+        branch_name = "refs/heads/PAYMCLOUD-473/iac-itn"
       }
     }
   ]

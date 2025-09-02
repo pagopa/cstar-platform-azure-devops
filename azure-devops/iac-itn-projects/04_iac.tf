@@ -68,11 +68,11 @@ module "iac_code_review" {
       tf_uat_aks_azure_devops_sa_cacrt = module.uat_secrets[each.value.name].values["${local.aks_uat_platform_name}-azure-devops-sa-cacrt"].value,
       tf_uat_aks_azure_devops_sa_token = base64decode(module.uat_secrets[each.value.name].values["${local.aks_uat_platform_name}-azure-devops-sa-token"].value),
     } : {},
-    # contains(each.value.envs, "p") && try(each.value.kv_name, "") != "" ? {
-    #   tf_prod_aks_apiserver_url         = module.prod_secrets[each.value.name].values["${local.aks_prod_platform_name}-apiserver-url"].value,
-    #   tf_prod_aks_azure_devops_sa_cacrt = module.prod_secrets[each.value.name].values["${local.aks_prod_platform_name}-azure-devops-sa-cacrt"].value,
-    #   tf_prod_aks_azure_devops_sa_token = base64decode(module.prod_secrets[each.value.name].values["${local.aks_prod_platform_name}-azure-devops-sa-token"].value),
-    # } : {},
+    contains(each.value.envs, "p") && try(each.value.kv_name, "") != "" ? {
+      tf_prod_aks_apiserver_url         = module.prod_secrets[each.value.name].values["${local.aks_prod_platform_name}-apiserver-url"].value,
+      tf_prod_aks_azure_devops_sa_cacrt = module.prod_secrets[each.value.name].values["${local.aks_prod_platform_name}-azure-devops-sa-cacrt"].value,
+      tf_prod_aks_azure_devops_sa_token = base64decode(module.prod_secrets[each.value.name].values["${local.aks_prod_platform_name}-azure-devops-sa-token"].value),
+    } : {},
     local.base_iac_variables_code_review,
     try(local.domain_variables[each.value.name].iac_variables_cr, {})
   )
@@ -118,11 +118,11 @@ module "iac_deploy" {
       tf_uat_aks_azure_devops_sa_cacrt = module.uat_secrets[each.value.name].values["${local.aks_uat_platform_name}-azure-devops-sa-cacrt"].value,
       tf_uat_aks_azure_devops_sa_token = base64decode(module.uat_secrets[each.value.name].values["${local.aks_uat_platform_name}-azure-devops-sa-token"].value),
     } : {},
-    # contains(each.value.envs, "p") && try(each.value.kv_name, "") != "" ? {
-    #   tf_prod_aks_apiserver_url         = module.prod_secrets[each.value.name].values["${local.aks_prod_platform_name}-apiserver-url"].value,
-    #   tf_prod_aks_azure_devops_sa_cacrt = module.prod_secrets[each.value.name].values["${local.aks_prod_platform_name}-azure-devops-sa-cacrt"].value,
-    #   tf_prod_aks_azure_devops_sa_token = base64decode(module.prod_secrets[each.value.name].values["${local.aks_prod_platform_name}-azure-devops-sa-token"].value),
-    # } : {},
+    contains(each.value.envs, "p") && try(each.value.kv_name, "") != "" ? {
+      tf_prod_aks_apiserver_url         = module.prod_secrets[each.value.name].values["${local.aks_prod_platform_name}-apiserver-url"].value,
+      tf_prod_aks_azure_devops_sa_cacrt = module.prod_secrets[each.value.name].values["${local.aks_prod_platform_name}-azure-devops-sa-cacrt"].value,
+      tf_prod_aks_azure_devops_sa_token = base64decode(module.prod_secrets[each.value.name].values["${local.aks_prod_platform_name}-azure-devops-sa-token"].value),
+    } : {},
     local.base_iac_variables_deploy,
     try(local.domain_variables[each.value.name].iac_variables_deploy, {})
   )
