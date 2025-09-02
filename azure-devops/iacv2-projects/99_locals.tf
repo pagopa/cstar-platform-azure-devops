@@ -37,17 +37,6 @@ locals {
       }
     },
     {
-      name : "rtp",
-      envs : ["d", "u", "p"],
-      code_review : true,
-      deploy : true,
-      pipeline_prefix : "rtp-infra",
-      pipeline_path : "rtp-infrastructure",
-      repository : {
-        yml_prefix_name : "rtp"
-      }
-    },
-    {
       name : "rtd",
       envs : ["d", "u", "p"],
       kv_name : "${local.prefix}-%s-rtd-kv",
@@ -69,19 +58,6 @@ locals {
       pipeline_path : "tae-infrastructure",
       repository : {
         yml_prefix_name : "tae"
-      }
-    },
-    {
-      name : "idpay",
-      envs : ["d", "u", "p"],
-      kv_name : "${local.prefix}-%s-idpay-kv",
-      rg_name : "${local.prefix}-%s-idpay-sec-rg",
-      code_review : true,
-      deploy : true,
-      pipeline_prefix : "idpay-infra",
-      pipeline_path : "idpay-infrastructure",
-      repository : {
-        yml_prefix_name : "idpay"
       }
     },
     {
