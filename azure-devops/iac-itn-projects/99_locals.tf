@@ -78,6 +78,32 @@ locals {
         yml_prefix_name : "idpay"
         branch_name = "refs/heads/PAYMCLOUD-473/iac-itn"
       }
+    },
+    {
+      name : "mcshared",
+      envs : ["d", "u", "p"],
+      code_review : true,
+      deploy : true,
+      pipeline_prefix : "mcshared-infra",
+      pipeline_path : "mcshared-infrastructure",
+      repository : {
+        yml_prefix_name : "mcshared"
+      }
+    },
+    {
+      name : "mcshared-api-spec",
+      envs : ["d", "u", "p"],
+      kv_name : "",
+      rg_name : "",
+      code_review : true,
+      deploy : true,
+      pipeline_prefix : "mcshared-api-spec",
+      pipeline_path : "mcshared-infrastructure",
+      repository : {
+        name = "cstar-securehub-infra-api-spec"
+        yml_prefix_name : "mcshared"
+        branch_name = "refs/heads/PAYMCLOUD-473/iac-itn"
+      }
     }
   ]
 
