@@ -1,21 +1,12 @@
 locals {
-  prefix         = "cstar"
-  location_short = "itn"
+  prefix = "cstar"
 
   dev_subscription_name  = "dev-${local.prefix}"
   uat_subscription_name  = "uat-${local.prefix}"
   prod_subscription_name = "prod-${local.prefix}"
 
-  # dev_identity_rg_name  = "${local.prefix}-d-identity-rg"
-  # uat_identity_rg_name  = "${local.prefix}-u-identity-rg"
-  # prod_identity_rg_name = "${local.prefix}-p-identity-rg"
-  #
-  # prod_key_vault_azdo_resource_group = "${local.prefix}-p-sec-rg"
-  # prod_key_vault_azdo_name           = "${local.prefix}-p-azdo-${local.location_short}-kv"
-
   # Service connections/ End points
   srv_endpoint_github_ro = "azure-devops-github-ro"
-  srv_endpoint_github_rw = "azure-devops-github-rw"
   srv_endpoint_github_pr = "azure-devops-github-pr"
 
   aks_dev_platform_name  = "${local.prefix}-d-itn-dev-aks"
@@ -23,6 +14,89 @@ locals {
   aks_prod_platform_name = "${local.prefix}-p-itn-prod-aks"
 
   domains = [
+    {
+      name : "networking",
+      envs : ["d", "u", "p"],
+      code_review : true,
+      deploy : true,
+      pipeline_prefix : "networking-infra",
+      pipeline_path : "networking-infrastructure",
+      repository : {
+        yml_prefix_name : "networking"
+      }
+    },
+    {
+      name : "packer",
+      envs : ["d", "u", "p"],
+      code_review : true,
+      deploy : true,
+      pipeline_prefix : "packer-infra",
+      pipeline_path : "packer-infrastructure",
+      repository : {
+        yml_prefix_name : "packer"
+      }
+    },
+    {
+      name : "security",
+      envs : ["d", "u", "p"],
+      code_review : true,
+      deploy : true,
+      pipeline_prefix : "security-infra",
+      pipeline_path : "security-infrastructure",
+      repository : {
+        yml_prefix_name : "security"
+      }
+    },
+    {
+      name : "core",
+      envs : ["d", "u", "p"],
+      code_review : true,
+      deploy : true,
+      pipeline_prefix : "core-infra-ITN",
+      pipeline_path : "core-infrastructure",
+      repository : {
+        yml_prefix_name : "core"
+      }
+    },
+    {
+      name : "platform",
+      envs : ["d", "u", "p"],
+      code_review : true,
+      deploy : true,
+      pipeline_prefix : "platform-infra",
+      pipeline_path : "platform-infrastructure",
+      kv_name : "",
+      rg_name : "",
+      repository : {
+        yml_prefix_name : "platform"
+      }
+    },
+    {
+      name : "platform-coder",
+      envs : ["d", "u", "p"],
+      code_review : true,
+      deploy : true,
+      pipeline_prefix : "platform-coder-infra",
+      pipeline_path : "platform-coder-infrastructure",
+      kv_name : "cstar-%s-itn-core-kv",
+      rg_name : "cstar-%s-itn-core-sec-rg",
+      repository : {
+        yml_prefix_name : "platform-coder"
+      }
+    },
+    {
+      name : "grafanaconf",
+      envs : ["d", "u", "p"],
+      code_review : true,
+      deploy : true,
+      pipeline_prefix : "pgrafanaconf-infra",
+      pipeline_path : "grafanaconf-infrastructure",
+      kv_name : "",
+      rg_name : "",
+      repository : {
+        yml_prefix_name : "grafanaconf"
+      }
+    },
     {
       name : "srtp",
       envs : ["d", "u", "p"],
@@ -48,7 +122,7 @@ locals {
       repository : {
         name = "cstar-securehub-infra-api-spec"
         yml_prefix_name : "srtp"
-        branch_name = "refs/heads/PAYMCLOUD-473/iac-itn"
+        branch_name = "refs/heads/main"
       }
     },
     {
@@ -76,7 +150,7 @@ locals {
       repository : {
         name = "cstar-securehub-infra-api-spec"
         yml_prefix_name : "idpay"
-        branch_name = "refs/heads/PAYMCLOUD-473/iac-itn"
+        branch_name = "refs/heads/main"
       }
     },
     {
@@ -102,7 +176,7 @@ locals {
       repository : {
         name = "cstar-securehub-infra-api-spec"
         yml_prefix_name : "mcshared"
-        branch_name = "refs/heads/PAYMCLOUD-473/iac-itn"
+        branch_name = "refs/heads/main"
       }
     }
   ]

@@ -2,7 +2,7 @@ locals {
   default_repository = {
     organization   = "pagopa"
     name           = "cstar-securehub-infra"
-    branch_name    = "refs/heads/PAYMCLOUD-473/iac-itn"
+    branch_name    = "refs/heads/main"
     pipelines_path = ".devops"
   }
 
