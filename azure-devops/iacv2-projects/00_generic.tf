@@ -20,8 +20,3 @@ data "azuredevops_group" "admin" {
   project_id = data.azuredevops_project.project.id
   name       = "Project Administrators"
 }
-
-data "azuredevops_group" "iac_team" {
-  project_id = data.azuredevops_project.project.id
-  name       = "cstar-platform-iac-projects Team"
-}
