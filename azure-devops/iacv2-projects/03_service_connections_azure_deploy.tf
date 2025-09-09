@@ -78,7 +78,7 @@ module "prod_azurerm_iac_deploy_service_conn" {
 
   check_approval_enabled = true
   approver_ids = [
-    data.azuredevops_group.admin.origin_id,
+    data.azuredevops_group.admin.origin_id
   ]
 }
 
