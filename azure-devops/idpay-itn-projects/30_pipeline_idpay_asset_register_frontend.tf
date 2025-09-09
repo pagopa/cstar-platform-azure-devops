@@ -66,7 +66,7 @@ locals {
   }
 }
 
-module "idpay-fe-register_deploy" {
+module "idpay_fe_register_deploy" {
   source = "./.terraform/modules/__devops_v0__/azuredevops_build_definition_generic"
 
   providers = {

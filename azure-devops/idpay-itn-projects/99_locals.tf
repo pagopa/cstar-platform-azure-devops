@@ -95,14 +95,14 @@ locals {
   dev_welfare_dns_domain           = "welfare.dev.cstar.pagopa.it"
 
   # UAT
-  uat_welfare_cdn_profile          = "${local.prefix}-u-weu-${local.domain}-welfare-cdn-profile"
-  uat_welfare_cdn_endpoint         = "${local.prefix}-u-weu-${local.domain}-welfare-cdn-endpoint"
+  uat_welfare_cdn_profile          = "${local.prefix}-u-itn-${local.domain}-welfare-cdn-profile"
+  uat_welfare_cdn_endpoint         = "${local.prefix}-u-itn-${local.domain}-welfare-cdn-endpoint"
   uat_welfare_storage_account_name = replace("${local.prefix}-u-${local.location_short}-${local.domain}-wel-cdn-sa", "-", "")
   uat_welfare_dns_domain           = "welfare.uat.cstar.pagopa.it"
 
   # PROD
-  prod_welfare_cdn_profile          = "${local.prefix}-p-weu-${local.domain}-welfare-cdn-profile"
-  prod_welfare_cdn_endpoint         = "${local.prefix}-p-weu-${local.domain}-welfare-cdn-endpoint"
+  prod_welfare_cdn_profile          = "${local.prefix}-p-itn-${local.domain}-welfare-cdn-profile"
+  prod_welfare_cdn_endpoint         = "${local.prefix}-p-itn-${local.domain}-welfare-cdn-endpoint"
   prod_welfare_storage_account_name = replace("${local.prefix}-p-${local.location_short}-${local.domain}-wel-cdn-sa", "-", "")
   prod_welfare_dns_domain           = "welfare.cstar.pagopa.it"
 
@@ -117,14 +117,14 @@ locals {
   dev_asset_cdn_domain                          = "registrodeibeni.dev.cstar.pagopa.it"
 
   # UAT REGISTRO DEI BENI
-  uat_asset_cdn_profile                         = "${local.prefix}-u-weu-${local.domain}-asset-register-cdn-profile"
-  uat_asset_cdn_endpoint                        = "${local.prefix}-u-weu-${local.domain}-asset-register-cdn-endpoint"
+  uat_asset_cdn_profile                         = "${local.prefix}-u-itn-${local.domain}-asset-register-cdn-profile"
+  uat_asset_cdn_endpoint                        = "${local.prefix}-u-itn-${local.domain}-asset-register-cdn-endpoint"
   uat_asset_storage_asset_register_account_name = "cstaruitnidpayregcdnsa"
   uat_asset_cdn_domain                          = "registrodeibeni.uat.cstar.pagopa.it"
 
   # PROD REGISTRO DEI BENI
-  prod_asset_cdn_profile                         = "${local.prefix}-p-weu-${local.domain}-asset-register-cdn-profile"
-  prod_asset_cdn_endpoint                        = "${local.prefix}-p-weu-${local.domain}-asset-register-cdn-endpoint"
+  prod_asset_cdn_profile                         = "${local.prefix}-p-itn-${local.domain}-asset-register-cdn-profile"
+  prod_asset_cdn_endpoint                        = "${local.prefix}-p-itn-${local.domain}-asset-register-cdn-endpoint"
   prod_asset_storage_asset_register_account_name = "cstarpitnidpayregcdnsa"
   prod_asset_cdn_domain                          = "registrodeibeni.cstar.pagopa.it"
 
@@ -139,14 +139,14 @@ locals {
   dev_bonus_cdn_domains               = [for i in local.bonus_dns_zone_name : "dev.${i}"]
 
   # UAT PORTALE UTENTI
-  uat_bonus_portal_users_cdn_profile  = "${local.prefix}-u-weu-${local.domain}-bonus-cdn-profile"
-  uat_bonus_portal_users_cdn_endpoint = "${local.prefix}-u-weu-${local.domain}-bonus-cdn-endpoint"
+  uat_bonus_portal_users_cdn_profile  = "${local.prefix}-u-itn-${local.domain}-bonus-cdn-profile"
+  uat_bonus_portal_users_cdn_endpoint = "${local.prefix}-u-itn-${local.domain}-bonus-cdn-endpoint"
   uat_bonus_portal_users_account_name = "cstaruitnidpaybonuscdnsa"
   uat_bonus_cdn_domains               = [for i in local.bonus_dns_zone_name : "uat.${i}"]
 
   # PROD PORTALE UTENTI
-  prod_bonus_portal_users_cdn_profile  = "${local.prefix}-p-weu-${local.domain}-bonus-cdn-profile"
-  prod_bonus_portal_users_cdn_endpoint = "${local.prefix}-p-weu-${local.domain}-bonus-cdn-endpoint"
+  prod_bonus_portal_users_cdn_profile  = "${local.prefix}-p-itn-${local.domain}-bonus-cdn-profile"
+  prod_bonus_portal_users_cdn_endpoint = "${local.prefix}-p-itn-${local.domain}-bonus-cdn-endpoint"
   prod_bonus_portal_users_account_name = "cstarpitnidpaybonuscdnsa"
   prod_bonus_cdn_domains               = [for i in local.bonus_dns_zone_name : i]
 
@@ -156,13 +156,13 @@ locals {
   dev_bonus_merchant_op_storage_account_name = "cstarditnidpaybonuscdnsa"
 
   # UAT PORTALE ESERCENTI OPERATOR
-  uat_bonus_merchant_op_cdn_profile  = "${local.prefix}-u-weu-${local.domain}-bonus-cdn-profile"
-  uat_bonus_merchant_op_cdn_endpoint = "${local.prefix}-u-weu-${local.domain}-bonus-cdn-endpoint"
+  uat_bonus_merchant_op_cdn_profile  = "${local.prefix}-u-itn-${local.domain}-bonus-cdn-profile"
+  uat_bonus_merchant_op_cdn_endpoint = "${local.prefix}-u-itn-${local.domain}-bonus-cdn-endpoint"
   uat_bonus_merchant_op_account_name = "cstaruitnidpaybonuscdnsa"
 
   # PROD PORTALE ESERCENTI OPERATOR
-  prod_bonus_merchant_op_cdn_profile  = "${local.prefix}-p-weu-${local.domain}-bonus-cdn-profile"
-  prod_bonus_merchant_op_cdn_endpoint = "${local.prefix}-p-weu-${local.domain}-bonus-cdn-endpoint"
+  prod_bonus_merchant_op_cdn_profile  = "${local.prefix}-p-itn-${local.domain}-bonus-cdn-profile"
+  prod_bonus_merchant_op_cdn_endpoint = "${local.prefix}-p-itn-${local.domain}-bonus-cdn-endpoint"
   prod_bonus_merchant_op_account_name = "cstarpitnidpaybonuscdnsa"
 
   #WELFARE: FRONTEND REACT ENV
