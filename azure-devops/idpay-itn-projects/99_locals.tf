@@ -117,14 +117,14 @@ locals {
   dev_asset_cdn_domain                          = "registrodeibeni.dev.cstar.pagopa.it"
 
   # UAT REGISTRO DEI BENI
-  uat_asset_cdn_profile                         = "${local.prefix}-u-weu-${local.domain}-asset-register-cdn-profile"
-  uat_asset_cdn_endpoint                        = "${local.prefix}-u-weu-${local.domain}-asset-register-cdn-endpoint"
+  uat_asset_cdn_profile                         = "${local.prefix}-u-itn-${local.domain}-asset-register-cdn-profile"
+  uat_asset_cdn_endpoint                        = "${local.prefix}-u-itn-${local.domain}-asset-register-cdn-endpoint"
   uat_asset_storage_asset_register_account_name = "cstaruitnidpayregcdnsa"
   uat_asset_cdn_domain                          = "registrodeibeni.uat.cstar.pagopa.it"
 
   # PROD REGISTRO DEI BENI
-  prod_asset_cdn_profile                         = "${local.prefix}-p-weu-${local.domain}-asset-register-cdn-profile"
-  prod_asset_cdn_endpoint                        = "${local.prefix}-p-weu-${local.domain}-asset-register-cdn-endpoint"
+  prod_asset_cdn_profile                         = "${local.prefix}-p-itn-${local.domain}-asset-register-cdn-profile"
+  prod_asset_cdn_endpoint                        = "${local.prefix}-p-itn-${local.domain}-asset-register-cdn-endpoint"
   prod_asset_storage_asset_register_account_name = "cstarpitnidpayregcdnsa"
   prod_asset_cdn_domain                          = "registrodeibeni.cstar.pagopa.it"
 
