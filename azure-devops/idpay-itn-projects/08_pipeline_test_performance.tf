@@ -33,9 +33,9 @@ module "eie_performance_test" {
   repository                   = var.eie_performance_test.repository
   github_service_connection_id = local.service_connection_github_ro_id
 
-  pipeline_name                = "${local.product}-performance-test.test"
-  pipeline_yml_filename        = "testing-pipelines.yml"
-  path                         = var.eie_performance_test.pipeline.path
+  pipeline_name         = "${local.product}-performance-test.test"
+  pipeline_yml_filename = "testing-pipelines.yml"
+  path                  = var.eie_performance_test.pipeline.path
 
   variables = merge(
     local.eie_performance_test_variables,
