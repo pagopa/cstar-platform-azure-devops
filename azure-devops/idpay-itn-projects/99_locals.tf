@@ -110,23 +110,23 @@ locals {
   # ASSET REGISTRATION
   #---------------------------------------------------------------------------------------------------------
 
-  # DEV REGISTRO DEI BENI
+  # DEV ELENCO INFORMATICO DEGLI ELETTRODOMESTICI
   dev_asset_cdn_profile                         = "${local.prefix}-d-itn-${local.domain}-asset-register-cdn-profile"
   dev_asset_cdn_endpoint                        = "${local.prefix}-d-itn-${local.domain}-asset-register-cdn-endpoint"
   dev_asset_storage_asset_register_account_name = "cstarditnidpayregcdnsa"
-  dev_asset_cdn_domain                          = "registrodeibeni.dev.cstar.pagopa.it"
+  dev_asset_cdn_domain                          = "eie.dev.cstar.pagopa.it"
 
-  # UAT REGISTRO DEI BENI
+  # UAT ELENCO INFORMATICO DEGLI ELETTRODOMESTICI
   uat_asset_cdn_profile                         = "${local.prefix}-u-itn-${local.domain}-asset-register-cdn-profile"
   uat_asset_cdn_endpoint                        = "${local.prefix}-u-itn-${local.domain}-asset-register-cdn-endpoint"
   uat_asset_storage_asset_register_account_name = "cstaruitnidpayregcdnsa"
-  uat_asset_cdn_domain                          = "registrodeibeni.uat.cstar.pagopa.it"
+  uat_asset_cdn_domain                          = "eie.uat.cstar.pagopa.it"
 
-  # PROD REGISTRO DEI BENI
+  # PROD ELENCO INFORMATICO DEGLI ELETTRODOMESTICI
   prod_asset_cdn_profile                         = "${local.prefix}-p-itn-${local.domain}-asset-register-cdn-profile"
   prod_asset_cdn_endpoint                        = "${local.prefix}-p-itn-${local.domain}-asset-register-cdn-endpoint"
   prod_asset_storage_asset_register_account_name = "cstarpitnidpayregcdnsa"
-  prod_asset_cdn_domain                          = "registrodeibeni.cstar.pagopa.it"
+  prod_asset_cdn_domain                          = "eie.cstar.pagopa.it"
 
   #---------------------------------------------------------------------------------------------------------
   # BONUS
@@ -254,29 +254,29 @@ locals {
   prod_mixpanel_token                                        = "TODO" //"1d1b09b008638080ab34fe9b75db84fd"
   prod_onetrust_domain_id                                    = "TODO" //"084d5de2-d423-458a-9b28-0f8db3e55e71"
 
-  #REGISTRO BENI: FRONTEND REACT ENV
+  #ELENCO INFORMATICO DEGLI ELETTRODOMESTICI: FRONTEND REACT ENV
 
-  dev_react_app_asset_register_url_cdn                  = "https://registrodeibeni.dev.cstar.pagopa.it/"
+  dev_react_app_asset_register_url_cdn                  = "https://eie.dev.cstar.pagopa.it/"
   dev_react_app_asset_register_url_storage              = "https://cstarditnidpayregcdnsa.z38.web.core.windows.net"
   dev_react_app_asset_register_url_fe_pre_login         = "https://api-io.dev.cstar.pagopa.it/idpay-itn/register/token"
   dev_react_app_asset_register_url_fe_login             = "https://dev.selfcare.pagopa.it/auth"
-  dev_react_app_asset_register_url_fe_assistance_portal = "/registro-dei-beni/assistenza"
+  dev_react_app_asset_register_url_fe_assistance_portal = "/elenco-informatico-elettrodomestici/assistenza"
   dev_react_app_asset_register_url_fe_landing           = "https://dev.selfcare.pagopa.it/auth/logout"
   dev_react_app_url_api_register                        = "https://api-io.dev.cstar.pagopa.it/idpay-itn/register"
 
-  uat_react_app_asset_register_url_cdn                  = "https://registrodeibeni.uat.cstar.pagopa.it/"
+  uat_react_app_asset_register_url_cdn                  = "https://eie.uat.cstar.pagopa.it/"
   uat_react_app_asset_register_url_storage              = "https://cstaruitnidpayregcdnsa.z38.web.core.windows.net"
   uat_react_app_asset_register_url_fe_pre_login         = "https://api-io.uat.cstar.pagopa.it/idpay-itn/register/token"
   uat_react_app_asset_register_url_fe_login             = "https://uat.selfcare.pagopa.it/auth"
-  uat_react_app_asset_register_url_fe_assistance_portal = "/registro-dei-beni/assistenza"
+  uat_react_app_asset_register_url_fe_assistance_portal = "/elenco-informatico-elettrodomestici/assistenza"
   uat_react_app_asset_register_url_fe_landing           = "https://uat.selfcare.pagopa.it/auth/logout"
   uat_react_app_url_api_register                        = "https://api-io.uat.cstar.pagopa.it/idpay-itn/register"
 
-  prod_react_app_asset_register_url_cdn                  = "https://registrodeibeni.cstar.pagopa.it/"
+  prod_react_app_asset_register_url_cdn                  = "https://eie.cstar.pagopa.it/"
   prod_react_app_asset_register_url_storage              = "https://cstarpitnidpayregcdnsa.z38.web.core.windows.net"
   prod_react_app_asset_register_url_fe_pre_login         = "https://api-io.cstar.pagopa.it/idpay-itn/register/token"
   prod_react_app_asset_register_url_fe_login             = "https://selfcare.pagopa.it/auth"
-  prod_react_app_asset_register_url_fe_assistance_portal = "/registro-dei-beni/assistenza"
+  prod_react_app_asset_register_url_fe_assistance_portal = "/elenco-informatico-elettrodomestici/assistenza"
   prod_react_app_asset_register_url_fe_landing           = "https://selfcare.pagopa.it/auth/logout"
   prod_react_app_url_api_register                        = "https://api-io.cstar.pagopa.it/idpay-itn/register"
 
