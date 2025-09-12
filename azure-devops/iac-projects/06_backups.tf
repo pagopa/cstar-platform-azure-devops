@@ -13,9 +13,9 @@ variable "apim_backup" {
 module "apim_backup" {
   source = "./.terraform/modules/__devops_v0__/azuredevops_build_definition_deploy"
 
-  project_id                   = data.azuredevops_project.project.id
+  project_id                   = data.azuredevops_project.this[local.projects.iac].id
   repository                   = var.apim_backup.repository
-  github_service_connection_id = azuredevops_serviceendpoint_github.azure_devops_github_pr.id
+  github_service_connection_id = data.azuredevops_serviceendpoint_github.azure_devops_github_pr[local.projects.iac].id
   path                         = "backups"
   pipeline_name_prefix         = "backup-apim"
 
@@ -34,7 +34,7 @@ module "apim_backup" {
   variables_secret = {}
 
   service_connection_ids_authorization = [
-    module.prod_azurerm_iac_deploy_service_conn.service_endpoint_id,
+    data.azuredevops_serviceendpoint_azurerm.prod_tf_azure_service_connection_apply[local.projects.iac].id
   ]
 
   schedules = {

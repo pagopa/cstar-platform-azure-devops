@@ -18,6 +18,12 @@ variable "project_name" {
   description = "Project name project"
 }
 
+
+variable "project_iac_name" {
+  type        = string
+  description = "Project iac name project"
+}
+
 variable "location" {
   type = string
 }
