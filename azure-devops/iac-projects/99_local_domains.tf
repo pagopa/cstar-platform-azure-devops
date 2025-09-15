@@ -48,7 +48,7 @@ locals {
       project_name = "iac"
       repository : {
         name = "cstar-securehub-infra"
-        yml_prefix_name : "srtp"
+        yml_prefix_name : "mcshared"
         branch_name = "refs/heads/main"
       }
     },
@@ -178,23 +178,23 @@ locals {
         branch_name = "refs/heads/main"
       }
     },
-    # {
-    #   name : "platform-coder",
-    #   envs : ["d", "u", "p"],
-    #   location_short = "itn"
-    #   code_review : true,
-    #   deploy : true,
-    #   kv_name : "cstar-%s-itn-core-kv",
-    #   rg_name : "cstar-%s-itn-core-sec-rg",
-    #   pipeline_prefix : "platform-coder-infra",
-    #   pipeline_path : "platform-infrastructure",
-    #   project_name = "iac"
-    #   repository : {
-    #     name = "cstar-securehub-infra"
-    #     yml_prefix_name : "platform-coder"
-    #     branch_name = "refs/heads/main"
-    #   }
-    # },
+    {
+      name : "platform-coder",
+      envs : ["d", "u", "p"],
+      location_short = "itn"
+      code_review : true,
+      deploy : true,
+      kv_name : "cstar-%s-itn-core-kv",
+      rg_name : "cstar-%s-itn-core-sec-rg",
+      pipeline_prefix : "platform-coder-infra",
+      pipeline_path : "platform-infrastructure",
+      project_name = "iac"
+      repository : {
+        name = "cstar-securehub-infra"
+        yml_prefix_name : "platform-coder"
+        branch_name = "refs/heads/main"
+      }
+    },
     {
       name : "grafanaconf",
       envs : ["d", "u", "p"],

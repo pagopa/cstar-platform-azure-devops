@@ -51,9 +51,9 @@ module "iac_code_review" {
     data.azuredevops_serviceendpoint_github.azure_devops_github_ro[each.value.project_name].service_endpoint_id,
 
     # PLAN
-    data.azuredevops_serviceendpoint_azurerm.dev_tf_azure_service_connection_plan[each.value.project_name].service_endpoint_id,
-    data.azuredevops_serviceendpoint_azurerm.uat_tf_azure_service_connection_plan[each.value.project_name].service_endpoint_id,
-    data.azuredevops_serviceendpoint_azurerm.prod_tf_azure_service_connection_plan[each.value.project_name].service_endpoint_id
+    module.dev_tf_azure_service_connection_plan[each.value.project_name].service_endpoint_id,
+    module.uat_tf_azure_service_connection_plan[each.value.project_name].service_endpoint_id,
+    module.prod_tf_azure_service_connection_plan[each.value.project_name].service_endpoint_id
   ]
 }
 
@@ -110,13 +110,13 @@ module "iac_deploy" {
     data.azuredevops_serviceendpoint_github.azure_devops_github_ro[each.value.project_name].service_endpoint_id,
 
     # PLAN
-    data.azuredevops_serviceendpoint_azurerm.dev_tf_azure_service_connection_plan[each.value.project_name].service_endpoint_id,
-    data.azuredevops_serviceendpoint_azurerm.uat_tf_azure_service_connection_plan[each.value.project_name].service_endpoint_id,
-    data.azuredevops_serviceendpoint_azurerm.prod_tf_azure_service_connection_plan[each.value.project_name].service_endpoint_id,
+    module.dev_tf_azure_service_connection_plan[each.value.project_name].service_endpoint_id,
+    module.uat_tf_azure_service_connection_plan[each.value.project_name].service_endpoint_id,
+    module.prod_tf_azure_service_connection_plan[each.value.project_name].service_endpoint_id,
 
     # APPLY
-    data.azuredevops_serviceendpoint_azurerm.dev_tf_azure_service_connection_apply[each.value.project_name].service_endpoint_id,
-    data.azuredevops_serviceendpoint_azurerm.uat_tf_azure_service_connection_apply[each.value.project_name].service_endpoint_id,
-    data.azuredevops_serviceendpoint_azurerm.prod_tf_azure_service_connection_apply[each.value.project_name].service_endpoint_id
+    module.dev_tf_azure_service_connection_deploy[each.value.project_name].service_endpoint_id,
+    module.uat_tf_azure_service_connection_deploy[each.value.project_name].service_endpoint_id,
+    module.prod_tf_azure_service_connection_deploy[each.value.project_name].service_endpoint_id
   ]
 }

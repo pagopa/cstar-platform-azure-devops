@@ -31,39 +31,31 @@ locals {
   uat_subscription_name  = "uat-${local.prefix}"
   prod_subscription_name = "prod-${local.prefix}"
 
-  aks_dev_platform_name  = "${local.prefix}-d-itn-dev-aks"
-  aks_uat_platform_name  = "${local.prefix}-u-itn-uat-aks"
-  aks_prod_platform_name = "${local.prefix}-p-itn-prod-aks"
-
-  # aks_dev_weu_platform_name  = "${local.prefix}-d-weu-dev01-aks"
-  # aks_uat_weu_platform_name  = "${local.prefix}-u-weu-uat01-aks"
-  # aks_prod_weu_platform_name = "${local.prefix}-p-weu-prod01-aks"
-
   code_review_domains = [for d in local.domains : d if d.code_review == true]
   deploy_domains      = [for d in local.domains : d if d.deploy == true]
 
   project_settings = {
     for key, project_name in local.projects : key => {
 
-      tf_azure_service_connection_plan_name_dev  = data.azuredevops_serviceendpoint_azurerm.dev_tf_azure_service_connection_plan[key].service_endpoint_name
-      tf_azure_service_connection_plan_name_uat  = data.azuredevops_serviceendpoint_azurerm.uat_tf_azure_service_connection_plan[key].service_endpoint_name
-      tf_azure_service_connection_plan_name_prod = data.azuredevops_serviceendpoint_azurerm.prod_tf_azure_service_connection_plan[key].service_endpoint_name
+      tf_azure_service_connection_plan_name_dev  = module.dev_tf_azure_service_connection_plan[key].service_endpoint_name
+      tf_azure_service_connection_plan_name_uat  = module.uat_tf_azure_service_connection_plan[key].service_endpoint_name
+      tf_azure_service_connection_plan_name_prod = module.prod_tf_azure_service_connection_plan[key].service_endpoint_name
 
-      tf_azure_service_connection_apply_name_dev  = data.azuredevops_serviceendpoint_azurerm.dev_tf_azure_service_connection_apply[key].service_endpoint_name
-      tf_azure_service_connection_apply_name_uat  = data.azuredevops_serviceendpoint_azurerm.uat_tf_azure_service_connection_apply[key].service_endpoint_name
-      tf_azure_service_connection_apply_name_prod = data.azuredevops_serviceendpoint_azurerm.prod_tf_azure_service_connection_apply[key].service_endpoint_name
+      tf_azure_service_connection_apply_name_dev  = module.dev_tf_azure_service_connection_deploy[key].service_endpoint_name
+      tf_azure_service_connection_apply_name_uat  = module.uat_tf_azure_service_connection_deploy[key].service_endpoint_name
+      tf_azure_service_connection_apply_name_prod = module.prod_tf_azure_service_connection_deploy[key].service_endpoint_name
 
       default_env_variables = {
 
         # PLAN
-        TF_AZURE_SERVICE_CONNECTION_PLAN_NAME_DEV  = data.azuredevops_serviceendpoint_azurerm.dev_tf_azure_service_connection_plan[key].service_endpoint_name
-        TF_AZURE_SERVICE_CONNECTION_PLAN_NAME_UAT  = data.azuredevops_serviceendpoint_azurerm.uat_tf_azure_service_connection_plan[key].service_endpoint_name
-        TF_AZURE_SERVICE_CONNECTION_PLAN_NAME_PROD = data.azuredevops_serviceendpoint_azurerm.prod_tf_azure_service_connection_plan[key].service_endpoint_name
+        TF_AZURE_SERVICE_CONNECTION_PLAN_NAME_DEV  = module.dev_tf_azure_service_connection_plan[key].service_endpoint_name
+        TF_AZURE_SERVICE_CONNECTION_PLAN_NAME_UAT  = module.uat_tf_azure_service_connection_plan[key].service_endpoint_name
+        TF_AZURE_SERVICE_CONNECTION_PLAN_NAME_PROD = module.prod_tf_azure_service_connection_plan[key].service_endpoint_name
 
         #APPLY
-        TF_AZURE_SERVICE_CONNECTION_APPLY_NAME_DEV  = data.azuredevops_serviceendpoint_azurerm.dev_tf_azure_service_connection_apply[key].service_endpoint_name
-        TF_AZURE_SERVICE_CONNECTION_APPLY_NAME_UAT  = data.azuredevops_serviceendpoint_azurerm.uat_tf_azure_service_connection_apply[key].service_endpoint_name
-        TF_AZURE_SERVICE_CONNECTION_APPLY_NAME_PROD = data.azuredevops_serviceendpoint_azurerm.prod_tf_azure_service_connection_apply[key].service_endpoint_name
+        TF_AZURE_SERVICE_CONNECTION_APPLY_NAME_DEV  = module.dev_tf_azure_service_connection_deploy[key].service_endpoint_name
+        TF_AZURE_SERVICE_CONNECTION_APPLY_NAME_UAT  = module.uat_tf_azure_service_connection_deploy[key].service_endpoint_name
+        TF_AZURE_SERVICE_CONNECTION_APPLY_NAME_PROD = module.prod_tf_azure_service_connection_deploy[key].service_endpoint_name
       }
     }
   }
