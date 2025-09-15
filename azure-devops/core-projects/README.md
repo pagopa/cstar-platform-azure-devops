@@ -22,7 +22,7 @@
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module___devops_v0__"></a> [\_\_devops\_v0\_\_](#module\_\_\_devops\_v0\_\_) | git::https://github.com/pagopa/azuredevops-tf-modules.git | 7e23d73d22e7b37352c25a32cc40f6f42b6569ea |
+| <a name="module___devops_v0__"></a> [\_\_devops\_v0\_\_](#module\_\_\_devops\_v0\_\_) | git::https://github.com/pagopa/azuredevops-tf-modules.git | 535f37c3fe420a70acc92bd55c073bb2438e24ba |
 | <a name="module___v3__"></a> [\_\_v3\_\_](#module\_\_\_v3\_\_) | git::https://github.com/pagopa/terraform-azurerm-v3.git | 087a57940a67444c3b883030c54ceb78562c64ef |
 | <a name="module_api-cstar-dev-pagopa-it-cert_az"></a> [api-cstar-dev-pagopa-it-cert\_az](#module\_api-cstar-dev-pagopa-it-cert\_az) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated | n/a |
 | <a name="module_api-cstar-pagopa-it-cert_az"></a> [api-cstar-pagopa-it-cert\_az](#module\_api-cstar-pagopa-it-cert\_az) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated | n/a |
@@ -64,6 +64,9 @@
 
 | Name | Type |
 |------|------|
+| [azuredevops_serviceendpoint_github.azure_devops_github_pr](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/resources/serviceendpoint_github) | resource |
+| [azuredevops_serviceendpoint_github.azure_devops_github_ro](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/resources/serviceendpoint_github) | resource |
+| [azuredevops_serviceendpoint_github.azure_devops_github_rw](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/resources/serviceendpoint_github) | resource |
 | [azuredevops_serviceendpoint_github.io-azure-devops-github-pr](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/resources/serviceendpoint_github) | resource |
 | [azuredevops_serviceendpoint_github.io-azure-devops-github-ro](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/resources/serviceendpoint_github) | resource |
 | [azuredevops_serviceendpoint_github.io-azure-devops-github-rw](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/resources/serviceendpoint_github) | resource |
@@ -75,10 +78,13 @@
 | [azurerm_role_assignment.dev_azurerm](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.prod_azurerm](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.uat_azurerm](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/role_assignment) | resource |
+| [azuredevops_group.technical_project_managers](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/data-sources/group) | data source |
+| [azuredevops_project.iac](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/data-sources/project) | data source |
 | [azuredevops_project.project](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/data-sources/project) | data source |
 | [azuredevops_serviceendpoint_azurecr.dev_weu_workload_identity](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/data-sources/serviceendpoint_azurecr) | data source |
 | [azuredevops_serviceendpoint_azurecr.prod_weu_workload_identity](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/data-sources/serviceendpoint_azurecr) | data source |
 | [azuredevops_serviceendpoint_azurecr.uat_weu_workload_identity](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/data-sources/serviceendpoint_azurecr) | data source |
+| [azuredevops_team.developers](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/data-sources/team) | data source |
 | [azurerm_application_insights.application_insights_dev](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/application_insights) | data source |
 | [azurerm_client_config.current](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/client_config) | data source |
 | [azurerm_key_vault.domain_kv_dev](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/key_vault) | data source |
@@ -116,6 +122,7 @@
 | <a name="input_portal-cstar-pagopa-it"></a> [portal-cstar-pagopa-it](#input\_portal-cstar-pagopa-it) | 🚨 WARNING: migrate to 10\_tls\_certs.tf  This usage is deprecated, please use the 10\_tls\_certs.tf file, configuring the required certs in the local variable "certificates"  It will create the cert pipeline in the TLS-Certificates/<env> folder. Remember to manually edit the scheduling from portal to avoid a scheduling bug on terraform provider. Destroy the old pipeline before creating the new one | `map` | <pre>{<br/>  "pipeline": {<br/>    "dns_record_name": "portal",<br/>    "dns_zone_name": "cstar.pagopa.it",<br/>    "enable_tls_cert": true,<br/>    "path": "TLS-Certificates\\PROD",<br/>    "variables": {<br/>      "CERT_NAME_EXPIRE_SECONDS": "2592000"<br/>    },<br/>    "variables_secret": {}<br/>  }<br/>}</pre> | no |
 | <a name="input_portal-cstar-uat-pagopa-it"></a> [portal-cstar-uat-pagopa-it](#input\_portal-cstar-uat-pagopa-it) | 🚨 WARNING: migrate to 10\_tls\_certs.tf  This usage is deprecated, please use the 10\_tls\_certs.tf file, configuring the required certs in the local variable "certificates"  It will create the cert pipeline in the TLS-Certificates/<env> folder. Remember to manually edit the scheduling from portal to avoid a scheduling bug on terraform provider. Destroy the old pipeline before creating the new one | `map` | <pre>{<br/>  "pipeline": {<br/>    "dns_record_name": "portal",<br/>    "dns_zone_name": "uat.cstar.pagopa.it",<br/>    "enable_tls_cert": true,<br/>    "path": "TLS-Certificates\\UAT",<br/>    "variables": {<br/>      "CERT_NAME_EXPIRE_SECONDS": "2592000"<br/>    },<br/>    "variables_secret": {}<br/>  }<br/>}</pre> | no |
 | <a name="input_prod_subscription_name"></a> [prod\_subscription\_name](#input\_prod\_subscription\_name) | PROD Subscription name | `string` | n/a | yes |
+| <a name="input_project_iac_name"></a> [project\_iac\_name](#input\_project\_iac\_name) | Project iac name project | `string` | n/a | yes |
 | <a name="input_project_name"></a> [project\_name](#input\_project\_name) | Project name project | `string` | n/a | yes |
 | <a name="input_rtp-cstar-dev-pagopa-it"></a> [rtp-cstar-dev-pagopa-it](#input\_rtp-cstar-dev-pagopa-it) | 🚨 WARNING: migrate to 10\_tls\_certs.tf  This usage is deprecated, please use the 10\_tls\_certs.tf file, configuring the required certs in the local variable "certificates"  It will create the cert pipeline in the TLS-Certificates/<env> folder. Remember to manually edit the scheduling from portal to avoid a scheduling bug on terraform provider. Destroy the old pipeline before creating the new one | `map` | <pre>{<br/>  "pipeline": {<br/>    "dns_record_name": "api-rtp",<br/>    "dns_zone_name": "dev.cstar.pagopa.it",<br/>    "enable_tls_cert": true,<br/>    "path": "TLS-Certificates\\DEV",<br/>    "variables": {<br/>      "CERT_NAME_EXPIRE_SECONDS": "2592000"<br/>    },<br/>    "variables_secret": {}<br/>  }<br/>}</pre> | no |
 | <a name="input_rtp-cstar-pagopa-it"></a> [rtp-cstar-pagopa-it](#input\_rtp-cstar-pagopa-it) | 🚨 WARNING: migrate to 10\_tls\_certs.tf  This usage is deprecated, please use the 10\_tls\_certs.tf file, configuring the required certs in the local variable "certificates"  It will create the cert pipeline in the TLS-Certificates/<env> folder. Remember to manually edit the scheduling from portal to avoid a scheduling bug on terraform provider. Destroy the old pipeline before creating the new one | `map` | <pre>{<br/>  "pipeline": {<br/>    "dns_record_name": "api-rtp",<br/>    "dns_zone_name": "cstar.pagopa.it",<br/>    "enable_tls_cert": true,<br/>    "path": "TLS-Certificates\\PROD",<br/>    "variables": {<br/>      "CERT_NAME_EXPIRE_SECONDS": "2592000"<br/>    },<br/>    "variables_secret": {}<br/>  }<br/>}</pre> | no |

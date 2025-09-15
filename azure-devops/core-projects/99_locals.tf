@@ -2,7 +2,6 @@
 locals {
   project_prefix_short = "cstar"
   domain               = "core"
-  azure_devops_org     = "pagopaspa"
 
   location              = "westeurope"
   dev_identity_rg_name  = "cstar-d-identity-rg"
@@ -20,6 +19,10 @@ locals {
 
   # ⚙️ DevOps
   devops_project_id = data.azuredevops_project.project.project_id
+  devops_projects = {
+    app = data.azuredevops_project.project.project_id
+    iac = data.azuredevops_project.iac.project_id
+  }
 
   # 🔐 KV Legacy WEU
   prod_key_vault_azdo_name = "${local.project_prefix_short}-p-azdo-weu-kv"

@@ -15,9 +15,9 @@ module "dev_secrets" {
   key_vault_name = format(each.value.kv_name, "d")
 
   secrets = [
-    "${var.aks_dev_platform_name}-azure-devops-sa-token",
-    "${var.aks_dev_platform_name}-azure-devops-sa-cacrt",
-    "${var.aks_dev_platform_name}-apiserver-url"
+    "${local.tf_aks_dev_name[each.value.location_short]}-azure-devops-sa-token",
+    "${local.tf_aks_dev_name[each.value.location_short]}-azure-devops-sa-cacrt",
+    "${local.tf_aks_dev_name[each.value.location_short]}-apiserver-url"
   ]
 }
 
@@ -35,9 +35,9 @@ module "uat_secrets" {
 
 
   secrets = [
-    "${var.aks_uat_platform_name}-azure-devops-sa-token",
-    "${var.aks_uat_platform_name}-azure-devops-sa-cacrt",
-    "${var.aks_uat_platform_name}-apiserver-url"
+    "${local.tf_aks_uat_name[each.value.location_short]}-azure-devops-sa-token",
+    "${local.tf_aks_uat_name[each.value.location_short]}-azure-devops-sa-cacrt",
+    "${local.tf_aks_uat_name[each.value.location_short]}-apiserver-url"
   ]
 }
 
@@ -55,8 +55,25 @@ module "prod_secrets" {
 
 
   secrets = [
-    "${var.aks_prod_platform_name}-azure-devops-sa-token",
-    "${var.aks_prod_platform_name}-azure-devops-sa-cacrt",
-    "${var.aks_prod_platform_name}-apiserver-url"
+    "${local.tf_aks_prod_name[each.value.location_short]}-azure-devops-sa-token",
+    "${local.tf_aks_prod_name[each.value.location_short]}-azure-devops-sa-cacrt",
+    "${local.tf_aks_prod_name[each.value.location_short]}-apiserver-url"
+  ]
+}
+
+#
+# PROD KEYVAULT
+#
+
+module "secrets" {
+  source = "./.terraform/modules/__v3__/key_vault_secrets_query"
+
+  resource_group = local.prod_key_vault_azdo_resource_group
+  key_vault_name = local.prod_key_vault_azdo_name
+
+  secrets = [
+    "cstar-azure-devops-github-ro-TOKEN",
+    "cstar-azure-devops-github-rw-TOKEN",
+    "cstar-azure-devops-github-pr-TOKEN",
   ]
 }

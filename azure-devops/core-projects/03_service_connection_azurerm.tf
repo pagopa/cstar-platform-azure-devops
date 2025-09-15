@@ -70,8 +70,13 @@ module "prod_azurerm_service_conn" {
   subscription_id   = data.azurerm_subscriptions.prod.subscriptions[0].subscription_id
   subscription_name = var.prod_subscription_name
 
-  location            = var.location
-  resource_group_name = local.prod_identity_rg_name
+  location               = var.location
+  resource_group_name    = local.prod_identity_rg_name
+  check_approval_enabled = true
+  approver_ids = [
+    data.azuredevops_group.technical_project_managers.origin_id,
+    data.azuredevops_team.developers.id
+  ]
 }
 
 resource "azurerm_role_assignment" "prod_azurerm" {
