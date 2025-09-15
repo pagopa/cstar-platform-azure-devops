@@ -17,7 +17,7 @@ variable "switcher_iac" {
 locals {
   # deploy vars
   iac-variables_switcher = {
-    TF_AZURE_SERVICE_CONNECTION_NAME = data.azuredevops_serviceendpoint_azurerm.dev_tf_azure_service_connection_apply[local.projects.iac].service_endpoint_name
+    TF_AZURE_SERVICE_CONNECTION_NAME = data.azuredevops_serviceendpoint_azurerm.dev_tf_azure_service_connection_apply["iac"].service_endpoint_name
     TF_AZURE_DEVOPS_POOL_AGENT_NAME : "cstar-dev-linux-infra"
   }
   # deploy secrets
@@ -35,9 +35,9 @@ module "resource_switcher" {
 
   path = var.switcher_iac.pipeline.path
 
-  project_id                   = data.azuredevops_project.this[local.projects.iac].id
+  project_id                   = data.azuredevops_project.this["iac"].id
   repository                   = var.switcher_iac.repository
-  github_service_connection_id = data.azuredevops_serviceendpoint_github.azure_devops_github_pr[local.projects.iac].id
+  github_service_connection_id = data.azuredevops_serviceendpoint_github.azure_devops_github_pr["iac"].id
 
   variables = merge(
     local.iac-variables_switcher,
@@ -50,8 +50,8 @@ module "resource_switcher" {
   timeout = 50
 
   service_connection_ids_authorization = [
-    data.azuredevops_serviceendpoint_github.azure_devops_github_ro[local.projects.iac].id,
-    data.azuredevops_serviceendpoint_azurerm.dev_tf_azure_service_connection_apply[local.projects.iac].id
+    data.azuredevops_serviceendpoint_github.azure_devops_github_ro["iac"].id,
+    data.azuredevops_serviceendpoint_azurerm.dev_tf_azure_service_connection_apply["iac"].id
   ]
 
   schedule_configuration = {

@@ -43,33 +43,33 @@ locals {
   deploy_domains      = [for d in local.domains : d if d.deploy == true]
 
   project_settings = {
-    for key, project_name in local.projects : project_name => {
+    for key, project_name in local.projects : key => {
 
-      tf_azure_service_connection_plan_name_dev  = data.azuredevops_serviceendpoint_azurerm.dev_tf_azure_service_connection_plan[project_name].service_endpoint_name
-      tf_azure_service_connection_plan_name_uat  = data.azuredevops_serviceendpoint_azurerm.uat_tf_azure_service_connection_plan[project_name].service_endpoint_name
-      tf_azure_service_connection_plan_name_prod = data.azuredevops_serviceendpoint_azurerm.prod_tf_azure_service_connection_plan[project_name].service_endpoint_name
+      tf_azure_service_connection_plan_name_dev  = data.azuredevops_serviceendpoint_azurerm.dev_tf_azure_service_connection_plan[key].service_endpoint_name
+      tf_azure_service_connection_plan_name_uat  = data.azuredevops_serviceendpoint_azurerm.uat_tf_azure_service_connection_plan[key].service_endpoint_name
+      tf_azure_service_connection_plan_name_prod = data.azuredevops_serviceendpoint_azurerm.prod_tf_azure_service_connection_plan[key].service_endpoint_name
 
-      tf_azure_service_connection_apply_name_dev  = data.azuredevops_serviceendpoint_azurerm.dev_tf_azure_service_connection_apply[local.projects.app].service_endpoint_name
-      tf_azure_service_connection_apply_name_uat  = data.azuredevops_serviceendpoint_azurerm.uat_tf_azure_service_connection_apply[local.projects.app].service_endpoint_name
-      tf_azure_service_connection_apply_name_prod = data.azuredevops_serviceendpoint_azurerm.prod_tf_azure_service_connection_apply[local.projects.app].service_endpoint_name
+      tf_azure_service_connection_apply_name_dev  = data.azuredevops_serviceendpoint_azurerm.dev_tf_azure_service_connection_apply[key].service_endpoint_name
+      tf_azure_service_connection_apply_name_uat  = data.azuredevops_serviceendpoint_azurerm.uat_tf_azure_service_connection_apply[key].service_endpoint_name
+      tf_azure_service_connection_apply_name_prod = data.azuredevops_serviceendpoint_azurerm.prod_tf_azure_service_connection_apply[key].service_endpoint_name
 
       default_env_variables = {
 
         # PLAN
-        TF_AZURE_SERVICE_CONNECTION_PLAN_NAME_DEV  = data.azuredevops_serviceendpoint_azurerm.dev_tf_azure_service_connection_plan[project_name].service_endpoint_name
-        TF_AZURE_SERVICE_CONNECTION_PLAN_NAME_UAT  = data.azuredevops_serviceendpoint_azurerm.uat_tf_azure_service_connection_plan[project_name].service_endpoint_name
-        TF_AZURE_SERVICE_CONNECTION_PLAN_NAME_PROD = data.azuredevops_serviceendpoint_azurerm.prod_tf_azure_service_connection_plan[project_name].service_endpoint_name
+        TF_AZURE_SERVICE_CONNECTION_PLAN_NAME_DEV  = data.azuredevops_serviceendpoint_azurerm.dev_tf_azure_service_connection_plan[key].service_endpoint_name
+        TF_AZURE_SERVICE_CONNECTION_PLAN_NAME_UAT  = data.azuredevops_serviceendpoint_azurerm.uat_tf_azure_service_connection_plan[key].service_endpoint_name
+        TF_AZURE_SERVICE_CONNECTION_PLAN_NAME_PROD = data.azuredevops_serviceendpoint_azurerm.prod_tf_azure_service_connection_plan[key].service_endpoint_name
 
         #APPLY
-        TF_AZURE_SERVICE_CONNECTION_APPLY_NAME_DEV  = data.azuredevops_serviceendpoint_azurerm.dev_tf_azure_service_connection_apply[project_name].service_endpoint_name
-        TF_AZURE_SERVICE_CONNECTION_APPLY_NAME_UAT  = data.azuredevops_serviceendpoint_azurerm.uat_tf_azure_service_connection_apply[project_name].service_endpoint_name
-        TF_AZURE_SERVICE_CONNECTION_APPLY_NAME_PROD = data.azuredevops_serviceendpoint_azurerm.prod_tf_azure_service_connection_apply[project_name].service_endpoint_name
+        TF_AZURE_SERVICE_CONNECTION_APPLY_NAME_DEV  = data.azuredevops_serviceendpoint_azurerm.dev_tf_azure_service_connection_apply[key].service_endpoint_name
+        TF_AZURE_SERVICE_CONNECTION_APPLY_NAME_UAT  = data.azuredevops_serviceendpoint_azurerm.uat_tf_azure_service_connection_apply[key].service_endpoint_name
+        TF_AZURE_SERVICE_CONNECTION_APPLY_NAME_PROD = data.azuredevops_serviceendpoint_azurerm.prod_tf_azure_service_connection_apply[key].service_endpoint_name
       }
     }
   }
 
   devops_settings = {
-    (local.projects.app) = {
+    app = {
       srv_endpoint_github_ro = "io-azure-devops-github-ro"
       srv_endpoint_github_pr = "io-azure-devops-github-pr"
 
@@ -88,7 +88,7 @@ locals {
       uat_tf_azure_service_connection_deploy_name  = "azdo-uat-${local.prefix}-app-deploy-v2-service-conn"
       prod_tf_azure_service_connection_deploy_name = "azdo-prod-${local.prefix}-app-deploy-v2-service-conn"
     }
-    (local.projects.iac) = {
+    iac = {
       srv_endpoint_github_ro = "azure-devops-github-ro"
       srv_endpoint_github_pr = "azure-devops-github-pr"
       srv_endpoint_github_rw = "azure-devops-github-rw"
@@ -121,5 +121,9 @@ locals {
 
   prod_key_vault_azdo_resource_group = "${local.prefix}-p-sec-rg"
   prod_key_vault_azdo_name           = "${local.prefix}-p-azdo-weu-kv"
+
+  dev_identity_rg_name  = "${local.prefix}-d-identity-rg"
+  uat_identity_rg_name  = "${local.prefix}-u-identity-rg"
+  prod_identity_rg_name = "${local.prefix}-p-identity-rg"
 
 }

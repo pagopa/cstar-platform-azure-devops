@@ -12,7 +12,7 @@ module "iac_code_review" {
   repository                   = merge(local.default_repository, each.value.repository)
   github_service_connection_id = data.azuredevops_serviceendpoint_github.azure_devops_github_pr[each.value.project_name].service_endpoint_id
 
-  pipeline_name_prefix = "${upper(each.value.location_short)}-${each.value.pipeline_prefix}"
+  pipeline_name_prefix = "${each.value.location_short}-${each.value.pipeline_prefix}"
 
   variables = merge(
     {
@@ -71,7 +71,7 @@ module "iac_deploy" {
   repository                   = merge(local.default_repository, each.value.repository)
   github_service_connection_id = data.azuredevops_serviceendpoint_github.azure_devops_github_pr[each.value.project_name].service_endpoint_id
 
-  pipeline_name_prefix = "${upper(each.value.location_short)}-${each.value.pipeline_prefix}"
+  pipeline_name_prefix = "${each.value.location_short}-${each.value.pipeline_prefix}"
 
   variables = merge(
     {
