@@ -111,22 +111,36 @@ locals {
   #---------------------------------------------------------------------------------------------------------
 
   # DEV ELENCO INFORMATICO DEGLI ELETTRODOMESTICI
-  dev_asset_cdn_profile                         = "${local.prefix}-d-itn-${local.domain}-asset-register-cdn-profile"
-  dev_asset_cdn_endpoint                        = "${local.prefix}-d-itn-${local.domain}-asset-register-cdn-endpoint"
-  dev_asset_storage_asset_register_account_name = "cstarditnidpayregcdnsa"
-  dev_asset_cdn_domain                          = "eie.dev.cstar.pagopa.it"
+  dev_asset_cdn_profile                                          = "${local.prefix}-d-itn-${local.domain}-asset-register-cdn-profile"
+  dev_asset_cdn_endpoint                                         = "${local.prefix}-d-itn-${local.domain}-asset-register-cdn-endpoint"
+  dev_asset_storage_asset_register_account_name                  = "cstarditnidpayregcdnsa"
+  dev_asset_cdn_domain                                           = "eie.dev.cstar.pagopa.it"
+  dev_react_app_asset_register_one_trust_privacy_policy_id       = "otnotice-44d36c0c-f859-4437-ae03-7da3c8b660f2"
+  dev_react_app_asset_register_one_trust_privacy_policy_json_url = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/draft/44d36c0c-f859-4437-ae03-7da3c8b660f2.json"
+  dev_react_app_asset_register_one_trust_tos_id                  = "otnotice-f1b252d1-de0a-4e99-859c-47918b46876e"
+  dev_react_app_asset_register_one_trust_tos_json_url            = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/draft/f1b252d1-de0a-4e99-859c-47918b46876e.json"
 
   # UAT ELENCO INFORMATICO DEGLI ELETTRODOMESTICI
-  uat_asset_cdn_profile                         = "${local.prefix}-u-itn-${local.domain}-asset-register-cdn-profile"
-  uat_asset_cdn_endpoint                        = "${local.prefix}-u-itn-${local.domain}-asset-register-cdn-endpoint"
-  uat_asset_storage_asset_register_account_name = "cstaruitnidpayregcdnsa"
-  uat_asset_cdn_domain                          = "eie.uat.cstar.pagopa.it"
+  uat_asset_cdn_profile                                          = "${local.prefix}-u-itn-${local.domain}-asset-register-cdn-profile"
+  uat_asset_cdn_endpoint                                         = "${local.prefix}-u-itn-${local.domain}-asset-register-cdn-endpoint"
+  uat_asset_storage_asset_register_account_name                  = "cstaruitnidpayregcdnsa"
+  uat_asset_cdn_domain                                           = "eie.uat.cstar.pagopa.it"
+  uat_react_app_asset_register_one_trust_privacy_policy_id       = "otnotice-44d36c0c-f859-4437-ae03-7da3c8b660f2"
+  uat_react_app_asset_register_one_trust_privacy_policy_json_url = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/draft/44d36c0c-f859-4437-ae03-7da3c8b660f2.json"
+  uat_react_app_asset_register_one_trust_tos_id                  = "otnotice-f1b252d1-de0a-4e99-859c-47918b46876e"
+  uat_react_app_asset_register_one_trust_tos_json_url            = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/draft/f1b252d1-de0a-4e99-859c-47918b46876e.json"
+
 
   # PROD ELENCO INFORMATICO DEGLI ELETTRODOMESTICI
-  prod_asset_cdn_profile                         = "${local.prefix}-p-itn-${local.domain}-asset-register-cdn-profile"
-  prod_asset_cdn_endpoint                        = "${local.prefix}-p-itn-${local.domain}-asset-register-cdn-endpoint"
-  prod_asset_storage_asset_register_account_name = "cstarpitnidpayregcdnsa"
-  prod_asset_cdn_domain                          = "eie.cstar.pagopa.it"
+  prod_asset_cdn_profile                                          = "${local.prefix}-p-itn-${local.domain}-asset-register-cdn-profile"
+  prod_asset_cdn_endpoint                                         = "${local.prefix}-p-itn-${local.domain}-asset-register-cdn-endpoint"
+  prod_asset_storage_asset_register_account_name                  = "cstarpitnidpayregcdnsa"
+  prod_asset_cdn_domain                                           = "eie.cstar.pagopa.it"
+  prod_react_app_asset_register_one_trust_privacy_policy_id       = "otnotice-44d36c0c-f859-4437-ae03-7da3c8b660f2"
+  prod_react_app_asset_register_one_trust_privacy_policy_json_url = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/44d36c0c-f859-4437-ae03-7da3c8b660f2.json"
+  prod_react_app_asset_register_one_trust_tos_id                  = "otnotice-f1b252d1-de0a-4e99-859c-47918b46876e"
+  prod_react_app_asset_register_one_trust_tos_json_url            = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/f1b252d1-de0a-4e99-859c-47918b46876e.json"
+
 
   #---------------------------------------------------------------------------------------------------------
   # BONUS
