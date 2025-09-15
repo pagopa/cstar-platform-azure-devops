@@ -283,8 +283,8 @@ locals {
       location_short = "weu"
       code_review : true,
       deploy : true,
-      pipeline_prefix : "core-infra-secrets",
-      pipeline_path : "core-infrastructure",
+      pipeline_prefix : "security-infra",
+      pipeline_path : "security-infrastructure",
       project_name = "iac"
       repository : {
         name = "cstar-infrastructure"
