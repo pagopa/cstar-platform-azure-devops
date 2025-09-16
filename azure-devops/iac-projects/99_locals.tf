@@ -118,4 +118,28 @@ locals {
   uat_identity_rg_name  = "${local.prefix}-u-identity-rg"
   prod_identity_rg_name = "${local.prefix}-p-identity-rg"
 
+  generic_pipelines = {
+    "performance-test-setup" : {
+      pipeline_prefix : "performance-test-setup",
+      pipeline_path : "performance-test-setup",
+      project_name : "iac",
+      repository : {
+        name = "cstar-securehub-infra"
+        yml_file_name : "performance-test-setup.yml"
+        branch_name = "refs/heads/main"
+      }
+      schedules : {
+        days_to_build : ["Fri"],
+        schedule_only_with_changes : false,
+        start_hours : 19,
+        start_minutes : 0,
+        time_zone : "(UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna",
+        branch_filter : {
+          include : ["refs/heads/main"],
+          exclude : []
+        }
+      }
+    }
+  }
+
 }
