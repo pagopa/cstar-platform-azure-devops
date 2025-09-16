@@ -34,7 +34,7 @@ module "apim_backup" {
   variables_secret = {}
 
   service_connection_ids_authorization = [
-    data.azuredevops_serviceendpoint_azurerm.prod_tf_azure_service_connection_apply["iac"].id
+    module.prod_tf_azure_service_connection_deploy["iac"].service_endpoint_id
   ]
 
   schedules = {
