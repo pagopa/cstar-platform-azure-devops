@@ -1,28 +1,28 @@
-variable "eie_performance_test" {
+variable "pari_performance_test" {
   default = {
     repository = {
       organization    = "pagopa"
-      name            = "eie-performance-test"
+      name            = "pari-performance-test"
       branch_name     = "refs/heads/main"
       pipelines_path  = ".devops"
       yml_prefix_name = null
     }
     pipeline = {
-      path = "idpay\\eie-performance-test"
+      path = "idpay\\pari-performance-test"
     }
   }
 }
 
 locals {
   # global vars
-  eie_performance_test_variables = {}
+  pari_performance_test_variables = {}
 
   # global secrets
-  eie_performance_test_variables_secret = {}
+  pari_performance_test_variables_secret = {}
 
 }
 
-module "eie_performance_test" {
+module "pari_performance_test" {
   source = "./.terraform/modules/__devops_v0__/azuredevops_build_definition_generic"
 
   providers = {
@@ -30,19 +30,19 @@ module "eie_performance_test" {
   }
 
   project_id                   = local.devops_project_id
-  repository                   = var.eie_performance_test.repository
+  repository                   = var.pari_performance_test.repository
   github_service_connection_id = local.service_connection_github_ro_id
 
   pipeline_name         = "${local.product}-performance-test.test"
   pipeline_yml_filename = "testing-pipelines.yml"
-  path                  = var.eie_performance_test.pipeline.path
+  path                  = var.pari_performance_test.pipeline.path
 
   variables = merge(
-    local.eie_performance_test_variables,
+    local.pari_performance_test_variables,
   )
 
   variables_secret = merge(
-    local.eie_performance_test_variables_secret
+    local.pari_performance_test_variables_secret
   )
 
   service_connection_ids_authorization = [
