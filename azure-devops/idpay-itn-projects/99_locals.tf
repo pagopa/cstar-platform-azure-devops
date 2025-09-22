@@ -320,17 +320,17 @@ locals {
   dev_vite_user_keycloak_realm        = "user"
   dev_vite_user_keycloak_client_id    = "frontend"
   dev_vite_user_keycloak_redirect_uri = "https://dev.bonuselettrodomestici.it/utente"
-  dev_vite_url_api_portal_users       = "https://api-io.dev.cstar.pagopa.it/idpay-itn/onboarding/web"
+  dev_vite_url_api_portal_users       = "https://api-io.dev.cstar.pagopa.it/idpay-itn/"
 
   uat_vite_user_keycloak_realm        = "user"
   uat_vite_user_keycloak_client_id    = "frontend"
   uat_vite_user_keycloak_redirect_uri = "https://uat.bonuselettrodomestici.it/utente"
-  uat_vite_url_api_portal_users       = "https://api-io.uat.cstar.pagopa.it/idpay-itn/onboarding/web"
+  uat_vite_url_api_portal_users       = "https://api-io.uat.cstar.pagopa.it/idpay-itn/"
 
   prod_vite_user_keycloak_realm        = "user"
   prod_vite_user_keycloak_client_id    = "frontend"
   prod_vite_user_keycloak_redirect_uri = "https://bonuselettrodomestici.it/utente"
-  prod_vite_url_api_portal_users       = "https://api-io.cstar.pagopa.it/idpay-itn/onboarding/web"
+  prod_vite_url_api_portal_users       = "https://api-io.cstar.pagopa.it/idpay-itn/"
 
 
 
