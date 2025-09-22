@@ -39,6 +39,25 @@ locals {
       variables        = {}
       variables_secret = {}
     }
+    ### Influxdb TLS CERTIFICATES
+    "influxdb-itn-internal-dev-cstar-pagopa-it" : {
+      env              = "dev"
+      dns_record_name  = "influxdb.itn.internal"
+      variables        = {}
+      variables_secret = {}
+    }
+    "influxdb-itn-internal-uat-cstar-pagopa-it" : {
+      env              = "uat"
+      dns_record_name  = "influxdb.itn.internal"
+      variables        = {}
+      variables_secret = {}
+    }
+    "influxdb-itn-internal-cstar-pagopa-it" : {
+      env              = "prod"
+      dns_record_name  = "influxdb.itn.internal"
+      variables        = {}
+      variables_secret = {}
+    }
   }
 
   # TLS CERTS
