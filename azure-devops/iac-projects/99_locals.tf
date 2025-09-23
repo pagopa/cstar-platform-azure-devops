@@ -62,6 +62,7 @@ locals {
 
   devops_settings = {
     app = {
+      groups                 = ["developers", "technical-project-managers"]
       srv_endpoint_github_ro = "io-azure-devops-github-ro"
       srv_endpoint_github_pr = "io-azure-devops-github-pr"
 
@@ -81,6 +82,7 @@ locals {
       prod_tf_azure_service_connection_deploy_name = "azdo-prod-${local.prefix}-app-deploy-v2-service-conn"
     }
     iac = {
+      groups                 = ["admins"]
       srv_endpoint_github_ro = "azure-devops-github-ro"
       srv_endpoint_github_pr = "azure-devops-github-pr"
       srv_endpoint_github_rw = "azure-devops-github-rw"
@@ -129,7 +131,7 @@ locals {
         branch_name = "refs/heads/main"
       }
       schedules : {
-        days_to_build : ["Fri"],
+        days_to_build : ["Mon", "Tue", "Wed", "Thu", "Fri"],
         schedule_only_with_changes : false,
         start_hours : 19,
         start_minutes : 0,
@@ -141,5 +143,12 @@ locals {
       }
     }
   }
-
+  teams_flatten = flatten([
+    for key, val in local.devops_settings : [
+      for group in lookup(val, "groups", []) : {
+        project_id = data.azuredevops_project.this[key].id
+        group_name = group
+      }
+    ]
+  ])
 }

@@ -7,12 +7,12 @@ locals {
       dns_zone_rg                         = local.rg_dev_dns_zone_name
       subscription_name                   = local.dev_subscription_name
       subscription_id                     = local.dev_subscription_id
-      credential_key_vault_name           = local.dev_domain_key_vault_name
-      credential_key_vault_resource_group = local.dev_domain_key_vault_resource_group
+      credential_key_vault_name           = local.dev_key_vault_name
+      credential_key_vault_resource_group = local.dev_key_vault_resource_group
       service_endpoint                    = module.dev_cstar_core_tls_cert_service_conn_federated.service_endpoint_id
       variables = {
         KEY_VAULT_SERVICE_CONNECTION = module.dev_cstar_core_tls_cert_service_conn_federated.service_endpoint_name
-        KEY_VAULT_NAME               = local.dev_domain_key_vault_name
+        KEY_VAULT_NAME               = local.dev_key_vault_name
         CERT_NAME_EXPIRE_SECONDS     = "2592000"
       }
       variables_secret = {}
@@ -22,12 +22,12 @@ locals {
       dns_zone_rg                         = local.rg_uat_dns_zone_name
       subscription_name                   = local.uat_subscription_name
       subscription_id                     = local.uat_subscription_id
-      credential_key_vault_name           = local.uat_domain_key_vault_name
-      credential_key_vault_resource_group = local.uat_domain_key_vault_resource_group
+      credential_key_vault_name           = local.uat_key_vault_name
+      credential_key_vault_resource_group = local.uat_key_vault_resource_group
       service_endpoint                    = module.uat_cstar_core_tls_cert_service_conn_federated.service_endpoint_id
       variables = {
         KEY_VAULT_SERVICE_CONNECTION = module.uat_cstar_core_tls_cert_service_conn_federated.service_endpoint_name
-        KEY_VAULT_NAME               = local.uat_domain_key_vault_name
+        KEY_VAULT_NAME               = local.uat_key_vault_name
         CERT_NAME_EXPIRE_SECONDS     = "2592000"
       }
       variables_secret = {}
@@ -37,12 +37,12 @@ locals {
       dns_zone_rg                         = local.rg_prod_dns_zone_name
       subscription_name                   = local.prod_subscription_name
       subscription_id                     = local.prod_subscription_id
-      credential_key_vault_name           = local.prod_domain_key_vault_name
-      credential_key_vault_resource_group = local.prod_domain_key_vault_resource_group
+      credential_key_vault_name           = local.prod_key_vault_name
+      credential_key_vault_resource_group = local.prod_key_vault_resource_group
       service_endpoint                    = module.prod_cstar_core_tls_cert_service_conn_federated.service_endpoint_id
       variables = {
         KEY_VAULT_SERVICE_CONNECTION = module.prod_cstar_core_tls_cert_service_conn_federated.service_endpoint_name
-        KEY_VAULT_NAME               = local.prod_domain_key_vault_name
+        KEY_VAULT_NAME               = local.prod_key_vault_name
         CERT_NAME_EXPIRE_SECONDS     = "2592000"
       }
       variables_secret = {}
@@ -50,6 +50,33 @@ locals {
   }
 
   certificates_legacy = {
+    "api-cstar-dev-pagopa-it" : {
+      env             = "dev"
+      dns_record_name = "api"
+      variables       = {}
+      variables_secret = merge(
+        local.cert_diff_env_variables_dev
+      )
+      cert_diff_variables = local.dev_cert_diff_variables
+    }
+    "api-cstar-uat-pagopa-it-cert_az" : {
+      env             = "uat"
+      dns_record_name = "api"
+      variables       = {}
+      variables_secret = merge(
+        local.cert_diff_env_variables_uat
+      )
+      cert_diff_variables = local.uat_cert_diff_variables
+    }
+    "api-cstar-pagopa-it-cert_az" : {
+      env             = "prod"
+      dns_record_name = "api"
+      variables       = {}
+      variables_secret = merge(
+        local.cert_diff_env_variables_prod
+      )
+      cert_diff_variables = local.prod_cert_diff_variables
+    }
     "rtp-cb-cstar-dev-pagopa-it" : {
       env              = "dev"
       dns_record_name  = "api-rtp-cb"
@@ -125,6 +152,14 @@ module "federated_cert_pipeline_dev" {
       exclude = []
     }
   }
+  cert_diff_variables = {
+    enabled           = try(each.value.cert_diff_variables.enabled, false)
+    alert_enabled     = try(each.value.cert_diff_variables.alert_enabled, false)
+    cert_diff_version = try(each.value.cert_diff_variables.cert_diff_version, "")
+    app_insights_name = try(each.value.cert_diff_variables.app_insights_name, "")
+    app_insights_rg   = try(each.value.cert_diff_variables.app_insights_rg, "")
+    actions_group     = try(each.value.cert_diff_variables.actions_group, [""])
+  }
 
   depends_on = [
     module.letsencrypt_dev
@@ -186,6 +221,15 @@ module "federated_cert_pipeline_uat" {
     }
   }
 
+  cert_diff_variables = {
+    enabled           = try(each.value.cert_diff_variables.enabled, false)
+    alert_enabled     = try(each.value.cert_diff_variables.alert_enabled, false)
+    cert_diff_version = try(each.value.cert_diff_variables.cert_diff_version, "")
+    app_insights_name = try(each.value.cert_diff_variables.app_insights_name, "")
+    app_insights_rg   = try(each.value.cert_diff_variables.app_insights_rg, "")
+    actions_group     = try(each.value.cert_diff_variables.actions_group, [""])
+  }
+
   depends_on = [
     module.letsencrypt_uat
   ]
@@ -244,6 +288,15 @@ module "federated_cert_pipeline_prod" {
       include = ["refs/heads/master"]
       exclude = []
     }
+  }
+
+  cert_diff_variables = {
+    enabled           = try(each.value.cert_diff_variables.enabled, false)
+    alert_enabled     = try(each.value.cert_diff_variables.alert_enabled, false)
+    cert_diff_version = try(each.value.cert_diff_variables.cert_diff_version, "")
+    app_insights_name = try(each.value.cert_diff_variables.app_insights_name, "")
+    app_insights_rg   = try(each.value.cert_diff_variables.app_insights_rg, "")
+    actions_group     = try(each.value.cert_diff_variables.actions_group, [""])
   }
 
   depends_on = [

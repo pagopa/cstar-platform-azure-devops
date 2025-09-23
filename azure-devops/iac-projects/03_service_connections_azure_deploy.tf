@@ -85,10 +85,12 @@ module "prod_tf_azure_service_connection_deploy" {
   location            = var.location
   resource_group_name = local.prod_identity_rg_name
 
-  # check_approval_enabled = true
-  # approver_ids = [
-  #   data.azuredevops_group.admin.origin_id
-  # ]
+  check_approval_enabled = true
+  approver_ids = [
+    for k, g in data.azuredevops_group.groups :
+    g.origin_id if g.project_id == data.azuredevops_project.this[each.key].id &&
+    contains(local.devops_settings[each.key].groups, g.name)
+  ]
 }
 
 resource "azurerm_role_assignment" "prod_apply_permissions" {

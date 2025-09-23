@@ -30,15 +30,15 @@ locals {
     subscription_id                     = local.uat_subscription_id
     dns_zone_resource_group             = local.rg_uat_dns_zone_name
     credential_subcription              = local.uat_subscription_name
-    credential_key_vault_name           = local.uat_domain_key_vault_name
-    credential_key_vault_resource_group = local.uat_domain_key_vault_resource_group
+    credential_key_vault_name           = local.uat_key_vault_name
+    credential_key_vault_resource_group = local.uat_key_vault_resource_group
     service_connection_ids_authorization = [
       module.uat_cstar_core_tls_cert_service_conn_federated.service_endpoint_id,
     ]
   }
   mcshared-cstar-uat-pagopa-it-variables = {
     KEY_VAULT_SERVICE_CONNECTION = module.uat_cstar_core_tls_cert_service_conn_federated.service_endpoint_name,
-    KEY_VAULT_NAME               = local.uat_domain_key_vault_name
+    KEY_VAULT_NAME               = local.uat_key_vault_name
   }
   mcshared-cstar-uat-pagopa-it-variables_secret = {
   }

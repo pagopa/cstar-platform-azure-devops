@@ -25,7 +25,8 @@ resource "azurerm_key_vault_access_policy" "DEV-CSTAR-CORE-TLS-CERT-SERVICE-CONN
   tenant_id    = data.azurerm_client_config.current.tenant_id
   object_id    = module.dev_cstar_core_tls_cert_service_conn_federated.service_principal_object_id
 
-  certificate_permissions = ["Get", "Import"]
+  certificate_permissions = ["Get", "Import", "Update"]
+  secret_permissions      = ["Get"]
 }
 
 # create let's encrypt credential used to create SSL certificates
@@ -37,7 +38,7 @@ module "letsencrypt_dev" {
   }
   prefix            = local.project_prefix_short
   env               = "d"
-  key_vault_name    = local.dev_domain_key_vault_name
+  key_vault_name    = local.dev_key_vault_name
   subscription_name = local.dev_subscription_name
 }
 
@@ -68,7 +69,8 @@ resource "azurerm_key_vault_access_policy" "UAT-CSTAR-CORE-TLS-CERT-SERVICE-CONN
   tenant_id    = data.azurerm_client_config.current.tenant_id
   object_id    = module.uat_cstar_core_tls_cert_service_conn_federated.service_principal_object_id
 
-  certificate_permissions = ["Get", "Import"]
+  certificate_permissions = ["Get", "Import", "Update"]
+  secret_permissions      = ["Get"]
 }
 
 # create let's encrypt credential used to create SSL certificates
@@ -80,7 +82,7 @@ module "letsencrypt_uat" {
   }
   prefix            = local.project_prefix_short
   env               = "u"
-  key_vault_name    = local.uat_domain_key_vault_name
+  key_vault_name    = local.uat_key_vault_name
   subscription_name = local.uat_subscription_name
 }
 
@@ -110,7 +112,8 @@ resource "azurerm_key_vault_access_policy" "PROD-CSTAR-CORE-TLS-CERT-SERVICE-CON
   tenant_id    = data.azurerm_client_config.current.tenant_id
   object_id    = module.prod_cstar_core_tls_cert_service_conn_federated.service_principal_object_id
 
-  certificate_permissions = ["Get", "Import"]
+  certificate_permissions = ["Get", "Import", "Update"]
+  secret_permissions      = ["Get"]
 }
 
 # create let's encrypt credential used to create SSL certificates
@@ -122,6 +125,6 @@ module "letsencrypt_prod" {
   }
   prefix            = local.project_prefix_short
   env               = "p"
-  key_vault_name    = local.prod_domain_key_vault_name
+  key_vault_name    = local.prod_key_vault_name
   subscription_name = local.prod_subscription_name
 }
