@@ -84,6 +84,7 @@ locals {
     PROD_REACT_APP_ONE_TRUST_TOS_ID                  = local.prod_react_app_asset_register_one_trust_tos_id
     PROD_REACT_APP_ONE_TRUST_TOS_JSON_URL            = local.prod_react_app_asset_register_one_trust_tos_json_url
 
+    REACT_APP_UPCOMING_INITIATIVE_DAY                = local.initiative_day
   }
 }
 
