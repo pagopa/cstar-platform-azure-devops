@@ -45,3 +45,22 @@ data "azuredevops_serviceendpoint_github" "azure_devops_github_pr" {
   project_id            = data.azuredevops_project.this[each.key].project_id
   service_endpoint_name = local.devops_settings[each.key].srv_endpoint_github_pr
 }
+
+#
+# Teams
+#
+
+
+data "azuredevops_group" "groups" {
+  for_each = {
+    for g in local.teams_flatten : "${g.project_id}-${g.group_name}" => g
+  }
+
+  project_id = each.value.project_id
+  name       = each.value.group_name
+}
+
+
+# output "value" {
+#   value = data.azuredevops_team.teams
+# }

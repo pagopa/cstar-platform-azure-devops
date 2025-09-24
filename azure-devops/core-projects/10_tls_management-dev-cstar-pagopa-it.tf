@@ -36,15 +36,15 @@ locals {
     subscription_id                     = data.azurerm_subscriptions.dev.subscriptions[0].subscription_id
     dns_zone_resource_group             = local.rg_dev_dns_zone_name
     credential_subcription              = local.dev_subscription_name
-    credential_key_vault_name           = local.dev_domain_key_vault_name
-    credential_key_vault_resource_group = local.dev_domain_key_vault_resource_group
+    credential_key_vault_name           = local.dev_key_vault_name
+    credential_key_vault_resource_group = local.dev_key_vault_resource_group
     service_connection_ids_authorization = [
       module.dev_cstar_core_tls_cert_service_conn_federated.service_endpoint_id,
     ]
   }
   management-cstar-dev-pagopa-it-variables = {
     KEY_VAULT_SERVICE_CONNECTION = module.dev_cstar_core_tls_cert_service_conn_federated.service_endpoint_name,
-    KEY_VAULT_NAME               = local.dev_domain_key_vault_name
+    KEY_VAULT_NAME               = local.dev_key_vault_name
   }
   management-cstar-dev-pagopa-it-variables_secret = {
   }
