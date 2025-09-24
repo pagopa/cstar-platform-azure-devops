@@ -103,8 +103,8 @@ locals {
   }
 
   prod_cert_diff_variables = {
-    enabled           = false
-    alert_enabled     = false
+    enabled           = true
+    alert_enabled     = true
     cert_diff_version = "0.2.5"
     app_insights_name = local.prod_app_insight_monitoring_name
     app_insights_rg   = local.prod_app_insight_monitoring_rg
