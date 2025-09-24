@@ -111,7 +111,7 @@ locals {
   #---------------------------------------------------------------------------------------------------------
 
   # INITIATIVE DAT
-  initiative_day                                                 = "20/09/2025"
+  initiative_day = "20/09/2025"
 
   # DEV ELENCO INFORMATICO DEGLI ELETTRODOMESTICI
   dev_asset_cdn_profile                                          = "${local.prefix}-d-itn-${local.domain}-asset-register-cdn-profile"
