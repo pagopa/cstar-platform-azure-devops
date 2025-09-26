@@ -1,7 +1,7 @@
 locals {
 
   # TLS CERTS
-  certificate_legacy_env_mappings = {
+  certificate_weu_env_mappings = {
     dev = {
       dns_zone_name                       = "dev.cstar.pagopa.it"
       dns_zone_rg                         = local.rg_dev_dns_zone_name
@@ -49,7 +49,7 @@ locals {
     }
   }
 
-  certificates_legacy = {
+  certificates_frontend_weu = {
     "api-cstar-dev-pagopa-it" : {
       env             = "dev"
       dns_record_name = "api"
@@ -95,6 +95,33 @@ locals {
       variables        = {}
       variables_secret = {}
     }
+    "platform-cstar-dev-pagopa-it" : {
+      env             = "dev"
+      dns_record_name = "platform"
+      variables       = {}
+      variables_secret = merge(
+        local.cert_diff_env_variables_dev
+      )
+      cert_diff_variables = local.dev_cert_diff_variables
+    }
+    "platform-cstar-uat-pagopa-it-cert_az" : {
+      env             = "uat"
+      dns_record_name = "platform"
+      variables       = {}
+      variables_secret = merge(
+        local.cert_diff_env_variables_uat
+      )
+      cert_diff_variables = local.uat_cert_diff_variables
+    }
+    "platform-cstar-pagopa-it-cert_az" : {
+      env             = "prod"
+      dns_record_name = "platform"
+      variables       = {}
+      variables_secret = merge(
+        local.cert_diff_env_variables_prod
+      )
+      cert_diff_variables = local.prod_cert_diff_variables
+    }
   }
 }
 
@@ -105,7 +132,7 @@ locals {
 module "federated_cert_pipeline_dev" {
   source = "./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated"
 
-  for_each = { for k, v in local.certificates_legacy : k => v if v.env == "dev" }
+  for_each = { for k, v in local.certificates_frontend_weu : k => v if v.env == "dev" }
 
   providers = {
     azurerm = azurerm.dev
@@ -120,26 +147,26 @@ module "federated_cert_pipeline_dev" {
   github_service_connection_id = azuredevops_serviceendpoint_github.io-azure-devops-github-rw.id
 
   dns_record_name         = each.value.dns_record_name
-  dns_zone_name           = local.certificate_legacy_env_mappings[each.value.env].dns_zone_name
-  dns_zone_resource_group = local.certificate_legacy_env_mappings[each.value.env].dns_zone_rg
+  dns_zone_name           = local.certificate_weu_env_mappings[each.value.env].dns_zone_name
+  dns_zone_resource_group = local.certificate_weu_env_mappings[each.value.env].dns_zone_rg
   tenant_id               = data.azurerm_client_config.current.tenant_id
-  subscription_name       = local.certificate_legacy_env_mappings[each.value.env].subscription_name
-  subscription_id         = local.certificate_legacy_env_mappings[each.value.env].subscription_id
+  subscription_name       = local.certificate_weu_env_mappings[each.value.env].subscription_name
+  subscription_id         = local.certificate_weu_env_mappings[each.value.env].subscription_id
 
-  credential_key_vault_name           = local.certificate_legacy_env_mappings[each.value.env].credential_key_vault_name
-  credential_key_vault_resource_group = local.certificate_legacy_env_mappings[each.value.env].credential_key_vault_resource_group
+  credential_key_vault_name           = local.certificate_weu_env_mappings[each.value.env].credential_key_vault_name
+  credential_key_vault_resource_group = local.certificate_weu_env_mappings[each.value.env].credential_key_vault_resource_group
 
   variables = merge(
-    local.certificate_legacy_env_mappings[each.value.env].variables,
+    local.certificate_weu_env_mappings[each.value.env].variables,
     each.value.variables
   )
 
   variables_secret = merge(
-    local.certificate_legacy_env_mappings[each.value.env].variables_secret,
+    local.certificate_weu_env_mappings[each.value.env].variables_secret,
     each.value.variables_secret
   )
 
-  service_connection_ids_authorization = [local.certificate_legacy_env_mappings[each.value.env].service_endpoint]
+  service_connection_ids_authorization = [local.certificate_weu_env_mappings[each.value.env].service_endpoint]
 
   schedules = {
     days_to_build              = ["Fri"]
@@ -173,7 +200,7 @@ module "federated_cert_pipeline_dev" {
 module "federated_cert_pipeline_uat" {
   source = "./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated"
 
-  for_each = { for k, v in local.certificates_legacy : k => v if v.env == "uat" }
+  for_each = { for k, v in local.certificates_frontend_weu : k => v if v.env == "uat" }
 
   providers = {
     azurerm = azurerm.uat
@@ -188,26 +215,26 @@ module "federated_cert_pipeline_uat" {
   github_service_connection_id = azuredevops_serviceendpoint_github.io-azure-devops-github-rw.id
 
   dns_record_name         = each.value.dns_record_name
-  dns_zone_name           = local.certificate_legacy_env_mappings[each.value.env].dns_zone_name
-  dns_zone_resource_group = local.certificate_legacy_env_mappings[each.value.env].dns_zone_rg
+  dns_zone_name           = local.certificate_weu_env_mappings[each.value.env].dns_zone_name
+  dns_zone_resource_group = local.certificate_weu_env_mappings[each.value.env].dns_zone_rg
   tenant_id               = data.azurerm_client_config.current.tenant_id
-  subscription_name       = local.certificate_legacy_env_mappings[each.value.env].subscription_name
-  subscription_id         = local.certificate_legacy_env_mappings[each.value.env].subscription_id
+  subscription_name       = local.certificate_weu_env_mappings[each.value.env].subscription_name
+  subscription_id         = local.certificate_weu_env_mappings[each.value.env].subscription_id
 
-  credential_key_vault_name           = local.certificate_legacy_env_mappings[each.value.env].credential_key_vault_name
-  credential_key_vault_resource_group = local.certificate_legacy_env_mappings[each.value.env].credential_key_vault_resource_group
+  credential_key_vault_name           = local.certificate_weu_env_mappings[each.value.env].credential_key_vault_name
+  credential_key_vault_resource_group = local.certificate_weu_env_mappings[each.value.env].credential_key_vault_resource_group
 
   variables = merge(
-    local.certificate_legacy_env_mappings[each.value.env].variables,
+    local.certificate_weu_env_mappings[each.value.env].variables,
     each.value.variables
   )
 
   variables_secret = merge(
-    local.certificate_legacy_env_mappings[each.value.env].variables_secret,
+    local.certificate_weu_env_mappings[each.value.env].variables_secret,
     each.value.variables_secret
   )
 
-  service_connection_ids_authorization = [local.certificate_legacy_env_mappings[each.value.env].service_endpoint]
+  service_connection_ids_authorization = [local.certificate_weu_env_mappings[each.value.env].service_endpoint]
 
   schedules = {
     days_to_build              = ["Fri"]
@@ -242,7 +269,7 @@ module "federated_cert_pipeline_uat" {
 module "federated_cert_pipeline_prod" {
   source = "./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated"
 
-  for_each = { for k, v in local.certificates_legacy : k => v if v.env == "prod" }
+  for_each = { for k, v in local.certificates_frontend_weu : k => v if v.env == "prod" }
 
   providers = {
     azurerm = azurerm.prod
@@ -257,26 +284,26 @@ module "federated_cert_pipeline_prod" {
   github_service_connection_id = azuredevops_serviceendpoint_github.io-azure-devops-github-rw.id
 
   dns_record_name         = each.value.dns_record_name
-  dns_zone_name           = local.certificate_legacy_env_mappings[each.value.env].dns_zone_name
-  dns_zone_resource_group = local.certificate_legacy_env_mappings[each.value.env].dns_zone_rg
+  dns_zone_name           = local.certificate_weu_env_mappings[each.value.env].dns_zone_name
+  dns_zone_resource_group = local.certificate_weu_env_mappings[each.value.env].dns_zone_rg
   tenant_id               = data.azurerm_client_config.current.tenant_id
-  subscription_name       = local.certificate_legacy_env_mappings[each.value.env].subscription_name
-  subscription_id         = local.certificate_legacy_env_mappings[each.value.env].subscription_id
+  subscription_name       = local.certificate_weu_env_mappings[each.value.env].subscription_name
+  subscription_id         = local.certificate_weu_env_mappings[each.value.env].subscription_id
 
-  credential_key_vault_name           = local.certificate_legacy_env_mappings[each.value.env].credential_key_vault_name
-  credential_key_vault_resource_group = local.certificate_legacy_env_mappings[each.value.env].credential_key_vault_resource_group
+  credential_key_vault_name           = local.certificate_weu_env_mappings[each.value.env].credential_key_vault_name
+  credential_key_vault_resource_group = local.certificate_weu_env_mappings[each.value.env].credential_key_vault_resource_group
 
   variables = merge(
-    local.certificate_legacy_env_mappings[each.value.env].variables,
+    local.certificate_weu_env_mappings[each.value.env].variables,
     each.value.variables
   )
 
   variables_secret = merge(
-    local.certificate_legacy_env_mappings[each.value.env].variables_secret,
+    local.certificate_weu_env_mappings[each.value.env].variables_secret,
     each.value.variables_secret
   )
 
-  service_connection_ids_authorization = [local.certificate_legacy_env_mappings[each.value.env].service_endpoint]
+  service_connection_ids_authorization = [local.certificate_weu_env_mappings[each.value.env].service_endpoint]
 
   schedules = {
     days_to_build              = ["Fri"]
