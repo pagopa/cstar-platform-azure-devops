@@ -33,7 +33,7 @@ locals {
     DEV_REACT_APP_URL_FE_ASSISTANCE_PORTAL          = local.dev_react_app_asset_register_url_fe_assistance_portal
     DEV_REACT_APP_URL_STORAGE                       = local.dev_react_app_asset_register_url_storage
     DEV_REACT_APP_URL_API_REGISTER                  = local.dev_react_app_url_api_register
-    DEV_REACT_APP_URL_FE_EIE_MANUAL                 = ""
+    DEV_REACT_APP_URL_FE_EIE_MANUAL                 = local.react_app_url_fe_eie_manual
     DEV_CDN_DOMAINS                                 = local.dev_asset_cdn_domain
     DEV_REACT_APP_ONE_TRUST_OTNOTICE_CDN_URL        = local.dev_react_app_one_trust_otnotice_cdn_url
     DEV_REACT_APP_ONE_TRUST_OTNOTICE_CDN_SETTINGS   = local.dev_react_app_one_trust_otnotice_cdn_settings
@@ -54,7 +54,7 @@ locals {
     UAT_REACT_APP_URL_FE_ASSISTANCE_PORTAL          = local.uat_react_app_asset_register_url_fe_assistance_portal
     UAT_REACT_APP_URL_STORAGE                       = local.uat_react_app_asset_register_url_storage
     UAT_REACT_APP_URL_API_REGISTER                  = local.uat_react_app_url_api_register
-    UAT_REACT_APP_URL_FE_EIE_MANUAL                 = ""
+    UAT_REACT_APP_URL_FE_EIE_MANUAL                 = local.react_app_url_fe_eie_manual
     UAT_CDN_DOMAINS                                 = local.uat_asset_cdn_domain
     UAT_REACT_APP_ONE_TRUST_OTNOTICE_CDN_URL        = local.uat_react_app_one_trust_otnotice_cdn_url
     UAT_REACT_APP_ONE_TRUST_OTNOTICE_CDN_SETTINGS   = local.uat_react_app_one_trust_otnotice_cdn_settings
@@ -75,7 +75,7 @@ locals {
     PROD_REACT_APP_URL_FE_ASSISTANCE_PORTAL          = local.prod_react_app_asset_register_url_fe_assistance_portal
     PROD_REACT_APP_URL_STORAGE                       = local.prod_react_app_asset_register_url_storage
     PROD_REACT_APP_URL_API_REGISTER                  = local.prod_react_app_url_api_register
-    PROD_REACT_APP_URL_FE_EIE_MANUAL                 = ""
+    PROD_REACT_APP_URL_FE_EIE_MANUAL                 = local.react_app_url_fe_eie_manual
     PROD_CDN_DOMAINS                                 = local.prod_asset_cdn_domain
     PROD_REACT_APP_ONE_TRUST_OTNOTICE_CDN_URL        = local.prod_react_app_one_trust_otnotice_cdn_url
     PROD_REACT_APP_ONE_TRUST_OTNOTICE_CDN_SETTINGS   = local.prod_react_app_one_trust_otnotice_cdn_settings
