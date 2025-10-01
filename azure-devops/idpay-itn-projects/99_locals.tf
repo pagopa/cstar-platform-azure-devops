@@ -298,7 +298,7 @@ locals {
   prod_react_app_url_api_register                        = "https://api-io.cstar.pagopa.it/idpay-itn/register"
 
   #DEVELOPER PORTAL GUIDE
-  react_app_url_fe_eie_manual                            = "https://developer.pagopa.it/app-io/guides"
+  react_app_url_fe_eie_manual = "https://developer.pagopa.it/app-io/guides"
 
 
   #BONUS FRONTEND REACT ENV MERCHANT OPERATOR PORTAL
