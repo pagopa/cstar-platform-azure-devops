@@ -34,7 +34,7 @@ module "pari_generic_performance_test" {
   github_service_connection_id = local.service_connection_github_ro_id
 
   pipeline_name         = "${local.product}-generic-performance-test.test"
-  pipeline_yml_filename = "performance_generic.yaml"
+  pipeline_yml_filename = "k6-performance-generic.yml"
   path                  = var.pari_generic_performance_test.pipeline.path
 
   variables = merge(
