@@ -297,6 +297,9 @@ locals {
   prod_react_app_asset_register_url_fe_landing           = "https://selfcare.pagopa.it/auth/logout"
   prod_react_app_url_api_register                        = "https://api-io.cstar.pagopa.it/idpay-itn/register"
 
+  #DEVELOPER PORTAL GUIDE
+  react_app_url_fe_eie_manual = "https://developer.pagopa.it/app-io/guides"
+
 
   #BONUS FRONTEND REACT ENV MERCHANT OPERATOR PORTAL
 
