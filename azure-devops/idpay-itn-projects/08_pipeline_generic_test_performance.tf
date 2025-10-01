@@ -8,7 +8,7 @@ variable "pari_generic_performance_test" {
       yml_prefix_name = null
     }
     pipeline = {
-      path = "idpay\\pari-generic-performance-test"
+      path = "idpay\\pari-performance-test"
     }
   }
 }
@@ -33,7 +33,7 @@ module "pari_generic_performance_test" {
   repository                   = var.pari_generic_performance_test.repository
   github_service_connection_id = local.service_connection_github_ro_id
 
-  pipeline_name         = "${local.product}-generic-performance-test.test"
+  pipeline_name         = "k6-performance-generic.test"
   pipeline_yml_filename = "k6-performance-generic.yml"
   path                  = var.pari_generic_performance_test.pipeline.path
 
