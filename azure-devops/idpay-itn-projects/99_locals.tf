@@ -308,18 +308,21 @@ locals {
   dev_vite_keycloak_client_id       = "frontend"
   dev_vite_keycloak_redirect_uri    = "https://dev.bonuselettrodomestici.it/esercente"
   dev_vite_url_api_portal_merchants = "https://api-io.dev.cstar.pagopa.it/idpay-itn/merchant-op"
+  dev_vite_initiative_id            = "68dd003ccce8c534d1da22bc"
 
   uat_vite_keycloak_url             = "https://api-mcshared.uat.cstar.pagopa.it/auth-itn"
   uat_vite_keycloak_realm           = "merchant-operator"
   uat_vite_keycloak_client_id       = "frontend"
   uat_vite_keycloak_redirect_uri    = "https://uat.bonuselettrodomestici.it/esercente"
   uat_vite_url_api_portal_merchants = "https://api-io.uat.cstar.pagopa.it/idpay-itn/merchant-op"
+  uat_vite_initiative_id            = "68dd003ccce8c534d1da22bc"
 
   prod_vite_keycloak_url             = "https://api-mcshared.cstar.pagopa.it/auth-itn"
   prod_vite_keycloak_realm           = "merchant-operator"
   prod_vite_keycloak_client_id       = "frontend"
   prod_vite_keycloak_redirect_uri    = "https://bonuselettrodomestici.it/esercente"
   prod_vite_url_api_portal_merchants = "https://api-io.cstar.pagopa.it/idpay-itn/merchant-op"
+  prod_vite_initiative_id            = "68dd003ccce8c534d1da22bc"
 
   #BONUS USER REALM PORTAL
 
