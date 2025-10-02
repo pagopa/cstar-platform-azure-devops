@@ -322,7 +322,7 @@ locals {
   prod_vite_keycloak_client_id       = "frontend"
   prod_vite_keycloak_redirect_uri    = "https://bonuselettrodomestici.it/esercente"
   prod_vite_url_api_portal_merchants = "https://api-io.cstar.pagopa.it/idpay-itn/merchant-op"
-  prod_vite_initiative_id            = "tbd"
+  prod_vite_initiative_id            = "68dd003ccce8c534d1da22bc"
 
   #BONUS USER REALM PORTAL
 
