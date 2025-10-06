@@ -13,10 +13,11 @@ module "domain_dev_secrets" {
   resource_group = local.dev_kv_domain_resource_group
 
   secrets = [
+    "argocd-server-url",
+    "argocd-admin-username",
+    "argocd-admin-password",
   ]
 }
-
-
 #
 # 🟨 UAT - SECRETS
 #
@@ -32,6 +33,9 @@ module "domain_uat_secrets" {
   resource_group = local.uat_kv_domain_resource_group
 
   secrets = [
+    "argocd-server-url",
+    "argocd-admin-username",
+    "argocd-admin-password",
   ]
 }
 
@@ -53,5 +57,8 @@ module "domain_prod_secrets" {
     "srtp-bot-github-rw-TOKEN",
     "srtp-bot-github-ro-TOKEN",
     "srtp-bot-github-pr-TOKEN",
+    "argocd-server-url",
+    "argocd-admin-username",
+    "argocd-admin-password",
   ]
 }

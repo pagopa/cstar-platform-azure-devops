@@ -74,11 +74,6 @@ module "iac_deploy" {
   pipeline_name_prefix = "${each.value.location_short}-${each.value.pipeline_prefix}"
 
   variables = merge(
-    {
-      tf_aks_dev_name  = local.tf_aks_dev_name[each.value.location_short]
-      tf_aks_uat_name  = local.tf_aks_uat_name[each.value.location_short]
-      tf_aks_prod_name = local.tf_aks_prod_name[each.value.location_short]
-    },
     local.devops_settings[each.value.project_name].default_env_variables,
 
     local.project_settings[each.value.project_name].default_env_variables,
@@ -87,16 +82,19 @@ module "iac_deploy" {
       tf_dev_aks_apiserver_url         = module.dev_secrets[each.value.name].values["${local.tf_aks_dev_name[each.value.location_short]}-apiserver-url"].value,
       tf_dev_aks_azure_devops_sa_cacrt = module.dev_secrets[each.value.name].values["${local.tf_aks_dev_name[each.value.location_short]}-azure-devops-sa-cacrt"].value,
       tf_dev_aks_azure_devops_sa_token = base64decode(module.dev_secrets[each.value.name].values["${local.tf_aks_dev_name[each.value.location_short]}-azure-devops-sa-token"].value),
+      tf_aks_dev_name                  = local.tf_aks_dev_name[each.value.location_short]
     } : {},
     contains(each.value.envs, "u") && try(each.value.kv_name, "") != "" ? {
       tf_uat_aks_apiserver_url         = module.uat_secrets[each.value.name].values["${local.tf_aks_uat_name[each.value.location_short]}-apiserver-url"].value,
       tf_uat_aks_azure_devops_sa_cacrt = module.uat_secrets[each.value.name].values["${local.tf_aks_uat_name[each.value.location_short]}-azure-devops-sa-cacrt"].value,
       tf_uat_aks_azure_devops_sa_token = base64decode(module.uat_secrets[each.value.name].values["${local.tf_aks_uat_name[each.value.location_short]}-azure-devops-sa-token"].value),
+      tf_aks_uat_name                  = local.tf_aks_uat_name[each.value.location_short]
     } : {},
     contains(each.value.envs, "p") && try(each.value.kv_name, "") != "" ? {
       tf_prod_aks_apiserver_url         = module.prod_secrets[each.value.name].values["${local.tf_aks_prod_name[each.value.location_short]}-apiserver-url"].value,
       tf_prod_aks_azure_devops_sa_cacrt = module.prod_secrets[each.value.name].values["${local.tf_aks_prod_name[each.value.location_short]}-azure-devops-sa-cacrt"].value,
       tf_prod_aks_azure_devops_sa_token = base64decode(module.prod_secrets[each.value.name].values["${local.tf_aks_prod_name[each.value.location_short]}-azure-devops-sa-token"].value),
+      tf_aks_prod_name                  = local.tf_aks_prod_name[each.value.location_short]
     } : {},
     local.base_iac_variables_deploy
   )
