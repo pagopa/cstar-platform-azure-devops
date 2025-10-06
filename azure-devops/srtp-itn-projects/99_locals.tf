@@ -8,6 +8,11 @@ locals {
 
   devops_project_id = data.azuredevops_project.this.project_id
 
+  ### Agent Pool
+  azdo_agent_pool_dev  = "cstar-dev-linux"
+  azdo_agent_pool_uat  = "cstar-uat-linux"
+  azdo_agent_pool_prod = "cstar-prod-linux"
+
   # Default Domain Resource Group
   dev_data_rg_name  = "${local.prefix}-d-${local.location_short}-${local.domain}-data-rg"
   uat_data_rg_name  = "${local.prefix}-u-${local.location_short}-${local.domain}-data-rg"
@@ -49,10 +54,6 @@ locals {
   rg_dev_dns_zone_name  = "cstar-d-vnet-rg"
   rg_uat_dns_zone_name  = "cstar-u-vnet-rg"
   rg_prod_dns_zone_name = "cstar-p-vnet-rg"
-
-  dev_dns_zone_name  = "dev.cstar.pagopa.it"
-  uat_dns_zone_name  = "uat.cstar.pagopa.it"
-  prod_dns_zone_name = "cstar.pagopa.it"
 
   ### Idenity RG
   dev_identity_rg_name  = "cstar-d-itn-srtp-cicd-rg"
