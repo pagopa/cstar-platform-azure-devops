@@ -3,7 +3,7 @@ variable "srtp_aks_deploy" {
     repository = {
       organization   = "pagopa"
       name           = "srtp-deploy-aks"
-      branch_name    = "refs/heads/feat/init-project"
+      branch_name    = "refs/heads/main"
       pipelines_path = ".devops"
     }
     pipeline = {
