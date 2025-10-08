@@ -20,6 +20,8 @@ module "domain_dev_secrets" {
     "argocd-admin-username",
     "argocd-server-url",
     # "idpay-workload-identity-client-id",
+    "keycloak-username",
+    "keycloak-password"
   ]
 }
 
