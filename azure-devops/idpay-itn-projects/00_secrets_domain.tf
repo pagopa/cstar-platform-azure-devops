@@ -74,5 +74,7 @@ module "domain_prod_secrets" {
     "argocd-admin-password",
     "argocd-admin-username",
     "argocd-server-url",
+    "keycloak-username",
+    "keycloak-password"
   ]
 }

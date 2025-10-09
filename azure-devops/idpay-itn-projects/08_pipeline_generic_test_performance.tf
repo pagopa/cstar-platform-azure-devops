@@ -24,6 +24,9 @@ locals {
 
     UAT_KEYCLOAK_USERNAME                = module.domain_uat_secrets.values["keycloak-username"].value
     UAT_KEYCLOAK_PASSWORD                = module.domain_uat_secrets.values["keycloak-password"].value
+
+    PROD_KEYCLOAK_USERNAME                = module.domain_prod_secrets.values["keycloak-username"].value
+    PROD_KEYCLOAK_PASSWORD                = module.domain_prod_secrets.values["keycloak-password"].value
   }
 
 }
