@@ -73,6 +73,6 @@ module "domain_prod_secrets" {
     "idpay-bot-github-pr-TOKEN",
     "argocd-admin-password",
     "argocd-admin-username",
-    "argocd-server-url",
+    "argocd-server-url"
   ]
 }

@@ -19,11 +19,11 @@ locals {
 
   # global secrets
   pari_generic_performance_test_variables_secret = {
-    DEV_USER_EMAIL                    = module.domain_dev_secrets.values["keycloak-username"].value
-    DEV_PASSWORD_EMAIL                = module.domain_dev_secrets.values["keycloak-password"].value
+    DEV_KEYCLOAK_USERNAME                = module.domain_dev_secrets.values["keycloak-username"].value
+    DEV_KEYCLOAK_PASSWORD                = module.domain_dev_secrets.values["keycloak-password"].value
 
-    UAT_USER_EMAIL                    = module.domain_uat_secrets.values["keycloak-username"].value
-    UAT_PASSWORD_EMAIL                = module.domain_uat_secrets.values["keycloak-password"].value
+    UAT_KEYCLOAK_USERNAME                = module.domain_uat_secrets.values["keycloak-username"].value
+    UAT_KEYCLOAK_PASSWORD                = module.domain_uat_secrets.values["keycloak-password"].value
   }
 
 }
