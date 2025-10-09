@@ -48,6 +48,8 @@ module "domain_uat_secrets" {
     "argocd-admin-username",
     "argocd-server-url",
     # "idpay-workload-identity-client-id",
+    "keycloak-username",
+    "keycloak-password"
   ]
 }
 
