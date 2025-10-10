@@ -20,6 +20,8 @@ module "domain_dev_secrets" {
     "argocd-admin-username",
     "argocd-server-url",
     # "idpay-workload-identity-client-id",
+    "keycloak-test-user-username",
+    "keycloak-test-user-password"
   ]
 }
 
@@ -46,6 +48,8 @@ module "domain_uat_secrets" {
     "argocd-admin-username",
     "argocd-server-url",
     # "idpay-workload-identity-client-id",
+    "keycloak-test-user-username",
+    "keycloak-test-user-password"
   ]
 }
 
@@ -69,6 +73,6 @@ module "domain_prod_secrets" {
     "idpay-bot-github-pr-TOKEN",
     "argocd-admin-password",
     "argocd-admin-username",
-    "argocd-server-url",
+    "argocd-server-url"
   ]
 }
