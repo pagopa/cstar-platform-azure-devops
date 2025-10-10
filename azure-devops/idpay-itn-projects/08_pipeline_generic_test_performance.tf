@@ -1,4 +1,4 @@
-keycloak-test-user-passwordvariable "pari_generic_performance_test" {
+variable "pari_generic_performance_test" {
   default = {
     repository = {
       organization    = "pagopa"
