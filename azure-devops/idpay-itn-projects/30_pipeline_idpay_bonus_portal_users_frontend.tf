@@ -34,6 +34,7 @@ locals {
     DEV_VITE_KEYCLOAK_CLIENT_ID    = local.dev_vite_user_keycloak_client_id
     DEV_VITE_KEYCLOAK_REDIRECT_URI = local.dev_vite_user_keycloak_redirect_uri
     DEV_VITE_URL_API_PORTAL_USERS  = local.dev_vite_url_api_portal_users
+    DEV_VITE_INITIATIVE_ID         = local.dev_vite_initiative_id
     DEV_CDN_DOMAINS                = join(" ", local.dev_bonus_cdn_domains)
 
 
@@ -49,6 +50,7 @@ locals {
     UAT_VITE_KEYCLOAK_CLIENT_ID    = local.uat_vite_user_keycloak_client_id
     UAT_VITE_KEYCLOAK_REDIRECT_URI = local.uat_vite_user_keycloak_redirect_uri
     UAT_VITE_URL_API_PORTAL_USERS  = local.uat_vite_url_api_portal_users
+    UAT_VITE_INITIATIVE_ID         = local.uat_vite_initiative_id
     UAT_CDN_DOMAINS                = join(" ", local.uat_bonus_cdn_domains)
 
     PROD_AZURE_SUBSCRIPTION         = local.prod_service_endpoint_azure_id
@@ -63,6 +65,7 @@ locals {
     PROD_VITE_KEYCLOAK_CLIENT_ID    = local.prod_vite_user_keycloak_client_id
     PROD_VITE_KEYCLOAK_REDIRECT_URI = local.prod_vite_user_keycloak_redirect_uri
     PROD_VITE_URL_API_PORTAL_USERS  = local.prod_vite_url_api_portal_users
+    PROD_VITE_INITIATIVE_ID         = local.prod_vite_initiative_id
     PROD_CDN_DOMAINS                = join(" ", local.prod_bonus_cdn_domains)
 
   }
