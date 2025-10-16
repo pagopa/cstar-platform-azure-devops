@@ -21,7 +21,6 @@ locals {
 
     blob_container_name    = "$web"
     AZURE_DEVOPS_GITHUB_RO = local.service_connection_github_ro_name
-    REACT_APP_MANUAL_LINK  = local.react_app_url_fe_eie_manual
 
     DEV_AZURE_SUBSCRIPTION                                    = local.dev_service_endpoint_azure_id
     DEV_CDN_ENDPOINT                                          = local.dev_welfare_cdn_endpoint
@@ -47,6 +46,7 @@ locals {
     DEV_REACT_APP_ONE_TRUST_TOS_ID_MERCHANTS                  = local.dev_react_app_one_trust_tos_id_merchants
     DEV_REACT_APP_ONE_TRUST_TOS_JSON_URL_MERCHANTS            = local.dev_react_app_one_trust_tos_json_url_merchants
     DEV_CDN_DOMAINS                                           = local.dev_welfare_dns_domain
+    DEV_REACT_APP_URL_FE_MANUAL_LINK                          = local.react_app_url_fe_eie_manual
 
     UAT_AZURE_SUBSCRIPTION                                    = local.uat_service_endpoint_azure_id
     UAT_CDN_ENDPOINT                                          = local.uat_welfare_cdn_endpoint
@@ -72,6 +72,7 @@ locals {
     UAT_REACT_APP_ONE_TRUST_TOS_ID_MERCHANTS                  = local.uat_react_app_one_trust_tos_id_merchants
     UAT_REACT_APP_ONE_TRUST_TOS_JSON_URL_MERCHANTS            = local.uat_react_app_one_trust_tos_json_url_merchants
     UAT_CDN_DOMAINS                                           = local.uat_welfare_dns_domain
+    UAT_REACT_APP_URL_FE_MANUAL_LINK                          = local.react_app_url_fe_eie_manual
 
     PROD_AZURE_SUBSCRIPTION                                    = local.prod_service_endpoint_azure_id
     PROD_CDN_ENDPOINT                                          = local.prod_welfare_cdn_endpoint
@@ -97,6 +98,7 @@ locals {
     PROD_REACT_APP_ONE_TRUST_TOS_ID_MERCHANTS                  = local.prod_react_app_one_trust_tos_id_merchants
     PROD_REACT_APP_ONE_TRUST_TOS_JSON_URL_MERCHANTS            = local.prod_react_app_one_trust_tos_json_url_merchants
     PROD_CDN_DOMAINS                                           = local.prod_welfare_dns_domain
+    PROD_REACT_APP_URL_FE_MANUAL_LINK                          = local.react_app_url_fe_eie_manual
 
 
   }
