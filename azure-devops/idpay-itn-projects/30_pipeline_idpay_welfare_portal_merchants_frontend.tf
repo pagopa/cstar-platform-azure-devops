@@ -21,6 +21,7 @@ locals {
 
     blob_container_name    = "$web"
     AZURE_DEVOPS_GITHUB_RO = local.service_connection_github_ro_name
+    EACT_APP_MANUAL_LINK   = local.react_app_url_fe_eie_manual
 
     DEV_AZURE_SUBSCRIPTION                                    = local.dev_service_endpoint_azure_id
     DEV_CDN_ENDPOINT                                          = local.dev_welfare_cdn_endpoint
