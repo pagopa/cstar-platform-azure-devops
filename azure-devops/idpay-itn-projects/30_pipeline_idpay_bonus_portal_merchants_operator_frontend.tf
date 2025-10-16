@@ -22,8 +22,6 @@ locals {
     blob_container_name    = "$web"
     AZURE_DEVOPS_GITHUB_RO = local.service_connection_github_ro_name
 
-    VITE_MANUAL_LINK = local.react_app_url_fe_eie_manual
-
     DEV_AZURE_SUBSCRIPTION         = local.dev_service_endpoint_azure_id
     DEV_CDN_ENDPOINT               = local.dev_bonus_merchant_op_cdn_endpoint
     DEV_CDN_PROFILE                = local.dev_bonus_merchant_op_cdn_profile
@@ -38,6 +36,7 @@ locals {
     DEV_CDN_DOMAINS                = join(" ", local.dev_bonus_cdn_domains)
     DEV_VITE_API_URL               = local.dev_vite_url_api_portal_merchants
     DEV_VITE_INITIATIVE_ID         = local.dev_vite_initiative_id
+    DEV_VITE_MANUAL_LINK           = local.react_app_url_fe_eie_manual
 
     UAT_AZURE_SUBSCRIPTION         = local.uat_service_endpoint_azure_id
     UAT_CDN_ENDPOINT               = local.uat_bonus_merchant_op_cdn_endpoint
@@ -53,6 +52,7 @@ locals {
     UAT_CDN_DOMAINS                = join(" ", local.uat_bonus_cdn_domains)
     UAT_VITE_API_URL               = local.uat_vite_url_api_portal_merchants
     UAT_VITE_INITIATIVE_ID         = local.uat_vite_initiative_id
+    UAT_VITE_MANUAL_LINK           = local.react_app_url_fe_eie_manual
 
     PROD_AZURE_SUBSCRIPTION         = local.prod_service_endpoint_azure_id
     PROD_CDN_ENDPOINT               = local.prod_bonus_merchant_op_cdn_endpoint
@@ -68,6 +68,7 @@ locals {
     PROD_CDN_DOMAINS                = join(" ", local.prod_bonus_cdn_domains)
     PROD_VITE_API_URL               = local.prod_vite_url_api_portal_merchants
     PROD_VITE_INITIATIVE_ID         = local.prod_vite_initiative_id
+    PROD_VITE_MANUAL_LINK           = local.react_app_url_fe_eie_manual
   }
 }
 
