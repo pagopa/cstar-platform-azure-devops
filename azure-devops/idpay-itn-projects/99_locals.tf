@@ -280,6 +280,8 @@ locals {
   dev_react_app_asset_register_url_fe_assistance_portal = "/elenco-informatico-elettrodomestici/assistenza"
   dev_react_app_asset_register_url_fe_landing           = "https://dev.selfcare.pagopa.it/auth/logout"
   dev_react_app_url_api_register                        = "https://api-io.dev.cstar.pagopa.it/idpay-itn/register"
+  dev_react_app_url_privacy_disclaimer                  = "https://eie.dev.cstar.pagopa.it/elenco-informatico-elettrodomestici/privacy-policy"
+  dev_react_app_url_terms_and_conditions                = "https://eie.dev.cstar.pagopa.it/elenco-informatico-elettrodomestici/terms-of-service"
 
   uat_react_app_asset_register_url_cdn                  = "https://eie.uat.cstar.pagopa.it/"
   uat_react_app_asset_register_url_storage              = "https://cstaruitnidpayregcdnsa.z38.web.core.windows.net"
@@ -288,6 +290,8 @@ locals {
   uat_react_app_asset_register_url_fe_assistance_portal = "/elenco-informatico-elettrodomestici/assistenza"
   uat_react_app_asset_register_url_fe_landing           = "https://uat.selfcare.pagopa.it/auth/logout"
   uat_react_app_url_api_register                        = "https://api-io.uat.cstar.pagopa.it/idpay-itn/register"
+  uat_react_app_url_privacy_disclaimer                  = "https://eie.uat.cstar.pagopa.it/elenco-informatico-elettrodomestici/privacy-policy"
+  uat_react_app_url_terms_and_conditions                = "https://eie.uat.cstar.pagopa.it/elenco-informatico-elettrodomestici/terms-of-service"
 
   prod_react_app_asset_register_url_cdn                  = "https://eie.cstar.pagopa.it/"
   prod_react_app_asset_register_url_storage              = "https://cstarpitnidpayregcdnsa.z38.web.core.windows.net"
@@ -296,12 +300,12 @@ locals {
   prod_react_app_asset_register_url_fe_assistance_portal = "/elenco-informatico-elettrodomestici/assistenza"
   prod_react_app_asset_register_url_fe_landing           = "https://selfcare.pagopa.it/auth/logout"
   prod_react_app_url_api_register                        = "https://api-io.cstar.pagopa.it/idpay-itn/register"
+  prod_react_app_url_privacy_disclaimer                  = "https://eie.cstar.pagopa.it/elenco-informatico-elettrodomestici/privacy-policy"
+  prod_react_app_url_terms_and_conditions                = "https://eie.cstar.pagopa.it/elenco-informatico-elettrodomestici/terms-of-service"
 
   #EIE PORTAL GUIDE
-  react_app_url_fe_eie_manual        = "https://developer.pagopa.it/pari/guides/bonuselettrodomestici-manuale-tecnico-produttore"
-  react_app_pagopa_help_email        = "https://developer.pagopa.it/pari/guides/bonuselettrodomestici-manuale-tecnico-produttore/contatti"
-  react_app_url_privacy_disclaimer   = "https://eie.cstar.pagopa.it/elenco-informatico-elettrodomestici/privacy-policy"
-  react_app_url_terms_and_conditions = "https://eie.cstar.pagopa.it/elenco-informatico-elettrodomestici/terms-of-service"
+  react_app_url_fe_eie_manual = "https://developer.pagopa.it/pari/guides/bonuselettrodomestici-manuale-tecnico-produttore"
+  react_app_pagopa_help_email = "https://developer.pagopa.it/pari/guides/bonuselettrodomestici-manuale-tecnico-produttore/contatti"
 
   #BONUS FRONTEND REACT ENV MERCHANT OPERATOR PORTAL
 

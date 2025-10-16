@@ -42,8 +42,8 @@ locals {
     DEV_REACT_APP_ONE_TRUST_TOS_ID                  = local.dev_react_app_asset_register_one_trust_tos_id
     DEV_REACT_APP_ONE_TRUST_TOS_JSON_URL            = local.dev_react_app_asset_register_one_trust_tos_json_url
     DEV_REACT_APP_ASSISTANCE_EMAIL                  = local.react_app_pagopa_help_email
-    DEV_REACT_APP_URL_PRIVACY_DISCLAIMER            = local.react_app_url_privacy_disclaimer
-    DEV_REACT_APP_URL_TERMS_AND_CONDITIONS          = local.react_app_url_terms_and_conditions
+    DEV_REACT_APP_URL_PRIVACY_DISCLAIMER            = local.dev_react_app_url_privacy_disclaimer
+    DEV_REACT_APP_URL_TERMS_AND_CONDITIONS          = local.dev_react_app_url_terms_and_conditions
 
     UAT_AZURE_SUBSCRIPTION                          = local.uat_service_endpoint_azure_id
     UAT_CDN_ENDPOINT                                = local.uat_asset_cdn_endpoint
@@ -66,8 +66,8 @@ locals {
     UAT_REACT_APP_ONE_TRUST_TOS_ID                  = local.uat_react_app_asset_register_one_trust_tos_id
     UAT_REACT_APP_ONE_TRUST_TOS_JSON_URL            = local.uat_react_app_asset_register_one_trust_tos_json_url
     UAT_REACT_APP_ASSISTANCE_EMAIL                  = local.react_app_pagopa_help_email
-    UAT_REACT_APP_URL_PRIVACY_DISCLAIMER            = local.react_app_url_privacy_disclaimer
-    UAT_REACT_APP_URL_TERMS_AND_CONDITIONS          = local.react_app_url_terms_and_conditions
+    UAT_REACT_APP_URL_PRIVACY_DISCLAIMER            = local.uat_react_app_url_privacy_disclaimer
+    UAT_REACT_APP_URL_TERMS_AND_CONDITIONS          = local.uat_react_app_url_terms_and_conditions
 
     PROD_AZURE_SUBSCRIPTION                          = local.prod_service_endpoint_azure_id
     PROD_CDN_ENDPOINT                                = local.prod_asset_cdn_endpoint
@@ -90,8 +90,8 @@ locals {
     PROD_REACT_APP_ONE_TRUST_TOS_ID                  = local.prod_react_app_asset_register_one_trust_tos_id
     PROD_REACT_APP_ONE_TRUST_TOS_JSON_URL            = local.prod_react_app_asset_register_one_trust_tos_json_url
     PROD_REACT_APP_ASSISTANCE_EMAIL                  = local.react_app_pagopa_help_email
-    PROD_REACT_APP_URL_PRIVACY_DISCLAIMER            = local.react_app_url_privacy_disclaimer
-    PROD_REACT_APP_URL_TERMS_AND_CONDITIONS          = local.react_app_url_terms_and_conditions
+    PROD_REACT_APP_URL_PRIVACY_DISCLAIMER            = local.prod_react_app_url_privacy_disclaimer
+    PROD_REACT_APP_URL_TERMS_AND_CONDITIONS          = local.prod_react_app_url_terms_and_conditions
 
     REACT_APP_UPCOMING_INITIATIVE_DAY = local.initiative_day
   }
