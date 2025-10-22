@@ -198,11 +198,11 @@ locals {
   dev_react_app_url_api_merchants                           = "https://api-io.dev.cstar.pagopa.it/idpay-itn/merchant"
   dev_react_app_url_api_merchants_portal                    = "https://api-io.dev.cstar.pagopa.it/idpay-itn/merchant/portal"
   dev_react_app_one_trust_otnotice_cdn_url                  = "https://privacyportalde-cdn.onetrust.com/privacy-notice-scripts/otnotice-1.0.min.js"
-  dev_react_app_one_trust_otnotice_cdn_settings             = "eyJjYWxsYmFja1VybCI6Imh0dHBzOi8vcHJpdmFjeXBvcnRhbC1kZS5vbmV0cnVzdC5jb20vcmVxdWVzdC92MS9wcml2YWN5Tm90aWNlcy9zdGF0cy92aWV3cyJ9"
+  dev_react_app_one_trust_otnotice_cdn_settings             = "eyJjYWxsYmFja1VybCI6Imh0dHBzOi8vcHJpdmFjeXBvcnRhbC1kZS5vbmV0cnVzdC5jb20vcmVxdWVzdC92MS9wcml2YWN5Tm90aWNlcy9zdGF0cy92aWV3cyIsImNvbnRlbnRBcGlVcmwiOiJodHRwczovL3ByaXZhY3lwb3J0YWwtZGUub25ldHJ1c3QuY29tL3JlcXVlc3QvdjEvZW50ZXJwcmlzZXBvbGljeS9kaWdpdGFscG9saWN5L2NvbnRlbnQiLCJtZXRhZGF0YUFwaVVybCI6Imh0dHBzOi8vcHJpdmFjeXBvcnRhbC1kZS5vbmV0cnVzdC5jb20vcmVxdWVzdC92MS9lbnRlcnByaXNlcG9saWN5L2RpZ2l0YWxwb2xpY3kvbWV0YS1kYXRhIn0="
   dev_react_app_one_trust_privacy_policy_id                 = "otnotice-5b7fed3e-ea34-4620-b01d-b17fa7c88441"
-  dev_react_app_one_trust_privacy_policy_json_url           = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/draft/5b7fed3e-ea34-4620-b01d-b17fa7c88441.json"
+  dev_react_app_one_trust_privacy_policy_json_url           = "https://privacyportalde-cdn.onetrust.com/storage-container/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/44d36c0c-f859-4437-ae03-7da3c8b660f2/published/privacynotice.json"
   dev_react_app_one_trust_tos_id                            = "otnotice-6240fe7c-a66c-4395-a5c6-f1fee15e8258"
-  dev_react_app_one_trust_tos_json_url                      = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/draft/6240fe7c-a66c-4395-a5c6-f1fee15e8258.json"
+  dev_react_app_one_trust_tos_json_url                      = "https://privacyportalde-cdn.onetrust.com/storage-container/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/f1b252d1-de0a-4e99-859c-47918b46876e/published/privacynotice.json"
   dev_react_app_one_trust_privacy_policy_id_merchants       = "otnotice-5079ee0c-cfa9-42ec-acda-66799bed5039"
   dev_react_app_one_trust_privacy_policy_json_url_merchants = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/draft/5079ee0c-cfa9-42ec-acda-66799bed5039.json"
   dev_react_app_one_trust_tos_id_merchants                  = "otnotice-d99f1397-31cc-4519-9629-785c0d4c9145"
@@ -228,11 +228,11 @@ locals {
   uat_react_app_url_api_merchants                           = "https://api-io.uat.cstar.pagopa.it/idpay-itn/merchant"
   uat_react_app_url_api_merchants_portal                    = "https://api-io.uat.cstar.pagopa.it/idpay-itn/merchant/portal"
   uat_react_app_one_trust_otnotice_cdn_url                  = "https://privacyportalde-cdn.onetrust.com/privacy-notice-scripts/otnotice-1.0.min.js"
-  uat_react_app_one_trust_otnotice_cdn_settings             = "eyJjYWxsYmFja1VybCI6Imh0dHBzOi8vcHJpdmFjeXBvcnRhbC1kZS5vbmV0cnVzdC5jb20vcmVxdWVzdC92MS9wcml2YWN5Tm90aWNlcy9zdGF0cy92aWV3cyJ9"
+  uat_react_app_one_trust_otnotice_cdn_settings             = "eyJjYWxsYmFja1VybCI6Imh0dHBzOi8vcHJpdmFjeXBvcnRhbC1kZS5vbmV0cnVzdC5jb20vcmVxdWVzdC92MS9wcml2YWN5Tm90aWNlcy9zdGF0cy92aWV3cyIsImNvbnRlbnRBcGlVcmwiOiJodHRwczovL3ByaXZhY3lwb3J0YWwtZGUub25ldHJ1c3QuY29tL3JlcXVlc3QvdjEvZW50ZXJwcmlzZXBvbGljeS9kaWdpdGFscG9saWN5L2NvbnRlbnQiLCJtZXRhZGF0YUFwaVVybCI6Imh0dHBzOi8vcHJpdmFjeXBvcnRhbC1kZS5vbmV0cnVzdC5jb20vcmVxdWVzdC92MS9lbnRlcnByaXNlcG9saWN5L2RpZ2l0YWxwb2xpY3kvbWV0YS1kYXRhIn0="
   uat_react_app_one_trust_privacy_policy_id                 = "otnotice-5b7fed3e-ea34-4620-b01d-b17fa7c88441"
-  uat_react_app_one_trust_privacy_policy_json_url           = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/draft/5b7fed3e-ea34-4620-b01d-b17fa7c88441.json"
+  uat_react_app_one_trust_privacy_policy_json_url           = "https://privacyportalde-cdn.onetrust.com/storage-container/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/44d36c0c-f859-4437-ae03-7da3c8b660f2/published/privacynotice.json"
   uat_react_app_one_trust_tos_id                            = "otnotice-6240fe7c-a66c-4395-a5c6-f1fee15e8258"
-  uat_react_app_one_trust_tos_json_url                      = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/draft/6240fe7c-a66c-4395-a5c6-f1fee15e8258.json"
+  uat_react_app_one_trust_tos_json_url                      = "https://privacyportalde-cdn.onetrust.com/storage-container/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/f1b252d1-de0a-4e99-859c-47918b46876e/published/privacynotice.json"
   uat_react_app_one_trust_privacy_policy_id_merchants       = "otnotice-5079ee0c-cfa9-42ec-acda-66799bed5039"
   uat_react_app_one_trust_privacy_policy_json_url_merchants = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/draft/5079ee0c-cfa9-42ec-acda-66799bed5039.json"
   uat_react_app_one_trust_tos_id_merchants                  = "otnotice-d99f1397-31cc-4519-9629-785c0d4c9145"
@@ -257,11 +257,11 @@ locals {
   prod_react_app_url_api_merchants                           = "https://api-io.cstar.pagopa.it/idpay-itn/merchant"
   prod_react_app_url_api_merchants_portal                    = "https://api-io.cstar.pagopa.it/idpay-itn/merchant/portal"
   prod_react_app_one_trust_otnotice_cdn_url                  = "https://privacyportalde-cdn.onetrust.com/privacy-notice-scripts/otnotice-1.0.min.js"
-  prod_react_app_one_trust_otnotice_cdn_settings             = "eyJjYWxsYmFja1VybCI6Imh0dHBzOi8vcHJpdmFjeXBvcnRhbC1kZS5vbmV0cnVzdC5jb20vcmVxdWVzdC92MS9wcml2YWN5Tm90aWNlcy9zdGF0cy92aWV3cyJ9"
+  prod_react_app_one_trust_otnotice_cdn_settings             = "eyJjYWxsYmFja1VybCI6Imh0dHBzOi8vcHJpdmFjeXBvcnRhbC1kZS5vbmV0cnVzdC5jb20vcmVxdWVzdC92MS9wcml2YWN5Tm90aWNlcy9zdGF0cy92aWV3cyIsImNvbnRlbnRBcGlVcmwiOiJodHRwczovL3ByaXZhY3lwb3J0YWwtZGUub25ldHJ1c3QuY29tL3JlcXVlc3QvdjEvZW50ZXJwcmlzZXBvbGljeS9kaWdpdGFscG9saWN5L2NvbnRlbnQiLCJtZXRhZGF0YUFwaVVybCI6Imh0dHBzOi8vcHJpdmFjeXBvcnRhbC1kZS5vbmV0cnVzdC5jb20vcmVxdWVzdC92MS9lbnRlcnByaXNlcG9saWN5L2RpZ2l0YWxwb2xpY3kvbWV0YS1kYXRhIn0="
   prod_react_app_one_trust_privacy_policy_id                 = "otnotice-5b7fed3e-ea34-4620-b01d-b17fa7c88441"
-  prod_react_app_one_trust_privacy_policy_json_url           = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/5b7fed3e-ea34-4620-b01d-b17fa7c88441.json"
+  prod_react_app_one_trust_privacy_policy_json_url           = "https://privacyportalde-cdn.onetrust.com/storage-container/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/44d36c0c-f859-4437-ae03-7da3c8b660f2/published/privacynotice.json"
   prod_react_app_one_trust_tos_id                            = "otnotice-6240fe7c-a66c-4395-a5c6-f1fee15e8258"
-  prod_react_app_one_trust_tos_json_url                      = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/6240fe7c-a66c-4395-a5c6-f1fee15e8258.json"
+  prod_react_app_one_trust_tos_json_url                      = "https://privacyportalde-cdn.onetrust.com/storage-container/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/f1b252d1-de0a-4e99-859c-47918b46876e/published/privacynotice.json"
   prod_react_app_one_trust_privacy_policy_id_merchants       = "otnotice-5079ee0c-cfa9-42ec-acda-66799bed5039"
   prod_react_app_one_trust_privacy_policy_json_url_merchants = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/5079ee0c-cfa9-42ec-acda-66799bed5039.json"
   prod_react_app_one_trust_tos_id_merchants                  = "otnotice-d99f1397-31cc-4519-9629-785c0d4c9145"
@@ -280,6 +280,8 @@ locals {
   dev_react_app_asset_register_url_fe_assistance_portal = "/elenco-informatico-elettrodomestici/assistenza"
   dev_react_app_asset_register_url_fe_landing           = "https://dev.selfcare.pagopa.it/auth/logout"
   dev_react_app_url_api_register                        = "https://api-io.dev.cstar.pagopa.it/idpay-itn/register"
+  dev_react_app_url_privacy_disclaimer                  = "https://eie.dev.cstar.pagopa.it/elenco-informatico-elettrodomestici/privacy-policy"
+  dev_react_app_url_terms_and_conditions                = "https://eie.dev.cstar.pagopa.it/elenco-informatico-elettrodomestici/terms-of-service"
 
   uat_react_app_asset_register_url_cdn                  = "https://eie.uat.cstar.pagopa.it/"
   uat_react_app_asset_register_url_storage              = "https://cstaruitnidpayregcdnsa.z38.web.core.windows.net"
@@ -288,6 +290,8 @@ locals {
   uat_react_app_asset_register_url_fe_assistance_portal = "/elenco-informatico-elettrodomestici/assistenza"
   uat_react_app_asset_register_url_fe_landing           = "https://uat.selfcare.pagopa.it/auth/logout"
   uat_react_app_url_api_register                        = "https://api-io.uat.cstar.pagopa.it/idpay-itn/register"
+  uat_react_app_url_privacy_disclaimer                  = "https://eie.uat.cstar.pagopa.it/elenco-informatico-elettrodomestici/privacy-policy"
+  uat_react_app_url_terms_and_conditions                = "https://eie.uat.cstar.pagopa.it/elenco-informatico-elettrodomestici/terms-of-service"
 
   prod_react_app_asset_register_url_cdn                  = "https://eie.cstar.pagopa.it/"
   prod_react_app_asset_register_url_storage              = "https://cstarpitnidpayregcdnsa.z38.web.core.windows.net"
@@ -296,10 +300,12 @@ locals {
   prod_react_app_asset_register_url_fe_assistance_portal = "/elenco-informatico-elettrodomestici/assistenza"
   prod_react_app_asset_register_url_fe_landing           = "https://selfcare.pagopa.it/auth/logout"
   prod_react_app_url_api_register                        = "https://api-io.cstar.pagopa.it/idpay-itn/register"
+  prod_react_app_url_privacy_disclaimer                  = "https://eie.cstar.pagopa.it/elenco-informatico-elettrodomestici/privacy-policy"
+  prod_react_app_url_terms_and_conditions                = "https://eie.cstar.pagopa.it/elenco-informatico-elettrodomestici/terms-of-service"
 
-  #DEVELOPER PORTAL GUIDE
-  react_app_url_fe_eie_manual = "https://developer.pagopa.it/app-io/guides"
-
+  #EIE PORTAL GUIDE
+  react_app_url_fe_eie_manual = "https://developer.pagopa.it/pari/guides/bonuselettrodomestici-manuale-tecnico-produttore"
+  react_app_pagopa_help_email = "https://developer.pagopa.it/pari/guides/bonuselettrodomestici-manuale-tecnico-produttore/contatti"
 
   #BONUS FRONTEND REACT ENV MERCHANT OPERATOR PORTAL
 
