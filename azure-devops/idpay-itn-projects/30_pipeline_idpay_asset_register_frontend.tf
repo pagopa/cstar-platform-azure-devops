@@ -41,7 +41,6 @@ locals {
     DEV_REACT_APP_ONE_TRUST_PRIVACY_POLICY_JSON_URL = local.dev_react_app_asset_register_one_trust_privacy_policy_json_url
     DEV_REACT_APP_ONE_TRUST_TOS_ID                  = local.dev_react_app_asset_register_one_trust_tos_id
     DEV_REACT_APP_ONE_TRUST_TOS_JSON_URL            = local.dev_react_app_asset_register_one_trust_tos_json_url
-    DEV_REACT_APP_ASSISTANCE_EMAIL                  = local.react_app_pagopa_help_email
     DEV_REACT_APP_URL_PRIVACY_DISCLAIMER            = local.dev_react_app_url_privacy_disclaimer
     DEV_REACT_APP_URL_TERMS_AND_CONDITIONS          = local.dev_react_app_url_terms_and_conditions
 
@@ -65,7 +64,6 @@ locals {
     UAT_REACT_APP_ONE_TRUST_PRIVACY_POLICY_JSON_URL = local.uat_react_app_asset_register_one_trust_privacy_policy_json_url
     UAT_REACT_APP_ONE_TRUST_TOS_ID                  = local.uat_react_app_asset_register_one_trust_tos_id
     UAT_REACT_APP_ONE_TRUST_TOS_JSON_URL            = local.uat_react_app_asset_register_one_trust_tos_json_url
-    UAT_REACT_APP_ASSISTANCE_EMAIL                  = local.react_app_pagopa_help_email
     UAT_REACT_APP_URL_PRIVACY_DISCLAIMER            = local.uat_react_app_url_privacy_disclaimer
     UAT_REACT_APP_URL_TERMS_AND_CONDITIONS          = local.uat_react_app_url_terms_and_conditions
 
@@ -89,11 +87,12 @@ locals {
     PROD_REACT_APP_ONE_TRUST_PRIVACY_POLICY_JSON_URL = local.prod_react_app_asset_register_one_trust_privacy_policy_json_url
     PROD_REACT_APP_ONE_TRUST_TOS_ID                  = local.prod_react_app_asset_register_one_trust_tos_id
     PROD_REACT_APP_ONE_TRUST_TOS_JSON_URL            = local.prod_react_app_asset_register_one_trust_tos_json_url
-    PROD_REACT_APP_ASSISTANCE_EMAIL                  = local.react_app_pagopa_help_email
     PROD_REACT_APP_URL_PRIVACY_DISCLAIMER            = local.prod_react_app_url_privacy_disclaimer
     PROD_REACT_APP_URL_TERMS_AND_CONDITIONS          = local.prod_react_app_url_terms_and_conditions
 
     REACT_APP_UPCOMING_INITIATIVE_DAY = local.initiative_day
+    REACT_APP_ASSISTANCE_EMAIL        = local.react_app_pagopa_help_email
+
   }
 }
 
