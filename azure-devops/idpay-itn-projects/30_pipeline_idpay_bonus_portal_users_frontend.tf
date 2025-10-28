@@ -36,7 +36,7 @@ locals {
     DEV_VITE_URL_API_PORTAL_USERS  = local.dev_vite_url_api_portal_users
     DEV_VITE_INITIATIVE_ID         = local.dev_vite_initiative_id
     DEV_CDN_DOMAINS                = join(" ", local.dev_bonus_cdn_domains)
-
+    DEV_VITE_BASE_URL              = local.dev_vite_base_url
 
     UAT_AZURE_SUBSCRIPTION         = local.uat_service_endpoint_azure_id
     UAT_ANALYTICS_ENABLED          = local.uat_analytics_enabled
@@ -52,6 +52,7 @@ locals {
     UAT_VITE_URL_API_PORTAL_USERS  = local.uat_vite_url_api_portal_users
     UAT_VITE_INITIATIVE_ID         = local.uat_vite_initiative_id
     UAT_CDN_DOMAINS                = join(" ", local.uat_bonus_cdn_domains)
+    UAT_VITE_BASE_URL              = local.uat_vite_base_url
 
     PROD_AZURE_SUBSCRIPTION         = local.prod_service_endpoint_azure_id
     PROD_ANALYTICS_ENABLED          = local.prod_analytics_enabled
@@ -67,7 +68,7 @@ locals {
     PROD_VITE_URL_API_PORTAL_USERS  = local.prod_vite_url_api_portal_users
     PROD_VITE_INITIATIVE_ID         = local.prod_vite_initiative_id
     PROD_CDN_DOMAINS                = join(" ", local.prod_bonus_cdn_domains)
-
+    PROD_VITE_BASE_URL              = local.prod_vite_base_url
   }
 }
 
