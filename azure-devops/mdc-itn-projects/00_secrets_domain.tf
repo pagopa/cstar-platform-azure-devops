@@ -1,0 +1,64 @@
+#
+# 🟢 DEV - SECRET
+#
+
+module "domain_dev_secrets" {
+  providers = {
+    azurerm = azurerm.dev
+  }
+
+  source = "./.terraform/modules/__v3__/key_vault_secrets_query"
+
+  key_vault_name = local.dev_kv_domain_name
+  resource_group = local.dev_kv_domain_resource_group
+
+  secrets = [
+    "argocd-server-url",
+    "argocd-admin-username",
+    "argocd-admin-password",
+  ]
+}
+#
+# 🟨 UAT - SECRETS
+#
+
+module "domain_uat_secrets" {
+  providers = {
+    azurerm = azurerm.uat
+  }
+
+  source = "./.terraform/modules/__v3__/key_vault_secrets_query"
+
+  key_vault_name = local.uat_kv_domain_name
+  resource_group = local.uat_kv_domain_resource_group
+
+  secrets = [
+    "argocd-server-url",
+    "argocd-admin-username",
+    "argocd-admin-password",
+  ]
+}
+
+#
+# 🛑 PROD - SECRETS
+#
+
+module "domain_prod_secrets" {
+  providers = {
+    azurerm = azurerm.prod
+  }
+
+  source = "./.terraform/modules/__v3__/key_vault_secrets_query"
+
+  key_vault_name = local.prod_kv_domain_name
+  resource_group = local.prod_kv_domain_resource_group
+
+  secrets = [
+    "mdc-bot-github-rw-TOKEN",
+    "mdc-bot-github-ro-TOKEN",
+    "mdc-bot-github-pr-TOKEN",
+    "argocd-server-url",
+    "argocd-admin-username",
+    "argocd-admin-password",
+  ]
+}
