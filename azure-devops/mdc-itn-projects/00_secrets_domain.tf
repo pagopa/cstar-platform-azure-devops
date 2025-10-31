@@ -13,9 +13,9 @@ module "domain_dev_secrets" {
   resource_group = local.dev_kv_domain_resource_group
 
   secrets = [
-    "argocd-server-url",
-    "argocd-admin-username",
-    "argocd-admin-password",
+    # "argocd-server-url",
+    # "argocd-admin-username",
+    # "argocd-admin-password",
   ]
 }
 #
@@ -33,9 +33,9 @@ module "domain_uat_secrets" {
   resource_group = local.uat_kv_domain_resource_group
 
   secrets = [
-    "argocd-server-url",
-    "argocd-admin-username",
-    "argocd-admin-password",
+    # "argocd-server-url",
+    # "argocd-admin-username",
+    # "argocd-admin-password",
   ]
 }
 
@@ -57,8 +57,8 @@ module "domain_prod_secrets" {
     "emd-bot-github-rw-TOKEN",
     "emd-bot-github-ro-TOKEN",
     "emd-bot-github-pr-TOKEN",
-    "argocd-server-url",
-    "argocd-admin-username",
-    "argocd-admin-password",
+    # "argocd-server-url",
+    # "argocd-admin-username",
+    # "argocd-admin-password",
   ]
 }
