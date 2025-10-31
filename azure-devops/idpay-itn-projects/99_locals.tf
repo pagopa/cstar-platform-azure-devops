@@ -119,20 +119,20 @@ locals {
   dev_asset_storage_asset_register_account_name                  = "cstarditnidpayregcdnsa"
   dev_asset_cdn_domain                                           = "eie.dev.cstar.pagopa.it"
   dev_react_app_asset_register_one_trust_privacy_policy_id       = "otnotice-44d36c0c-f859-4437-ae03-7da3c8b660f2"
-  dev_react_app_asset_register_one_trust_privacy_policy_json_url = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/draft/44d36c0c-f859-4437-ae03-7da3c8b660f2.json"
+  dev_react_app_asset_register_one_trust_privacy_policy_json_url = "https://privacyportalde-cdn.onetrust.com/storage-container/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/44d36c0c-f859-4437-ae03-7da3c8b660f2/published/privacynotice.json"
   dev_react_app_asset_register_one_trust_tos_id                  = "otnotice-f1b252d1-de0a-4e99-859c-47918b46876e"
-  dev_react_app_asset_register_one_trust_tos_json_url            = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/draft/f1b252d1-de0a-4e99-859c-47918b46876e.json"
-
+  dev_react_app_asset_register_one_trust_tos_json_url            = "https://privacyportalde-cdn.onetrust.com/storage-container/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/f1b252d1-de0a-4e99-859c-47918b46876e/published/privacynotice.json"
+  dev_react_app_asset_register_one_trust_domain_id               = "019a15b4-52f8-70c0-8b74-b99ad3172f07"
   # UAT ELENCO INFORMATICO DEGLI ELETTRODOMESTICI
   uat_asset_cdn_profile                                          = "${local.prefix}-u-itn-${local.domain}-asset-register-cdn-profile"
   uat_asset_cdn_endpoint                                         = "${local.prefix}-u-itn-${local.domain}-asset-register-cdn-endpoint"
   uat_asset_storage_asset_register_account_name                  = "cstaruitnidpayregcdnsa"
   uat_asset_cdn_domain                                           = "eie.uat.cstar.pagopa.it"
   uat_react_app_asset_register_one_trust_privacy_policy_id       = "otnotice-44d36c0c-f859-4437-ae03-7da3c8b660f2"
-  uat_react_app_asset_register_one_trust_privacy_policy_json_url = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/draft/44d36c0c-f859-4437-ae03-7da3c8b660f2.json"
+  uat_react_app_asset_register_one_trust_privacy_policy_json_url = "https://privacyportalde-cdn.onetrust.com/storage-container/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/44d36c0c-f859-4437-ae03-7da3c8b660f2/published/privacynotice.json"
   uat_react_app_asset_register_one_trust_tos_id                  = "otnotice-f1b252d1-de0a-4e99-859c-47918b46876e"
-  uat_react_app_asset_register_one_trust_tos_json_url            = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/draft/f1b252d1-de0a-4e99-859c-47918b46876e.json"
-
+  uat_react_app_asset_register_one_trust_tos_json_url            = "https://privacyportalde-cdn.onetrust.com/storage-container/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/f1b252d1-de0a-4e99-859c-47918b46876e/published/privacynotice.json"
+  uat_react_app_asset_register_one_trust_domain_id               = "019a15b4-52f8-70c0-8b74-b99ad3172f07"
 
   # PROD ELENCO INFORMATICO DEGLI ELETTRODOMESTICI
   prod_asset_cdn_profile                                          = "${local.prefix}-p-itn-${local.domain}-asset-register-cdn-profile"
@@ -140,11 +140,12 @@ locals {
   prod_asset_storage_asset_register_account_name                  = "cstarpitnidpayregcdnsa"
   prod_asset_cdn_domain                                           = "eie.cstar.pagopa.it"
   prod_react_app_asset_register_one_trust_privacy_policy_id       = "otnotice-44d36c0c-f859-4437-ae03-7da3c8b660f2"
-  prod_react_app_asset_register_one_trust_privacy_policy_json_url = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/44d36c0c-f859-4437-ae03-7da3c8b660f2.json"
+  prod_react_app_asset_register_one_trust_privacy_policy_json_url = "https://privacyportalde-cdn.onetrust.com/storage-container/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/44d36c0c-f859-4437-ae03-7da3c8b660f2/published/privacynotice.json"
   prod_react_app_asset_register_one_trust_tos_id                  = "otnotice-f1b252d1-de0a-4e99-859c-47918b46876e"
-  prod_react_app_asset_register_one_trust_tos_json_url            = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/f1b252d1-de0a-4e99-859c-47918b46876e.json"
+  prod_react_app_asset_register_one_trust_tos_json_url            = "https://privacyportalde-cdn.onetrust.com/storage-container/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/f1b252d1-de0a-4e99-859c-47918b46876e/published/privacynotice.json"
+  prod_react_app_asset_register_one_trust_domain_id               = "019a15be-8c31-752f-8d08-e777bc0dd577"
 
-
+  one_trust_base_url = "https://cdn.cookielaw.org/"
   #---------------------------------------------------------------------------------------------------------
   # BONUS
   #---------------------------------------------------------------------------------------------------------
@@ -336,18 +337,19 @@ locals {
   dev_vite_user_keycloak_client_id    = "frontend"
   dev_vite_user_keycloak_redirect_uri = "https://dev.bonuselettrodomestici.it/utente"
   dev_vite_url_api_portal_users       = "https://api-io.dev.cstar.pagopa.it/idpay-itn/"
+  dev_vite_base_url                   = "https://dev.bonuselettrodomestici.it"
 
   uat_vite_user_keycloak_realm        = "user"
   uat_vite_user_keycloak_client_id    = "frontend"
   uat_vite_user_keycloak_redirect_uri = "https://uat.bonuselettrodomestici.it/utente"
   uat_vite_url_api_portal_users       = "https://api-io.uat.cstar.pagopa.it/idpay-itn/"
+  uat_vite_base_url                   = "https://uat.bonuselettrodomestici.it"
 
   prod_vite_user_keycloak_realm        = "user"
   prod_vite_user_keycloak_client_id    = "frontend"
   prod_vite_user_keycloak_redirect_uri = "https://bonuselettrodomestici.it/utente"
   prod_vite_url_api_portal_users       = "https://api-io.cstar.pagopa.it/idpay-itn/"
-
-
+  prod_vite_base_url                   = "https://bonuselettrodomestici.it"
 
 }
 
