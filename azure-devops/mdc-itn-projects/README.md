@@ -31,8 +31,6 @@
 | <a name="module_federated_cert_pipeline_prod"></a> [federated\_cert\_pipeline\_prod](#module\_federated\_cert\_pipeline\_prod) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated | n/a |
 | <a name="module_federated_cert_pipeline_uat"></a> [federated\_cert\_pipeline\_uat](#module\_federated\_cert\_pipeline\_uat) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated | n/a |
 | <a name="module_prod_tls_cert_service_connection"></a> [prod\_tls\_cert\_service\_connection](#module\_prod\_tls\_cert\_service\_connection) | ./.terraform/modules/__devops_v0__/workflow_tls_cert_service_connection | n/a |
-| <a name="module_rtp-front-end-deploy_deploy"></a> [rtp-front-end-deploy\_deploy](#module\_rtp-front-end-deploy\_deploy) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_deploy | n/a |
-| <a name="module_mdc_aks_deploy"></a> [mdc\_aks\_deploy](#module\_mdc\_aks\_deploy) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_generic | n/a |
 | <a name="module_uat_tls_cert_service_connection"></a> [uat\_tls\_cert\_service\_connection](#module\_uat\_tls\_cert\_service\_connection) | ./.terraform/modules/__devops_v0__/workflow_tls_cert_service_connection | n/a |
 
 ## Resources
@@ -65,8 +63,6 @@
 | <a name="input_acr_ita_service_connection_workload_identity_uat"></a> [acr\_ita\_service\_connection\_workload\_identity\_uat](#input\_acr\_ita\_service\_connection\_workload\_identity\_uat) | The service connection ID for the ITA UAT workload identity in Azure Container Registry | `string` | `""` | no |
 | <a name="input_dev_subscription_name"></a> [dev\_subscription\_name](#input\_dev\_subscription\_name) | DEV Subscription name | `string` | n/a | yes |
 | <a name="input_prod_subscription_name"></a> [prod\_subscription\_name](#input\_prod\_subscription\_name) | PROD Subscription name | `string` | n/a | yes |
-| <a name="input_rtp_front_end_deploy"></a> [rtp\_front\_end\_deploy](#input\_rtp\_front\_end\_deploy) | n/a | `map` | <pre>{<br/>  "pipeline": {<br/>    "enable_code_review": true,<br/>    "enable_deploy": true,<br/>    "path": "mdc"<br/>  },<br/>  "repository": {<br/>    "branch_name": "refs/heads/main",<br/>    "name": "rtp-start-app",<br/>    "organization": "pagopa",<br/>    "pipelines_path": ".devops",<br/>    "yml_prefix_name": null<br/>  }<br/>}</pre> | no |
-| <a name="input_mdc_aks_deploy"></a> [mdc\_aks\_deploy](#input\_mdc\_aks\_deploy) | n/a | `map` | <pre>{<br/>  "pipeline": {<br/>    "name": "mdc-deploy-aks",<br/>    "path": "argocd"<br/>  },<br/>  "repository": {<br/>    "branch_name": "refs/heads/main",<br/>    "name": "mdc-deploy-aks",<br/>    "organization": "pagopa",<br/>    "pipelines_path": ".devops"<br/>  }<br/>}</pre> | no |
 | <a name="input_uat_subscription_name"></a> [uat\_subscription\_name](#input\_uat\_subscription\_name) | UAT Subscription name | `string` | n/a | yes |
 
 ## Outputs
