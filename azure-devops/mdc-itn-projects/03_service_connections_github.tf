@@ -9,7 +9,7 @@ resource "azuredevops_serviceendpoint_github" "bot_github_rw" {
   project_id            = data.azuredevops_project.this.id
   service_endpoint_name = "${local.domain}-bot-github-rw"
   auth_personal {
-    personal_access_token = module.domain_prod_secrets.values["mdc-bot-github-rw-TOKEN"].value
+    personal_access_token = module.domain_prod_secrets.values["emd-bot-github-rw-TOKEN"].value
   }
   lifecycle {
     ignore_changes = [description, authorization]
@@ -23,7 +23,7 @@ resource "azuredevops_serviceendpoint_github" "bot_github_ro" {
   project_id            = data.azuredevops_project.this.id
   service_endpoint_name = "${local.domain}-bot-github-ro"
   auth_personal {
-    personal_access_token = module.domain_prod_secrets.values["mdc-bot-github-ro-TOKEN"].value
+    personal_access_token = module.domain_prod_secrets.values["emd-bot-github-ro-TOKEN"].value
   }
   lifecycle {
     ignore_changes = [description, authorization]
@@ -37,7 +37,7 @@ resource "azuredevops_serviceendpoint_github" "bot_github_pr" {
   project_id            = data.azuredevops_project.this.id
   service_endpoint_name = "${local.domain}-bot-github-pr"
   auth_personal {
-    personal_access_token = module.domain_prod_secrets.values["mdc-bot-github-pr-TOKEN"].value
+    personal_access_token = module.domain_prod_secrets.values["emd-bot-github-pr-TOKEN"].value
   }
   lifecycle {
     ignore_changes = [description, authorization]

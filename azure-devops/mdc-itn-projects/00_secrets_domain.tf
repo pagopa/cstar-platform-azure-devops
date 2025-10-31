@@ -54,9 +54,9 @@ module "domain_prod_secrets" {
   resource_group = local.prod_kv_domain_resource_group
 
   secrets = [
-    "mdc-bot-github-rw-TOKEN",
-    "mdc-bot-github-ro-TOKEN",
-    "mdc-bot-github-pr-TOKEN",
+    "emd-bot-github-rw-TOKEN",
+    "emd-bot-github-ro-TOKEN",
+    "emd-bot-github-pr-TOKEN",
     "argocd-server-url",
     "argocd-admin-username",
     "argocd-admin-password",
