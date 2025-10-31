@@ -243,7 +243,7 @@ module "federated_cert_pipeline_prod" {
   schedules = {
     days_to_build              = ["Wed", "Fri"]
     schedule_only_with_changes = false
-    start_hours                = 10
+    start_hours                = 11
     start_minutes              = 0
     time_zone                  = "(UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna"
     branch_filter = {
