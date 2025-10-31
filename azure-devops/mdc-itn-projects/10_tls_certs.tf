@@ -195,7 +195,7 @@ module "federated_cert_pipeline_uat" {
   }
 
   depends_on = [
-    module.dev_tls_cert_service_connection
+    module.uat_tls_cert_service_connection
   ]
 }
 
