@@ -36,6 +36,7 @@ module "domain_uat_secrets" {
     "argocd-server-url",
     "argocd-admin-username",
     "argocd-admin-password",
+    "srtp-bot-github-test-TOKEN"
   ]
 }
 
