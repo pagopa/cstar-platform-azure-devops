@@ -46,7 +46,7 @@ locals {
     PROD_POSTMAN_KV_NAME               = local.prod_kv_domain_name
     PROD_POSTMAN_ENV_SECRET_NAME       = "postman-environment"
 
-    GITHUB_USER = "srtp-bot-github-ro"
+    GITHUB_USER = "srtp-bot-github-rw"
   }
 
   # deploy secrets vars
@@ -60,7 +60,7 @@ locals {
     PROD_ARGOCD_USERNAME = module.domain_prod_secrets.values["argocd-admin-username"].value
     PROD_ARGOCD_PASSWORD = module.domain_prod_secrets.values["argocd-admin-password"].value
 
-    GITHUB_TOKEN = module.domain_prod_secrets.values["srtp-bot-github-ro-TOKEN"].value
+    GITHUB_TOKEN = module.domain_prod_secrets.values["srtp-bot-github-rw-TOKEN"].value
   }
 }
 
