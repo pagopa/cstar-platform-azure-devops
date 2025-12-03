@@ -35,7 +35,7 @@ module "domain_uat_secrets" {
   secrets = [
     "argocd-server-url",
     "argocd-admin-username",
-    "argocd-admin-password"
+    "argocd-admin-password",
   ]
 }
 
