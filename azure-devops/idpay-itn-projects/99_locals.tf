@@ -201,9 +201,9 @@ locals {
   dev_react_app_one_trust_otnotice_cdn_url                  = "https://privacyportalde-cdn.onetrust.com/privacy-notice-scripts/otnotice-1.0.min.js"
   dev_react_app_one_trust_otnotice_cdn_settings             = "eyJjYWxsYmFja1VybCI6Imh0dHBzOi8vcHJpdmFjeXBvcnRhbC1kZS5vbmV0cnVzdC5jb20vcmVxdWVzdC92MS9wcml2YWN5Tm90aWNlcy9zdGF0cy92aWV3cyIsImNvbnRlbnRBcGlVcmwiOiJodHRwczovL3ByaXZhY3lwb3J0YWwtZGUub25ldHJ1c3QuY29tL3JlcXVlc3QvdjEvZW50ZXJwcmlzZXBvbGljeS9kaWdpdGFscG9saWN5L2NvbnRlbnQiLCJtZXRhZGF0YUFwaVVybCI6Imh0dHBzOi8vcHJpdmFjeXBvcnRhbC1kZS5vbmV0cnVzdC5jb20vcmVxdWVzdC92MS9lbnRlcnByaXNlcG9saWN5L2RpZ2l0YWxwb2xpY3kvbWV0YS1kYXRhIn0="
   dev_react_app_one_trust_privacy_policy_id                 = "otnotice-5b7fed3e-ea34-4620-b01d-b17fa7c88441"
-  dev_react_app_one_trust_privacy_policy_json_url           = "https://privacyportalde-cdn.onetrust.com/storage-container/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/44d36c0c-f859-4437-ae03-7da3c8b660f2/published/privacynotice.json"
+  dev_react_app_one_trust_privacy_policy_json_url           = "https://privacyportalde-cdn.onetrust.com/storage-container/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/5b7fed3e-ea34-4620-b01d-b17fa7c88441/published/privacynotice.json"
   dev_react_app_one_trust_tos_id                            = "otnotice-6240fe7c-a66c-4395-a5c6-f1fee15e8258"
-  dev_react_app_one_trust_tos_json_url                      = "https://privacyportalde-cdn.onetrust.com/storage-container/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/f1b252d1-de0a-4e99-859c-47918b46876e/published/privacynotice.json"
+  dev_react_app_one_trust_tos_json_url                      = "https://privacyportalde-cdn.onetrust.com/storage-container/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/6240fe7c-a66c-4395-a5c6-f1fee15e8258/published/privacynotice.json"
   dev_react_app_one_trust_privacy_policy_id_merchants       = "otnotice-5079ee0c-cfa9-42ec-acda-66799bed5039"
   dev_react_app_one_trust_privacy_policy_json_url_merchants = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/draft/5079ee0c-cfa9-42ec-acda-66799bed5039.json"
   dev_react_app_one_trust_tos_id_merchants                  = "otnotice-d99f1397-31cc-4519-9629-785c0d4c9145"
@@ -211,8 +211,8 @@ locals {
   dev_analytics_enabled                                     = "true"
   dev_analytics_mocked                                      = "true" //Put to false when mixpanel available
   dev_mixpanel_token                                        = "TODO" //"6e1290bdda5885981a2f443f37444f0f"
-  dev_onetrust_domain_id                                    = "TODO" //"a8f58d7a-7f6a-4fe6-ac02-f95bac3876d4-test"
-
+  dev_onetrust_domain_id                                    = "019a15d0-8140-7fc9-9550-800aa9b1be13"
+  dev_react_app_one_trust_base_url                          = "https://cdn.cookielaw.org"
 
   uat_react_app_url_cdn                                     = "https://welfare.uat.cstar.pagopa.it/"
   uat_react_app_url_storage                                 = "https://cstaruitnidpaywelcdnsa.z38.web.core.windows.net/"
@@ -231,9 +231,9 @@ locals {
   uat_react_app_one_trust_otnotice_cdn_url                  = "https://privacyportalde-cdn.onetrust.com/privacy-notice-scripts/otnotice-1.0.min.js"
   uat_react_app_one_trust_otnotice_cdn_settings             = "eyJjYWxsYmFja1VybCI6Imh0dHBzOi8vcHJpdmFjeXBvcnRhbC1kZS5vbmV0cnVzdC5jb20vcmVxdWVzdC92MS9wcml2YWN5Tm90aWNlcy9zdGF0cy92aWV3cyIsImNvbnRlbnRBcGlVcmwiOiJodHRwczovL3ByaXZhY3lwb3J0YWwtZGUub25ldHJ1c3QuY29tL3JlcXVlc3QvdjEvZW50ZXJwcmlzZXBvbGljeS9kaWdpdGFscG9saWN5L2NvbnRlbnQiLCJtZXRhZGF0YUFwaVVybCI6Imh0dHBzOi8vcHJpdmFjeXBvcnRhbC1kZS5vbmV0cnVzdC5jb20vcmVxdWVzdC92MS9lbnRlcnByaXNlcG9saWN5L2RpZ2l0YWxwb2xpY3kvbWV0YS1kYXRhIn0="
   uat_react_app_one_trust_privacy_policy_id                 = "otnotice-5b7fed3e-ea34-4620-b01d-b17fa7c88441"
-  uat_react_app_one_trust_privacy_policy_json_url           = "https://privacyportalde-cdn.onetrust.com/storage-container/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/44d36c0c-f859-4437-ae03-7da3c8b660f2/published/privacynotice.json"
+  uat_react_app_one_trust_privacy_policy_json_url           = "https://privacyportalde-cdn.onetrust.com/storage-container/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/5b7fed3e-ea34-4620-b01d-b17fa7c88441/published/privacynotice.json"
   uat_react_app_one_trust_tos_id                            = "otnotice-6240fe7c-a66c-4395-a5c6-f1fee15e8258"
-  uat_react_app_one_trust_tos_json_url                      = "https://privacyportalde-cdn.onetrust.com/storage-container/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/f1b252d1-de0a-4e99-859c-47918b46876e/published/privacynotice.json"
+  uat_react_app_one_trust_tos_json_url                      = "https://privacyportalde-cdn.onetrust.com/storage-container/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/6240fe7c-a66c-4395-a5c6-f1fee15e8258/published/privacynotice.json"
   uat_react_app_one_trust_privacy_policy_id_merchants       = "otnotice-5079ee0c-cfa9-42ec-acda-66799bed5039"
   uat_react_app_one_trust_privacy_policy_json_url_merchants = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/draft/5079ee0c-cfa9-42ec-acda-66799bed5039.json"
   uat_react_app_one_trust_tos_id_merchants                  = "otnotice-d99f1397-31cc-4519-9629-785c0d4c9145"
@@ -241,7 +241,9 @@ locals {
   uat_analytics_enabled                                     = "true"
   uat_analytics_mocked                                      = "true" //Put to false when mixpanel available
   uat_mixpanel_token                                        = "TODO" //"1d1b09b008638080ab34fe9b75db84fd"
-  uat_onetrust_domain_id                                    = "TODO" //"15a1f042-9257-450f-b9e8-38d019191729"
+  uat_onetrust_domain_id                                    = "019a15d0-8140-7fc9-9550-800aa9b1be13"
+  uat_react_app_one_trust_base_url                          = "https://cdn.cookielaw.org"
+
 
   prod_react_app_url_cdn                                     = "https://welfare.cstar.pagopa.it/"
   prod_react_app_url_storage                                 = "https://cstarpweuidpayidpaycdnsa.z38.web.core.windows.net/"
@@ -260,9 +262,9 @@ locals {
   prod_react_app_one_trust_otnotice_cdn_url                  = "https://privacyportalde-cdn.onetrust.com/privacy-notice-scripts/otnotice-1.0.min.js"
   prod_react_app_one_trust_otnotice_cdn_settings             = "eyJjYWxsYmFja1VybCI6Imh0dHBzOi8vcHJpdmFjeXBvcnRhbC1kZS5vbmV0cnVzdC5jb20vcmVxdWVzdC92MS9wcml2YWN5Tm90aWNlcy9zdGF0cy92aWV3cyIsImNvbnRlbnRBcGlVcmwiOiJodHRwczovL3ByaXZhY3lwb3J0YWwtZGUub25ldHJ1c3QuY29tL3JlcXVlc3QvdjEvZW50ZXJwcmlzZXBvbGljeS9kaWdpdGFscG9saWN5L2NvbnRlbnQiLCJtZXRhZGF0YUFwaVVybCI6Imh0dHBzOi8vcHJpdmFjeXBvcnRhbC1kZS5vbmV0cnVzdC5jb20vcmVxdWVzdC92MS9lbnRlcnByaXNlcG9saWN5L2RpZ2l0YWxwb2xpY3kvbWV0YS1kYXRhIn0="
   prod_react_app_one_trust_privacy_policy_id                 = "otnotice-5b7fed3e-ea34-4620-b01d-b17fa7c88441"
-  prod_react_app_one_trust_privacy_policy_json_url           = "https://privacyportalde-cdn.onetrust.com/storage-container/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/44d36c0c-f859-4437-ae03-7da3c8b660f2/published/privacynotice.json"
+  prod_react_app_one_trust_privacy_policy_json_url           = "https://privacyportalde-cdn.onetrust.com/storage-container/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/5b7fed3e-ea34-4620-b01d-b17fa7c88441/published/privacynotice.json"
   prod_react_app_one_trust_tos_id                            = "otnotice-6240fe7c-a66c-4395-a5c6-f1fee15e8258"
-  prod_react_app_one_trust_tos_json_url                      = "https://privacyportalde-cdn.onetrust.com/storage-container/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/f1b252d1-de0a-4e99-859c-47918b46876e/published/privacynotice.json"
+  prod_react_app_one_trust_tos_json_url                      = "https://privacyportalde-cdn.onetrust.com/storage-container/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/6240fe7c-a66c-4395-a5c6-f1fee15e8258/published/privacynotice.json"
   prod_react_app_one_trust_privacy_policy_id_merchants       = "otnotice-5079ee0c-cfa9-42ec-acda-66799bed5039"
   prod_react_app_one_trust_privacy_policy_json_url_merchants = "https://privacyportalde-cdn.onetrust.com/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/5079ee0c-cfa9-42ec-acda-66799bed5039.json"
   prod_react_app_one_trust_tos_id_merchants                  = "otnotice-d99f1397-31cc-4519-9629-785c0d4c9145"
@@ -270,8 +272,8 @@ locals {
   prod_analytics_enabled                                     = "true"
   prod_analytics_mocked                                      = "true" //Put to false when mixpanel available
   prod_mixpanel_token                                        = "TODO" //"1d1b09b008638080ab34fe9b75db84fd"
-  prod_onetrust_domain_id                                    = "TODO" //"084d5de2-d423-458a-9b28-0f8db3e55e71"
-
+  prod_onetrust_domain_id                                    = "019a15d0-8140-7fc9-9550-800aa9b1be13"
+  prod_react_app_one_trust_base_url                          = "https://cdn.cookielaw.org"
   #ELENCO INFORMATICO DEGLI ELETTRODOMESTICI: FRONTEND REACT ENV
 
   dev_react_app_asset_register_url_cdn                  = "https://eie.dev.cstar.pagopa.it/"
