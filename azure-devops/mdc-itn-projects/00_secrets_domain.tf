@@ -13,9 +13,9 @@ module "domain_dev_secrets" {
   resource_group = local.dev_kv_domain_resource_group
 
   secrets = [
-    # "argocd-server-url",
-    # "argocd-admin-username",
-    # "argocd-admin-password",
+    "argocd-server-url",
+    "argocd-admin-username",
+    "argocd-admin-password",
   ]
 }
 #
