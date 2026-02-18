@@ -4,6 +4,23 @@ locals {
     # cstar-securehub-infra Domains
     #
     {
+      name : "mdc",
+      envs : ["d", "u", "p"],
+      location_short = "itn"
+      code_review : true,
+      deploy : true,
+      pipeline_prefix : "mdc-infra",
+      pipeline_path : "mdc-infrastructure",
+      kv_name : "cstar-%s-itn-mdc-kv",
+      rg_name : "cstar-%s-itn-mdc-security-rg",
+      project_name = "iac"
+      repository : {
+        name = "cstar-securehub-infra"
+        yml_prefix_name : "mdc"
+        branch_name = "refs/heads/main"
+      }
+    },
+    {
       name : "idpay",
       envs : ["d", "u", "p"],
       location_short = "itn"
@@ -97,6 +114,21 @@ locals {
       repository : {
         name = "cstar-securehub-infra-api-spec"
         yml_prefix_name : "srtp"
+        branch_name = "refs/heads/main"
+      }
+    },
+    {
+      name : "mdc-api-spec",
+      envs : ["d", "u", "p"],
+      location_short = "itn"
+      code_review : true,
+      deploy : true,
+      pipeline_prefix : "infra-mdc-api-spec",
+      pipeline_path : "infra-api-spec\\mdc",
+      project_name = "app"
+      repository : {
+        name = "cstar-securehub-infra-api-spec"
+        yml_prefix_name : "mdc"
         branch_name = "refs/heads/main"
       }
     },
