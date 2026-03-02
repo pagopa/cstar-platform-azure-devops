@@ -21,8 +21,8 @@
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module___devops_v0__"></a> [\_\_devops\_v0\_\_](#module\_\_\_devops\_v0\_\_) | git::https://github.com/pagopa/azuredevops-tf-modules.git | 0ae8d9d49f92f690afc66a39f245924a04aa274b |
-| <a name="module___v3__"></a> [\_\_v3\_\_](#module\_\_\_v3\_\_) | git::https://github.com/pagopa/terraform-azurerm-v3.git | 4ac32cd6fb7d56e7be3b1c0dbcbf251f5b0cd199 |
+| <a name="module___devops_v0__"></a> [\_\_devops\_v0\_\_](#module\_\_\_devops\_v0\_\_) | git::https://github.com/pagopa/azuredevops-tf-modules.git | 535f37c3fe420a70acc92bd55c073bb2438e24ba |
+| <a name="module___v3__"></a> [\_\_v3\_\_](#module\_\_\_v3\_\_) | git::https://github.com/pagopa/terraform-azurerm-v3.git | d0a0b3a81963169bdc974f79eba31e41e918e63d |
 | <a name="module_dev_tls_cert_service_connection"></a> [dev\_tls\_cert\_service\_connection](#module\_dev\_tls\_cert\_service\_connection) | ./.terraform/modules/__devops_v0__/workflow_tls_cert_service_connection | n/a |
 | <a name="module_domain_dev_secrets"></a> [domain\_dev\_secrets](#module\_domain\_dev\_secrets) | ./.terraform/modules/__v3__/key_vault_secrets_query | n/a |
 | <a name="module_domain_prod_secrets"></a> [domain\_prod\_secrets](#module\_domain\_prod\_secrets) | ./.terraform/modules/__v3__/key_vault_secrets_query | n/a |
@@ -30,6 +30,7 @@
 | <a name="module_federated_cert_pipeline_dev"></a> [federated\_cert\_pipeline\_dev](#module\_federated\_cert\_pipeline\_dev) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated | n/a |
 | <a name="module_federated_cert_pipeline_prod"></a> [federated\_cert\_pipeline\_prod](#module\_federated\_cert\_pipeline\_prod) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated | n/a |
 | <a name="module_federated_cert_pipeline_uat"></a> [federated\_cert\_pipeline\_uat](#module\_federated\_cert\_pipeline\_uat) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_tls_cert_federated | n/a |
+| <a name="module_mdc_aks_deploy"></a> [mdc\_aks\_deploy](#module\_mdc\_aks\_deploy) | ./.terraform/modules/__devops_v0__/azuredevops_build_definition_generic | n/a |
 | <a name="module_prod_tls_cert_service_connection"></a> [prod\_tls\_cert\_service\_connection](#module\_prod\_tls\_cert\_service\_connection) | ./.terraform/modules/__devops_v0__/workflow_tls_cert_service_connection | n/a |
 | <a name="module_uat_tls_cert_service_connection"></a> [uat\_tls\_cert\_service\_connection](#module\_uat\_tls\_cert\_service\_connection) | ./.terraform/modules/__devops_v0__/workflow_tls_cert_service_connection | n/a |
 
@@ -62,6 +63,7 @@
 | <a name="input_acr_ita_service_connection_workload_identity_prod"></a> [acr\_ita\_service\_connection\_workload\_identity\_prod](#input\_acr\_ita\_service\_connection\_workload\_identity\_prod) | The service connection ID for the ITA PROD workload identity in Azure Container Registry | `string` | `""` | no |
 | <a name="input_acr_ita_service_connection_workload_identity_uat"></a> [acr\_ita\_service\_connection\_workload\_identity\_uat](#input\_acr\_ita\_service\_connection\_workload\_identity\_uat) | The service connection ID for the ITA UAT workload identity in Azure Container Registry | `string` | `""` | no |
 | <a name="input_dev_subscription_name"></a> [dev\_subscription\_name](#input\_dev\_subscription\_name) | DEV Subscription name | `string` | n/a | yes |
+| <a name="input_mdc_aks_deploy"></a> [mdc\_aks\_deploy](#input\_mdc\_aks\_deploy) | n/a | `map` | <pre>{<br/>  "pipeline": {<br/>    "name": "mdc-deploy-aks",<br/>    "path": "argocd"<br/>  },<br/>  "repository": {<br/>    "branch_name": "refs/heads/main",<br/>    "name": "mdc-deploy-aks",<br/>    "organization": "pagopa",<br/>    "pipelines_path": ".devops"<br/>  }<br/>}</pre> | no |
 | <a name="input_prod_subscription_name"></a> [prod\_subscription\_name](#input\_prod\_subscription\_name) | PROD Subscription name | `string` | n/a | yes |
 | <a name="input_uat_subscription_name"></a> [uat\_subscription\_name](#input\_uat\_subscription\_name) | UAT Subscription name | `string` | n/a | yes |
 
