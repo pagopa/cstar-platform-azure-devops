@@ -2,13 +2,13 @@ variable "mdc_aks_deploy" {
   default = {
     repository = {
       organization   = "pagopa"
-      name           = "mil-aks-deploy"
-      branch_name    = "refs/heads/argocd-init"
+      name           = "mdc-deploy-aks"
+      branch_name    = "refs/heads/main"
       pipelines_path = ".devops"
     }
     pipeline = {
       path = "argocd"
-      name = "mdc-aks-deploy"
+      name = "mdc-deploy-aks"
     }
   }
 }
