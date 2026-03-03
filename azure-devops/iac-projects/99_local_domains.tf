@@ -246,23 +246,6 @@ locals {
     # cstar-infrastructure
     #
     {
-      name : "mil",
-      envs : ["d", "u", "p"],
-      location_short = "weu"
-      kv_name : "cstar-%s-weu-mil-kv",
-      rg_name : "cstar-%s-weu-mil-sec-rg",
-      code_review : true,
-      deploy : true,
-      pipeline_prefix : "mil-infra",
-      pipeline_path : "mil-infrastructure",
-      project_name = "iac"
-      repository : {
-        name = "cstar-infrastructure"
-        yml_prefix_name : "mil"
-        branch_name = "refs/heads/main"
-      }
-    },
-    {
       name : "rtd",
       envs : ["d", "u", "p"],
       location_short = "weu"
