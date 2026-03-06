@@ -22,7 +22,7 @@ module "DEV-CSTAR-RTP-TLS-CERT-SERVICE-CONN-FEDERATED" {
 
 resource "azurerm_key_vault_access_policy" "DEV-CSTAR-RTP-TLS-CERT-SERVICE-CONN_kv_access_policy" {
   provider     = azurerm.dev
-  key_vault_id = data.azurerm_key_vault.domain_kv_dev.id
+  key_vault_id = "/subscriptions/4d177dd6-5c7d-40ab-8019-0c1be380a25d/resourceGroups/cstar-d-sec-rg/providers/Microsoft.KeyVault/vaults/cstar-d-kv"
   tenant_id    = data.azurerm_client_config.current.tenant_id
   object_id    = module.DEV-CSTAR-RTP-TLS-CERT-SERVICE-CONN-FEDERATED.service_principal_object_id
 
@@ -66,7 +66,7 @@ module "UAT_CSTAR_RTP_TLS_CERT_SERVICE_CONN_FEDERATED" {
 resource "azurerm_key_vault_access_policy" "UAT_CSTAR_RTP_TLS_CERT_SERVICE_CONN_kv_access_policy" {
   provider = azurerm.uat
 
-  key_vault_id = data.azurerm_key_vault.domain_kv_uat.id
+  key_vault_id = "/subscriptions/4d177dd6-5c7d-40ab-8019-0c1be380a25d/resourceGroups/cstar-d-sec-rg/providers/Microsoft.KeyVault/vaults/cstar-d-kv"
   tenant_id    = data.azurerm_client_config.current.tenant_id
   object_id    = module.UAT_CSTAR_RTP_TLS_CERT_SERVICE_CONN_FEDERATED.service_principal_object_id
 
@@ -111,7 +111,7 @@ module "PROD-CSTAR-RTP-TLS-CERT-SERVICE-CONN-FEDERATED" {
 
 resource "azurerm_key_vault_access_policy" "PROD-CSTAR-RTP-TLS-CERT-SERVICE-CONN_kv_access_policy" {
   provider     = azurerm.prod
-  key_vault_id = data.azurerm_key_vault.domain_kv_prod.id
+  key_vault_id = "/subscriptions/4d177dd6-5c7d-40ab-8019-0c1be380a25d/resourceGroups/cstar-d-sec-rg/providers/Microsoft.KeyVault/vaults/cstar-d-kv"
   tenant_id    = data.azurerm_client_config.current.tenant_id
   object_id    = module.PROD-CSTAR-RTP-TLS-CERT-SERVICE-CONN-FEDERATED.service_principal_object_id
 
