@@ -95,4 +95,3 @@ module "emd_ar_backoffice_fe_deploy" {
     local.prod_service_endpoint_azure_id
   ]
 }
-
