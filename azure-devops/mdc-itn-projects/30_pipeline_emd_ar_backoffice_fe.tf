@@ -17,26 +17,29 @@ locals {
   dev_backoffice_cdn_endpoint    = "${local.prefix}-d-${local.location_short}-${local.domain}-backoffice"
   dev_backoffice_resource_group  = "${local.prefix}-d-${local.location_short}-${local.domain}-data-rg"
   dev_backoffice_storage_account = replace("${local.prefix}-d-${local.location_short}-${local.domain}backoffice", "-", "")
-  dev_backoffice_cdn_domain   = "mdc.dev.cstar.pagopa.it"
+  dev_backoffice_cdn_domain      = "mdc.dev.cstar.pagopa.it"
   # TODO: sostituire con URL APIM quando configurato (es. https://api.dev.cstar.pagopa.it/emd/ar/backoffice)
   # Per ora punta all'ingress interno AKS — NON raggiungibile dal browser, solo placeholder
   dev_backoffice_api_base_url = "https://api-emd.dev.cstar.pagopa.it/emd/ar/backoffice"
+  dev_backoffice_ar_base_url  = "https://dev.selfcare.pagopa.it/auth"
 
   uat_backoffice_cdn_profile     = "${local.prefix}-u-${local.location_short}-${local.domain}-backoffice"
   uat_backoffice_cdn_endpoint    = "${local.prefix}-u-${local.location_short}-${local.domain}-backoffice"
   uat_backoffice_resource_group  = "${local.prefix}-u-${local.location_short}-${local.domain}-data-rg"
   uat_backoffice_storage_account = replace("${local.prefix}-u-${local.location_short}-${local.domain}backoffice", "-", "")
-  uat_backoffice_cdn_domain   = "mdc.uat.cstar.pagopa.it"
+  uat_backoffice_cdn_domain      = "mdc.uat.cstar.pagopa.it"
   # TODO: sostituire con URL APIM quando configurato
   uat_backoffice_api_base_url = "https://api-emd.uat.cstar.pagopa.it/emd/ar/backoffice"
+  uat_backoffice_ar_base_url  = "https://uat.selfcare.pagopa.it/auth"
 
   prod_backoffice_cdn_profile     = "${local.prefix}-p-${local.location_short}-${local.domain}-backoffice"
   prod_backoffice_cdn_endpoint    = "${local.prefix}-p-${local.location_short}-${local.domain}-backoffice"
   prod_backoffice_resource_group  = "${local.prefix}-p-${local.location_short}-${local.domain}-data-rg"
   prod_backoffice_storage_account = replace("${local.prefix}-p-${local.location_short}-${local.domain}backoffice", "-", "")
-  prod_backoffice_cdn_domain   = "mdc.cstar.pagopa.it"
+  prod_backoffice_cdn_domain      = "mdc.cstar.pagopa.it"
   # TODO: sostituire con URL APIM quando configurato
   prod_backoffice_api_base_url = "https://api-emd.cstar.pagopa.it/emd/ar/backoffice"
+  prod_backoffice_ar_base_url  = "https://selfcare.pagopa.it/auth"
 
   emd_ar_backoffice_fe_variables_deploy = {
     # AzureCLI@2 richiede il NOME della service connection (non l'id)
@@ -47,6 +50,7 @@ locals {
     DEV_STORAGE_ACCOUNT    = local.dev_backoffice_storage_account
     DEV_CDN_DOMAINS        = local.dev_backoffice_cdn_domain
     DEV_API_BASE_URL       = local.dev_backoffice_api_base_url
+    DEV_AR_BASE_URL        = local.dev_backoffice_ar_base_url
 
     UAT_AZURE_SUBSCRIPTION = local.uat_service_endpoint_azure_name
     UAT_CDN_ENDPOINT       = local.uat_backoffice_cdn_endpoint
@@ -55,6 +59,7 @@ locals {
     UAT_STORAGE_ACCOUNT    = local.uat_backoffice_storage_account
     UAT_CDN_DOMAINS        = local.uat_backoffice_cdn_domain
     UAT_API_BASE_URL       = local.uat_backoffice_api_base_url
+    UAT_AR_BASE_URL        = local.uat_backoffice_ar_base_url
 
     PROD_AZURE_SUBSCRIPTION = local.prod_service_endpoint_azure_name
     PROD_CDN_ENDPOINT       = local.prod_backoffice_cdn_endpoint
@@ -63,6 +68,7 @@ locals {
     PROD_STORAGE_ACCOUNT    = local.prod_backoffice_storage_account
     PROD_CDN_DOMAINS        = local.prod_backoffice_cdn_domain
     PROD_API_BASE_URL       = local.prod_backoffice_api_base_url
+    PROD_AR_BASE_URL        = local.prod_backoffice_ar_base_url
   }
 }
 
