@@ -16,6 +16,7 @@ module "domain_dev_secrets" {
     "argocd-server-url",
     "argocd-admin-username",
     "argocd-admin-password",
+    "email-mdc-google",
   ]
 }
 #
@@ -36,6 +37,7 @@ module "domain_uat_secrets" {
     "argocd-server-url",
     "argocd-admin-username",
     "argocd-admin-password",
+    "email-mdc-google",
   ]
 }
 
@@ -60,5 +62,6 @@ module "domain_prod_secrets" {
     "argocd-server-url",
     "argocd-admin-username",
     "argocd-admin-password",
+    "email-mdc-google",
   ]
 }
