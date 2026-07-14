@@ -47,9 +47,9 @@ module "emd_ar_backoffice_admin_fe_deploy" {
 
   project_id                   = local.devops_project_id
   repository                   = var.emd_ar_backoffice_admin_fe.repository
-  github_service_connection_id = azuredevops_serviceendpoint_github.bot_github_pr.id
+  github_service_connection_id = azuredevops_serviceendpoint_github.bot_github_rw.id
 
-  pipeline_name         = "emd_ar_backoffice_admin_fe.deploy"
+  pipeline_name         = "emd-ar-backoffice-admin-fe.deploy"
   pipeline_yml_filename = "deploy-pipelines.yml"
   path                  = var.emd_ar_backoffice_admin_fe.pipeline.path
 
@@ -61,7 +61,7 @@ module "emd_ar_backoffice_admin_fe_deploy" {
   variables_secret = {}
 
   service_connection_ids_authorization = [
-    azuredevops_serviceendpoint_github.bot_github_pr.id,
+    azuredevops_serviceendpoint_github.bot_github_rw.id,
     local.dev_service_endpoint_azure_id,
     local.uat_service_endpoint_azure_id,
     local.prod_service_endpoint_azure_id
