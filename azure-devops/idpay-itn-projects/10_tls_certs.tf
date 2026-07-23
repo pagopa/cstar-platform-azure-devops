@@ -5,18 +5,50 @@ locals {
     idpay-itn-internal-dev-cstar-pagopa-it : {
       env              = "dev"
       dns_record_name  = "idpay.itn.internal"
+      dns_zone_name    = "dev.cstar.pagopa.it"
+      dns_zone_rg      = local.rg_dev_dns_zone_name
       variables        = {}
       variables_secret = {}
     }
     idpay-itn-internal-uat-cstar-pagopa-it : {
       env              = "uat"
       dns_record_name  = "idpay.itn.internal"
+      dns_zone_name    = "uat.cstar.pagopa.it"
+      dns_zone_rg      = local.rg_uat_dns_zone_name
       variables        = {}
       variables_secret = {}
     }
     idpay-itn-internal-cstar-pagopa-it : {
       env              = "prod"
       dns_record_name  = "idpay.itn.internal"
+      dns_zone_name    = "cstar.pagopa.it"
+      dns_zone_rg      = local.rg_prod_dns_zone_name
+      variables        = {}
+      variables_secret = {}
+    }
+
+    # pari.pagopa.it
+    dev-pari-pagopa-it : {
+      env              = "dev"
+      dns_record_name  = ""
+      dns_zone_name    = "dev.pari.pagopa.it"
+      dns_zone_rg      = local.rg_dev_itn_dns_zone_name
+      variables        = {}
+      variables_secret = {}
+    }
+    uat-pari-pagopa-it : {
+      env              = "uat"
+      dns_record_name  = ""
+      dns_zone_name    = "uat.pari.pagopa.it"
+      dns_zone_rg      = local.rg_uat_itn_dns_zone_name
+      variables        = {}
+      variables_secret = {}
+    }
+    pari-pagopa-it : {
+      env              = "prod"
+      dns_record_name  = ""
+      dns_zone_name    = "pari.pagopa.it"
+      dns_zone_rg      = local.rg_prod_itn_dns_zone_name
       variables        = {}
       variables_secret = {}
     }
@@ -24,8 +56,6 @@ locals {
 
   env_configurations = {
     dev = {
-      dns_zone_name                       = "dev.cstar.pagopa.it"
-      dns_zone_rg                         = local.rg_dev_dns_zone_name
       subscription_name                   = local.dev_subscription_name
       subscription_id                     = local.dev_subscription_id
       credential_key_vault_name           = local.dev_kv_domain_name
@@ -37,8 +67,6 @@ locals {
       variables_secret = {}
     }
     uat = {
-      dns_zone_name                       = "uat.cstar.pagopa.it"
-      dns_zone_rg                         = local.rg_uat_dns_zone_name
       subscription_name                   = local.uat_subscription_name
       subscription_id                     = local.uat_subscription_id
       credential_key_vault_name           = local.uat_kv_domain_name
@@ -50,8 +78,6 @@ locals {
       variables_secret = {}
     }
     prod = {
-      dns_zone_name                       = "cstar.pagopa.it"
-      dns_zone_rg                         = local.rg_prod_dns_zone_name
       subscription_name                   = local.prod_subscription_name
       subscription_id                     = local.prod_subscription_id
       credential_key_vault_name           = local.prod_kv_domain_name
@@ -86,8 +112,8 @@ module "federated_cert_pipeline_dev" {
   github_service_connection_id = azuredevops_serviceendpoint_github.idpay_bot_github_rw.id
 
   dns_record_name         = each.value.dns_record_name
-  dns_zone_name           = local.env_configurations[each.value.env].dns_zone_name
-  dns_zone_resource_group = local.env_configurations[each.value.env].dns_zone_rg
+  dns_zone_name           = each.value.dns_zone_name
+  dns_zone_resource_group = each.value.dns_zone_rg
   tenant_id               = data.azurerm_client_config.current.tenant_id
   subscription_name       = local.env_configurations[each.value.env].subscription_name
   subscription_id         = local.env_configurations[each.value.env].subscription_id
@@ -153,8 +179,8 @@ module "federated_cert_pipeline_uat" {
   github_service_connection_id = azuredevops_serviceendpoint_github.idpay_bot_github_rw.id
 
   dns_record_name         = each.value.dns_record_name
-  dns_zone_name           = local.env_configurations[each.value.env].dns_zone_name
-  dns_zone_resource_group = local.env_configurations[each.value.env].dns_zone_rg
+  dns_zone_name           = each.value.dns_zone_name
+  dns_zone_resource_group = each.value.dns_zone_rg
   tenant_id               = data.azurerm_client_config.current.tenant_id
   subscription_name       = local.env_configurations[each.value.env].subscription_name
   subscription_id         = local.env_configurations[each.value.env].subscription_id
@@ -220,8 +246,8 @@ module "federated_cert_pipeline_prod" {
   github_service_connection_id = azuredevops_serviceendpoint_github.idpay_bot_github_rw.id
 
   dns_record_name         = each.value.dns_record_name
-  dns_zone_name           = local.env_configurations[each.value.env].dns_zone_name
-  dns_zone_resource_group = local.env_configurations[each.value.env].dns_zone_rg
+  dns_zone_name           = each.value.dns_zone_name
+  dns_zone_resource_group = each.value.dns_zone_rg
   tenant_id               = data.azurerm_client_config.current.tenant_id
   subscription_name       = local.env_configurations[each.value.env].subscription_name
   subscription_id         = local.env_configurations[each.value.env].subscription_id
