@@ -16,18 +16,18 @@ locals {
   dev_backoffice_admin_storage_account = replace("${local.prefix}-d-${local.location_short}-${local.domain}admin", "-", "")
   dev_keycloak_url                     = "https://api-mcshared.dev.cstar.pagopa.it/auth-itn"
   dev_keycloak_realm                   = "mdc"
-  dev_keycloak_admin_client_id         = "ar_backoffice_portal_client"
+  dev_keycloak_admin_client_id         = "ar-backoffice-portal-client"
 
 
   uat_backoffice_admin_storage_account = replace("${local.prefix}-u-${local.location_short}-${local.domain}admin", "-", "")
   uat_keycloak_url                     = "https://api-mcshared.uat.cstar.pagopa.it/auth-itn"
   uat_keycloak_realm                   = "mdc"
-  uat_keycloak_admin_client_id         = "ar_backoffice_portal_client"
+  uat_keycloak_admin_client_id         = "ar-backoffice-portal-client"
 
   prod_backoffice_admin_storage_account = replace("${local.prefix}-p-${local.location_short}-${local.domain}admin", "-", "")
   prod_keycloak_url                     = "https://api-mcshared.cstar.pagopa.it/auth-itn"
   prod_keycloak_realm                   = "mdc"
-  prod_keycloak_admin_client_id         = "ar_backoffice_portal_client"
+  prod_keycloak_admin_client_id         = "ar-backoffice-portal-client"
 
   emd_ar_backoffice_admin_fe_variables_deploy = {
     # AzureCLI@2 richiede il NOME della service connection (non l'id)
