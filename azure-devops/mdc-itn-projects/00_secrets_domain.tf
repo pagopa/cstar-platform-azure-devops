@@ -17,8 +17,6 @@ module "domain_dev_secrets" {
     "argocd-admin-username",
     "argocd-admin-password",
     "email-mdc-google",
-    "keycloak-external-mdc-url",
-    "ar-backoffice-admin-client-id",
   ]
 }
 #
@@ -40,8 +38,6 @@ module "domain_uat_secrets" {
     "argocd-admin-username",
     "argocd-admin-password",
     "email-mdc-google",
-    "keycloak-external-mdc-url",
-    "ar-backoffice-admin-client-id",
   ]
 }
 
@@ -67,7 +63,5 @@ module "domain_prod_secrets" {
     "argocd-admin-username",
     "argocd-admin-password",
     "email-mdc-google",
-    "keycloak-external-mdc-url",
-    "ar-backoffice-admin-client-id",
   ]
 }
