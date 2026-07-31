@@ -203,6 +203,8 @@ locals {
       deploy : true,
       pipeline_prefix : "platform-infra",
       pipeline_path : "platform-infrastructure",
+      kv_name : "cstar-%s-itn-core-kv",
+      rg_name : "cstar-%s-itn-core-sec-rg",
       project_name = "iac"
       repository : {
         name = "cstar-securehub-infra"
