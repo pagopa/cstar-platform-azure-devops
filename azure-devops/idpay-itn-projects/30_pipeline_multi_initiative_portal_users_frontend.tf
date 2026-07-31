@@ -30,10 +30,7 @@ locals {
     DEV_ANALYTICS_MOCKED           = local.dev_analytics_mocked
     DEV_VITE_KEYCLOAK_URL          = local.dev_vite_keycloak_url
     DEV_VITE_KEYCLOAK_REALM        = local.dev_vite_user_keycloak_realm
-    DEV_VITE_KEYCLOAK_CLIENT_ID    = local.dev_vite_user_keycloak_client_id
-    DEV_VITE_KEYCLOAK_REDIRECT_URI = "https://dev.pari.pagopa.it/utente"
     DEV_VITE_URL_API_PORTAL_USERS  = local.dev_vite_url_api_portal_users
-    DEV_VITE_INITIATIVE_ID         = ""
     DEV_CDN_DOMAINS                = "dev.pari.pagopa.it"
     DEV_VITE_BASE_URL              = "https://dev.pari.pagopa.it"
 
@@ -46,10 +43,7 @@ locals {
     UAT_ANALYTICS_MOCKED           = local.uat_analytics_mocked
     UAT_VITE_KEYCLOAK_URL          = local.uat_vite_keycloak_url
     UAT_VITE_KEYCLOAK_REALM        = local.uat_vite_user_keycloak_realm
-    UAT_VITE_KEYCLOAK_CLIENT_ID    = local.uat_vite_user_keycloak_client_id
-    UAT_VITE_KEYCLOAK_REDIRECT_URI = "https://uat.pari.pagopa.it/utente"
     UAT_VITE_URL_API_PORTAL_USERS  = local.uat_vite_url_api_portal_users
-    UAT_VITE_INITIATIVE_ID         = ""
     UAT_CDN_DOMAINS                = "uat.pari.pagopa.it"
     UAT_VITE_BASE_URL              = "https://uat.pari.pagopa.it"
 
@@ -62,10 +56,7 @@ locals {
     PROD_ANALYTICS_MOCKED           = local.prod_analytics_mocked
     PROD_VITE_KEYCLOAK_URL          = local.prod_vite_keycloak_url
     PROD_VITE_KEYCLOAK_REALM        = local.prod_vite_user_keycloak_realm
-    PROD_VITE_KEYCLOAK_CLIENT_ID    = local.prod_vite_user_keycloak_client_id
-    PROD_VITE_KEYCLOAK_REDIRECT_URI = "https://pari.pagopa.it/utente"
     PROD_VITE_URL_API_PORTAL_USERS  = local.prod_vite_url_api_portal_users
-    PROD_VITE_INITIATIVE_ID         = ""
     PROD_CDN_DOMAINS                = "pari.pagopa.it"
     PROD_VITE_BASE_URL              = "https://pari.pagopa.it"
   }
