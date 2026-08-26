@@ -151,30 +151,30 @@ locals {
   #---------------------------------------------------------------------------------------------------------
 
   # DEV PORTALE UTENTI
-  dev_bonus_portal_users_cdn_profile                        = "${local.prefix}-d-itn-${local.domain}-bonus-cdn-profile"
-  dev_bonus_portal_users_cdn_endpoint                       = "${local.prefix}-d-itn-${local.domain}-bonus-cdn-endpoint"
-  dev_bonus_portal_users_account_name                       = "cstarditnidpaybonuscdnsa"
-  dev_bonus_cdn_domains                                     = [for i in local.bonus_dns_zone_name : "dev.${i}"]
-  dev_bonus_portal_users_one_trust_domain_id                = "019a6fb9-4953-7e06-bcaf-16cda0526ad9"
-  dev_bonus_portal_users_one_trust_otnotice_cdn_url         = "https://privacyportalde-cdn.onetrust.com/privacy-notice-scripts/otnotice-1.0.min.js"
-  dev_bonus_portal_users_one_trust_otnotice_cdn_settings    = "eyJjYWxsYmFja1VybCI6Imh0dHBzOi8vcHJpdmFjeXBvcnRhbC1kZS5vbmV0cnVzdC5jb20vcmVxdWVzdC92MS9wcml2YWN5Tm90aWNlcy9zdGF0cy92aWV3cyIsImNvbnRlbnRBcGlVcmwiOiJodHRwczovL3ByaXZhY3lwb3J0YWwtZGUub25ldHJ1c3QuY29tL3JlcXVlc3QvdjEvZW50ZXJwcmlzZXBvbGljeS9kaWdpdGFscG9saWN5L2NvbnRlbnQiLCJtZXRhZGF0YUFwaVVybCI6Imh0dHBzOi8vcHJpdmFjeXBvcnRhbC1kZS5vbmV0cnVzdC5jb20vcmVxdWVzdC92MS9lbnRlcnByaXNlcG9saWN5L2RpZ2l0YWxwb2xpY3kvbWV0YS1kYXRhIn0="  
-  dev_bonus_portal_users_one_trust_privacy_policy_id        = "afaba862-cf80-48de-9d82-26314e3c1bf6"
-  dev_bonus_portal_users_one_trust_privacy_policy_json_url  = "https://privacyportalde-cdn.onetrust.com/storage-container/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/afaba862-cf80-48de-9d82-26314e3c1bf6/published/privacynotice.json"
-  dev_bonus_portal_users_one_trust_tos_id                   = "570a78af-0f77-4459-8f72-b7e5f714336d"
-  dev_bonus_portal_users_one_trust_tos_json_url             = "https://privacyportalde-cdn.onetrust.com/storage-container/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/570a78af-0f77-4459-8f72-b7e5f714336d/published/privacynotice.json"  
+  dev_bonus_portal_users_cdn_profile                       = "${local.prefix}-d-itn-${local.domain}-bonus-cdn-profile"
+  dev_bonus_portal_users_cdn_endpoint                      = "${local.prefix}-d-itn-${local.domain}-bonus-cdn-endpoint"
+  dev_bonus_portal_users_account_name                      = "cstarditnidpaybonuscdnsa"
+  dev_bonus_cdn_domains                                    = [for i in local.bonus_dns_zone_name : "dev.${i}"]
+  dev_bonus_portal_users_one_trust_domain_id               = "019a6fb9-4953-7e06-bcaf-16cda0526ad9"
+  dev_bonus_portal_users_one_trust_otnotice_cdn_url        = "https://privacyportalde-cdn.onetrust.com/privacy-notice-scripts/otnotice-1.0.min.js"
+  dev_bonus_portal_users_one_trust_otnotice_cdn_settings   = "eyJjYWxsYmFja1VybCI6Imh0dHBzOi8vcHJpdmFjeXBvcnRhbC1kZS5vbmV0cnVzdC5jb20vcmVxdWVzdC92MS9wcml2YWN5Tm90aWNlcy9zdGF0cy92aWV3cyIsImNvbnRlbnRBcGlVcmwiOiJodHRwczovL3ByaXZhY3lwb3J0YWwtZGUub25ldHJ1c3QuY29tL3JlcXVlc3QvdjEvZW50ZXJwcmlzZXBvbGljeS9kaWdpdGFscG9saWN5L2NvbnRlbnQiLCJtZXRhZGF0YUFwaVVybCI6Imh0dHBzOi8vcHJpdmFjeXBvcnRhbC1kZS5vbmV0cnVzdC5jb20vcmVxdWVzdC92MS9lbnRlcnByaXNlcG9saWN5L2RpZ2l0YWxwb2xpY3kvbWV0YS1kYXRhIn0="
+  dev_bonus_portal_users_one_trust_privacy_policy_id       = "afaba862-cf80-48de-9d82-26314e3c1bf6"
+  dev_bonus_portal_users_one_trust_privacy_policy_json_url = "https://privacyportalde-cdn.onetrust.com/storage-container/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/afaba862-cf80-48de-9d82-26314e3c1bf6/published/privacynotice.json"
+  dev_bonus_portal_users_one_trust_tos_id                  = "570a78af-0f77-4459-8f72-b7e5f714336d"
+  dev_bonus_portal_users_one_trust_tos_json_url            = "https://privacyportalde-cdn.onetrust.com/storage-container/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/570a78af-0f77-4459-8f72-b7e5f714336d/published/privacynotice.json"
 
   # UAT PORTALE UTENTI
-  uat_bonus_portal_users_cdn_profile                        = "${local.prefix}-u-itn-${local.domain}-bonus-cdn-profile"
-  uat_bonus_portal_users_cdn_endpoint                       = "${local.prefix}-u-itn-${local.domain}-bonus-cdn-endpoint"
-  uat_bonus_portal_users_account_name                       = "cstaruitnidpaybonuscdnsa"
-  uat_bonus_cdn_domains                                     = [for i in local.bonus_dns_zone_name : "uat.${i}"]
-  uat_bonus_portal_users_one_trust_domain_id                = "019a6fb9-4953-7e06-bcaf-16cda0526ad9"
-  uat_bonus_portal_users_one_trust_otnotice_cdn_url         = "https://privacyportalde-cdn.onetrust.com/privacy-notice-scripts/otnotice-1.0.min.js"
-  uat_bonus_portal_users_one_trust_otnotice_cdn_settings    = "eyJjYWxsYmFja1VybCI6Imh0dHBzOi8vcHJpdmFjeXBvcnRhbC1kZS5vbmV0cnVzdC5jb20vcmVxdWVzdC92MS9wcml2YWN5Tm90aWNlcy9zdGF0cy92aWV3cyIsImNvbnRlbnRBcGlVcmwiOiJodHRwczovL3ByaXZhY3lwb3J0YWwtZGUub25ldHJ1c3QuY29tL3JlcXVlc3QvdjEvZW50ZXJwcmlzZXBvbGljeS9kaWdpdGFscG9saWN5L2NvbnRlbnQiLCJtZXRhZGF0YUFwaVVybCI6Imh0dHBzOi8vcHJpdmFjeXBvcnRhbC1kZS5vbmV0cnVzdC5jb20vcmVxdWVzdC92MS9lbnRlcnByaXNlcG9saWN5L2RpZ2l0YWxwb2xpY3kvbWV0YS1kYXRhIn0="  
-  uat_bonus_portal_users_one_trust_privacy_policy_id        = "afaba862-cf80-48de-9d82-26314e3c1bf6"
-  uat_bonus_portal_users_one_trust_privacy_policy_json_url  = "https://privacyportalde-cdn.onetrust.com/storage-container/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/afaba862-cf80-48de-9d82-26314e3c1bf6/published/privacynotice.json"
-  uat_bonus_portal_users_one_trust_tos_id                   = "570a78af-0f77-4459-8f72-b7e5f714336d"
-  uat_bonus_portal_users_one_trust_tos_json_url             = "https://privacyportalde-cdn.onetrust.com/storage-container/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/570a78af-0f77-4459-8f72-b7e5f714336d/published/privacynotice.json"
+  uat_bonus_portal_users_cdn_profile                       = "${local.prefix}-u-itn-${local.domain}-bonus-cdn-profile"
+  uat_bonus_portal_users_cdn_endpoint                      = "${local.prefix}-u-itn-${local.domain}-bonus-cdn-endpoint"
+  uat_bonus_portal_users_account_name                      = "cstaruitnidpaybonuscdnsa"
+  uat_bonus_cdn_domains                                    = [for i in local.bonus_dns_zone_name : "uat.${i}"]
+  uat_bonus_portal_users_one_trust_domain_id               = "019a6fb9-4953-7e06-bcaf-16cda0526ad9"
+  uat_bonus_portal_users_one_trust_otnotice_cdn_url        = "https://privacyportalde-cdn.onetrust.com/privacy-notice-scripts/otnotice-1.0.min.js"
+  uat_bonus_portal_users_one_trust_otnotice_cdn_settings   = "eyJjYWxsYmFja1VybCI6Imh0dHBzOi8vcHJpdmFjeXBvcnRhbC1kZS5vbmV0cnVzdC5jb20vcmVxdWVzdC92MS9wcml2YWN5Tm90aWNlcy9zdGF0cy92aWV3cyIsImNvbnRlbnRBcGlVcmwiOiJodHRwczovL3ByaXZhY3lwb3J0YWwtZGUub25ldHJ1c3QuY29tL3JlcXVlc3QvdjEvZW50ZXJwcmlzZXBvbGljeS9kaWdpdGFscG9saWN5L2NvbnRlbnQiLCJtZXRhZGF0YUFwaVVybCI6Imh0dHBzOi8vcHJpdmFjeXBvcnRhbC1kZS5vbmV0cnVzdC5jb20vcmVxdWVzdC92MS9lbnRlcnByaXNlcG9saWN5L2RpZ2l0YWxwb2xpY3kvbWV0YS1kYXRhIn0="
+  uat_bonus_portal_users_one_trust_privacy_policy_id       = "afaba862-cf80-48de-9d82-26314e3c1bf6"
+  uat_bonus_portal_users_one_trust_privacy_policy_json_url = "https://privacyportalde-cdn.onetrust.com/storage-container/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/afaba862-cf80-48de-9d82-26314e3c1bf6/published/privacynotice.json"
+  uat_bonus_portal_users_one_trust_tos_id                  = "570a78af-0f77-4459-8f72-b7e5f714336d"
+  uat_bonus_portal_users_one_trust_tos_json_url            = "https://privacyportalde-cdn.onetrust.com/storage-container/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/570a78af-0f77-4459-8f72-b7e5f714336d/published/privacynotice.json"
 
   # PROD PORTALE UTENTI
   prod_bonus_portal_users_cdn_profile                       = "${local.prefix}-p-itn-${local.domain}-bonus-cdn-profile"
@@ -183,7 +183,7 @@ locals {
   prod_bonus_cdn_domains                                    = [for i in local.bonus_dns_zone_name : i]
   prod_bonus_portal_users_one_trust_domain_id               = "019a6fb9-4953-7e06-bcaf-16cda0526ad9"
   prod_bonus_portal_users_one_trust_otnotice_cdn_url        = "https://privacyportalde-cdn.onetrust.com/privacy-notice-scripts/otnotice-1.0.min.js"
-  prod_bonus_portal_users_one_trust_otnotice_cdn_settings   = "eyJjYWxsYmFja1VybCI6Imh0dHBzOi8vcHJpdmFjeXBvcnRhbC1kZS5vbmV0cnVzdC5jb20vcmVxdWVzdC92MS9wcml2YWN5Tm90aWNlcy9zdGF0cy92aWV3cyIsImNvbnRlbnRBcGlVcmwiOiJodHRwczovL3ByaXZhY3lwb3J0YWwtZGUub25ldHJ1c3QuY29tL3JlcXVlc3QvdjEvZW50ZXJwcmlzZXBvbGljeS9kaWdpdGFscG9saWN5L2NvbnRlbnQiLCJtZXRhZGF0YUFwaVVybCI6Imh0dHBzOi8vcHJpdmFjeXBvcnRhbC1kZS5vbmV0cnVzdC5jb20vcmVxdWVzdC92MS9lbnRlcnByaXNlcG9saWN5L2RpZ2l0YWxwb2xpY3kvbWV0YS1kYXRhIn0="  
+  prod_bonus_portal_users_one_trust_otnotice_cdn_settings   = "eyJjYWxsYmFja1VybCI6Imh0dHBzOi8vcHJpdmFjeXBvcnRhbC1kZS5vbmV0cnVzdC5jb20vcmVxdWVzdC92MS9wcml2YWN5Tm90aWNlcy9zdGF0cy92aWV3cyIsImNvbnRlbnRBcGlVcmwiOiJodHRwczovL3ByaXZhY3lwb3J0YWwtZGUub25ldHJ1c3QuY29tL3JlcXVlc3QvdjEvZW50ZXJwcmlzZXBvbGljeS9kaWdpdGFscG9saWN5L2NvbnRlbnQiLCJtZXRhZGF0YUFwaVVybCI6Imh0dHBzOi8vcHJpdmFjeXBvcnRhbC1kZS5vbmV0cnVzdC5jb20vcmVxdWVzdC92MS9lbnRlcnByaXNlcG9saWN5L2RpZ2l0YWxwb2xpY3kvbWV0YS1kYXRhIn0="
   prod_bonus_portal_users_one_trust_privacy_policy_id       = "afaba862-cf80-48de-9d82-26314e3c1bf6"
   prod_bonus_portal_users_one_trust_privacy_policy_json_url = "https://privacyportalde-cdn.onetrust.com/storage-container/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/afaba862-cf80-48de-9d82-26314e3c1bf6/published/privacynotice.json"
   prod_bonus_portal_users_one_trust_tos_id                  = "570a78af-0f77-4459-8f72-b7e5f714336d"
