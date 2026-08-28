@@ -18,7 +18,7 @@ variable "multi_initiative_portal_merchants_operator_frontend" {
 locals {
 
   # deploy vars
-  multi_initiative_portal_merchants_operator_frontend = {
+  multi_initiative_portal_merchants_operator_frontend_variables_deploy = {
 
     blob_container_name    = "$web"
     AZURE_DEVOPS_GITHUB_RO = local.service_connection_github_ro_name
@@ -89,7 +89,7 @@ module "multi_initiative_portal_merchants_operator_frontend_deploy" {
   }
 
   project_id                   = local.devops_project_id
-  repository                   = var.multi_initiative_portal_merchants_operator_frontend
+  repository                   = var.multi_initiative_portal_merchants_operator_frontend.repository
   github_service_connection_id = local.service_connection_github_ro_id
 
 
@@ -101,7 +101,7 @@ module "multi_initiative_portal_merchants_operator_frontend_deploy" {
   ci_trigger_use_yaml = true
 
   variables = merge(
-    local.multi_initiative_portal_merchants_operator_frontend,
+    local.multi_initiative_portal_merchants_operator_frontend_variables_deploy,
   )
 
   variables_secret = {}
