@@ -37,6 +37,7 @@ locals {
     DEV_VITE_API_URL                                   = local.dev_vite_url_api_portal_merchants
     DEV_VITE_INITIATIVE_ID                             = local.dev_vite_initiative_id
     DEV_VITE_ONE_TRUST_OTNOTICE_CDN_SETTINGS_GLOBAL    = local.dev_react_app_one_trust_otnotice_cdn_settings
+    DEV_VITE_ONE_TRUST_DOMAIN_ID                       = local.dev_merchants_operator_one_trust_domain_id
     DEV_VITE_ONE_TRUST_TOS_JSON_URL_GLOBAL             = local.dev_react_app_one_trust_tos_json_url_merchants_operator
     DEV_VITE_ONE_TRUST_PRIVACY_POLICY_JSON_URL_GLOBAL  = local.dev_react_app_one_trust_privacy_policy_json_url_merchants_operator
     DEV_VITE_ONE_TRUST_TOS_NOTICE_ID_GLOBAL            = local.dev_react_app_one_trust_tos_id_merchants_operator
@@ -57,6 +58,7 @@ locals {
     UAT_VITE_API_URL                                   = local.uat_vite_url_api_portal_merchants
     UAT_VITE_INITIATIVE_ID                             = local.uat_vite_initiative_id
     UAT_VITE_ONE_TRUST_OTNOTICE_CDN_SETTINGS_GLOBAL    = local.uat_react_app_one_trust_otnotice_cdn_settings
+    UAT_VITE_ONE_TRUST_DOMAIN_ID                       = local.uat_merchants_operator_one_trust_domain_id
     UAT_VITE_ONE_TRUST_TOS_JSON_URL_GLOBAL             = local.uat_react_app_one_trust_tos_json_url_merchants_operator
     UAT_VITE_ONE_TRUST_PRIVACY_POLICY_JSON_URL_GLOBAL  = local.uat_react_app_one_trust_privacy_policy_json_url_merchants_operator
     UAT_VITE_ONE_TRUST_TOS_NOTICE_ID_GLOBAL            = local.uat_react_app_one_trust_tos_id_merchants_operator
@@ -77,6 +79,7 @@ locals {
     PROD_VITE_API_URL                                   = local.prod_vite_url_api_portal_merchants
     PROD_VITE_INITIATIVE_ID                             = local.prod_vite_initiative_id
     PROD_VITE_ONE_TRUST_OTNOTICE_CDN_SETTINGS_GLOBAL    = local.prod_react_app_one_trust_otnotice_cdn_settings
+    PROD_VITE_ONE_TRUST_DOMAIN_ID                       = local.prod_merchants_operator_one_trust_domain_id
     PROD_VITE_ONE_TRUST_TOS_JSON_URL_GLOBAL             = local.prod_react_app_one_trust_tos_json_url_merchants_operator
     PROD_VITE_ONE_TRUST_PRIVACY_POLICY_JSON_URL_GLOBAL  = local.prod_react_app_one_trust_privacy_policy_json_url_merchants_operator
     PROD_VITE_ONE_TRUST_TOS_NOTICE_ID_GLOBAL            = local.prod_react_app_one_trust_tos_id_merchants_operator
