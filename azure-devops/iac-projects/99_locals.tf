@@ -107,11 +107,15 @@ locals {
   # code review vars
   base_iac_variables_code_review = {}
   # code review secrets
-  base_iac_variables_secret_code_review = {}
+  base_iac_variables_secret_code_review = {
+    AZDO_GITHUB_TOKEN = module.secrets.values["cstar-azure-devops-github-ro-TOKEN"].value
+  }
   # deploy vars
   base_iac_variables_deploy = {}
   # deploy secrets
-  base_iac_variables_secret_deploy = {}
+  base_iac_variables_secret_deploy = {
+    AZDO_GITHUB_TOKEN = module.secrets.values["cstar-azure-devops-github-ro-TOKEN"].value
+  }
 
   prod_key_vault_azdo_resource_group = "${local.prefix}-p-sec-rg"
   prod_key_vault_azdo_name           = "${local.prefix}-p-azdo-weu-kv"
