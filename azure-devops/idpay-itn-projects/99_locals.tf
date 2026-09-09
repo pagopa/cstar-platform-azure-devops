@@ -245,8 +245,9 @@ locals {
   dev_react_app_one_trust_tos_id_merchants                  = "otnotice-451ed2b2-a420-4b44-8c86-8f12b0c07b60"
   dev_react_app_one_trust_tos_json_url_merchants            = "https://privacyportalde-cdn.onetrust.com/storage-container/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/451ed2b2-a420-4b44-8c86-8f12b0c07b60/published/privacynotice.json"
   dev_analytics_enabled                                     = "true"
-  dev_analytics_mocked                                      = "true" //Put to false when mixpanel available
-  dev_mixpanel_token                                        = "TODO" //"6e1290bdda5885981a2f443f37444f0f"
+  dev_analytics_mocked                                      = "false"
+  dev_mixpanel_debug_mode                                   = "true"
+  dev_mixpanel_token                                        = "08604ce2e6491e3b8ef38b935ead45f9"
   dev_onetrust_domain_id                                    = "019a15d0-8140-7fc9-9550-800aa9b1be13"
   dev_react_app_one_trust_base_url                          = "https://cdn.cookielaw.org"
 
@@ -275,8 +276,9 @@ locals {
   uat_react_app_one_trust_tos_id_merchants                  = "otnotice-451ed2b2-a420-4b44-8c86-8f12b0c07b60"
   uat_react_app_one_trust_tos_json_url_merchants            = "https://privacyportalde-cdn.onetrust.com/storage-container/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/451ed2b2-a420-4b44-8c86-8f12b0c07b60/published/privacynotice.json"
   uat_analytics_enabled                                     = "true"
-  uat_analytics_mocked                                      = "true" //Put to false when mixpanel available
-  uat_mixpanel_token                                        = "TODO" //"1d1b09b008638080ab34fe9b75db84fd"
+  uat_analytics_mocked                                      = "false"
+  uat_mixpanel_debug_mode                                   = "false"
+  uat_mixpanel_token                                        = "08604ce2e6491e3b8ef38b935ead45f9"
   uat_onetrust_domain_id                                    = "019a15d0-8140-7fc9-9550-800aa9b1be13"
   uat_react_app_one_trust_base_url                          = "https://cdn.cookielaw.org"
 
@@ -306,8 +308,9 @@ locals {
   prod_react_app_one_trust_tos_id_merchants                  = "otnotice-451ed2b2-a420-4b44-8c86-8f12b0c07b60"
   prod_react_app_one_trust_tos_json_url_merchants            = "https://privacyportalde-cdn.onetrust.com/storage-container/77f17844-04c3-4969-a11d-462ee77acbe1/privacy-notices/451ed2b2-a420-4b44-8c86-8f12b0c07b60/published/privacynotice.json"
   prod_analytics_enabled                                     = "true"
-  prod_analytics_mocked                                      = "true" //Put to false when mixpanel available
-  prod_mixpanel_token                                        = "TODO" //"1d1b09b008638080ab34fe9b75db84fd"
+  prod_analytics_mocked                                      = "false"
+  prod_mixpanel_debug_mode                                   = "false"
+  prod_mixpanel_token                                        = "08604ce2e6491e3b8ef38b935ead45f9"
   prod_onetrust_domain_id                                    = "019a15d0-8140-7fc9-9550-800aa9b1be13"
   prod_react_app_one_trust_base_url                          = "https://cdn.cookielaw.org"
   #ELENCO INFORMATICO DEGLI ELETTRODOMESTICI: FRONTEND REACT ENV
