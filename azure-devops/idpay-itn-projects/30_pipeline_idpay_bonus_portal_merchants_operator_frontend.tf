@@ -27,8 +27,10 @@ locals {
     DEV_CDN_PROFILE                                    = local.dev_bonus_merchant_op_cdn_profile
     DEV_RESOURCE_GROUP                                 = local.dev_storage_account_rg
     DEV_STORAGE_ACCOUNT                                = local.dev_bonus_merchant_op_storage_account_name
-    DEV_ANALYTICS_ENABLED                              = local.dev_analytics_enabled
     DEV_ANALYTICS_MOCKED                               = local.dev_analytics_mocked
+    DEV_MIXPANEL_ENABLED                               = local.dev_analytics_enabled
+    DEV_MIXPANEL_DEBUG                                 = local.uat_mixpanel_debug
+    DEV_MIXPANEL_TOKEN                                 = local.uat_mixpanel_token
     DEV_VITE_KEYCLOAK_URL                              = local.dev_vite_keycloak_url
     DEV_VITE_KEYCLOAK_REALM                            = local.dev_vite_keycloak_realm
     DEV_VITE_KEYCLOAK_CLIENT_ID                        = local.dev_vite_keycloak_client_id
@@ -47,8 +49,10 @@ locals {
     UAT_CDN_PROFILE                                    = local.uat_bonus_merchant_op_cdn_profile
     UAT_RESOURCE_GROUP                                 = local.uat_storage_account_rg
     UAT_STORAGE_ACCOUNT                                = local.uat_bonus_merchant_op_account_name
-    UAT_ANALYTICS_ENABLED                              = local.uat_analytics_enabled
     UAT_ANALYTICS_MOCKED                               = local.uat_analytics_mocked
+    UAT_MIXPANEL_ENABLED                               = local.uat_analytics_enabled
+    UAT_MIXPANEL_DEBUG                                 = local.uat_mixpanel_debug
+    UAT_MIXPANEL_TOKEN                                 = local.uat_mixpanel_token
     UAT_VITE_KEYCLOAK_URL                              = local.uat_vite_keycloak_url
     UAT_VITE_KEYCLOAK_REALM                            = local.uat_vite_keycloak_realm
     UAT_VITE_KEYCLOAK_CLIENT_ID                        = local.uat_vite_keycloak_client_id
@@ -67,8 +71,10 @@ locals {
     PROD_CDN_PROFILE                                    = local.prod_bonus_merchant_op_cdn_profile
     PROD_RESOURCE_GROUP                                 = local.prod_storage_account_rg
     PROD_STORAGE_ACCOUNT                                = local.prod_bonus_merchant_op_account_name
-    PROD_ANALYTICS_ENABLED                              = local.prod_analytics_enabled
     PROD_ANALYTICS_MOCKED                               = local.prod_analytics_mocked
+    PROD_MIXPANEL_ENABLED                               = local.prod_analytics_enabled
+    PROD_MIXPANEL_DEBUG                                 = local.prod_mixpanel_debug
+    PROD_MIXPANEL_TOKEN                                 = local.prod_mixpanel_token
     PROD_VITE_KEYCLOAK_URL                              = local.prod_vite_keycloak_url
     PROD_VITE_KEYCLOAK_REALM                            = local.prod_vite_keycloak_realm
     PROD_VITE_KEYCLOAK_CLIENT_ID                        = local.prod_vite_keycloak_client_id
