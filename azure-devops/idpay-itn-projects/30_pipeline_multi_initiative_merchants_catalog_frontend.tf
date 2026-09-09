@@ -21,27 +21,27 @@ locals {
     blob_container_name    = "$web"
     AZURE_DEVOPS_GITHUB_RO = local.service_connection_github_ro_name
 
-    DEV_AZURE_SUBSCRIPTION                     = local.dev_service_endpoint_azure_id
-    DEV_CDN_ENDPOINT                           = "cstar-d-itn-idpay-cdn-web"
-    DEV_CDN_PROFILE                            = "cstar-d-itn-idpay-multi-initiative-cdn-profile"
-    DEV_RESOURCE_GROUP                         = local.dev_storage_account_rg
-    DEV_STORAGE_ACCOUNT                        = "cstarditnidpaymultinit"
-    DEV_CDN_DOMAINS                            = "dev.pari.pagopa.it"
+    DEV_AZURE_SUBSCRIPTION = local.dev_service_endpoint_azure_id
+    DEV_CDN_ENDPOINT       = "cstar-d-itn-idpay-cdn-web"
+    DEV_CDN_PROFILE        = "cstar-d-itn-idpay-multi-initiative-cdn-profile"
+    DEV_RESOURCE_GROUP     = local.dev_storage_account_rg
+    DEV_STORAGE_ACCOUNT    = "cstarditnidpaymultinit"
+    DEV_CDN_DOMAINS        = "dev.pari.pagopa.it"
 
 
-    UAT_AZURE_SUBSCRIPTION                     = local.uat_service_endpoint_azure_id
-    UAT_CDN_ENDPOINT                           = "cstar-u-itn-idpay-cdn-web"
-    UAT_CDN_PROFILE                            = "cstar-u-itn-idpay-multi-initiative-cdn-profile"
-    UAT_RESOURCE_GROUP                         = local.uat_storage_account_rg
-    UAT_STORAGE_ACCOUNT                        = "cstaruitnidpaymultinit"
-    UAT_CDN_DOMAINS                            = "uat.pari.pagopa.it"
+    UAT_AZURE_SUBSCRIPTION = local.uat_service_endpoint_azure_id
+    UAT_CDN_ENDPOINT       = "cstar-u-itn-idpay-cdn-web"
+    UAT_CDN_PROFILE        = "cstar-u-itn-idpay-multi-initiative-cdn-profile"
+    UAT_RESOURCE_GROUP     = local.uat_storage_account_rg
+    UAT_STORAGE_ACCOUNT    = "cstaruitnidpaymultinit"
+    UAT_CDN_DOMAINS        = "uat.pari.pagopa.it"
 
-    PROD_AZURE_SUBSCRIPTION                     = local.prod_service_endpoint_azure_id
-    PROD_CDN_ENDPOINT                           = "cstar-p-itn-idpay-cdn-web"
-    PROD_CDN_PROFILE                            = "cstar-p-itn-idpay-multi-initiative-cdn-profile"
-    PROD_RESOURCE_GROUP                         = local.prod_storage_account_rg
-    PROD_STORAGE_ACCOUNT                        = "cstarpitnidpaymultinit"
-    PROD_CDN_DOMAINS                            = "pari.pagopa.it"
+    PROD_AZURE_SUBSCRIPTION = local.prod_service_endpoint_azure_id
+    PROD_CDN_ENDPOINT       = "cstar-p-itn-idpay-cdn-web"
+    PROD_CDN_PROFILE        = "cstar-p-itn-idpay-multi-initiative-cdn-profile"
+    PROD_RESOURCE_GROUP     = local.prod_storage_account_rg
+    PROD_STORAGE_ACCOUNT    = "cstarpitnidpaymultinit"
+    PROD_CDN_DOMAINS        = "pari.pagopa.it"
   }
 }
 
