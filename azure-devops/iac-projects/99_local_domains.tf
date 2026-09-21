@@ -54,21 +54,6 @@ locals {
         branch_name = "refs/heads/main"
       }
     },
-    {
-      name : "mcshared",
-      envs : ["d", "u", "p"],
-      location_short = "itn"
-      code_review : true,
-      deploy : true,
-      pipeline_prefix : "mcshared-infra",
-      pipeline_path : "mcshared-infrastructure",
-      project_name = "iac"
-      repository : {
-        name = "cstar-securehub-infra"
-        yml_prefix_name : "mcshared"
-        branch_name = "refs/heads/main"
-      }
-    },
     #
     # cstar-securehub-infra-api-spec
     #
