@@ -37,6 +37,7 @@ locals {
     DEV_REACT_APP_URL_STORAGE                                 = local.dev_react_app_url_storage
     DEV_ANALYTICS_ENABLED                                     = local.dev_analytics_enabled
     DEV_ANALYTICS_MOCKED                                      = local.dev_analytics_mocked
+    DEV_MIXPANEL_DEBUG                                        = local.dev_mixpanel_debug
     DEV_MIXPANEL_TOKEN                                        = local.dev_mixpanel_token
     DEV_ONETRUST_DOMAIN_ID                                    = local.dev_onetrust_domain_id
     DEV_REACT_APP_ONE_TRUST_OTNOTICE_CDN_URL                  = local.dev_react_app_one_trust_otnotice_cdn_url
@@ -62,6 +63,7 @@ locals {
     UAT_REACT_APP_URL_STORAGE                                 = local.uat_react_app_url_storage
     UAT_ANALYTICS_ENABLED                                     = local.uat_analytics_enabled
     UAT_ANALYTICS_MOCKED                                      = local.uat_analytics_mocked
+    UAT_MIXPANEL_DEBUG                                        = local.uat_mixpanel_debug
     UAT_MIXPANEL_TOKEN                                        = local.uat_mixpanel_token
     UAT_ONETRUST_DOMAIN_ID                                    = local.uat_onetrust_domain_id
     UAT_REACT_APP_ONE_TRUST_OTNOTICE_CDN_URL                  = local.uat_react_app_one_trust_otnotice_cdn_url
@@ -87,6 +89,7 @@ locals {
     PROD_REACT_APP_URL_STORAGE                                 = local.prod_react_app_url_storage
     PROD_ANALYTICS_ENABLED                                     = local.prod_analytics_enabled
     PROD_ANALYTICS_MOCKED                                      = local.prod_analytics_mocked
+    PROD_MIXPANEL_DEBUG                                        = local.prod_mixpanel_debug
     PROD_MIXPANEL_TOKEN                                        = local.prod_mixpanel_token
     PROD_ONETRUST_DOMAIN_ID                                    = local.prod_onetrust_domain_id
     PROD_REACT_APP_ONE_TRUST_OTNOTICE_CDN_URL                  = local.prod_react_app_one_trust_otnotice_cdn_url
