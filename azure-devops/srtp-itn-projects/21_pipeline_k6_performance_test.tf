@@ -57,4 +57,3 @@ module "srtp_k6_performance_test" {
     local.service_connection_github_ro_id,
   ]
 }
-
