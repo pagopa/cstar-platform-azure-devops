@@ -23,17 +23,25 @@ locals {
     UAT_AZURE_SERVICE_CONNECTION_NAME = local.uat_service_endpoint_azure_name
     UAT_POSTMAN_KV_NAME               = local.uat_kv_domain_name
   }
+
+  srtp_k6_performance_test_pipelines = {
+    custom = "k6-custom-test.yml"
+    stress = "k6-stress-test.yml"
+    soak   = "k6-soak-test.yml"
+    spike  = "k6-spike-test.yml"
+  }
 }
 
 module "srtp_k6_performance_test" {
-  source = "./.terraform/modules/__devops_v0__/azuredevops_build_definition_generic"
+  for_each = local.srtp_k6_performance_test_pipelines
+  source   = "./.terraform/modules/__devops_v0__/azuredevops_build_definition_generic"
 
   project_id                   = local.devops_project_id
   repository                   = var.srtp_k6_performance_test.repository
   github_service_connection_id = local.service_connection_github_pr_id
 
-  pipeline_name         = "${var.srtp_k6_performance_test.pipeline.name}.k6-performance-test"
-  pipeline_yml_filename = "k6-performance-tests.yml"
+  pipeline_name         = "${var.srtp_k6_performance_test.pipeline.name}.k6-${each.key}-test"
+  pipeline_yml_filename = each.value
   path                  = var.srtp_k6_performance_test.pipeline.path
 
   ci_trigger_enabled           = false
@@ -49,3 +57,4 @@ module "srtp_k6_performance_test" {
     local.service_connection_github_ro_id,
   ]
 }
+
