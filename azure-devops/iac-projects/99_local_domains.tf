@@ -54,21 +54,6 @@ locals {
         branch_name = "refs/heads/main"
       }
     },
-    {
-      name : "mcshared",
-      envs : ["d", "u", "p"],
-      location_short = "itn"
-      code_review : true,
-      deploy : true,
-      pipeline_prefix : "mcshared-infra",
-      pipeline_path : "mcshared-infrastructure",
-      project_name = "iac"
-      repository : {
-        name = "cstar-securehub-infra"
-        yml_prefix_name : "mcshared"
-        branch_name = "refs/heads/main"
-      }
-    },
     #
     # cstar-securehub-infra-api-spec
     #
@@ -247,38 +232,6 @@ locals {
     #
     # cstar-infrastructure
     #
-    {
-      name : "rtd",
-      envs : ["d", "u", "p"],
-      location_short = "weu"
-      kv_name : "${local.prefix}-%s-rtd-kv",
-      rg_name : "${local.prefix}-%s-rtd-sec-rg",
-      code_review : true,
-      deploy : true,
-      pipeline_prefix : "rtd-infra",
-      pipeline_path : "rtd-infrastructure",
-      project_name = "iac"
-      repository : {
-        name = "cstar-infrastructure"
-        yml_prefix_name : "rtd"
-        branch_name = "refs/heads/main"
-      }
-    },
-    {
-      name : "tae",
-      envs : ["d", "u", "p"],
-      location_short = "weu"
-      code_review : true,
-      deploy : true,
-      pipeline_prefix : "tae-infra",
-      pipeline_path : "tae-infrastructure",
-      project_name = "iac"
-      repository : {
-        name = "cstar-infrastructure"
-        yml_prefix_name : "tae"
-        branch_name = "refs/heads/main"
-      }
-    },
     {
       name : "core",
       envs : ["d", "u", "p"],
