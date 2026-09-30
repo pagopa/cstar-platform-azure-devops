@@ -18,19 +18,21 @@ locals {
   dev_keycloak_realm                   = "mdc"
   dev_keycloak_admin_client_id         = "ar-backoffice-portal-client"
   dev_backoffice_internal_api_base_url = "https://api-emd.dev.cstar.pagopa.it/emd/backoffice-internal"
-
+  dev_grafana_url                      = data.azurerm_dashboard_grafana.dev_grafana_managed.endpoint
 
   uat_backoffice_admin_storage_account = replace("${local.prefix}-u-${local.location_short}-${local.domain}admin", "-", "")
   uat_keycloak_url                     = "https://api-mcshared.uat.cstar.pagopa.it/auth-itn"
   uat_keycloak_realm                   = "mdc"
   uat_keycloak_admin_client_id         = "ar-backoffice-portal-client"
   uat_backoffice_internal_api_base_url = "https://api-emd.uat.cstar.pagopa.it/emd/backoffice-internal"
+  uat_grafana_url                      = data.azurerm_dashboard_grafana.dev_grafana_managed.endpoint
 
   prod_backoffice_admin_storage_account = replace("${local.prefix}-p-${local.location_short}-${local.domain}admin", "-", "")
   prod_keycloak_url                     = "https://api-mcshared.cstar.pagopa.it/auth-itn"
   prod_keycloak_realm                   = "mdc"
   prod_keycloak_admin_client_id         = "ar-backoffice-portal-client"
   prod_backoffice_internal_api_base_url = "https://api-emd.cstar.pagopa.it/emd/backoffice-internal"
+  prod_grafana_url                      = data.azurerm_dashboard_grafana.dev_grafana_managed.endpoint
 
   emd_ar_backoffice_admin_fe_variables_deploy = {
     # AzureCLI@2 richiede il NOME della service connection (non l'id)
@@ -41,6 +43,7 @@ locals {
     DEV_KEYCLOAK_URL       = local.dev_keycloak_url
     DEV_KEYCLOAK_REALM     = local.dev_keycloak_realm
     DEV_KEYCLOAK_CLIENT_ID = local.dev_keycloak_admin_client_id
+    DEV_GRAFANA_URL        = local.dev_grafana_url
 
     UAT_AGENT_POOL         = local.azdo_agent_pool_uat
     UAT_AZURE_SUBSCRIPTION = local.uat_service_endpoint_azure_name
@@ -49,6 +52,7 @@ locals {
     UAT_KEYCLOAK_URL       = local.uat_keycloak_url
     UAT_KEYCLOAK_REALM     = local.uat_keycloak_realm
     UAT_KEYCLOAK_CLIENT_ID = local.uat_keycloak_admin_client_id
+    UAT_GRAFANA_URL        = local.uat_grafana_url
 
     PROD_AGENT_POOL         = local.azdo_agent_pool_prod
     PROD_AZURE_SUBSCRIPTION = local.prod_service_endpoint_azure_name
@@ -57,6 +61,7 @@ locals {
     PROD_KEYCLOAK_URL       = local.prod_keycloak_url
     PROD_KEYCLOAK_REALM     = local.prod_keycloak_realm
     PROD_KEYCLOAK_CLIENT_ID = local.prod_keycloak_admin_client_id
+    PROD_GRAFANA_URL        = local.prod_grafana_url
   }
 }
 

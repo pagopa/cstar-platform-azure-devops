@@ -46,3 +46,21 @@ data "azurerm_key_vault" "prod_kv_domain" {
   name                = local.prod_kv_domain_name
   resource_group_name = local.prod_kv_domain_resource_group
 }
+
+#
+# GRAFANA
+#
+data "azurerm_dashboard_grafana" "dev_grafana_managed" {
+  name                = local.dev_grafana_name
+  resource_group_name = local.dev_monitoring_rg_name
+}
+
+data "azurerm_dashboard_grafana" "uat_grafana_managed" {
+  name                = local.uat_grafana_name
+  resource_group_name = local.uat_monitoring_rg_name
+}
+
+data "azurerm_dashboard_grafana" "prod_grafana_managed" {
+  name                = local.prod_grafana_name
+  resource_group_name = local.prod_monitoring_rg_name
+}
