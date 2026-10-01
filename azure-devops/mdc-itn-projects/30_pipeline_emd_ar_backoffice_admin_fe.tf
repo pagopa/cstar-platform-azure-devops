@@ -25,14 +25,14 @@ locals {
   uat_keycloak_realm                   = "mdc"
   uat_keycloak_admin_client_id         = "ar-backoffice-portal-client"
   uat_backoffice_internal_api_base_url = "https://api-emd.uat.cstar.pagopa.it/emd/backoffice-internal"
-  uat_grafana_url                      = data.azurerm_dashboard_grafana.dev_grafana_managed.endpoint
+  uat_grafana_url                      = data.azurerm_dashboard_grafana.uat_grafana_managed.endpoint
 
   prod_backoffice_admin_storage_account = replace("${local.prefix}-p-${local.location_short}-${local.domain}admin", "-", "")
   prod_keycloak_url                     = "https://api-mcshared.cstar.pagopa.it/auth-itn"
   prod_keycloak_realm                   = "mdc"
   prod_keycloak_admin_client_id         = "ar-backoffice-portal-client"
   prod_backoffice_internal_api_base_url = "https://api-emd.cstar.pagopa.it/emd/backoffice-internal"
-  prod_grafana_url                      = data.azurerm_dashboard_grafana.dev_grafana_managed.endpoint
+  prod_grafana_url                      = data.azurerm_dashboard_grafana.prod_grafana_managed.endpoint
 
   emd_ar_backoffice_admin_fe_variables_deploy = {
     # AzureCLI@2 richiede il NOME della service connection (non l'id)
