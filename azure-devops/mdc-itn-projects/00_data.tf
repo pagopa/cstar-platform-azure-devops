@@ -51,16 +51,22 @@ data "azurerm_key_vault" "prod_kv_domain" {
 # GRAFANA
 #
 data "azurerm_dashboard_grafana" "dev_grafana_managed" {
+  provider = azurerm.dev
+
   name                = local.dev_grafana_name
   resource_group_name = local.dev_monitoring_rg_name
 }
 
 data "azurerm_dashboard_grafana" "uat_grafana_managed" {
+  provider = azurerm.uat
+
   name                = local.uat_grafana_name
   resource_group_name = local.uat_monitoring_rg_name
 }
 
 data "azurerm_dashboard_grafana" "prod_grafana_managed" {
+  provider = azurerm.prod
+
   name                = local.prod_grafana_name
   resource_group_name = local.prod_monitoring_rg_name
 }
