@@ -50,6 +50,13 @@ locals {
   prod_service_endpoint_azure_id   = data.azuredevops_serviceendpoint_azurerm.prod_azurerm_service_conn.service_endpoint_id
   prod_service_endpoint_azure_name = data.azuredevops_serviceendpoint_azurerm.prod_azurerm_service_conn.service_endpoint_name
 
+  ### Grafana
+  dev_grafana_name        = "${local.prefix}-d-${local.location_short}-grafana"
+  dev_monitoring_rg_name  = "${local.prefix}-d-${local.location_short}-platform-monitoring-rg"
+  uat_grafana_name        = "${local.prefix}-u-${local.location_short}-grafana"
+  uat_monitoring_rg_name  = "${local.prefix}-u-${local.location_short}-platform-monitoring-rg"
+  prod_grafana_name       = "${local.prefix}-p-${local.location_short}-grafana"
+  prod_monitoring_rg_name = "${local.prefix}-p-${local.location_short}-platform-monitoring-rg"
 }
 
 # LOCAL TLS CERT
