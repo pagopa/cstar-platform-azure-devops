@@ -127,7 +127,7 @@ locals {
   generic_pipelines = {
     "performance-test-setup" : {
       pipeline_prefix : "performance-test-setup",
-      pipeline_path : "performance-test-setup",
+      pipeline_path : "performance-test",
       project_name : "iac",
       repository : {
         name = "cstar-securehub-infra"
@@ -144,6 +144,16 @@ locals {
           include : ["refs/heads/main"],
           exclude : []
         }
+      }
+    }
+    "keycloak-performance-test": {
+      pipeline_prefix : "keycloak-performance-test",
+      pipeline_path : "performance-test",
+      project_name : "iac",
+      repository : {
+        name = "cstar-securehub-infra"
+        yml_file_name : "keycloak-performance-test.yml"
+        branch_name = "refs/heads/main"
       }
     }
   }
