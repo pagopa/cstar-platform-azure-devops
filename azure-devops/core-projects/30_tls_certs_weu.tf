@@ -122,6 +122,33 @@ locals {
       )
       cert_diff_variables = local.prod_cert_diff_variables
     }
+    "api-itw-dev-cstar-pagopa-it" : {
+      env             = "dev"
+      dns_record_name = "api-itw"
+      variables       = {}
+      variables_secret = merge(
+        local.cert_diff_env_variables_dev
+      )
+      cert_diff_variables = local.dev_cert_diff_variables
+    }
+    "api-itw-uat-cstar-pagopa-it" : {
+      env             = "uat"
+      dns_record_name = "api-itw"
+      variables       = {}
+      variables_secret = merge(
+        local.cert_diff_env_variables_uat
+      )
+      cert_diff_variables = local.uat_cert_diff_variables
+    }
+    "api-itw-cstar-pagopa-it" : {
+      env             = "prod"
+      dns_record_name = "api-itw"
+      variables       = {}
+      variables_secret = merge(
+        local.cert_diff_env_variables_prod
+      )
+      cert_diff_variables = local.prod_cert_diff_variables
+    }
   }
 }
 
