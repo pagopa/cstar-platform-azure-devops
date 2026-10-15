@@ -346,7 +346,7 @@ locals {
   prod_react_app_url_terms_and_conditions                = "https://rdb.cstar.pagopa.it/registro-dei-beni/terms-of-service"
 
   #EIE PORTAL GUIDE
-  react_app_url_fe_eie_manual = "https://developer.pagopa.it/pari/guides/bonuselettrodomestici-manuale-tecnico-produttore"
+  react_app_url_fe_rdb_manual = "https://developer.pagopa.it/it/pari/guides"
   react_app_pagopa_help_email = "https://developer.pagopa.it/pari/guides/bonuselettrodomestici-manuale-tecnico-produttore/contatti"
 
   #BONUS FRONTEND REACT ENV MERCHANT OPERATOR PORTAL
