@@ -17,6 +17,9 @@ locals {
   uat_subscription_id  = data.azurerm_subscriptions.uat.subscriptions[0].subscription_id
   prod_subscription_id = data.azurerm_subscriptions.prod.subscriptions[0].subscription_id
 
+  bonus_elettrodomestici_2025_id = "68dd003ccce8c534d1da22bc"
+  bonus_decoder_2026_id = "69e0fa95e21efa516c7b8dec"
+
 
   ### 🔑 Key Vault
   dev_kv_domain_name            = "${local.prefix}-d-${local.location_short}-${local.domain}-kv"
