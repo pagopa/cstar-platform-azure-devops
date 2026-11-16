@@ -22,7 +22,7 @@ locals {
     BLOB_CONTAINER_NAME    = "$web"
 
     BONUS_ELETTRODOMESTICI_2025_ID = local.bonus_elettrodomestici_2025_id
-    BONUS_DECODER_2026_ID = local.bonus_decoder_2026_id
+    BONUS_DECODER_2026_ID          = local.bonus_decoder_2026_id
 
     DEV_AZURE_SUBSCRIPTION                          = local.dev_service_endpoint_azure_id
     DEV_CDN_ENDPOINT                                = local.dev_asset_cdn_endpoint
